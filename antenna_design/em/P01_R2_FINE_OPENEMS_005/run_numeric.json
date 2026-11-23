@@ -1,0 +1,45 @@
+{
+  "id": "P01_R2",
+  "numeric_outputs_finite": true,
+  "samples": 1003,
+  "channel_samples": 501,
+  "reference_ohm": 50,
+  "channel_worst_s11_db": -6.2887893934719585,
+  "channel_worst_frequency_hz": 7737600000.0,
+  "channel_best_s11_db": -16.68977882586821,
+  "channel_best_frequency_hz": 8053000000.0,
+  "channel_meets_minus6db_on_sampled_grid": true,
+  "channel_meets_minus10db_on_sampled_grid": false,
+  "wideband": {
+    "grid_hz": [
+      6980000000.0,
+      9000000000.0,
+      5000000.0
+    ],
+    "samples": 405,
+    "valid_rule": "u_inc within 20 dB of its peak (as reanalyze_port_dft.py)",
+    "valid_range_hz": [
+      6980000000.0,
+      8995000000.0
+    ],
+    "valid_samples": 404,
+    "re_zin_peak_ohm": 107.75370661568036,
+    "re_zin_peak_hz": 7720000000.0,
+    "im_zin_at_re_peak_ohm": 63.25152799005614,
+    "min_s11_db": -16.68832195449267,
+    "min_s11_hz": 8055000000.0
+  },
+  "wall_seconds": 868.0407960090006,
+  "cpu_seconds": 1514.3964930000002,
+  "peak_rss_kib": 752620,
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "frequency_evaluation_step_hz": 1000000.0,
+  "frequency_grid_caveat": "DTFT evaluation spacing is not physical resolution; finite-record decay/truncation governs accuracy",
+  "coverage_caveat": "sampled frequencies including exact endpoints; no mathematical guarantee between samples",
+  "native_xml_sha256": "7d23039cde56b05cc52c8347ba0651c0b1ae29c0eec9f6117660917b1516d49b",
+  "variant_sha256": "f99937125786d8cc5c6ce11bf1e955d411c4c766e22d523a48dcad8dc271facc",
+  "far_field": "NOT_RECORDED"
+}

@@ -1,0 +1,26 @@
+{
+  "run": "P01_IN1_OPENEMS_030",
+  "evidence": "GUIDE_MODEL (de-embedding of EM_SIMULATED Zin)",
+  "line_removed_mm": 11.439,
+  "line_z0_ohm_static": 50.31755527492863,
+  "tip_y_mm": -1.561,
+  "port_y_mm": -13.0,
+  "z_tip_at_f0_ohm": [
+    11.80910265889907,
+    34.21459163294544
+  ],
+  "re_z_tip_channel_ohm": [
+    8.412715071610888,
+    18.91039851912399
+  ],
+  "re_z_tip_peak": {
+    "ohm": 39.246110110469345,
+    "ghz": 8.665,
+    "im_ohm": 19.120976114818323
+  },
+  "zin_port_at_f0_ohm": [
+    50.62565910774,
+    106.6566253391
+  ],
+  "caveat": "notch section treated as plain microstrip; steps and open ends ignored"
+}

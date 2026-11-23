@@ -1,0 +1,382 @@
+{
+  "id": "US3_PS3",
+  "family": "USLOT_MSL_H207_PARASITIC_INVERTED_ZD1p5525",
+  "base_design": "US3_PS2",
+  "evidence": "GEOMETRY_ONLY",
+  "substrate": {
+    "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ]
+  },
+  "metal": {
+    "conductivity_S_m": 58000000.0,
+    "thickness_m": 3.5e-05
+  },
+  "driven_z_mm": 1.5525,
+  "patch_polygon_mm": [
+    [
+      -5.710633,
+      -3.21
+    ],
+    [
+      5.710633,
+      -3.21
+    ],
+    [
+      5.710633,
+      3.21
+    ],
+    [
+      -5.710633,
+      3.21
+    ]
+  ],
+  "slots_polygon_mm": [
+    [
+      [
+        -2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        1.95
+      ],
+      [
+        1.4,
+        1.95
+      ],
+      [
+        1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        1.95
+      ],
+      [
+        -2.2,
+        1.95
+      ]
+    ]
+  ],
+  "feed": {
+    "type": "microstrip_edge_qw",
+    "z0_ohm": 50,
+    "line_width_mm": 2.6,
+    "line_x_mm": 0.0,
+    "line_start_y_mm": -13.0,
+    "line_end_y_mm": -11.01,
+    "connector": {
+      "type": "none",
+      "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). INVERTED STACK: the lumped port integrates 0 -> driven_z_mm = 1.5525 mm (the line is on the INNER layer). Feed: EMBEDDED 50 ohm line (w 2.60 mm, y -13 -> -11.01, only 1.99 mm long) + embedded transformer (w 0.50 mm, l 7.80 mm, ~0.34 lambda_g at f0, NOT a quarter-wave: a matching section re-tuned on the de-embedded run-033 edge impedance) touching the radiating edge y=-3.21 (no inset, no notch). PENDING: a real connector needs a via/blind via to the inner layer or an edge launch on L2; the model does not include it."
+    },
+    "line_width_method": "2-D electrostatic finite-difference solve (own script, scratch only, /tmp; tensor grid dx 0.025-0.05 mm, dz = h/40 = 0.05175 mm, zero-thickness strip, open box 90 x 40 mm) of the buried microstrip at z = 1.5525 mm (eps_r 4.4 up to 2.07 mm, air above). w = 2.60 mm -> Z0 = 50.45 ohm (dx 0.025; 50.38 at dx 0.05), static eps_eff 3.728; f0 dispersion estimate ~3.83 (+0.1 as for the PS2 line; ROUGH). w = 2.65 would give 49.94 ohm but puts the line edge x = 1.325 mm 0.075 mm from the U-slot inner edge x = 1.4 mm: mesh grading x 1.70 > 1.5 (prepare trial), so 2.60 mm is used (0.4 ohm from 50; reflection ~0.4 %). Same solver at z_d = 1.29375 gives 88.54 / 4.028 (w 0.5) and 50.02 / 3.901 (w 2.1) vs the PS2 values 88.9 / 4.028 and 50.09 / 3.900. Estimate only; GEOMETRY_ONLY. The first EM run measures it.",
+    "transformer_width_mm": 0.5,
+    "transformer_length_mm": 7.8,
+    "transformer_start_y_mm": -11.01,
+    "patch_edge_y_mm": -3.21,
+    "feed_polygons_mm": [
+      [
+        [
+          -1.3,
+          -13.0
+        ],
+        [
+          1.3,
+          -13.0
+        ],
+        [
+          1.3,
+          -11.01
+        ],
+        [
+          -1.3,
+          -11.01
+        ]
+      ],
+      [
+        [
+          -0.25,
+          -11.01
+        ],
+        [
+          0.25,
+          -11.01
+        ],
+        [
+          0.25,
+          -3.21
+        ],
+        [
+          -0.25,
+          -3.21
+        ]
+      ]
+    ],
+    "transformer_width_method": "Same FD solver: w 0.50 mm (the project minimum feature) at z_d 1.5525 -> Zt = 96.56 ohm (dx 0.025), static eps_eff 3.843; f0 dispersion estimate ~3.88 (rough). Zt grows with z_d at fixed w (88.5 at 1.29375, 96.2-96.6 at 1.5525, 104.8 at 1.81125). Transformer length: NOT lambda_g/4 (4.5 mm); l = 7.8 mm from the robust re-match on the de-embedded run-033 patch-edge impedance (see computation.what_if_feed_rematch)."
+  },
+  "uslot_params": {
+    "L_mm": 6.42,
+    "W_mm": 11.421266,
+    "s_over_L": 0.34,
+    "Wu_mm": 4.4,
+    "Lu_mm": 2.65,
+    "t_mm": 0.8,
+    "y0_mm": -0.7,
+    "open_toward": "+y",
+    "note": "U-slot and patch identical in absolute dimensions and position to US3_PS2 (L 6.42, W 11.421, Wu 4.4, Lu 2.65, t 0.8, y0 -0.7). Only z_d, the 50 ohm line width and the transformer length change."
+  },
+  "parasitic_patches": [
+    {
+      "name": "par1",
+      "z_mm": 2.07,
+      "polygon_mm": [
+        [
+          -5.710633,
+          -2.9
+        ],
+        [
+          5.710633,
+          -2.9
+        ],
+        [
+          5.710633,
+          4.25
+        ],
+        [
+          -5.710633,
+          4.25
+        ]
+      ]
+    }
+  ],
+  "parasitic_params": {
+    "Wp_mm": 11.421266,
+    "Lp_mm": 7.15,
+    "x_centre_mm": 0.0,
+    "y_min_mm": -2.9,
+    "y_max_mm": 4.25,
+    "y_centre_mm": 0.675,
+    "z_mm": 2.07,
+    "gap_to_driven_layer_mm": 0.5175,
+    "driven_to_ground_mm": 1.5525,
+    "overhang_beyond_patch_plus_y_mm": 1.04,
+    "inset_from_patch_edge_minus_y_mm": 0.31,
+    "inset_from_patch_edge_x_mm": 0.0,
+    "note": "Parasitic identical to US3_PS2 (top face z = 2.07, x +-5.7106, y -2.90..4.25, floating). The driven layer moves up to z_d = 1.5525 mm (gap 0.5175 = 2 mesh cells, driven-ground 1.5525 = 6 cells). y_min = -2.9 keeps it 0.31 mm clear (in projection) of the 0.5 mm transformer, which lies below it."
+  },
+  "changed_vs_previous": {
+    "US3_PS2": {
+      "family_of_change": "COUPLING / FEED LEVEL of the driven layer: z_d (the tap ratio of the driven sheet to the top sheet) and, as its re-match, the transformer length. Documented EXCEPTION to 'one family': two intentional changes (see rationale); everything else is fixed.",
+      "driven_z_mm": [
+        1.29375,
+        1.5525
+      ],
+      "driven_to_parasitic_gap_mm": [
+        0.77625,
+        0.5175
+      ],
+      "feed.line_width_mm": [
+        2.1,
+        2.6
+      ],
+      "feed.line_end_y_mm": [
+        -8.91,
+        -11.01
+      ],
+      "feed.transformer_start_y_mm": [
+        -8.91,
+        -11.01
+      ],
+      "feed.transformer_length_mm": [
+        5.7,
+        7.8
+      ],
+      "feed.transformer_width_mm": [
+        0.5,
+        0.5
+      ],
+      "feed.feed_polygons_mm": "50 ohm line x +-1.30, y -13..-11.01 (was x +-1.05, y -13..-8.91); transformer x +-0.25, y -11.01..-3.21 (was -8.91..-3.21)",
+      "unchanged": "patch 11.421 x 6.42 mm, U-slot (Wu 4.4, Lu 2.65, t 0.8, y0 -0.7), parasitic 11.421 x 7.15 mm at z 2.07, y -2.90..4.25, substrate FR4 eps_r 4.4 tan_delta 0.017 h 2.07, board 26 x 26 mm, metal, port (50 ohm lumped at y = -13, 0 -> z_d), mesh hint lines (x +-1.8, y -0.215)",
+      "note": "The 50 ohm line width is a DEPENDENT consequence of z_d (50 ohm at the new height), not a third change. The total feed length 9.79 mm (port y -13 to patch edge y -3.21) is unchanged, so the S11 reference plane is the same."
+    }
+  },
+  "rationale": "Ronda 33 (US3_PS2, openEMS base mesh, converged): S11 min -13.3 dB at 7.085 GHz, worst in channel -2.73 dB, eta 0.54 -> 0.69 -> 0.72, Re(Zin_port) 10-14 ohm and X +17..+20 ohm in the channel. DIAGNOSIS (data of run 033, GUIDE_MODEL de-embedding of the buried 50 ohm line + transformer to the patch edge; nothing here is a result). (1) The 7.07 GHz resonance is a parallel-type resonance at the patch edge (Re Z_edge peak ~255 ohm, X crossing + to -), its single-resonator circuit fit (em/fit_patch_circuit.py, 6.4-7.7 GHz) gives Q ~55 and R 73 ohm at the port, i.e. Q about 4x that of every single-patch run (13-27) and about equal to the dielectric Qd = 1/(tan_delta at 7.07 GHz = 0.0192) = 52: an energy-confined, loss-dominated mode. It is NOT the plain TM10 of the driven patch: a quasi-static covered-stripline estimate (own FD solve: driven sheet between ground and the top sheet, eps_eff 4.38, end extension 0.37 mm per end, U-slot term 0.914 mm from MS3) puts that mode at ~8.9 GHz, 1.8 GHz above the observation; the most likely candidates are the U-slot / driven-plate mode enclosed in FR4 (slot length ~9.7 mm ~ lambda_g/2 = 10.1 mm at eps_eff 4.38 and 7.07 GHz) or a coupled mode of the pair; the radiation of this mode was NOT simulated (NF2FF only in the channel), so 'dark' is an inference from Q ~ Qd, not a measurement. The guide's isolated driven target (8.28 GHz) was therefore the wrong mode assignment: the pair does not form the two nearby channel resonances the guide assumed (expected dips 7.89 / 8.25 GHz). (2) The ~8.06 GHz feature is the bright, top-sheet (parasitic-dominated) mode: the FD estimate for the 7.15 mm top sheet alone (eps_eff 3.66, end extension 2.69 mm total) is 7.96 GHz vs 8.06 observed, the guide had 8.20; it radiates normally (eta 0.72 at 8.24 GHz, as P01_MS1 0.75) and sits in the middle of the channel. It is however weakly coupled to the port: Re Z_edge only ~30 ohm and X_edge ~ +50 ohm in the channel (Re Zin_port 14 ohm), while the quarter-wave transformer needs R_edge ~ Zt^2/50 = 158 ohm. (3) Scale argument: a driven sheet at height z_d under a top sheet taps the bright mode with V_d/V_top = alpha (FD modal solve: alpha 0.583 at z_d 1.29375, 0.712 at 1.5525, 0.851 at 1.81125, even-mode eps_eff constant 3.67), so R_edge(bright) ~ alpha^2 R_top: 0.34 R_top = 30 ohm gives R_top ~ 88 ohm (the bright mode is not intrinsically unmatched, the tap ratio is too low). (4) What a FEED-ONLY retune can do: re-applying a transformer of any (Zt <= 88.9, l) to the de-embedded Z_edge(f) gives at best -5.5 dB worst in channel (Zt 87.5-88.9, l ~7.9 mm; guide error up to ~3 dB, validated only qualitatively in round 27): not enough for the -6 dB minimum. A common rescaling of L_driven and Lp is NOT indicated: the bright mode is already at 8.06 GHz (= 7.99 GHz in the HFSS frame), and pushing the confined 7.07 GHz mode into the channel would reproduce the PS1 loss-matching (eta valley). CHOICE: raise the driven sheet to z_d = 1.5525 mm (6 mesh cells; gap to the top sheet 0.5175 mm = 2 cells): alpha 0.583 -> 0.712, expected R_edge(bright) x1.49 ~ 45 ohm (tap model; if the reactance scales too, X also x1.49) and, because Zt of the 0.5 mm line grows with z_d (96.6 ohm) and the transformer is re-matched to the new, higher edge impedance, the guide predicts -6.3 .. -10 dB worst in channel over the uncertainty cases (R scale 1.25-1.75, X scale 1 or R scale), against -5.5 dB for the best feed-only retune of the old stack. This is a DOCUMENTED EXCEPTION to 'one family': (a) z_d is the lever on the bright-mode port coupling, (b) the transformer length must be re-derived because the impedance it matches changes (and the new 50 ohm line width is dependent on z_d); they cannot be separated without wasting the last refinement. z_d was the pre-registered REFINEMENT-2 lever of PS2 ('split too small -> more coupling'); using it now leaves, as the final refinement, only the calibrated tuning of l / Lp with this run's de-embedded Z_edge. Everything else (patch, U-slot, parasitic, substrate, board, port, mesh hints) is kept. GEOMETRY_ONLY; no S11, gain, efficiency, bandwidth or phase is claimed.",
+  "computation": {
+    "label": "GUIDE_MODEL (geometric/quasi-static estimate fitted to / derived from run US3_PS2_OPENEMS_033 EM data, NOT an EM result for US3_PS3)",
+    "method": "(a) De-embedding: from s11_wideband.csv of run 033 (Zin at the lumped port, y = -13) the 50 ohm line (Z0 50.09, eps_eff 3.90 static -> 4.0 at f0, 4.09 mm) and the transformer (Zt 88.9, eps_eff 4.028 -> 4.06, 5.7 mm) are removed analytically as ideal lossless TEM lines (em/feed_retune_guide.line; junction step, open end, losses ignored) to get Z_edge(f). (b) Re-match: a transformer (Zt, l) and a 50 ohm line are re-applied to Z_edge(f) (and to Z_edge with its real part scaled by s = (alpha'/alpha)^2) and the channel worst S11 is read on a 1 MHz-class grid (7.3-8.7 GHz data grid, em/feed_retune_guide.channel_metrics); l chosen to minimise the maximum worst-case over 6 uncertainty cases (s 1.25 / 1.49 / 1.75, X scale 1 or s). (c) 2-D electrostatic finite-difference solves (own script, scratch only; validated: reproduces PS2 line widths 88.54 / 4.028 and 50.02 / 3.901 vs 88.9 / 4.028 and 50.09 / 3.900) for Z0 / eps_eff of the buried lines at z_d 1.5525, and a coupled-strip modal solve (generalised eigenproblem C v = lambda C_air v) of the stack ground / driven sheet / top sheet (strip width 11.4 mm) for the modal eps_eff and the voltage ratio alpha. (d) Single-resonator fit of run 033: em/fit_patch_circuit.py on 6.4-7.7 GHz. A two-resonator coupled circuit (capacitive coupling, 9 parameters, 120 random starts) did NOT converge to an identifiable solution (rms 4.5 ohm, parameters at bounds/degenerate): not used.",
+    "inputs": {
+      "run": "em/US3_PS2_OPENEMS_033 (EM_SIMULATED, openEMS 0.37.0.post1.dev40, base mesh, 60000 steps, lumped port at y -13)",
+      "us3_ps2_run033": {
+        "s11_min_db": -13.3,
+        "s11_min_ghz": 7.085,
+        "re_zin_peak_ohm": 79,
+        "re_zin_peak_ghz": 7.065,
+        "s11_secondary_ghz": 8.06,
+        "s11_secondary_db": -4.3,
+        "worst_in_channel_db": -2.73,
+        "channel_re_zin_ohm": [
+          10,
+          14
+        ],
+        "channel_x_zin_ohm": [
+          17,
+          20
+        ],
+        "eta_prad_over_pacc": [
+          0.54,
+          0.69,
+          0.72
+        ],
+        "dmax_dbi": 6.9,
+        "dmax_theta_deg": [
+          15,
+          20
+        ],
+        "dmax_phi_deg": 270
+      },
+      "z_edge_deembedded_ohm": {
+        "7.04_GHz": "255 + j84 (Re peak, X crossing + to -)",
+        "7.32_GHz": "26 + j7",
+        "7.76_GHz": "22 + j53",
+        "8.04_GHz": "30 + j48",
+        "8.24_GHz": "25 + j40",
+        "note": "model-dependent: a +-5 % error in eps_eff of the 0.5 mm line moves X by a few ohm; junction and open-end reactances are lumped into X"
+      },
+      "single_resonator_fit_6p4_7p7GHz": {
+        "fr_ghz": 7.065,
+        "Q": 55.25,
+        "R_port_ohm": 73.5,
+        "Ls_nH": 0.182,
+        "R0_ohm": 5.8,
+        "rms_ohm": 4.7
+      },
+      "reference_Q_single_patch_fits": "13-27 (circuit_fits/*.json)",
+      "dielectric_Q_at_7p07GHz": 52,
+      "fd_modal_stack": {
+        "z_d_mm": [
+          1.035,
+          1.29375,
+          1.5525,
+          1.81125
+        ],
+        "alpha_Vd_over_Vtop_even_mode": [
+          0.46,
+          0.583,
+          0.712,
+          0.851
+        ],
+        "even_eps_eff": [
+          3.668,
+          3.671,
+          3.674,
+          3.674
+        ],
+        "covered_driven_mode_eps_eff": [
+          4.388,
+          4.384,
+          4.381,
+          4.382
+        ],
+        "Zt_w0p5_ohm": [
+          80.67,
+          88.54,
+          96.16,
+          104.8
+        ]
+      },
+      "fd_end_effects_mm_total_both_ends": {
+        "top_sheet_7p15": 2.69,
+        "driven_sheet_covered_top_grounded": 0.74,
+        "driven_sheet_uncovered": 2.41
+      }
+    },
+    "outputs": {
+      "z_d_mm": 1.5525,
+      "gap_mm": 0.5175,
+      "alpha": 0.712,
+      "r_edge_bright_scale_expected": 1.49,
+      "r_edge_bright_expected_ohm": "~45 (30 x 1.49; uncertainty 1.25-1.75 -> 37-52)",
+      "line_w_mm": 2.6,
+      "z0_line_ohm": 50.45,
+      "eps_eff_line_static": 3.728,
+      "eps_eff_line_f0_rough": 3.83,
+      "transformer_w_mm": 0.5,
+      "zt_ohm": 96.56,
+      "eps_eff_t_static": 3.843,
+      "eps_eff_t_f0_rough": 3.88,
+      "transformer_l_mm": 7.8,
+      "transformer_l_electrical_deg_f0": "~151 (lambda_g(3.88) = 19.06 mm at f0; NOT a quarter wave: it transforms the inductive edge impedance, not a purely real one)",
+      "what_if_feed_rematch": {
+        "label": "GUIDE_MODEL what-if, NOT EM; worst |S11| in 7.7376-8.2368 GHz",
+        "cases_order": "R scale 1.25 (X x1 | X x1.25), 1.49 (X x1 | X x1.49), 1.75 (X x1 | X x1.75)",
+        "l_7p8mm_Zt96p56": [
+          -7.0,
+          -6.4,
+          -8.5,
+          -6.6,
+          -10.3,
+          -6.3
+        ],
+        "l_7p6mm": [
+          -6.6,
+          -6.2,
+          -8.0,
+          -6.7,
+          -9.7,
+          -6.6
+        ],
+        "l_8p0mm": [
+          -7.2,
+          -6.4,
+          -8.8,
+          -6.3,
+          -10.7,
+          -5.9
+        ],
+        "old_stack_feed_only_best": "-5.53 dB (Zt 88.9, l 7.9 mm; fallback if z_d change is rejected)",
+        "old_stack_as_built": "-2.74 dB (reproduces run 033)",
+        "model_error": "up to ~3 dB mean in-channel and >5 dB locally (validator, round 27, qualitative only); the s-scaling is the unverified assumption of the tap model"
+      }
+    },
+    "evidence": "GUIDE_MODEL (not EM)"
+  },
+  "pre_registered_hypothesis": {
+    "H1": "Same protocol as run 033 (openEMS base mesh, --edge-port lumped, NF2FF 11 points, fc 2.5 GHz, --max-timesteps 60000, converged to the energy criterion): worst |S11| over 7.7376-8.2368 GHz (1 MHz grid) is <= -6 dB (run 033: -2.73 dB; guide: -6.3 .. -10 dB; the preferred -10 dB is not expected).",
+    "H2": "Radiation efficiency Prad/Pacc >= 0.6 at all 11 NF2FF channel frequencies (run 033: 0.54 -> 0.72) and no valley below 0.5, Dmax within 20 deg of broadside at all of them (run 033: 15-20 deg).",
+    "H_mechanism": "The tap-model prediction, tested on the SAME de-embedding recipe (line 50.45 ohm eps_eff 3.83 and transformer 96.56 ohm eps_eff 3.88 at f0): (i) Re Z_edge at the bright mode (~8.0 GHz) rises from ~30 ohm to 37-52 ohm; falsified if < 34 or > 60 ohm. (ii) the bright mode stays at 8.06 +- 0.08 GHz (even-mode eps_eff unchanged 3.67 -> 3.674); falsified otherwise. (iii) the 7.07 GHz high-Q mode (Q ~55) is still outside the channel (no S11 minimum below -10 dB with Q > 30 inside 7.74-8.24 GHz); its new frequency is recorded as a diagnostic, no value is predicted.",
+    "H3_null": "If an eta valley below 0.5 appears in the channel with S11 good (matching by loss) the confined mode entered the channel: stop changing the geometry of this architecture and run the tan_delta = 0 control of the PS1 geometry (owner decision recorded in PS2).",
+    "evidence_rule": "Nothing here is a result. A single base-mesh openEMS run only tests the hypotheses; HFSS is needed to validate. PS3 is not reviewed by design-reviewer yet.",
+    "decision_rule": "REFINEMENT 2 (the LAST allowed for this candidate; one family, calibrated on the PS3 run, no blind sweeps; design-reviewer only if the owner agrees to simulate in HFSS). (A) H1 and H2 hold -> no further geometry change: fine mesh (two-mesh rule), then owner decision on HFSS. (B) Mechanism confirmed (i, ii hold) but H1 fails by < ~3 dB -> change ONLY the transformer length l (and, if |X| residual demands, w) from the PS3 de-embedded Z_edge with the same guide (calibrated; sensitivity ~1 dB per 0.4 mm). (C) Bright mode shifted by > 80 MHz from 8.06 GHz but mechanism (i) holds -> common shift of L_driven and Lp together (slopes -9.0 / -8.4 MHz per 0.01 mm) re-calibrated on the measured mode. (D) Mechanism (i) falsified (Re Z_edge < 34 ohm): the tap model is wrong; revert to z_d = 1.29375 and apply the feed-only retune of PS2 (guide -5.5 dB best, l ~7.9 mm) as the last refinement, accepting that PS2/PS3 cannot reach -6 dB, or stop the architecture. (E) eta valley < 0.5 with good S11 -> H3_null: stop. Do not change z_d and Lp / L_driven in the same round."
+  },
+  "manufacturability": {
+    "layers": "3 copper layers: L1 top (floating parasitic sheet, z=2.07 mm), L2 INNER (driven patch with U-slot + 50 ohm line + transformer, z=1.5525 mm), L3 ground (z=0). 2 dielectric layers: 1.5525 mm (ground-L2) + 0.5175 mm (L2-L1). A standard 3-copper-layer FR4 multilayer; the exact core/prepreg split is the fabricator's (a 0.5175 mm prepreg is thinner than the PS2 0.776 mm; to be checked with the fabricator).",
+    "connector": "PENDING. The line is on the inner layer: an SMA/edge launcher on L1 would need a (blind) via from L1 to L2 or a cut-out/edge launch contacting L2; none is modelled (lumped 50 ohm port 0 -> z_d at the board edge y=-13). Via/launch parasitics and the inner-layer reference plane are not included.",
+    "vias": "none in the model (the parasitic floats on L1; no feed via).",
+    "min_feature_mm": "transformer 0.50 mm wide (exactly the project minimum; +-0.05 mm etch moves Zt by ~+-2.5 ohm) and 7.8 mm long (a long narrow high-Z track, loss and etch sensitive); U-slot arms/base 0.8 mm as MS3; copper to slot edge >= 1.26 mm (top arms to patch edge), >= 3.5 mm in x; parasitic is a solid rectangle. Not checked against any fabricator.",
+    "geometry_checks": "patch +-5.7106 x +-3.21 mm, U x +-2.2 / y -0.7..1.95 (unchanged), line x +-1.30 / y -13..-11.01, transformer x +-0.25 / y -11.01..-3.21, parasitic x +-5.7106 / y -2.90..4.25: all inside the 26 x 26 mm board; line and transformer do not cross the slot; the parasitic does not overlap the line or transformer in projection (0.31 mm clearance in y); line edge x 1.30 mm is 0.10 mm from the U-slot inner edge x 1.4 mm in projection only (different y ranges, no overlap); dielectrics 1.5525 mm (ground-L2) + 0.5175 mm (L2-L1).",
+    "tolerances_to_specify": "dielectric thickness ground-L2 (z_d; ~30 ohm/mm on Zt, alpha 0.58->0.71 per 0.26 mm so R_edge ~ +-12 % per 0.05 mm), L2-L1 gap (coupling), layer registration, etch of the 0.5 mm transformer (7.8 mm: +-0.05 mm -> Zt +-2.5 ohm) and of Lp/L_driven (~9 MHz per 0.01 mm), real eps_r/tan_delta of core and prepreg (may differ).",
+    "risks": "homogeneous FR4 is provisional; the stack split is the fabricator's; a floating sheet and an inner-layer line cannot be tuned after lamination; inner-layer connector transition unresolved; the confined 7.07 GHz mode may move toward the channel when z_d changes (not predicted)."
+  },
+  "purpose": "Refinement 1 of the inverted classic stack (US3_PS2): raise the driven U-slot sheet to z_d = 1.5525 mm and re-match the buried transformer so that the bright top-sheet mode at ~8.06 GHz is coupled to the 50 ohm port, based on the run-033 data.",
+  "mesh_hint_lines_mm": {
+    "y": [
+      -0.215,
+      -2.95
+    ]
+  },
+  "mesh_hint_note": "Hint lines identical to US3_PS2 (x +-1.8 mm, y -0.215 mm). prepare trial (round 34): line w 2.65 (edge x 1.325, 0.075 mm from the slot edge 1.4) fails x grading 1.70 > 1.5; w 2.60 passes with max neighbour ratio 1.43 (x), 1.39 (y), 1.33 (z). z lines at 1.5525 and 2.07 coincide with the substrate lines (h/8 = 0.25875 mm). | 2026-11-15 (orchestrator, mesh only, after round 034): x hints [-1.8, 1.8] removed and y hint -2.95 added, so that both --mesh base and --mesh fine pass the 1.5 grading limit (with x +-1.8 the fine mesh failed at x 1.97; without -2.95 the fine mesh failed at y 1.64 near the patch edge -3.21 / parasitic edge -2.9). Round 034 used the previous hints; rounds 035 (base) and 036 (fine) use these."
+}

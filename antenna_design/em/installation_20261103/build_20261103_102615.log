@@ -1,0 +1,765 @@
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using CMAKE_INSTALL_PREFIX: /workspace/openems-install
+-- Build AppCSXCAD: NO
+-- include local config
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/tmp.v52tqzE5m6
+[  4%] Creating directories for 'fparser'
+[  8%] No download step for 'fparser'
+[ 12%] No update step for 'fparser'
+[ 16%] No patch step for 'fparser'
+[ 20%] Performing configure step for 'fparser'
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/tmp.v52tqzE5m6/fparser-prefix/src/fparser-build
+[ 25%] Performing build step for 'fparser'
+[ 33%] Building CXX object CMakeFiles/fparser.dir/fparser.cc.o
+[ 66%] Building CXX object CMakeFiles/fparser.dir/fpoptimizer.cc.o
+[100%] Linking CXX shared library libfparser.so
+[100%] Built target fparser
+[ 29%] Performing install step for 'fparser'
+[100%] Built target fparser
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /workspace/openems-install/lib/libfparser.so.4.5.1
+-- Up-to-date: /workspace/openems-install/lib/libfparser.so.4
+-- Up-to-date: /workspace/openems-install/lib/libfparser.so
+-- Up-to-date: /workspace/openems-install/include/fparser.hh
+[ 33%] Completed 'fparser'
+[ 33%] Built target fparser
+[ 37%] Creating directories for 'CSXCAD'
+[ 41%] No download step for 'CSXCAD'
+[ 45%] No update step for 'CSXCAD'
+[ 50%] No patch step for 'CSXCAD'
+[ 54%] Performing configure step for 'CSXCAD'
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/local/bin/git (found version "2.52.0")
+-- Found Git repository, CSXCAD version tag: 626b99f
+-- FPARSER_ROOT_DIR: /workspace/openems-install
+-- fparser_INCLUDE_DIR: /workspace/openems-install/include
+-- TinyXML_ROOT_DIR 
+-- Found TinyXML: /workspace/openems-deps/usr/lib/x86_64-linux-gnu/libtinyxml.so
+-- TinyXML_INCLUDE_DIR: /workspace/openems-deps/usr/include
+-- TinyXML_LIBRARY: /workspace/openems-deps/usr/lib/x86_64-linux-gnu/libtinyxml.so
+CMake Warning (dev) at CMakeLists.txt:107 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  Environment variable HDF5_ROOT is set to:
+
+    /workspace/openems-deps/usr
+
+  For compatibility, CMake is ignoring the variable.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found HDF5: /workspace/openems-deps/usr/lib/x86_64-linux-gnu/libhdf5_serial.so (found version "1.14.5") found components: C HL
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/tmp.v52tqzE5m6/CSXCAD-prefix/src/CSXCAD-build
+[ 58%] Performing build step for 'CSXCAD'
+[  2%] Building CXX object src/CMakeFiles/CSXCAD.dir/ContinuousStructure.cpp.o
+[  4%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimitives.cpp.o
+[  7%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSProperties.cpp.o
+[  9%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSRectGrid.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/CSXCAD.dir/ParameterObjects.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSFunctionParser.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSUseful.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/CSXCAD.dir/ParameterCoord.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSTransform.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSObject.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimPoint.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimBox.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimMultiBox.cpp.o
+[ 33%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimSphere.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimSphericalShell.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimCylinder.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimCylindricalShell.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimPolygon.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimLinPoly.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimRotPoly.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimPolyhedron.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimPolyhedronReader.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimCurve.cpp.o
+[ 57%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimWire.cpp.o
+[ 59%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPrimUserDefined.cpp.o
+[ 61%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropUnknown.cpp.o
+[ 64%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropMaterial.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropDispersiveMaterial.cpp.o
+[ 69%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropLorentzMaterial.cpp.o
+[ 71%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropDebyeMaterial.cpp.o
+[ 73%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropDiscMaterial.cpp.o
+[ 76%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropLumpedElement.cpp.o
+[ 78%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropAbsorbingBC.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropMetal.cpp.o
+[ 83%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropConductingSheet.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropExcitation.cpp.o
+[ 88%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropProbeBox.cpp.o
+[ 90%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropDumpBox.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSPropResBox.cpp.o
+[ 95%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSBackgroundMaterial.cpp.o
+[ 97%] Building CXX object src/CMakeFiles/CSXCAD.dir/CSModeData.cpp.o
+[100%] Linking CXX shared library libCSXCAD.so
+[100%] Built target CSXCAD
+[ 62%] Performing install step for 'CSXCAD'
+[100%] Built target CSXCAD
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/WriteCSX.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddCylinder.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/DirChar2Int.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/vector2str.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/struct_2_xmlNode.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/CheckSymmtricLines.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/AddPrimitiveArgs.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/SmoothRange.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/AddProperty.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/GetPropertyType.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/GetPropertyPosition.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/SetPropertyArgs.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/Add2Property.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/octave_struct2xml_2.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/private/FindProperty.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddLumpedElement.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddSphericalShell.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddCylindricalShell.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddDump.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddRotPoly.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AutoSmoothMeshLines.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/SmoothMesh.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/SetMaterialWeight.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/RecursiveSmoothMesh.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/SetExcitationWeightFile.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/struct_2_xml.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddSphere.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddProbe.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddWire.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/CSXGeomPlot.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddPolygon.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddExcitation.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/Convert_VF_DiscMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/CalcLorentzMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/searchBinary.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/export_excellon.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddDjordjevicSarkarMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddBox.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/CalcDrudeMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/CalcDebyeMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/CreateDiscMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddDebyeMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/SetMaterialProperty.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/CalcDjordjevicSarkarApprox.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddLinPoly.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddPolyhedron.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AnalyseMesh.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/ImportSTL.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/SmoothMeshLines.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddPropAttribute.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddDiscMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/InitCSX.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddCurve.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/ImportPLY.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/SmoothMeshLines2.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/isOctave.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/CheckMesh.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddMetal.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/SetBackgroundMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/export_povray.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/export_empire.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/DefineRectGrid.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/export_gerber.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddLorentzMaterial.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddPoint.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/DetectEdges.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddPlaneWaveExcite.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/AddConductingSheet.m
+-- Installing: /workspace/openems-install/share/CSXCAD/matlab/SetExcitationWeight.m
+-- Installing: /workspace/openems-install/lib/libCSXCAD.so.0.7.0
+-- Installing: /workspace/openems-install/lib/libCSXCAD.so.0
+-- Set non-toolchain portion of runtime path of "/workspace/openems-install/lib/libCSXCAD.so.0.7.0" to "/workspace/openems-install/lib"
+-- Installing: /workspace/openems-install/lib/libCSXCAD.so
+-- Installing: /workspace/openems-install/include/CSXCAD/ContinuousStructure.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimitives.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSProperties.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSRectGrid.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSXCAD_Global.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSObject.h
+-- Installing: /workspace/openems-install/include/CSXCAD/ParameterObjects.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSFunctionParser.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSUseful.h
+-- Installing: /workspace/openems-install/include/CSXCAD/ParameterCoord.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSTransform.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSBackgroundMaterial.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimPoint.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimBox.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimMultiBox.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimSphere.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimSphericalShell.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimCylinder.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimCylindricalShell.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimPolygon.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimLinPoly.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimRotPoly.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimPolyhedron.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimPolyhedronReader.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimCurve.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimWire.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPrimUserDefined.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropUnknown.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropMaterial.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropDispersiveMaterial.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropLorentzMaterial.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropDebyeMaterial.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropDiscMaterial.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropLumpedElement.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropAbsorbingBC.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropMetal.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropConductingSheet.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropExcitation.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropProbeBox.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropDumpBox.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSPropResBox.h
+-- Installing: /workspace/openems-install/include/CSXCAD/CSModeData.h
+[ 66%] Completed 'CSXCAD'
+[ 66%] Built target CSXCAD
+[ 70%] Creating directories for 'openEMS'
+[ 75%] No download step for 'openEMS'
+[ 79%] No update step for 'openEMS'
+[ 83%] No patch step for 'openEMS'
+[ 87%] Performing configure step for 'openEMS'
+-- The CXX compiler identification is GNU 14.2.0
+-- The C compiler identification is GNU 14.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Found Git: /usr/local/bin/git (found version "2.52.0")
+-- Found Git repository, openEMS version tag: 5fecbb5
+-- fparser: /workspace/openems-install/lib/libfparser.so
+-- CSXCAD_LIBRARIES: /workspace/openems-install/lib/libCSXCAD.so
+-- CSXCAD_INCLUDE_DIR: /workspace/openems-install/include/CSXCAD
+-- Found TinyXML: /workspace/openems-deps/usr/lib/x86_64-linux-gnu/libtinyxml.so
+-- TinyXML_INCLUDE_DIR: /workspace/openems-deps/usr/include
+-- TinyXML_LIBRARY: /workspace/openems-deps/usr/lib/x86_64-linux-gnu/libtinyxml.so
+CMake Warning (dev) at CMakeLists.txt:130 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  Environment variable HDF5_ROOT is set to:
+
+    /workspace/openems-deps/usr
+
+  For compatibility, CMake is ignoring the variable.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found HDF5: /workspace/openems-deps/usr/lib/x86_64-linux-gnu/libhdf5_serial.so (found version "1.14.5") found components: C HL
+CMake Warning (dev) at CMakeLists.txt:137 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: /workspace/openems-deps/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found suitable version "1.83.0", minimum required is "1.46") found components: thread date_time serialization chrono program_options
+-- Boost_INCLUDE_DIRS: /workspace/openems-deps/usr/include
+-- Boost_LIBRARIES: Boost::thread;Boost::date_time;Boost::serialization;Boost::chrono;Boost::program_options
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.3.1")
+-- Looking for a HIP compiler
+-- Looking for a HIP compiler - NOTFOUND
+-- Sources:openems.cpp/workspace/openems-source/openEMS/tools/AdrOp.cpp/workspace/openems-source/openEMS/tools/ErrorMsg.cpp/workspace/openems-source/openEMS/tools/array_ops.cpp/workspace/openems-source/openEMS/tools/signal.cpp/workspace/openems-source/openEMS/tools/global.cpp/workspace/openems-source/openEMS/tools/hdf5_file_reader.cpp/workspace/openems-source/openEMS/tools/hdf5_file_writer.cpp/workspace/openems-source/openEMS/tools/sar_calculation.cpp/workspace/openems-source/openEMS/tools/useful.cpp/workspace/openems-source/openEMS/tools/vtk_file_writer.cpp/workspace/openems-source/openEMS/FDTD/engine.cpp/workspace/openems-source/openEMS/FDTD/engine_threadpool.cpp/workspace/openems-source/openEMS/FDTD/operator.cpp/workspace/openems-source/openEMS/FDTD/operator_coeffs.cpp/workspace/openems-source/openEMS/FDTD/operator_cylinder.cpp/workspace/openems-source/openEMS/FDTD/engine_sse.cpp/workspace/openems-source/openEMS/FDTD/excitation.cpp/workspace/openems-source/openEMS/FDTD/operator_cylindermultigrid.cpp/workspace/openems-source/openEMS/FDTD/engine_subgrid.cpp/workspace/openems-source/openEMS/FDTD/engine_interface_fdtd.cpp/workspace/openems-source/openEMS/FDTD/engine_interface_sse_fdtd.cpp/workspace/openems-source/openEMS/FDTD/engine_interface_gpu_fdtd.cpp/workspace/openems-source/openEMS/FDTD/engine_field_gather.cpp/workspace/openems-source/openEMS/FDTD/engine_gpu.cpp/workspace/openems-source/openEMS/FDTD/gpu_backend.cpp/workspace/openems-source/openEMS/FDTD/gpu_plugins.cpp/workspace/openems-source/openEMS/FDTD/gpu_coeff_sets.cpp/workspace/openems-source/openEMS/FDTD/gpu_backend_reference.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_extension.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_dispersive.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_lorentzmaterial.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_debyematerial.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_conductingsheet.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_dispersive.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_lorentzmaterial.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_debyematerial.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_upml.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_upml.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_extension.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_mur_abc.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_mur_abc.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_cylinder.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_cylinder.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_excitation.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_excitation.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_tfsf.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_tfsf.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_steadystate.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_steadystate.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_lumpedRLC.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_lumpedRLC.cpp/workspace/openems-source/openEMS/FDTD/extensions/operator_ext_absorbing_bc.cpp/workspace/openems-source/openEMS/FDTD/extensions/engine_ext_absorbing_bc.cpp/workspace/openems-source/openEMS/Common/engine_interface_base.cpp/workspace/openems-source/openEMS/Common/operator_base.cpp/workspace/openems-source/openEMS/Common/processcurrent.cpp/workspace/openems-source/openEMS/Common/processfieldprobe.cpp/workspace/openems-source/openEMS/Common/processfields.cpp/workspace/openems-source/openEMS/Common/processfields_fd.cpp/workspace/openems-source/openEMS/Common/processfields_sar.cpp/workspace/openems-source/openEMS/Common/processfields_td.cpp/workspace/openems-source/openEMS/Common/processing.cpp/workspace/openems-source/openEMS/Common/processintegral.cpp/workspace/openems-source/openEMS/Common/processmodematch.cpp/workspace/openems-source/openEMS/Common/processvoltage.cpp
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/tmp.v52tqzE5m6/openEMS-prefix/src/openEMS-build
+[ 91%] Performing build step for 'openEMS'
+[  1%] Building CXX object nf2ff/CMakeFiles/nf2ff.dir/nf2ff.cpp.o
+[  2%] Building CXX object CMakeFiles/openEMS.dir/openems.cpp.o
+[  3%] Building CXX object CMakeFiles/openEMS.dir/tools/AdrOp.cpp.o
+[  5%] Building CXX object nf2ff/CMakeFiles/nf2ff.dir/nf2ff_calc.cpp.o
+[  6%] Building CXX object CMakeFiles/openEMS.dir/tools/ErrorMsg.cpp.o
+[  7%] Building CXX object CMakeFiles/openEMS.dir/tools/array_ops.cpp.o
+[  8%] Building CXX object CMakeFiles/openEMS.dir/tools/signal.cpp.o
+[ 10%] Building CXX object CMakeFiles/openEMS.dir/tools/global.cpp.o
+[ 11%] Building CXX object CMakeFiles/openEMS.dir/tools/hdf5_file_reader.cpp.o
+[ 12%] Building CXX object nf2ff/CMakeFiles/nf2ff.dir/__/tools/array_ops.cpp.o
+[ 13%] Building CXX object nf2ff/CMakeFiles/nf2ff.dir/__/tools/useful.cpp.o
+[ 15%] Building CXX object CMakeFiles/openEMS.dir/tools/hdf5_file_writer.cpp.o
+[ 16%] Building CXX object nf2ff/CMakeFiles/nf2ff.dir/__/tools/hdf5_file_reader.cpp.o
+[ 17%] Building CXX object CMakeFiles/openEMS.dir/tools/sar_calculation.cpp.o
+[ 18%] Building CXX object nf2ff/CMakeFiles/nf2ff.dir/__/tools/hdf5_file_writer.cpp.o
+[ 20%] Linking CXX shared library libnf2ff.so
+[ 20%] Built target nf2ff
+[ 21%] Building CXX object nf2ff/CMakeFiles/nf2ff_bin.dir/main.cpp.o
+[ 22%] Linking CXX executable nf2ff
+[ 22%] Built target nf2ff_bin
+[ 23%] Building CXX object CMakeFiles/openEMS.dir/tools/useful.cpp.o
+[ 25%] Building CXX object CMakeFiles/openEMS.dir/tools/vtk_file_writer.cpp.o
+[ 26%] Building CXX object CMakeFiles/openEMS.dir/FDTD/engine.cpp.o
+[ 27%] Building CXX object CMakeFiles/openEMS.dir/FDTD/engine_threadpool.cpp.o
+[ 28%] Building CXX object CMakeFiles/openEMS.dir/FDTD/operator.cpp.o
+[ 30%] Building CXX object CMakeFiles/openEMS.dir/FDTD/operator_coeffs.cpp.o
+[ 31%] Building CXX object CMakeFiles/openEMS.dir/FDTD/operator_cylinder.cpp.o
+[ 32%] Building CXX object CMakeFiles/openEMS.dir/FDTD/engine_sse.cpp.o
+[ 33%] Building CXX object CMakeFiles/openEMS.dir/FDTD/excitation.cpp.o
+[ 35%] Building CXX object CMakeFiles/openEMS.dir/FDTD/operator_cylindermultigrid.cpp.o
+[ 36%] Building CXX object CMakeFiles/openEMS.dir/FDTD/engine_subgrid.cpp.o
+[ 37%] Building CXX object CMakeFiles/openEMS.dir/FDTD/engine_interface_fdtd.cpp.o
+[ 38%] Building CXX object CMakeFiles/openEMS.dir/FDTD/engine_interface_sse_fdtd.cpp.o
+[ 40%] Building CXX object CMakeFiles/openEMS.dir/FDTD/engine_interface_gpu_fdtd.cpp.o
+[ 41%] Building CXX object CMakeFiles/openEMS.dir/FDTD/engine_field_gather.cpp.o
+[ 42%] Building CXX object CMakeFiles/openEMS.dir/FDTD/engine_gpu.cpp.o
+[ 43%] Building CXX object CMakeFiles/openEMS.dir/FDTD/gpu_backend.cpp.o
+[ 45%] Building CXX object CMakeFiles/openEMS.dir/FDTD/gpu_plugins.cpp.o
+[ 46%] Building CXX object CMakeFiles/openEMS.dir/FDTD/gpu_coeff_sets.cpp.o
+[ 47%] Building CXX object CMakeFiles/openEMS.dir/FDTD/gpu_backend_reference.cpp.o
+[ 48%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_extension.cpp.o
+[ 50%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_dispersive.cpp.o
+[ 51%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_lorentzmaterial.cpp.o
+[ 52%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_debyematerial.cpp.o
+[ 53%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_conductingsheet.cpp.o
+[ 55%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_dispersive.cpp.o
+[ 56%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_lorentzmaterial.cpp.o
+[ 57%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_debyematerial.cpp.o
+[ 58%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_upml.cpp.o
+[ 60%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_upml.cpp.o
+[ 61%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_extension.cpp.o
+[ 62%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_mur_abc.cpp.o
+[ 63%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_mur_abc.cpp.o
+[ 65%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_cylinder.cpp.o
+[ 66%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_cylinder.cpp.o
+[ 67%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_excitation.cpp.o
+[ 68%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_excitation.cpp.o
+[ 70%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_tfsf.cpp.o
+[ 71%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_tfsf.cpp.o
+[ 72%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_steadystate.cpp.o
+[ 73%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_steadystate.cpp.o
+[ 75%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_lumpedRLC.cpp.o
+[ 76%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_lumpedRLC.cpp.o
+[ 77%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/operator_ext_absorbing_bc.cpp.o
+[ 78%] Building CXX object CMakeFiles/openEMS.dir/FDTD/extensions/engine_ext_absorbing_bc.cpp.o
+[ 80%] Building CXX object CMakeFiles/openEMS.dir/Common/engine_interface_base.cpp.o
+[ 81%] Building CXX object CMakeFiles/openEMS.dir/Common/operator_base.cpp.o
+[ 82%] Building CXX object CMakeFiles/openEMS.dir/Common/processcurrent.cpp.o
+[ 83%] Building CXX object CMakeFiles/openEMS.dir/Common/processfieldprobe.cpp.o
+[ 85%] Building CXX object CMakeFiles/openEMS.dir/Common/processfields.cpp.o
+[ 86%] Building CXX object CMakeFiles/openEMS.dir/Common/processfields_fd.cpp.o
+[ 87%] Building CXX object CMakeFiles/openEMS.dir/Common/processfields_sar.cpp.o
+[ 88%] Building CXX object CMakeFiles/openEMS.dir/Common/processfields_td.cpp.o
+[ 90%] Building CXX object CMakeFiles/openEMS.dir/Common/processing.cpp.o
+[ 91%] Building CXX object CMakeFiles/openEMS.dir/Common/processintegral.cpp.o
+[ 92%] Building CXX object CMakeFiles/openEMS.dir/Common/processmodematch.cpp.o
+[ 93%] Building CXX object CMakeFiles/openEMS.dir/Common/processvoltage.cpp.o
+[ 95%] Linking CXX shared library libopenEMS.so
+[ 95%] Built target openEMS
+[ 96%] Building CXX object CMakeFiles/openEMS_bin.dir/main.cpp.o
+[ 97%] Building CXX object tools/CMakeFiles/sar_bin.dir/sar_calc.cpp.o
+[ 98%] Linking CXX executable openEMS
+[ 98%] Built target openEMS_bin
+[100%] Linking CXX executable sar_calc
+[100%] Built target sar_bin
+[ 95%] Performing install step for 'openEMS'
+[  8%] Built target nf2ff
+[ 11%] Built target nf2ff_bin
+[ 95%] Built target openEMS
+[100%] Built target sar_bin
+[100%] Built target openEMS_bin
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /workspace/openems-install/lib/libopenEMS.so.0.37.0
+-- Installing: /workspace/openems-install/lib/libopenEMS.so.0
+-- Set non-toolchain portion of runtime path of "/workspace/openems-install/lib/libopenEMS.so.0.37.0" to "/workspace/openems-install/lib"
+-- Installing: /workspace/openems-install/lib/libopenEMS.so
+-- Installing: /workspace/openems-install/bin/openEMS
+-- Set non-toolchain portion of runtime path of "/workspace/openems-install/bin/openEMS" to "/workspace/openems-install/lib"
+-- Installing: /workspace/openems-install/bin/openEMS.sh
+-- Installing: /workspace/openems-install/include/openEMS/openems.h
+-- Installing: /workspace/openems-install/include/openEMS/openems_global.h
+-- Installing: /workspace/openems-install/share/openEMS/matlab
+-- Installing: /workspace/openems-install/share/openEMS/matlab/SetGaussExcite.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/DFT_time2freq.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/ReadHDF5Dump.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/CalcSAR.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/h5readatt_octave.cc
+-- Installing: /workspace/openems-install/share/openEMS/matlab/plotRefl.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddMSLPort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/physical_constants.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/h5writemode.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/ConvertHDF5_VTK.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/ReadHDF5FieldData.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/private
+-- Installing: /workspace/openems-install/share/openEMS/matlab/private/ReadNF2FF.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/private/ensure_oct_file.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/private/invoke_openEMS.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/DumpFF2VTK.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/calcTLPort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/antennas
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/antennas/inverted_f.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/antennas/infDipol.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/antennas/Patch_Antenna.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/antennas/Bi_Quad_Antenna.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/antennas/Patch_Antenna_Array.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/optimizer
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/optimizer/optimizer_asco.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/optimizer/optimizer_simfun.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/other
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/other/gauss_excitation_test.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/other/Metamaterial_PlaneWave_Drude.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/other/resistance_sheet.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/other/PlaneWave.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/other/Helix.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/other/PML_reflection_analysis.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/other/LumpedElement.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/transmission_lines
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/transmission_lines/MSL_Losses.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/transmission_lines/MSL.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/transmission_lines/directional_coupler.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/transmission_lines/Stripline.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/transmission_lines/CPW_Line.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/transmission_lines/Finite_Stripline.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/waveguide
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/waveguide/Coax.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/waveguide/Rect_Waveguide.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/waveguide/Circ_Waveguide.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/waveguide/Circ_Waveguide_CylinderCoords.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/waveguide/Rect_WG_W_WG_Ports.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/waveguide/Coax_Cylindrical_MG.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/examples/waveguide/Coax_CylinderCoords.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/GetField_SubSampling.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddCoaxialPort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/optimizer_asco_sim.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/RunOpenEMS_Parallel.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/WriteOpenEMS.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Dump2VTK.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/RunOpenEMS.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/SetCustomExcite.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/InitQueue.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/calcWGPort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddPML.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AR_estimate.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/PlotHDF5FieldData.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/FFT_time2freq.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Rect_Waveguide.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Circ_Waveguide.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/MSL_NotchFilter.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/StripLine2MSL.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Simple_Patch_Antenna.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Transmission_Lines.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Horn_Antennas.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Bent_Patch_Antenna.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Horn_Antenna.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Parallel_Plate_Waveguide.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Waveguides.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/RCS_Sphere.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/CylindricalWave_CC.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Patch_Antennas.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/MRI_Loop_Coil.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Dipole_SAR.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/MRI_LP_Birdcage.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Helical_Antenna.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Patch_Antenna_Phased_Array.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/CRLH_Extract_SPara.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Horn_Antenna_2D_FF.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Dipole_SAR_xy.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MRI_LP_BirdCage_SAR.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MSL_NotchFilter_SPara.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MRI_LP_BirdCage_B1.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MRI_Loop_Coil_SAR.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Dipole_SAR.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Helical_Antenna_S11.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/CRLH_LWA_3D_Rad.gif
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Conical-horn-model.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Conical_Horn_Antenna_2D_RadPattern.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Patch_Array_C2_02_C3_10.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Bent-patch-feed-pt-Z.jpeg
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/CRLH_LWA_Geometry.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/StripLine2MSL_SParam.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Gridding-z-direction.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/CRLH_LWA_SPara.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/CRLH_Extract_DispDia.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MRI_LP_BirdCage_3D_SAR.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Patch_Array_C2_10_C3_02.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Circ_Waveguide_ZL.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Gridding-end-stub.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Rect_wg_fig1.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MRI_LP_BirdCage_CSX.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Bent_Patch_Antenna.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MRI_Loop_Coil_Setup.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Helical_Antenna_RadPattern.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Horn_Antenna_RadPattern.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/CylindricalWave_Ez_Anim.gif
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MRI_Loop_Coil_3D_SAR.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Bent_Patch_Antenna_3D_pattern.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Conical_Horn_Antenna_RadPattern.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Rect_wg_fig2.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Conical_Horn_Antenna_S11.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Simple_Patch_Antenna_Zin.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MSL_NotchFilter_Geometry.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/RadarUWB_delay.svg
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/UWB_Antenna_Geometry.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/RCS_normalizedRCS.svg
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Conical-horn-mesh.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MRI_Loop_Coil_B1_xz.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/RadarUWB_gain.svg
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/CRLH_Extract_Geometry.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Patch_Antenna_Phased_Array.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Parallel_Plate_Waveguide_Paraview.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Bent-patch-pattern-theta-90.jpeg
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Bent-patch-pattern-phi-0.jpeg
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/MRI_Loop_Coil_B1_xy.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Conical-horn-gridding.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Simple_Patch_Antenna_S11.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Dipole_SAR_xz.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/RadarUWB_S11.svg
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Circ_Waveguide_SPara.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Parallel_Plate_Waveguide_AppCSXCAD.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Patch_Array_C2_02_C3_02.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Bent_Patch_S11.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Horn_Antenna_S11.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Bent-patch-mesh.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Simple_Patch_Antenna_RadPattern.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Conical-horn-xsection.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/RadarUWB_fidelity.svg
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Gridding-T-junction.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/CRLH_LWA_FF.png
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/images/Rect_wg_animation.gif
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Biomedical.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/CRLH_Extraction.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/CRLH.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Scattering.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/Conical_Horn_Antenna.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/index.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/RadarUWBTutorial.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/.gitignore
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/Tutorials/CRLH_LeakyWaveAnt.rst
+-- Installing: /workspace/openems-install/share/openEMS/matlab/doc/convert_tutorials.py
+-- Installing: /workspace/openems-install/share/openEMS/matlab/queue_addProcess.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/FindFreeSSH.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddStripLinePort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/CalcNF2FF.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/plotFF3D.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddMRStub.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/GetField_TD2FD.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddWaveGuidePort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/calcPort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddCurvePort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/SetStepExcite.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/calc_ypar.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/FinishQueue.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/ResultsQueue.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Bent_Patch_Antenna.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Horn_Antenna.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/CreateCRLH.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/StripLine2MSL.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/MSL_NotchFilter.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/CRLH_LeakyWaveAnt.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/MRI_Loop_Coil.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Patch_Antenna_Phased_Array.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/CRLH_Extraction.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Rect_Waveguide.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Circ_Waveguide.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Dipole_SAR.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/README.txt
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Conical_Horn_Antenna.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/MRI_LP_Birdcage.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Helical_Antenna.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/RadarUWBTutorial.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/RCS_Sphere.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Simple_Patch_Antenna.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/CylindricalWave_CC.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Parallel_Plate_Waveguide.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Tutorials/Patch_Antenna_Array.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/polarFF.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/CleanupSimPath.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/openEMS_resource_path.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddLumpedPort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/Add2Queue.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/WriteHDF5.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/CheckQueue.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/setup.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/GetField_Interpolation.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/calcLumpedPort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/plotFFdB.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddCPWPort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/h5writemode_octave.cc
+-- Installing: /workspace/openems-install/share/openEMS/matlab/harminv.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/GetField_Range.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/ReadUI.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/queue_checkProcess.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/SetSinusExcite.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/InitCylindricalFDTD.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AnalyzeNF2FF.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/SetDiracExcite.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/DelayFidelity.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddCircWaveGuidePort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/ReadHDF5Mesh.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/ReadHDF5Attribute.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/optimize.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/SetBoundaryCond.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/AddRectWaveGuidePort.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/InitFDTD.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/CreateNF2FFBox.m
+-- Installing: /workspace/openems-install/share/openEMS/matlab/queue_delProcess.m
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/Parallel_Plate_Waveguide.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/Circ_Waveguide.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/Horn_Antenna.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/Dipole_SAR.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/Simple_Patch_Antenna.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/RCS_Sphere.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/CylindricalWave_CC.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/RadarUWBTutorial.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/Rect_Waveguide.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/MRI_Loop_Coil.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/MSL_NotchFilter.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/Helical_Antenna.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/Conical_Horn_Antenna.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/StripLine2MSL.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/Bent_Patch_Antenna.py
+-- Installing: /workspace/openems-install/share/openEMS/python/Tutorials/CRLH_Extraction.py
+-- Installing: /workspace/openems-install/share/openEMS/resources
+-- Installing: /workspace/openems-install/share/openEMS/resources/phantoms
+-- Installing: /workspace/openems-install/share/openEMS/resources/phantoms/phantom_head_298MHz.h5
+-- Installing: /workspace/openems-install/share/openEMS/resources/phantoms/phantom_body_128MHz.h5
+-- Installing: /workspace/openems-install/share/openEMS/resources/phantoms/create_phantoms.py
+-- Installing: /workspace/openems-install/bin/nf2ff
+-- Set non-toolchain portion of runtime path of "/workspace/openems-install/bin/nf2ff" to "/workspace/openems-install/lib"
+-- Installing: /workspace/openems-install/lib/libnf2ff.so.0.1.0
+-- Installing: /workspace/openems-install/lib/libnf2ff.so.0
+-- Set non-toolchain portion of runtime path of "/workspace/openems-install/lib/libnf2ff.so.0.1.0" to "/workspace/openems-install/lib"
+-- Installing: /workspace/openems-install/lib/libnf2ff.so
+-- Installing: /workspace/openems-install/include/openEMS/nf2ff.h
+-- Installing: /workspace/openems-install/include/openEMS/sar_calculation.h
+-- Installing: /workspace/openems-install/include/openEMS/hdf5_file_reader.h
+-- Installing: /workspace/openems-install/include/openEMS/hdf5_file_writer.h
+-- Installing: /workspace/openems-install/include/openEMS/vtk_file_writer.h
+-- Installing: /workspace/openems-install/include/openEMS/arraylib/array_ij.h
+-- Installing: /workspace/openems-install/include/openEMS/arraylib/array_ijk.h
+-- Installing: /workspace/openems-install/include/openEMS/arraylib/array_nijk.h
+-- Installing: /workspace/openems-install/include/openEMS/arraylib/impl/allocator.h
+-- Installing: /workspace/openems-install/include/openEMS/arraylib/impl/array_base.h
+-- Installing: /workspace/openems-install/include/openEMS/arraylib/impl/subscript.h
+-- Installing: /workspace/openems-install/bin/sar_calc
+-- Set non-toolchain portion of runtime path of "/workspace/openems-install/bin/sar_calc" to "/workspace/openems-install/lib"
+[100%] Completed 'openEMS'
+[100%] Built target openEMS
+Start building Python extensions against C++ path: /workspace/openems-install...
+Build CSXCAD python extension ... please wait
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Using pip 25.0.1 from /workspace/openems-install/venv/lib/python3.12/site-packages/pip (python 3.12)
+Processing /workspace/openems-source/CSXCAD/python
+  Preparing metadata (pyproject.toml): started
+  Running command Preparing metadata (pyproject.toml)
+  /workspace/openems-install/venv/lib/python3.12/site-packages/setuptools/config/_apply_pyprojecttoml.py:82: SetuptoolsWarning: `install_requires` overwritten in `pyproject.toml` (dependencies)
+    corresp(dist, value, root_dir)
+  running dist_info
+  creating /tmp/pip-modern-metadata-v1cappjd/CSXCAD.egg-info
+  writing /tmp/pip-modern-metadata-v1cappjd/CSXCAD.egg-info/PKG-INFO
+  writing dependency_links to /tmp/pip-modern-metadata-v1cappjd/CSXCAD.egg-info/dependency_links.txt
+  writing requirements to /tmp/pip-modern-metadata-v1cappjd/CSXCAD.egg-info/requires.txt
+  writing top-level names to /tmp/pip-modern-metadata-v1cappjd/CSXCAD.egg-info/top_level.txt
+  writing manifest file '/tmp/pip-modern-metadata-v1cappjd/CSXCAD.egg-info/SOURCES.txt'
+  writing manifest file '/tmp/pip-modern-metadata-v1cappjd/CSXCAD.egg-info/SOURCES.txt'
+  creating '/tmp/pip-modern-metadata-v1cappjd/csxcad-0.7.0.post1.dev1+g626b99f2f.dist-info'
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy in /workspace/openems-install/venv/lib/python3.12/site-packages (from CSXCAD==0.7.0.post1.dev1+g626b99f2f) (2.5.4)
+Requirement already satisfied: matplotlib>=2.1.0 in /workspace/openems-install/venv/lib/python3.12/site-packages (from CSXCAD==0.7.0.post1.dev1+g626b99f2f) (3.11.2)
+Requirement already satisfied: contourpy>=1.0.1 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (1.4.0)
+Requirement already satisfied: cycler>=0.10 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (4.68.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (26.3)
+Requirement already satisfied: pillow>=9 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (13.0.0)
+Requirement already satisfied: pyparsing>=3 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (3.3.3)
+Requirement already satisfied: python-dateutil>=2.7 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (4.0.0)
+Requirement already satisfied: tzdata in /workspace/openems-install/venv/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (2026.6)
+Building wheels for collected packages: CSXCAD
+  Building wheel for CSXCAD (pyproject.toml): started
+  Running command Building wheel for CSXCAD (pyproject.toml)
+  /workspace/openems-install/venv/lib/python3.12/site-packages/setuptools/config/_apply_pyprojecttoml.py:82: SetuptoolsWarning: `install_requires` overwritten in `pyproject.toml` (dependencies)
+    corresp(dist, value, root_dir)
+  running bdist_wheel
+  running build
+  running build_py
+  creating build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/__init__.py -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/__fallback_version__.py -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/SmoothMeshLines.py -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  running egg_info
+  creating CSXCAD.egg-info
+  writing CSXCAD.egg-info/PKG-INFO
+  writing dependency_links to CSXCAD.egg-info/dependency_links.txt
+  writing requirements to CSXCAD.egg-info/requires.txt
+  writing top-level names to CSXCAD.egg-info/top_level.txt
+  writing manifest file 'CSXCAD.egg-info/SOURCES.txt'
+  writing manifest file 'CSXCAD.egg-info/SOURCES.txt'
+  copying CSXCAD/CSObject.pxd -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSPrimitives.pxd -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSPrimitives.pyx -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSProperties.pxd -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSProperties.pyx -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSRectGrid.pxd -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSRectGrid.pyx -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSTransform.pxd -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSTransform.pyx -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSXCAD.pxd -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/CSXCAD.pyx -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/ParameterObjects.pxd -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/ParameterObjects.pyx -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  copying CSXCAD/Utilities.pyx -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  running build_ext
+  Compiling CSXCAD/CSTransform.pyx because it changed.
+  [1/1] Cythonizing CSXCAD/CSTransform.pyx
+  building 'CSXCAD.CSTransform' extension
+  clang++ -pthread -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c CSXCAD/CSTransform.cpp -o build/temp.linux-x86_64-cpython-312/CSXCAD/CSTransform.o -std=c++17
+  error: [Errno 2] No such file or directory: 'clang++'
+  error: subprocess-exited-with-error
+  
+  × Building wheel for CSXCAD (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> See above for output.
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  full command: /workspace/openems-install/venv/bin/python /workspace/openems-install/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py build_wheel /tmp/tmp0ordsa2n
+  cwd: /workspace/openems-source/CSXCAD/python
+  Building wheel for CSXCAD (pyproject.toml): finished with status 'error'
+  ERROR: Failed building wheel for CSXCAD
+Failed to build CSXCAD
+ERROR: Failed to build installable wheels for some pyproject.toml based projects (CSXCAD)
+Python module build failed!

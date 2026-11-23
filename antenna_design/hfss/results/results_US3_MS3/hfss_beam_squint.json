@@ -1,0 +1,59 @@
+{
+  "column_frequency_mapping": "GainTotal 7.9872, GainTotal_1 7.7376, GainTotal_2 8.2368 GHz (owner-confirmed)",
+  "designs": {
+    "US3_MS3": {
+      "per_frequency": [
+        {
+          "frequency_ghz": 7.7376,
+          "column": "GainTotal_1",
+          "broadside_gain_dbi": 4.690558044386102,
+          "e_plane_peak_deg": -15.771568110465607,
+          "e_plane_peak_gain_dbi": 5.236041400992525,
+          "e_plane_minus3db_deg": [
+            -65.83733333333333,
+            27.642694712905058
+          ],
+          "h_plane_peak_deg": 0.32278898273186996,
+          "h_plane_minus3db_deg": [
+            -41.47472478921984,
+            40.148606203376524
+          ]
+        },
+        {
+          "frequency_ghz": 7.9872,
+          "column": "GainTotal",
+          "broadside_gain_dbi": 4.711977993963599,
+          "e_plane_peak_deg": -13.071249784415494,
+          "e_plane_peak_gain_dbi": 5.102011172425344,
+          "e_plane_minus3db_deg": [
+            -64.06806385914197,
+            30.322378819810332
+          ],
+          "h_plane_peak_deg": 0.527198632546746,
+          "h_plane_minus3db_deg": [
+            -42.137665744876976,
+            40.80502387700431
+          ]
+        },
+        {
+          "frequency_ghz": 8.2368,
+          "column": "GainTotal_2",
+          "broadside_gain_dbi": 4.566392793428966,
+          "e_plane_peak_deg": -10.035800237482352,
+          "e_plane_peak_gain_dbi": 4.820030184333254,
+          "e_plane_minus3db_deg": [
+            -59.0559036939314,
+            31.383845581856484
+          ],
+          "h_plane_peak_deg": 0.9564149843110696,
+          "h_plane_minus3db_deg": [
+            -43.56810582933566,
+            42.4883163075396
+          ]
+        }
+      ],
+      "e_plane_squint_deg_over_channel": 5.735767872983255,
+      "h_plane_squint_deg_over_channel": 0.6336260015791997
+    }
+  }
+}

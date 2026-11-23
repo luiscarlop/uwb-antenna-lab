@@ -1,0 +1,6 @@
+2241960	% number of cells
+2.257743280828251e-13	% timestep (s)
+34424	% number of iterations
+7.772055469923171e-09	% total numerical time (s)
+619.101661	% simulation time (s)
+124660029.0416601	% speed (cells/s)

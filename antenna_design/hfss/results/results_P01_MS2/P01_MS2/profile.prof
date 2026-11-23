@@ -1,0 +1,274 @@
+HFSS Profile
+ Project: TFG_UWB-MIMO-Array
+ Design: P01_MS2
+ Solution setup: Setup_ch9
+ Design variation: board_x='26mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'
+
+  Task                      Real Time  CPU Time  Memory  Information
+  ----                      ---------  --------  ------  -----------
+
+  Solution Process                                       Start Time: 11/20/2026 16:16:00, Host: Z2-02, Processor: 32, OS: NT 10.0, Product: HFSS Version 2025.1.0
+                                                         Executing From: C:\Program Files\ANSYS Inc\v251\AnsysEM\HFSSCOMENGINE.exe
+                                                         
+  HPC                                                    Type: Auto, MPI Vendor: Intel, MPI Version: 2021
+  Machine                                                Name: Z2-02.geat.lab, Memory: 63.7 GB, RAM Limit: 90.000000%, Cores: 4, Free Disk Space: 22 GB
+                                                         
+                                                         Allow off core: True
+                                                         Solution Basis Order: 1
+  Design Validation                                      Elapsed time : 00:00:00 , HFSS ComEngine Memory : 66.3 M
+                                                         Perform full validations with standard port validations
+                                                         
+  Initial Meshing                                        Time: 11/20/2026 16:16:02
+  Mesh                      00:00:00   00:00:00  27.2 M  Type: Phi, Tetrahedra: 136
+  Post                      00:00:00   00:00:00  28.8 M  Tetrahedra: 136, Cores: 1
+  Lambda Refine             00:00:00   00:00:00  21.4 M  Tetrahedra: 1612, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  168 M   Disk: 0 Bytes
+  Port Adapt                00:00:00   00:00:00  179 M   Tetrahedra: 1612, Disk: 33.3 KB
+  Port Refine               00:00:00   00:00:00  18.9 M  Tetrahedra: 1687, Cores: 1
+  Initial Meshing                                        Elapsed Time: 00:00:01
+                                                         
+  Adaptive Meshing                                       Time: 11/20/2026 16:16:03
+                                                         
+  Adaptive Pass 1                                        Frequency: 7.9872GHz
+  Simulation Setup          00:00:00   00:00:00  169 M   Tetrahedra: 1687, Disk: 3.61 KB
+  Matrix Assembly           00:00:00   00:00:00  191 M   Tetrahedra: 1687, Lumped ports: 1, Disk: 4.71 KB
+  Matrix Solve              00:00:00   00:00:00  236 M   Type: DCS, Cores: 4, Matrix size: 11383, Matrix bandwidth:  21.0, Disk: 47.7 KB
+  Field Recovery            00:00:00   00:00:00  236 M   Excitations: 1, Disk: 718 KB
+  Data Transfer             00:00:00   00:00:00  68.7 M  Adaptive Pass 1
+                                                         
+  Adaptive Pass 2                                        Frequency: 7.9872GHz
+  Adaptive Refine           00:00:00   00:00:00  20.4 M  Tetrahedra: 2199, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  170 M   Tetrahedra: 2199, Disk: 3.61 KB
+  Matrix Assembly           00:00:00   00:00:00  197 M   Tetrahedra: 2199, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  261 M   Type: DCS, Cores: 4, Matrix size: 14633, Matrix bandwidth:  21.3, Disk: 58.7 KB
+  Field Recovery            00:00:00   00:00:00  261 M   Excitations: 1, Disk: 193 KB
+  Data Transfer             00:00:00   00:00:00  68.9 M  Adaptive Pass 2
+                                                         Max Mag. Delta S: 0.49436
+                                                         
+  Adaptive Pass 3                                        Frequency: 7.9872GHz
+  Adaptive Refine           00:00:00   00:00:00  21 M    Tetrahedra: 2859, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  172 M   Tetrahedra: 2859, Disk: 3.99 KB
+  Matrix Assembly           00:00:00   00:00:00  204 M   Tetrahedra: 2859, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  288 M   Type: DCS, Cores: 4, Matrix size: 18823, Matrix bandwidth:  21.5, Disk: 75.1 KB
+  Field Recovery            00:00:00   00:00:00  288 M   Excitations: 1, Disk: 219 KB
+  Data Transfer             00:00:00   00:00:00  69.4 M  Adaptive Pass 3
+                                                         Max Mag. Delta S: 0.15171
+                                                         
+  Adaptive Pass 4                                        Frequency: 7.9872GHz
+  Adaptive Refine           00:00:00   00:00:00  22 M    Tetrahedra: 3717, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  174 M   Tetrahedra: 3717, Disk: 3.99 KB
+  Matrix Assembly           00:00:00   00:00:00  214 M   Tetrahedra: 3717, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  331 M   Type: DCS, Cores: 4, Matrix size: 24267, Matrix bandwidth:  21.7, Disk: 96.4 KB
+  Field Recovery            00:00:00   00:00:00  331 M   Excitations: 1, Disk: 253 KB
+  Data Transfer             00:00:00   00:00:00  69.5 M  Adaptive Pass 4
+                                                         Max Mag. Delta S: 0.20442
+                                                         
+  Adaptive Pass 5                                        Frequency: 7.9872GHz
+  Adaptive Refine           00:00:00   00:00:00  23.1 M  Tetrahedra: 4838, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  176 M   Tetrahedra: 4838, Disk: 2.82 KB
+  Matrix Assembly           00:00:00   00:00:00  228 M   Tetrahedra: 4838, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  381 M   Type: DCS, Cores: 4, Matrix size: 31389, Matrix bandwidth:  21.8, Disk: 124 KB
+  Field Recovery            00:00:00   00:00:00  381 M   Excitations: 1, Disk: 300 KB
+  Data Transfer             00:00:00   00:00:00  69.7 M  Adaptive Pass 5
+                                                         Max Mag. Delta S: 0.10786
+                                                         
+  Adaptive Pass 6                                        Frequency: 7.9872GHz
+  Adaptive Refine           00:00:00   00:00:00  25 M    Tetrahedra: 6294, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  179 M   Tetrahedra: 6294, Disk: 3.2 KB
+  Matrix Assembly           00:00:00   00:00:00  244 M   Tetrahedra: 6294, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  436 M   Type: DCS, Cores: 4, Matrix size: 40631, Matrix bandwidth:  21.9, Disk: 160 KB
+  Field Recovery            00:00:00   00:00:00  436 M   Excitations: 1, Disk: 360 KB
+  Data Transfer             00:00:00   00:00:00  69.8 M  Adaptive Pass 6
+                                                         Max Mag. Delta S: 0.09330
+                                                         
+  Adaptive Pass 7                                        Frequency: 7.9872GHz
+  Adaptive Refine           00:00:00   00:00:00  26.7 M  Tetrahedra: 8183, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  183 M   Tetrahedra: 8183, Disk: 2.44 KB
+  Matrix Assembly           00:00:00   00:00:00  265 M   Tetrahedra: 8183, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:01  518 M   Type: DCS, Cores: 4, Matrix size: 52633, Matrix bandwidth:  22.0, Disk: 207 KB
+  Field Recovery            00:00:00   00:00:00  518 M   Excitations: 1, Disk: 439 KB
+  Data Transfer             00:00:00   00:00:00  69.8 M  Adaptive Pass 7
+                                                         Max Mag. Delta S: 0.04634
+                                                         
+  Adaptive Pass 8                                        Frequency: 7.9872GHz
+  Adaptive Refine           00:00:00   00:00:00  29.5 M  Tetrahedra: 10646, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  188 M   Tetrahedra: 10646, Disk: 2.82 KB
+  Matrix Assembly           00:00:00   00:00:00  293 M   Tetrahedra: 10646, Lumped ports: 1, Disk: 345 Bytes
+  Matrix Solve              00:00:00   00:00:01  625 M   Type: DCS, Cores: 4, Matrix size: 68275, Matrix bandwidth:  22.1, Disk: 268 KB
+  Field Recovery            00:00:00   00:00:00  625 M   Excitations: 1, Disk: 543 KB
+  Data Transfer             00:00:00   00:00:00  69.8 M  Adaptive Pass 8
+                                                         Max Mag. Delta S: 0.02816
+                                                         
+  Adaptive Pass 9                                        Frequency: 7.9872GHz
+  Adaptive Refine           00:00:00   00:00:00  32.6 M  Tetrahedra: 13769, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  195 M   Tetrahedra: 13769, Disk: 2.44 KB
+  Matrix Assembly           00:00:00   00:00:00  328 M   Tetrahedra: 13769, Lumped ports: 1, Disk: 345 Bytes
+  Matrix Solve              00:00:01   00:00:01  771 M   Type: DCS, Cores: 4, Matrix size: 88125, Matrix bandwidth:  22.1, Disk: 346 KB
+  Field Recovery            00:00:00   00:00:00  771 M   Excitations: 1, Disk: 673 KB
+  Data Transfer             00:00:00   00:00:00  69.9 M  Adaptive Pass 9
+                                                         Max Mag. Delta S: 0.02859
+                                                         
+  Adaptive Pass 10                                       Frequency: 7.9872GHz
+  Adaptive Refine           00:00:00   00:00:00  32.9 M  Tetrahedra: 15964, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  199 M   Tetrahedra: 15964, Disk: 2.82 KB
+  Matrix Assembly           00:00:03   00:00:00  353 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 345 Bytes
+  Matrix Solve              00:00:01   00:00:02  907 M   Type: DCS, Cores: 4, Matrix size: 102075, Matrix bandwidth:  22.1, Disk: 400 KB
+  Field Recovery            00:00:00   00:00:00  907 M   Excitations: 1, Disk: 614 KB
+  Data Transfer             00:00:00   00:00:00  69.9 M  Adaptive Pass 10
+                                                         Max Mag. Delta S: 0.01564
+                                                         
+  Adaptive Meshing                                       Elapsed Time: 00:00:30
+                                                         Adaptive Passes converged
+                                                         
+  Frequency Sweep                                        Time: 11/20/2026 16:16:33
+                                                         HPC: Enabled
+                                                         
+  Solution - Edges_and_f0                                Discrete HFSS Frequency Sweep, Solving Distributed - up to 3 frequencies in parallel, Time: 11/20/2026 16:16:33
+                                                         From 7.7376GHz to 8.2368GHz, 3 Frequencies
+                                                         Frequency: 7.9872GHz has already been solved
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  196 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  283 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:01   00:00:01  885 M   Type: DCS, Cores: 2, Matrix size: 102075, Matrix bandwidth:  22.1, Disk: 1.6 KB
+  Field Recovery            00:00:00   00:00:00  885 M   Excitations: 1, Disk: 113 KB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  198 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  249 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:02   00:00:01  907 M   Type: DCS, Cores: 1, Matrix size: 102075, Matrix bandwidth:  22.1, Disk: 1.6 KB
+  Field Recovery            00:00:00   00:00:00  907 M   Excitations: 1, Disk: 113 KB
+                                                         
+  Data Transfer             00:00:00   00:00:00  70.4 M  Discrete frequency sweep
+                                                         
+  Solution - Edges_and_f0                                Elapsed Time: 00:00:06
+                                                         HFSS: Distributed Discrete sweep
+                                                         
+  Solution - Sweep_7p5_8p5                               Interpolating HFSS Frequency Sweep, Solving Distributed - up to 4 frequencies in parallel, Time: 11/20/2026 16:16:43
+                                                         From 7.5GHz to 8.5GHz, 1001 Frequencies
+                                                         
+  Frequency - 8.5GHz                                     Z2-02.geat.lab
+                                                         Distributed Solve Group #1
+  Simulation Setup          00:00:00   00:00:00  224 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  276 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:02   00:00:02  475 M   Type: DCS, Cores: 1, Matrix size: 102075, Matrix bandwidth:  22.1, s-matrix only solve, Disk: 400 KB
+  Field Recovery            00:00:00   00:00:00  475 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 7.5GHz                                     Z2-02.geat.lab
+                                                         Distributed Solve Group #1
+  Simulation Setup          00:00:00   00:00:00  226 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  277 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:03   00:00:02  476 M   Type: DCS, Cores: 1, Matrix size: 102075, Matrix bandwidth:  22.1, s-matrix only solve, Disk: 400 KB
+  Field Recovery            00:00:00   00:00:00  476 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 8GHz                                       Z2-02.geat.lab
+                                                         Distributed Solve Group #1
+  Simulation Setup          00:00:00   00:00:00  224 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  277 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:03   00:00:02  476 M   Type: DCS, Cores: 1, Matrix size: 102075, Matrix bandwidth:  22.1, s-matrix only solve, Disk: 400 KB
+  Field Recovery            00:00:00   00:00:00  476 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 7.75GHz                                    Z2-02.geat.lab
+                                                         Distributed Solve Group #1
+  Simulation Setup          00:00:00   00:00:00  225 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  276 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:03   00:00:02  471 M   Type: DCS, Cores: 1, Matrix size: 102075, Matrix bandwidth:  22.1, s-matrix only solve, Disk: 400 KB
+  Field Recovery            00:00:00   00:00:00  471 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+                                                         Basis Element # 1, Frequency: 8.5GHz; Additional basis points are needed before the interpolation error can be computed.
+                                                         Basis Element # 2, Frequency: 7.5GHz; Additional basis points are needed before the interpolation error can be computed.
+                                                         Basis Element # 3, Frequency: 8GHz; S Matrix Error =  83.145%
+                                                         Basis Element # 4, Frequency: 7.75GHz; S Matrix Error =  11.048%
+                                                         Frequency: 8.2368GHz has already been solved
+                                                         Basis Element # 5, Frequency: 8.2368GHz; S Matrix Error =   0.459%; Secondary solver criterion is not converged
+                                                         
+  Frequency - 8.3684GHz                                  Z2-02.geat.lab
+                                                         Distributed Solve Group #2
+  Simulation Setup          00:00:00   00:00:00  224 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  276 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:02   00:00:01  474 M   Type: DCS, Cores: 1, Matrix size: 102075, Matrix bandwidth:  22.1, s-matrix only solve, Disk: 1.6 KB
+  Field Recovery            00:00:00   00:00:00  474 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 8.1184GHz                                  Z2-02.geat.lab
+                                                         Distributed Solve Group #2
+  Simulation Setup          00:00:00   00:00:00  226 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  279 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:02   00:00:01  477 M   Type: DCS, Cores: 1, Matrix size: 102075, Matrix bandwidth:  22.1, s-matrix only solve, Disk: 1.6 KB
+  Field Recovery            00:00:00   00:00:00  477 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 7.875GHz                                   Z2-02.geat.lab
+                                                         Distributed Solve Group #2
+  Simulation Setup          00:00:00   00:00:00  225 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  278 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:02   00:00:01  475 M   Type: DCS, Cores: 1, Matrix size: 102075, Matrix bandwidth:  22.1, s-matrix only solve, Disk: 1.6 KB
+  Field Recovery            00:00:00   00:00:00  475 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 7.625GHz                                   Z2-02.geat.lab
+                                                         Distributed Solve Group #2
+  Simulation Setup          00:00:00   00:00:00  224 M   Tetrahedra: 15964, Disk: 0 Bytes
+  Matrix Assembly           00:00:00   00:00:00  277 M   Tetrahedra: 15964, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:02   00:00:01  472 M   Type: DCS, Cores: 1, Matrix size: 102075, Matrix bandwidth:  22.1, s-matrix only solve, Disk: 1.6 KB
+  Field Recovery            00:00:00   00:00:00  472 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+                                                         Basis Element # 6, Frequency: 8.3684GHz; Scattering matrix quantities converged; Passive within tolerance
+  Data Transfer             00:00:00   00:00:00  71.9 M  Frequency Group #2; Interpolating frequency sweep
+                                                         
+  Solution - Sweep_7p5_8p5                               Elapsed Time: 00:00:22
+                                                         Interpolating sweep converged and is passive
+                                                         HFSS: Distributed Interpolating sweep
+                                                         
+  Frequency Sweep                                        Elapsed Time: 00:00:31
+                                                         
+  Simulation Summary                                     
+  Design Validation                                      Elapsed Time: 00:00:00, Total Memory: 66.3 MB
+  Initial Meshing                                        Elapsed Time: 00:00:01, Total Memory: 207 MB
+  Adaptive Meshing                                       Elapsed Time: 00:00:30, Average memory/process: 907 MB, Max memory/process: 907 MB, Max number of processes/frequency: 1, Total number of cores: 4
+  Frequency Sweep                                        Elapsed Time: 00:00:31, Average memory/process: 559 MB, Max memory/process: 907 MB, Max number of processes/frequency: 1, Total number of cores: 4
+                                                         Max solved tets: 15964, Max matrix size: 102075, Matrix bandwidth: 22.1
+                                                         
+  Solution Process                                       Elapsed Time: 00:01:04, ComEngine Memory: 72.5 M
+                                                         Stop Time: 11/20/2026 16:17:05, Status: Normal Completion
+                                                         
+  Solution Process                                       Start Time: 11/20/2026 16:17:55, Host: Z2-02, Processor: 32, OS: NT 10.0, Product: HFSS Version 2025.1.0
+                                                         Executing From: C:\Program Files\ANSYS Inc\v251\AnsysEM\HFSSCOMENGINE.exe
+                                                         
+  HPC                                                    Type: Auto, MPI Vendor: Intel, MPI Version: 2021
+  Machine                                                Name: Z2-02.geat.lab, Memory: 63.7 GB, RAM Limit: 90.000000%, Cores: 4, Free Disk Space: 47.8 GB
+                                                         
+                                                         Allow off core: True
+                                                         Solution Basis Order: 1
+  Design Validation                                      Elapsed time : 00:00:00 , HFSS ComEngine Memory : 65 M
+                                                         Perform full validations with standard port validations
+                                                         Adaptive Passes converged
+                                                         
+  Frequency Sweep                                        Time: 11/20/2026 16:17:55
+                                                         HPC: Enabled
+                                                         
+  Solution - Edges_and_f0                                Discrete HFSS Frequency Sweep, Solving Distributed - up to 3 frequencies in parallel, Time: 11/20/2026 16:17:56
+                                                         From 7.7376GHz to 8.2368GHz, 3 Frequencies
+  Solution - Edges_and_f0                                Elapsed Time: 00:00:00
+                                                         HFSS: Distributed Discrete sweep
+                                                         
+  Solution - Sweep_7p5_8p5                               Interpolating HFSS Frequency Sweep, Solving Distributed - up to 4 frequencies in parallel, Time: 11/20/2026 16:17:56
+                                                         From 7.5GHz to 8.5GHz, 1001 Frequencies
+                                                         Basis Element # 1, Frequency: 8.5GHz; Additional basis points are needed before the interpolation error can be computed.
+                                                         Basis Element # 2, Frequency: 7.5GHz; Additional basis points are needed before the interpolation error can be computed.
+                                                         Basis Element # 3, Frequency: 8GHz; S Matrix Error =  83.145%
+                                                         Basis Element # 4, Frequency: 7.75GHz; S Matrix Error =  11.048%
+                                                         Basis Element # 5, Frequency: 8.2368GHz; S Matrix Error =   0.459%; Secondary solver criterion is not converged
+                                                         Basis Element # 6, Frequency: 8.3684GHz; Scattering matrix quantities converged; Passive within tolerance
+                                                         Using previously solved data. No additional simulations required
+  Solution - Sweep_7p5_8p5                               Elapsed Time: 00:00:00
+                                                         Interpolating sweep converged and is passive
+                                                         HFSS: Distributed Interpolating sweep
+                                                         
+  Frequency Sweep                                        Elapsed Time: 00:00:00
+                                                         
+  Simulation Summary                                     
+  Design Validation                                      Elapsed Time: 00:00:00, Total Memory: 65 MB
+  Initial Meshing                                        Elapsed Time: 00:00:00, Total Memory: 0 Bytes
+  Frequency Sweep                                        Elapsed Time: 00:00:00, Total Memory: 0 Bytes
+                                                         
+  Solution Process                                       Elapsed Time: 00:00:00, ComEngine Memory: 69.1 M
+                                                         Stop Time: 11/20/2026 16:17:56, Status: Normal Completion
+                                                         

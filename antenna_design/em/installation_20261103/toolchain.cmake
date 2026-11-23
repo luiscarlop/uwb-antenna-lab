@@ -1,0 +1,5 @@
+set(CMAKE_PREFIX_PATH "/workspace/openems-deps/usr" CACHE STRING "Workspace-only Debian dependency prefix")
+set(HDF5_NO_FIND_PACKAGE_CONFIG_FILE TRUE CACHE BOOL "Use explicit relocated serial HDF5")
+set(HDF5_C_INCLUDE_DIR "/workspace/openems-deps/usr/include/hdf5/serial" CACHE PATH "Relocated official Debian headers")
+set(HDF5_hdf5_LIBRARY_RELEASE "/workspace/openems-deps/usr/lib/x86_64-linux-gnu/libhdf5_serial.so" CACHE FILEPATH "Relocated official Debian HDF5")
+set(HDF5_hdf5_hl_LIBRARY_RELEASE "/workspace/openems-deps/usr/lib/x86_64-linux-gnu/libhdf5_serial_hl.so" CACHE FILEPATH "Relocated official Debian HDF5 HL")

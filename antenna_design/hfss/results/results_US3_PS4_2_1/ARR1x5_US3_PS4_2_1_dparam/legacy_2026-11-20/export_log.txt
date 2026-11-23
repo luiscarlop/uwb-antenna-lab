@@ -1,0 +1,114 @@
+==== inicio: ARR1x5_P01_MS2_dparam, 15 pasos de arr_d
+proyecto guardado
+variacion nominal: arr_d='17mm' board_m='13mm' board_x='94mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'
+GetAvailableVariations: ["arr_d='17mm' board_m='13mm' board_x='94mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='13.5mm' board_m='13mm' board_x='80mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='14mm' board_m='13mm' board_x='82mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='14.5mm' board_m='13mm' board_x='84mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='15mm' board_m='13mm' board_x='85.999999999999986mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='15.5mm' board_m='13mm' board_x='88mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='16mm' board_m='13mm' board_x='90mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='16.5mm' board_m='13mm' board_x='92mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='17.5mm' board_m='13mm' board_x='96mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='18mm' board_m='13mm' board_x='98mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='18.5mm' board_m='13mm' board_x='100mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='19mm' board_m='13mm' board_x='102mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='19.5mm' board_m='13mm' board_x='104mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='20mm' board_m='13mm' board_x='106.00000000000001mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='20.5mm' board_m='13mm' board_x='108.00000000000001mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'", "arr_d='18.199999999999999mm' board_m='13mm' board_x='98.799999999999997mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'"]
+-- d13p5mm: arr_d='13.5mm' board_m='13mm' board_x='94mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm'
+ERR Touchstone d13p5mm: ExportNetworkData(string theVariationKey, Structured Array sourceNames, int theFormat, string theOutputFile, Structured Array theFreqs, long doRenorm, long double renormImped, [string dataType /*optional*/], [int pass /*optional*/], [int complexFormat /*optional*/], [int precision /*optional*/], [long useExportFreqs /*optional*/], [long includeGammaComments /*optional*/], [long supportNonStdExport /*optional*/])(arr_d='13.5mm' board_m='13mm' board_x='94mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' patch_L='7.3220000000000001mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='7.0999999999999996mm' tr_w='0.80000000000000004mm',IronPython.Runtime.List,3,C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d13p5mm\ARR1x5_d13p5mm.s5p,IronPython.Runtime.List,True,50,S,-1,0,15,False,False,False) - call failed. Logs or message window might have more details
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d13p5mm\ff_P1.csv
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d13p5mm\ff_P2.csv
+==== inicio: ARR1x5_P01_MS2_dparam, .s5p de 16 pasos, campos de [13.5]
+proyecto guardado
+resueltos (arr_d mm): [13.5, 14.0, 14.5, 15.0, 15.5, 16.0, 16.5, 17.0, 17.5, 18.0, 18.2, 18.5, 19.0, 19.5, 20.0, 20.5]
+... Touchstone d13p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d13p5mm\ARR1x5_d13p5mm.s5p
+... Touchstone d14mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d14mm\ARR1x5_d14mm.s5p
+... Touchstone d14p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d14p5mm\ARR1x5_d14p5mm.s5p
+... Touchstone d15mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d15mm\ARR1x5_d15mm.s5p
+... Touchstone d15p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d15p5mm\ARR1x5_d15p5mm.s5p
+... Touchstone d16mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d16mm\ARR1x5_d16mm.s5p
+... Touchstone d16p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d16p5mm\ARR1x5_d16p5mm.s5p
+... Touchstone d17mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d17mm\ARR1x5_d17mm.s5p
+... Touchstone d17p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d17p5mm\ARR1x5_d17p5mm.s5p
+... Touchstone d18mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d18mm\ARR1x5_d18mm.s5p
+... Touchstone d18p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d18p5mm\ARR1x5_d18p5mm.s5p
+... Touchstone d19mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d19mm\ARR1x5_d19mm.s5p
+... Touchstone d19p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d19p5mm\ARR1x5_d19p5mm.s5p
+... Touchstone d20mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d20mm\ARR1x5_d20mm.s5p
+... Touchstone d20p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d20p5mm\ARR1x5_d20p5mm.s5p
+... Touchstone d18p2mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d18p2mm\ARR1x5_d18p2mm.s5p
+... arr_d = 13.5mm como valor del diseno
+... Edit Sources d13p5mm P1
+... far field d13p5mm P1
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d13p5mm\ff_P1.csv
+... Edit Sources d13p5mm P2
+... far field d13p5mm P2
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d13p5mm\ff_P2.csv
+... Edit Sources d13p5mm P3
+... far field d13p5mm P3
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d13p5mm\ff_P3.csv
+... Edit Sources d13p5mm P4
+... far field d13p5mm P4
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d13p5mm\ff_P4.csv
+... Edit Sources d13p5mm P5
+... far field d13p5mm P5
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_P01_MS2_dparam_d13p5mm\ff_P5.csv
+arr_d restaurado a 17mm
+==== fin en C:/Users/user/Documents/Ansoft/ch9_array_export
+==== inicio: ARR1x5_US3_PS4_2_1_dparam, .s5p de 8 pasos, campos de [18.2]
+proyecto guardado
+resueltos (arr_d mm): [13.5, 14.0, 14.5, 15.0, 15.5, 16.0, 16.5, 17.0, 17.5, 18.0, 18.2, 18.5, 19.0, 19.5, 20.0, 20.5]
+... Touchstone d16p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d16p5mm\ARR1x5_d16p5mm.s5p
+... convergencia d16p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d16p5mm\convergence.conv (variaciones: 'arr_d=16.5mm,board_m=13mm,board_x=92mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+... Touchstone d17mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d17mm\ARR1x5_d17mm.s5p
+... convergencia d17mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d17mm\convergence.conv (variaciones: 'arr_d=17mm,board_m=13mm,board_x=94mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+... Touchstone d17p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d17p5mm\ARR1x5_d17p5mm.s5p
+... convergencia d17p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d17p5mm\convergence.conv (variaciones: 'arr_d=17.5mm,board_m=13mm,board_x=96mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+... Touchstone d18mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18mm\ARR1x5_d18mm.s5p
+... convergencia d18mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18mm\convergence.conv (variaciones: 'arr_d=18mm,board_m=13mm,board_x=98mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+... Touchstone d18p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18p5mm\ARR1x5_d18p5mm.s5p
+... convergencia d18p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18p5mm\convergence.conv (variaciones: 'arr_d=18.5mm,board_m=13mm,board_x=100mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+... Touchstone d19mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d19mm\ARR1x5_d19mm.s5p
+... convergencia d19mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d19mm\convergence.conv (variaciones: 'arr_d=19mm,board_m=13mm,board_x=102mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+... Touchstone d19p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d19p5mm\ARR1x5_d19p5mm.s5p
+... convergencia d19p5mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d19p5mm\convergence.conv (variaciones: 'arr_d=19.5mm,board_m=13mm,board_x=104mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+... Touchstone d18p2mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18p2mm\ARR1x5_d18p2mm.s5p
+... convergencia d18p2mm
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18p2mm\convergence.conv (variaciones: 'arr_d=18.199999999999999mm,board_m=13mm,board_x=98.799999999999997mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+... arr_d = 18.199999999999999mm como valor del diseno
+... Edit Sources d18p2mm P1
+... far field d18p2mm P1
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18p2mm\ff_P1.csv
+... Edit Sources d18p2mm P2
+... far field d18p2mm P2
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18p2mm\ff_P2.csv
+... Edit Sources d18p2mm P3
+... far field d18p2mm P3
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18p2mm\ff_P3.csv
+... Edit Sources d18p2mm P4
+... far field d18p2mm P4
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18p2mm\ff_P4.csv
+... Edit Sources d18p2mm P5
+... far field d18p2mm P5
+OK  C:/Users/user/Documents/Ansoft/ch9_array_export\ARR1x5_US3_PS4_2_1_dparam_d18p2mm\ff_P5.csv
+arr_d restaurado a 18.199999999999999mm
+==== fin en C:/Users/user/Documents/Ansoft/ch9_array_export

@@ -1,0 +1,19 @@
+{
+  "run": "em/P01_OPENEMS_002",
+  "z0_ohm": 50.0,
+  "min_inc_db": -20.0,
+  "method": "DFT of stored port_ut_1/port_it_1 (no new solve)",
+  "reproduction_max_abs_delta_s11": 5.338332398240437e-15,
+  "valid_range_hz": [
+    6980000000.0,
+    8995000000.0
+  ],
+  "samples": 404,
+  "step_hz": 5000000.0,
+  "re_zin_peak_ohm": 54.92187667022375,
+  "re_zin_peak_hz": 7470000000.0,
+  "im_zin_at_re_peak_ohm": 60.35205891792619,
+  "min_s11_db": -7.977139672340945,
+  "min_s11_hz": 7625000000.0,
+  "caveat": "Re(Zin) peak used as parallel-resonance indicator of the probe-fed patch; finite record, no far field"
+}

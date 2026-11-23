@@ -1,0 +1,106 @@
+{
+  "note": "HFSS single run per design (owner); adaptive convergence data not provided. openEMS EM_SIMULATED. Same reference plane (lumped port at line start).",
+  "designs": {
+    "US3_MS3": {
+      "hfss": {
+        "channel_samples": 499,
+        "channel_first_last_ghz": [
+          7.738,
+          8.236
+        ],
+        "worst_db": -6.798596766666262,
+        "worst_ghz": 8.236,
+        "best_db": -15.686132204573497,
+        "min_db": -15.686132204573497,
+        "min_ghz": 7.906,
+        "samples_above_minus6db": 0,
+        "samples_above_minus10db": 148,
+        "band_minus6db": {
+          "from_ghz": 7.593,
+          "to_ghz": 8.292,
+          "width_mhz": 699.0,
+          "hits_sweep_edge": false
+        },
+        "band_minus10db": {
+          "from_ghz": 7.74,
+          "to_ghz": 8.09,
+          "width_mhz": 350.0,
+          "hits_sweep_edge": false
+        }
+      },
+      "hfss_pattern_f0": {
+        "frequency_ghz": [
+          7.9872
+        ],
+        "quantity": "GainTotal (not realized), linear assumed",
+        "broadside_dbi": 4.711982001914742,
+        "max_dbi": 5.09652744028421,
+        "max_theta_deg": 15.0,
+        "max_phi_deg": 275.0,
+        "yz_plane_peak_deg_positive_toward_plus_y": -15.0,
+        "yz_plane_minus3db_deg": [
+          -60.0,
+          30.0
+        ]
+      },
+      "openems": {
+        "US3_MS3_OPENEMS_023": {
+          "channel_samples": 501,
+          "channel_first_last_ghz": [
+            7.7376,
+            8.2368
+          ],
+          "worst_db": -8.18197556473785,
+          "worst_ghz": 7.7376,
+          "best_db": -16.38765601395598,
+          "min_db": -16.38765601395598,
+          "min_ghz": 7.979,
+          "samples_above_minus6db": 0,
+          "samples_above_minus10db": 125,
+          "band_minus6db": {
+            "from_ghz": 7.638,
+            "to_ghz": 8.381,
+            "width_mhz": 743.0,
+            "hits_sweep_edge": false
+          },
+          "band_minus10db": {
+            "from_ghz": 7.798,
+            "to_ghz": 8.173,
+            "width_mhz": 375.0,
+            "hits_sweep_edge": false
+          },
+          "hfss_minus_openems_abs_dgamma_channel_max": 0.1031590844552628,
+          "hfss_minus_openems_abs_dgamma_channel_mean": 0.09302622288889192
+        },
+        "US3_MS3_FINE_OPENEMS_024": {
+          "channel_samples": 501,
+          "channel_first_last_ghz": [
+            7.7376,
+            8.2368
+          ],
+          "worst_db": -8.035056529097254,
+          "worst_ghz": 7.7376,
+          "best_db": -18.302073390605273,
+          "min_db": -18.302073390605273,
+          "min_ghz": 7.986,
+          "samples_above_minus6db": 0,
+          "samples_above_minus10db": 114,
+          "band_minus6db": {
+            "from_ghz": 7.648,
+            "to_ghz": 8.388,
+            "width_mhz": 740.0,
+            "hits_sweep_edge": false
+          },
+          "band_minus10db": {
+            "from_ghz": 7.8,
+            "to_ghz": 8.186,
+            "width_mhz": 386.0,
+            "hits_sweep_edge": false
+          },
+          "hfss_minus_openems_abs_dgamma_channel_max": 0.12671726752663431,
+          "hfss_minus_openems_abs_dgamma_channel_mean": 0.11552820472243866
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+-3.078,RuntimeError: Mesh grading y: 1.6549295774647932 exceeds 1.5 near lines [-3.2733, -3.19, -,RuntimeError: Mesh grading y: 2.108695652173896 exceeds 1.5 near lines [-3.2483, -3.19, -3,0.2s
+-3.1,PASS,RuntimeError: Mesh grading y: 1.5428571428571458 exceeds 1.5 near lines [-3.3842, -3.3067,,0.3s
+-3.16,PASS,RuntimeError: Mesh grading y: 2.5333333333333425 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s
+-3.156,RuntimeError: Mesh grading y: 1.9999999999999947 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.5333333333333425 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s
+-3.152,RuntimeError: Mesh grading y: 1.9999999999999947 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.5333333333333425 exceeds 1.5 near lines [-3.3842, -3.3067,,0.3s
+-3.148,RuntimeError: Mesh grading y: 1.9999999999999947 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.5333333333333425 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s
+-3.144,RuntimeError: Mesh grading y: 1.9999999999999947 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.5333333333333425 exceeds 1.5 near lines [-3.3842, -3.3067,,0.3s
+-3.14,RuntimeError: Mesh grading y: 1.9999999999999947 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.5333333333333425 exceeds 1.5 near lines [-3.3842, -3.3067,,0.3s
+-3.136,RuntimeError: Mesh grading y: 2.6697530864197594 exceeds 1.5 near lines [-3.3567, -3.2733,,RuntimeError: Mesh grading y: 2.408693415637862 exceeds 1.5 near lines [-3.3067, -3.2483, ,0.2s
+-3.132,RuntimeError: Mesh grading y: 2.4425287356321976 exceeds 1.5 near lines [-3.3567, -3.2733,,RuntimeError: Mesh grading y: 2.199473180076638 exceeds 1.5 near lines [-3.3067, -3.2483, ,0.3s
+-3.128,RuntimeError: Mesh grading y: 2.244623655913992 exceeds 1.5 near lines [-3.3567, -3.2733, ,RuntimeError: Mesh grading y: 2.0172491039426617 exceeds 1.5 near lines [-3.3067, -3.2483,,0.3s
+-3.124,RuntimeError: Mesh grading y: 2.0707070707070767 exceeds 1.5 near lines [-3.3567, -3.2733,,RuntimeError: Mesh grading y: 1.845117845117853 exceeds 1.5 near lines [-3.3067, -3.2483, ,0.3s
+-3.12,RuntimeError: Mesh grading y: 1.916666666666666 exceeds 1.5 near lines [-3.3567, -3.2733, ,RuntimeError: Mesh grading y: 1.916666666666666 exceeds 1.5 near lines [-3.3067, -3.2483, ,0.3s
+-3.116,RuntimeError: Mesh grading y: 1.779279279279279 exceeds 1.5 near lines [-3.3567, -3.2733, ,RuntimeError: Mesh grading y: 1.786036036036038 exceeds 1.5 near lines [-3.3067, -3.2483, ,0.3s
+-3.112,RuntimeError: Mesh grading y: 1.6495726495726533 exceeds 1.5 near lines [-3.3567, -3.2733,,RuntimeError: Mesh grading y: 1.6688034188034233 exceeds 1.5 near lines [-3.3067, -3.2483,,0.3s
+-3.108,RuntimeError: Mesh grading y: 1.5203252032520358 exceeds 1.5 near lines [-3.3567, -3.2733,,RuntimeError: Mesh grading y: 1.5630081300813021 exceeds 1.5 near lines [-3.3067, -3.2483,,0.3s
+-3.104,PASS,PASS,0.3s
+-3.1,PASS,RuntimeError: Mesh grading y: 1.5428571428571458 exceeds 1.5 near lines [-3.3842, -3.3067,,0.3s
+-3.096,PASS,RuntimeError: Mesh grading y: 1.6114285714285748 exceeds 1.5 near lines [-3.3842, -3.3067,,0.3s
+-3.092,PASS,RuntimeError: Mesh grading y: 1.6800000000000037 exceeds 1.5 near lines [-3.3842, -3.3067,,0.3s
+-3.088,PASS,RuntimeError: Mesh grading y: 1.7485714285714324 exceeds 1.5 near lines [-3.3842, -3.3067,,0.3s
+-3.084,RuntimeError: Mesh grading y: 1.5562913907284772 exceeds 1.5 near lines [-3.2733, -3.19, -,RuntimeError: Mesh grading y: 1.8171428571428614 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s
+-3.08,RuntimeError: Mesh grading y: 1.6206896551724144 exceeds 1.5 near lines [-3.2733, -3.19, -,RuntimeError: Mesh grading y: 2.2096774193548367 exceeds 1.5 near lines [-3.2483, -3.19, -,0.3s
+-3.076,RuntimeError: Mesh grading y: 1.690647482014389 exceeds 1.5 near lines [-3.2733, -3.19, -3,RuntimeError: Mesh grading y: 2.014970059880234 exceeds 1.5 near lines [-3.2483, -3.19, -3,0.3s
+-3.072,PASS,RuntimeError: Mesh grading y: 1.84636871508379 exceeds 1.5 near lines [-3.2483, -3.19, -3.,0.3s
+-3.068,PASS,RuntimeError: Mesh grading y: 1.698952879581147 exceeds 1.5 near lines [-3.2483, -3.19, -3,0.2s
+-3.064,RuntimeError: Mesh grading y: 1.511999999999996 exceeds 1.5 near lines [-3.4438, -3.3567, ,RuntimeError: Mesh grading y: 1.5689655172413781 exceeds 1.5 near lines [-3.2483, -3.19, -,0.2s
+-3.06,RuntimeError: Mesh grading y: 1.559999999999996 exceeds 1.5 near lines [-3.4479, -3.3567, ,PASS,0.2s
+-3.056,RuntimeError: Mesh grading y: 1.6079999999999959 exceeds 1.5 near lines [-3.453, -3.3567, ,PASS,0.2s
+-3.052,RuntimeError: Mesh grading y: 1.655999999999996 exceeds 1.5 near lines [-3.4575, -3.3567, ,PASS,0.3s
+-3.048,RuntimeError: Mesh grading y: 1.7039999999999957 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.5387931034482745 exceeds 1.5 near lines [-3.2483, -3.19, -,0.2s
+-3.044,RuntimeError: Mesh grading y: 1.7519999999999958 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.3941908713692897 exceeds 1.5 near lines [-3.2483, -3.19, -,0.2s
+-3.04,RuntimeError: Mesh grading y: 1.7999999999999958 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.2599999999999922 exceeds 1.5 near lines [-3.2483, -3.19, -,0.2s
+-3.036,RuntimeError: Mesh grading y: 1.8479999999999956 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.135135135135125 exceeds 1.5 near lines [-3.2483, -3.19, -3,0.2s
+-3.032,RuntimeError: Mesh grading y: 1.8959999999999957 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.142574257425743 exceeds 1.5 near lines [-3.2483, -3.19, -3,0.2s
+-3.028,RuntimeError: Mesh grading y: 1.9439999999999955 exceeds 1.5 near lines [-3.4613, -3.3567,,RuntimeError: Mesh grading y: 2.034615384615386 exceeds 1.5 near lines [-3.2483, -3.19, -3,0.2s
+-3.024,RuntimeError: Mesh grading y: 2.619469026548668 exceeds 1.5 near lines [-3.2733, -3.19, -3,RuntimeError: Mesh grading y: 1.9327102803738243 exceeds 1.5 near lines [-3.2483, -3.19, -,0.2s
+-3.02,RuntimeError: Mesh grading y: 2.468085106382971 exceeds 1.5 near lines [-3.2733, -3.19, -3,RuntimeError: Mesh grading y: 1.8363636363636393 exceeds 1.5 near lines [-3.2483, -3.19, -,0.2s
+-3.016,RuntimeError: Mesh grading y: 2.502202643171803 exceeds 1.5 near lines [-3.2733, -3.19, -3,RuntimeError: Mesh grading y: 1.7451327433628354 exceeds 1.5 near lines [-3.2483, -3.19, -,0.2s
+-3.012,RuntimeError: Mesh grading y: 2.3263598326359802 exceeds 1.5 near lines [-3.2733, -3.19, -,RuntimeError: Mesh grading y: 1.6586206896551687 exceeds 1.5 near lines [-3.2483, -3.19, -,0.2s
+-3.008,RuntimeError: Mesh grading y: 2.167330677290834 exceeds 1.5 near lines [-3.2733, -3.19, -3,RuntimeError: Mesh grading y: 1.5764705882352843 exceeds 1.5 near lines [-3.2483, -3.19, -,0.3s
+-3.004,RuntimeError: Mesh grading y: 2.022813688212925 exceeds 1.5 near lines [-3.2733, -3.19, -3,PASS,0.3s
+-3.0,RuntimeError: Mesh grading y: 1.8909090909090884 exceeds 1.5 near lines [-3.2733, -3.19, -,PASS,0.2s
+-2.996,RuntimeError: Mesh grading y: 1.7700348432055726 exceeds 1.5 near lines [-3.2733, -3.19, -,PASS,0.2s
+-2.992,RuntimeError: Mesh grading y: 1.6588628762541786 exceeds 1.5 near lines [-3.2733, -3.19, -,RuntimeError: Mesh grading y: 1.5228571428571442 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s
+-2.988,RuntimeError: Mesh grading y: 1.5562700964630205 exceeds 1.5 near lines [-3.2733, -3.19, -,RuntimeError: Mesh grading y: 1.548571428571431 exceeds 1.5 near lines [-3.3842, -3.3067, ,0.2s
+-2.984,PASS,RuntimeError: Mesh grading y: 1.5742857142857178 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s
+-2.98,PASS,RuntimeError: Mesh grading y: 1.6000000000000045 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s
+-3.112,RuntimeError: Mesh grading y: 1.6495726495726533 exceeds 1.5 near lines [-3.3567, -3.2733,,RuntimeError: Mesh grading y: 1.6688034188034233 exceeds 1.5 near lines [-3.3067, -3.2483,,0.2s
+-3.111,RuntimeError: Mesh grading y: 1.616033755274269 exceeds 1.5 near lines [-3.3567, -3.2733, ,RuntimeError: Mesh grading y: 1.6413502109704687 exceeds 1.5 near lines [-3.3067, -3.2483,,0.2s
+-3.11,RuntimeError: Mesh grading y: 1.5833333333333297 exceeds 1.5 near lines [-3.3567, -3.2733,,RuntimeError: Mesh grading y: 1.614583333333329 exceeds 1.5 near lines [-3.3067, -3.2483, ,0.2s
+-3.109,RuntimeError: Mesh grading y: 1.551440329218107 exceeds 1.5 near lines [-3.3567, -3.2733, ,RuntimeError: Mesh grading y: 1.5884773662551452 exceeds 1.5 near lines [-3.3067, -3.2483,,0.2s
+-3.108,RuntimeError: Mesh grading y: 1.5203252032520358 exceeds 1.5 near lines [-3.3567, -3.2733,,RuntimeError: Mesh grading y: 1.5630081300813021 exceeds 1.5 near lines [-3.3067, -3.2483,,0.2s
+-3.107,PASS,RuntimeError: Mesh grading y: 1.5381526104417684 exceeds 1.5 near lines [-3.3067, -3.2483,,0.2s
+-3.106,PASS,RuntimeError: Mesh grading y: 1.5138888888888873 exceeds 1.5 near lines [-3.3067, -3.2483,,0.3s
+-3.105,PASS,PASS,0.3s
+-3.104,PASS,PASS,0.3s
+-3.103,PASS,PASS,0.3s
+-3.102,PASS,RuntimeError: Mesh grading y: 1.5085714285714353 exceeds 1.5 near lines [-3.3842, -3.3067,,0.3s
+-3.101,PASS,RuntimeError: Mesh grading y: 1.5257142857142907 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s
+-3.1,PASS,RuntimeError: Mesh grading y: 1.5428571428571458 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s
+-3.099,PASS,RuntimeError: Mesh grading y: 1.5600000000000012 exceeds 1.5 near lines [-3.3842, -3.3067,,0.2s

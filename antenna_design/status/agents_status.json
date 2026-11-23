@@ -1,0 +1,66 @@
+{
+ "updated": "2026-11-19T17:54:27.787224+00:00",
+ "running": [],
+ "done": [
+  {
+   "agent": "artifact-builder",
+   "model": "Sonnet · medio",
+   "task": "US3_PS6_4 en Candidatos, Comparativa y Líneas",
+   "ended": "2026-11-19T17:54:27Z",
+   "dur_s": 133
+  },
+  {
+   "agent": "validator",
+   "model": "Sonnet · alto",
+   "task": "Auditoría ronda 051 (OK con observaciones)",
+   "ended": "2026-11-19T17:52:29Z",
+   "dur_s": 172
+  },
+  {
+   "agent": "FDTD openEMS",
+   "model": "malla fina · 2 vCPU",
+   "task": "US3_PS6_4_FINE · ronda 051 (peor S11 −11,24 dB)",
+   "ended": "2026-11-19T17:48:15Z",
+   "dur_s": 3012
+  },
+  {
+   "agent": "artifact-builder",
+   "model": "Sonnet · medio",
+   "task": "Pestaña «Líneas de desarrollo» del resumen",
+   "ended": "2026-11-19T16:53:00Z",
+   "dur_s": 191
+  },
+  {
+   "agent": "validator",
+   "model": "Sonnet · alto",
+   "task": "Auditoría rondas 049–050 (OK con observaciones)",
+   "ended": "2026-11-19T16:35:00Z",
+   "dur_s": 256
+  },
+  {
+   "agent": "FDTD openEMS",
+   "model": "malla base · 2 vCPU",
+   "task": "US3_PS6_4 · ronda 050 (peor S11 −10,92 dB)",
+   "ended": "2026-11-19T16:22:36Z",
+   "dur_s": 915
+  },
+  {
+   "agent": "rf-designer",
+   "model": "Sonnet · alto",
+   "task": "Diseño de US3_PS6_4 (parche más ancho)",
+   "ended": "2026-11-19T16:04:00Z",
+   "dur_s": 622
+  },
+  {
+   "agent": "FDTD openEMS",
+   "model": "malla base · 2 vCPU",
+   "task": "US3_PS6_3 · ronda 049 (peor S11 −10,94 dB)",
+   "ended": "2026-11-19T15:56:08Z",
+   "dur_s": 877
+  }
+ ],
+ "rounds": {
+  "used": 51,
+  "max": 60
+ }
+}

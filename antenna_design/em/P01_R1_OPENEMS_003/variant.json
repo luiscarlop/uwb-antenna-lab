@@ -1,0 +1,83 @@
+{
+ "id": "P01_R1",
+ "base_design": "P01_rectangular_patch",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "generic_FR4_PROVISIONAL",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 1.6,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.825
+  ],
+  [
+   5.710633,
+   -3.825
+  ],
+  [
+   5.710633,
+   3.825
+  ],
+  [
+   -5.710633,
+   3.825
+  ]
+ ],
+ "slots_polygon_mm": [],
+ "feed": {
+  "type": "probe_lumped_vertical",
+  "x_mm": 0.0,
+  "y_mm": -1.683,
+  "z0_ohm": 50
+ },
+ "changed_vs_base": {
+  "L_mm": [
+   8.28,
+   7.65
+  ]
+ },
+ "rationale": "Unica variable cambiada: longitud resonante L (eje y). En P01_OPENEMS_001/002 el pico de Re(Zin) (resonancia paralela) cae en 7.47 GHz en vez de f0=7.9872 GHz. Se separa L_eff=L+2*dL (Hammerstad, W/h/eps_eff del modelo base) y se escala L_eff por 7.47/7.9872, suponiendo dL y eps_eff constantes. W, material, grosor, caja 26x26, sonda concentrada de 50 ohm y la regla relativa y_feed=-0.22*L se mantienen; la posicion absoluta de la sonda cambia (-1.8216 -> -1.6830 mm) porque la regla es relativa. Solo estimacion geometrica: no se promete S11; la reactancia inductiva de la sonda sigue presente y el inset probablemente deba reajustarse en otra ronda.",
+ "computation": {
+  "method": "transmission-line model (designs.rectangular_patch_dimensions, Hammerstad) + scaling of L_eff with measured Re(Zin) peak",
+  "inputs": {
+   "W_mm": 11.42126651368023,
+   "L_base_mm": 8.280015708026776,
+   "L_base_nominal_mm": 8.28,
+   "eps_r": 4.4,
+   "h_mm": 1.6,
+   "f0_Hz": 7987200000.0,
+   "f_res_measured_Hz": 7470000000.0,
+   "f_res_source": "em/wideband_reanalysis/P01_OPENEMS_00{1,2}_6to10GHz.json (Re(Zin) peak 7.47 GHz, both meshes)"
+  },
+  "eps_eff": 3.7382321654029917,
+  "delta_L_mm": 0.7132461024068693,
+  "L_eff_base_mm": 9.706507912840515,
+  "scale_factor_fm_over_f0": 0.9352463942307693,
+  "L_eff_new_mm": 9.07797652605652,
+  "L_new_unrounded_mm": 7.651484321242782,
+  "L_new_rounded_mm": 7.65,
+  "L_naive_scaled_mm": 7.743854835106172,
+  "naive_minus_justified_mm": 0.0923705138633899,
+  "feed_rule": "y_feed = -0.22*L, x = 0",
+  "y_feed_base_mm": -1.8216034557658907,
+  "y_feed_new_mm": -1.683,
+  "model_predicted_f_res_for_rounded_L_Hz": 7988506184.191296,
+  "sensitivity_MHz_per_0p01mm": 8.79987534806009,
+  "assumptions": [
+   "dL and eps_eff unchanged (W, h, eps_r unchanged)",
+   "Re(Zin) peak taken as parallel-resonance indicator; probe inductance may offset true resonance",
+   "Not an EM result"
+  ]
+ }
+}

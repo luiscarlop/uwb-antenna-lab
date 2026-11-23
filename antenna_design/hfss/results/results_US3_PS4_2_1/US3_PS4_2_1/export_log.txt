@@ -1,0 +1,21 @@
+==== inicio elemento: US3_PS4_2_1 -> C:/Users/user/Documents/Ansoft/ch9_element_export\US3_PS4_2_1
+setup Setup_ch9, barrido Sweep_7p5_8p5, campos Edges_and_f0 sobre FF_sphere, puerto P1
+proyecto guardado
+variaciones disponibles: ["board_x='26mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' par_L='7.46mm' par_W='10mm' par_yc='0.75mm' par_z='1.0349999999999999mm' patch_L='6.2220000000000004mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='6.5999999999999996mm' tr_w='0.80000000000000004mm' u_Lu='2.6499999999999999mm' u_t='0.80000000000000004mm' u_Wu='4.4000000000000004mm' u_y0='-0.69999999999999996mm'"]
+variacion nominal: board_x='26mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' par_L='7.46mm' par_W='10mm' par_yc='0.75mm' par_z='1.0349999999999999mm' patch_L='6.2220000000000004mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='6.5999999999999996mm' tr_w='0.80000000000000004mm' u_Lu='2.6499999999999999mm' u_t='0.80000000000000004mm' u_Wu='4.4000000000000004mm' u_y0='-0.69999999999999996mm'
+variacion usada: board_x='26mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' par_L='7.46mm' par_W='10mm' par_yc='0.75mm' par_z='1.0349999999999999mm' patch_L='6.2220000000000004mm' patch_W='11.421265999999999mm' sub_h='2.0699999999999998mm' tr_l='6.5999999999999996mm' tr_w='0.80000000000000004mm' u_Lu='2.6499999999999999mm' u_t='0.80000000000000004mm' u_Wu='4.4000000000000004mm' u_y0='-0.69999999999999996mm'
+... Touchstone
+OK  C:/Users/user/Documents/Ansoft/ch9_element_export\US3_PS4_2_1\US3_PS4_2_1.s1p
+... Edit Sources P1 a 1 W
+... campo lejano ff_P1.csv
+OK  C:/Users/user/Documents/Ansoft/ch9_element_export\US3_PS4_2_1\ff_P1.csv
+... antenna_params.csv
+OK  C:/Users/user/Documents/Ansoft/ch9_element_export\US3_PS4_2_1\antenna_params.csv
+... realized_gain_cuts.csv
+OK  C:/Users/user/Documents/Ansoft/ch9_element_export\US3_PS4_2_1\realized_gain_cuts.csv
+... convergencia
+OK  C:/Users/user/Documents/Ansoft/ch9_element_export\US3_PS4_2_1\convergence.conv (variaciones: 'board_x=26mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+... perfil
+OK  C:/Users/user/Documents/Ansoft/ch9_element_export\US3_PS4_2_1\profile.prof (variaciones: 'board_x=26mm,board_y=26mm,cu_t=0.035000000000000003mm,line_w=3.9199999999999999mm,pad_xy=22mm,pad_zn=25mm,pad_zp=33mm,par_L=7.46mm,par_W=10mm,par_yc=0.75mm,par_z=1.0349999999999999mm,patch_L=6.2220000000000004mm,patch_W=11.421265999999999mm,sub_h=2.0699999999999998mm,tr_l=6.5999999999999996mm,tr_w=0.80000000000000004mm,u_Lu=2.6499999999999999mm,u_t=0.80000000000000004mm,u_Wu=4.4000000000000004mm,u_y0=-0.69999999999999996mm')
+Edit Sources: 1 W en P1
+==== fin en C:/Users/user/Documents/Ansoft/ch9_element_export\US3_PS4_2_1 sin errores

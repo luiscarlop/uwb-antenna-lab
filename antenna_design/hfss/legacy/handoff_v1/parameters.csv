@@ -1,0 +1,20 @@
+scope,parameter,value,units,provenance
+all,board_x,26.0,mm,manifest
+all,board_y,26.0,mm,manifest
+all,substrate_h,1.6,mm,manifest
+all,epsilon_r,4.4,1,manifest
+all,tan_delta,0.017,1,manifest
+all,reference_impedance,50,ohm,manifest
+all,frequency_center,7987200000.0,Hz,manifest
+all,copper_thickness,0.035,mm,proposed HFSS model assumption; not from manifest
+all,copper_conductivity,58000000.0,S/m,proposed HFSS model assumption; not from manifest
+all,port_sheet_width,0.2,mm,proposed HFSS model assumption; not from manifest
+P01_rectangular_patch,feed_x,0.0,mm,manifest
+P01_rectangular_patch,feed_y,-1.8216034557658907,mm,manifest
+P01_rectangular_patch,slot_count,0,1,manifest
+P02_u_slot_patch,feed_x,0.0,mm,manifest
+P02_u_slot_patch,feed_y,-1.8216034557658907,mm,manifest
+P02_u_slot_patch,slot_count,1,1,manifest
+P03_hex_slot_patch,feed_x,0.0,mm,manifest
+P03_hex_slot_patch,feed_y,-2.542373925945219,mm,manifest
+P03_hex_slot_patch,slot_count,1,1,manifest

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "900s",
+    "taskset",
+    "-c",
+    "0,1",
+    "/workspace/openems-install/venv/bin/python",
+    "/workspace/TFG_Beamforming_FBD/antenna_design/em/p01_openems.py",
+    "solve",
+    "--out",
+    "/workspace/TFG_Beamforming_FBD/antenna_design/em/P01_OPENEMS_001"
+  ],
+  "started_utc": "2026-11-03T10:32:44.577252+00:00"
+}

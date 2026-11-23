@@ -1,0 +1,36 @@
+{
+  "reference_run": "P01_R2_OPENEMS_004 (base mesh)",
+  "fine_run": "P01_R2_FINE_OPENEMS_005 (fine mesh, 002 rules)",
+  "samples": 1003,
+  "channel_samples": 501,
+  "max_abs_delta_s11_complex_channel": 0.05220914808407724,
+  "max_abs_delta_s11_db_channel": 2.4012678084097416,
+  "mean_delta_db_fine_minus_base_channel": 1.0483821510625833,
+  "worst_channel_s11_db": {
+    "base": -6.526190099190873,
+    "fine": -6.2887893934719585
+  },
+  "worst_channel_freq_hz": {
+    "base": 7737600000.0,
+    "fine": 7737600000.0
+  },
+  "samples_above_minus6db": {
+    "base": 0,
+    "fine": 0
+  },
+  "samples_above_minus10db": {
+    "base": 128,
+    "fine": 143
+  },
+  "min_s11": {
+    "base": [
+      -19.047937951520364,
+      8059000000.0
+    ],
+    "fine": [
+      -16.68977882586821,
+      8053000000.0
+    ]
+  },
+  "mesh_convergence": "NOT_ESTABLISHED (two meshes measure sensitivity only)"
+}

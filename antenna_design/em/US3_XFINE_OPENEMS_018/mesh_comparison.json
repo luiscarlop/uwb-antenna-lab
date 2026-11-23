@@ -1,0 +1,48 @@
+{
+  "fine_run": "US3_FINE_OPENEMS_016",
+  "xfine_run": "US3_XFINE_OPENEMS_018",
+  "pre_registered_rule": "reports/claude_run_016.md",
+  "worst_channel_s11_db": {
+    "fine": -6.653808409129104,
+    "xfine": -5.7762798086588205
+  },
+  "worst_freq_hz": {
+    "fine": 8236800000.0,
+    "xfine": 8236800000.0
+  },
+  "worst_change_db": 0.8775286004702831,
+  "samples_above_minus6db_xfine": 13,
+  "samples_above_minus10db_xfine": 293,
+  "best_channel_s11_db": {
+    "fine": -13.644400346716047,
+    "xfine": -11.818555044569287
+  },
+  "max_abs_delta_gamma_channel": 0.07848953886482167,
+  "minus6db_edges_hz": {
+    "fine": [
+      7685000000.0,
+      8265000000.0
+    ],
+    "xfine": [
+      7700000000.0,
+      8220000000.0
+    ]
+  },
+  "edge_shift_mhz": [
+    15.0,
+    -45.0
+  ],
+  "checks": {
+    "c1_worst_le_-6_and_change_le_0.5dB": false,
+    "c2_dgamma_le_0.03_and_edges_le_10MHz": false,
+    "c3_energy_port_passivity": true
+  },
+  "verdict": "MESH_SENSITIVE (0.5-1 dB)",
+  "mesh_convergence": "two meshes: bounded sensitivity at most, not asymptotic convergence",
+  "xfine_resources": {
+    "wall_s": 1915.0,
+    "steps": 9945,
+    "peak_rss_kib": 1972656,
+    "energy_db": -50.85
+  }
+}

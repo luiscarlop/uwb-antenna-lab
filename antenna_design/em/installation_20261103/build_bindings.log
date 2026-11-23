@@ -1,0 +1,340 @@
+Start building Python extensions against C++ path: /workspace/openems-install...
+Build CSXCAD python extension ... please wait
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Using pip 25.0.1 from /workspace/openems-install/venv/lib/python3.12/site-packages/pip (python 3.12)
+Processing /workspace/openems-source/CSXCAD/python
+  Preparing metadata (pyproject.toml): started
+  Running command Preparing metadata (pyproject.toml)
+  /workspace/openems-install/venv/lib/python3.12/site-packages/setuptools/config/_apply_pyprojecttoml.py:82: SetuptoolsWarning: `install_requires` overwritten in `pyproject.toml` (dependencies)
+    corresp(dist, value, root_dir)
+  running dist_info
+  creating /tmp/pip-modern-metadata-sf4gvr23/CSXCAD.egg-info
+  writing /tmp/pip-modern-metadata-sf4gvr23/CSXCAD.egg-info/PKG-INFO
+  writing dependency_links to /tmp/pip-modern-metadata-sf4gvr23/CSXCAD.egg-info/dependency_links.txt
+  writing requirements to /tmp/pip-modern-metadata-sf4gvr23/CSXCAD.egg-info/requires.txt
+  writing top-level names to /tmp/pip-modern-metadata-sf4gvr23/CSXCAD.egg-info/top_level.txt
+  writing manifest file '/tmp/pip-modern-metadata-sf4gvr23/CSXCAD.egg-info/SOURCES.txt'
+  writing manifest file '/tmp/pip-modern-metadata-sf4gvr23/CSXCAD.egg-info/SOURCES.txt'
+  creating '/tmp/pip-modern-metadata-sf4gvr23/csxcad-0.7.0.post1.dev1+g626b99f2f.dist-info'
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy in /workspace/openems-install/venv/lib/python3.12/site-packages (from CSXCAD==0.7.0.post1.dev1+g626b99f2f) (2.5.4)
+Requirement already satisfied: matplotlib>=2.1.0 in /workspace/openems-install/venv/lib/python3.12/site-packages (from CSXCAD==0.7.0.post1.dev1+g626b99f2f) (3.11.2)
+Requirement already satisfied: contourpy>=1.0.1 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (1.4.0)
+Requirement already satisfied: cycler>=0.10 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (4.68.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (26.3)
+Requirement already satisfied: pillow>=9 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (13.0.0)
+Requirement already satisfied: pyparsing>=3 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (3.3.3)
+Requirement already satisfied: python-dateutil>=2.7 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (4.0.0)
+Requirement already satisfied: tzdata in /workspace/openems-install/venv/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib>=2.1.0->CSXCAD==0.7.0.post1.dev1+g626b99f2f) (2026.6)
+Building wheels for collected packages: CSXCAD
+  Building wheel for CSXCAD (pyproject.toml): started
+  Running command Building wheel for CSXCAD (pyproject.toml)
+  /workspace/openems-install/venv/lib/python3.12/site-packages/setuptools/config/_apply_pyprojecttoml.py:82: SetuptoolsWarning: `install_requires` overwritten in `pyproject.toml` (dependencies)
+    corresp(dist, value, root_dir)
+  running bdist_wheel
+  running build
+  running build_py
+  copying CSXCAD/__fallback_version__.py -> build/lib.linux-x86_64-cpython-312/CSXCAD
+  running egg_info
+  writing CSXCAD.egg-info/PKG-INFO
+  writing dependency_links to CSXCAD.egg-info/dependency_links.txt
+  writing requirements to CSXCAD.egg-info/requires.txt
+  writing top-level names to CSXCAD.egg-info/top_level.txt
+  writing manifest file 'CSXCAD.egg-info/SOURCES.txt'
+  running build_ext
+  building 'CSXCAD.CSTransform' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c CSXCAD/CSTransform.cpp -o build/temp.linux-x86_64-cpython-312/CSXCAD/CSTransform.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/CSXCAD/CSTransform.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -o build/lib.linux-x86_64-cpython-312/CSXCAD/CSTransform.cpython-312-x86_64-linux-gnu.so
+  Compiling CSXCAD/CSProperties.pyx because it changed.
+  [1/1] Cythonizing CSXCAD/CSProperties.pyx
+  building 'CSXCAD.CSProperties' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c CSXCAD/CSProperties.cpp -o build/temp.linux-x86_64-cpython-312/CSXCAD/CSProperties.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/CSXCAD/CSProperties.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -o build/lib.linux-x86_64-cpython-312/CSXCAD/CSProperties.cpython-312-x86_64-linux-gnu.so
+  Compiling CSXCAD/CSPrimitives.pyx because it changed.
+  [1/1] Cythonizing CSXCAD/CSPrimitives.pyx
+  building 'CSXCAD.CSPrimitives' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c CSXCAD/CSPrimitives.cpp -o build/temp.linux-x86_64-cpython-312/CSXCAD/CSPrimitives.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/CSXCAD/CSPrimitives.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -o build/lib.linux-x86_64-cpython-312/CSXCAD/CSPrimitives.cpython-312-x86_64-linux-gnu.so
+  Compiling CSXCAD/Utilities.pyx because it changed.
+  [1/1] Cythonizing CSXCAD/Utilities.pyx
+  building 'CSXCAD.Utilities' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c CSXCAD/Utilities.cpp -o build/temp.linux-x86_64-cpython-312/CSXCAD/Utilities.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/CSXCAD/Utilities.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -o build/lib.linux-x86_64-cpython-312/CSXCAD/Utilities.cpython-312-x86_64-linux-gnu.so
+  Compiling CSXCAD/CSXCAD.pyx because it changed.
+  [1/1] Cythonizing CSXCAD/CSXCAD.pyx
+  building 'CSXCAD.CSXCAD' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c CSXCAD/CSXCAD.cpp -o build/temp.linux-x86_64-cpython-312/CSXCAD/CSXCAD.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/CSXCAD/CSXCAD.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -o build/lib.linux-x86_64-cpython-312/CSXCAD/CSXCAD.cpython-312-x86_64-linux-gnu.so
+  Compiling CSXCAD/ParameterObjects.pyx because it changed.
+  [1/1] Cythonizing CSXCAD/ParameterObjects.pyx
+  building 'CSXCAD.ParameterObjects' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c CSXCAD/ParameterObjects.cpp -o build/temp.linux-x86_64-cpython-312/CSXCAD/ParameterObjects.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/CSXCAD/ParameterObjects.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -o build/lib.linux-x86_64-cpython-312/CSXCAD/ParameterObjects.cpython-312-x86_64-linux-gnu.so
+  Compiling CSXCAD/CSRectGrid.pyx because it changed.
+  [1/1] Cythonizing CSXCAD/CSRectGrid.pyx
+  building 'CSXCAD.CSRectGrid' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c CSXCAD/CSRectGrid.cpp -o build/temp.linux-x86_64-cpython-312/CSXCAD/CSRectGrid.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/CSXCAD/CSRectGrid.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -o build/lib.linux-x86_64-cpython-312/CSXCAD/CSRectGrid.cpython-312-x86_64-linux-gnu.so
+  installing to build/bdist.linux-x86_64/wheel
+  running install
+  running install_lib
+  creating build/bdist.linux-x86_64/wheel
+  creating build/bdist.linux-x86_64/wheel/CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSTransform.pyx -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSProperties.pyx -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/ParameterObjects.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/ParameterObjects.pxd -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/__init__.py -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSPrimitives.pyx -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSProperties.pxd -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/Utilities.pyx -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSXCAD.pyx -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSXCAD.pxd -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSTransform.pxd -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/__fallback_version__.py -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/ParameterObjects.pyx -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSRectGrid.pxd -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSTransform.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSRectGrid.pyx -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSPrimitives.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/Utilities.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSProperties.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSRectGrid.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/SmoothMeshLines.py -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSXCAD.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSObject.pxd -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  copying build/lib.linux-x86_64-cpython-312/CSXCAD/CSPrimitives.pxd -> build/bdist.linux-x86_64/wheel/./CSXCAD
+  running install_egg_info
+  Copying CSXCAD.egg-info to build/bdist.linux-x86_64/wheel/./CSXCAD-0.7.0.post1.dev1+g626b99f2f-py3.12.egg-info
+  running install_scripts
+  creating build/bdist.linux-x86_64/wheel/csxcad-0.7.0.post1.dev1+g626b99f2f.dist-info/WHEEL
+  creating '/tmp/pip-wheel-ebf5qw26/.tmp-cpfu9p8y/csxcad-0.7.0.post1.dev1+g626b99f2f-cp312-cp312-linux_x86_64.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+  adding 'CSXCAD/CSObject.pxd'
+  adding 'CSXCAD/CSPrimitives.cpython-312-x86_64-linux-gnu.so'
+  adding 'CSXCAD/CSPrimitives.pxd'
+  adding 'CSXCAD/CSPrimitives.pyx'
+  adding 'CSXCAD/CSProperties.cpython-312-x86_64-linux-gnu.so'
+  adding 'CSXCAD/CSProperties.pxd'
+  adding 'CSXCAD/CSProperties.pyx'
+  adding 'CSXCAD/CSRectGrid.cpython-312-x86_64-linux-gnu.so'
+  adding 'CSXCAD/CSRectGrid.pxd'
+  adding 'CSXCAD/CSRectGrid.pyx'
+  adding 'CSXCAD/CSTransform.cpython-312-x86_64-linux-gnu.so'
+  adding 'CSXCAD/CSTransform.pxd'
+  adding 'CSXCAD/CSTransform.pyx'
+  adding 'CSXCAD/CSXCAD.cpython-312-x86_64-linux-gnu.so'
+  adding 'CSXCAD/CSXCAD.pxd'
+  adding 'CSXCAD/CSXCAD.pyx'
+  adding 'CSXCAD/ParameterObjects.cpython-312-x86_64-linux-gnu.so'
+  adding 'CSXCAD/ParameterObjects.pxd'
+  adding 'CSXCAD/ParameterObjects.pyx'
+  adding 'CSXCAD/SmoothMeshLines.py'
+  adding 'CSXCAD/Utilities.cpython-312-x86_64-linux-gnu.so'
+  adding 'CSXCAD/Utilities.pyx'
+  adding 'CSXCAD/__fallback_version__.py'
+  adding 'CSXCAD/__init__.py'
+  adding 'csxcad-0.7.0.post1.dev1+g626b99f2f.dist-info/METADATA'
+  adding 'csxcad-0.7.0.post1.dev1+g626b99f2f.dist-info/WHEEL'
+  adding 'csxcad-0.7.0.post1.dev1+g626b99f2f.dist-info/top_level.txt'
+  adding 'csxcad-0.7.0.post1.dev1+g626b99f2f.dist-info/RECORD'
+  removing build/bdist.linux-x86_64/wheel
+  Building wheel for CSXCAD (pyproject.toml): finished with status 'done'
+  Created wheel for CSXCAD: filename=csxcad-0.7.0.post1.dev1+g626b99f2f-cp312-cp312-linux_x86_64.whl size=4083378 sha256=e9c2b986141cbdd86589061c853f23d48ce9d8ca7ccf9f5fe900f70ddd00232a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s6nylx4k/wheels/e4/de/e6/7fe42bcd3242e77ae16be57923379a45a80c324ad7d49705ec
+Successfully built CSXCAD
+Installing collected packages: CSXCAD
+Successfully installed CSXCAD-0.7.0.post1.dev1+g626b99f2f
+/workspace/openems-source
+Build openEMS python extension ... please wait
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Using pip 25.0.1 from /workspace/openems-install/venv/lib/python3.12/site-packages/pip (python 3.12)
+Processing /workspace/openems-source/openEMS/python
+  Preparing metadata (pyproject.toml): started
+  Running command Preparing metadata (pyproject.toml)
+  running dist_info
+  creating /tmp/pip-modern-metadata-adprhuq5/openEMS.egg-info
+  writing /tmp/pip-modern-metadata-adprhuq5/openEMS.egg-info/PKG-INFO
+  writing dependency_links to /tmp/pip-modern-metadata-adprhuq5/openEMS.egg-info/dependency_links.txt
+  writing requirements to /tmp/pip-modern-metadata-adprhuq5/openEMS.egg-info/requires.txt
+  writing top-level names to /tmp/pip-modern-metadata-adprhuq5/openEMS.egg-info/top_level.txt
+  writing manifest file '/tmp/pip-modern-metadata-adprhuq5/openEMS.egg-info/SOURCES.txt'
+  writing manifest file '/tmp/pip-modern-metadata-adprhuq5/openEMS.egg-info/SOURCES.txt'
+  creating '/tmp/pip-modern-metadata-adprhuq5/openems-0.37.0.post1.dev1+g5fecbb58d.dist-info'
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy in /workspace/openems-install/venv/lib/python3.12/site-packages (from openEMS==0.37.0.post1.dev1+g5fecbb58d) (2.5.4)
+Requirement already satisfied: h5py in /workspace/openems-install/venv/lib/python3.12/site-packages (from openEMS==0.37.0.post1.dev1+g5fecbb58d) (3.16.0)
+Requirement already satisfied: CSXCAD in /workspace/openems-install/venv/lib/python3.12/site-packages (from openEMS==0.37.0.post1.dev1+g5fecbb58d) (0.7.0.post1.dev1+g626b99f2f)
+Requirement already satisfied: matplotlib>=2.1.0 in /workspace/openems-install/venv/lib/python3.12/site-packages (from CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (3.11.2)
+Requirement already satisfied: contourpy>=1.0.1 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (1.4.0)
+Requirement already satisfied: cycler>=0.10 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (4.68.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (26.3)
+Requirement already satisfied: pillow>=9 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (13.0.0)
+Requirement already satisfied: pyparsing>=3 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (3.3.3)
+Requirement already satisfied: python-dateutil>=2.7 in /workspace/openems-install/venv/lib/python3.12/site-packages (from matplotlib>=2.1.0->CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (4.0.0)
+Requirement already satisfied: tzdata in /workspace/openems-install/venv/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib>=2.1.0->CSXCAD->openEMS==0.37.0.post1.dev1+g5fecbb58d) (2026.6)
+Building wheels for collected packages: openEMS
+  Building wheel for openEMS (pyproject.toml): started
+  Running command Building wheel for openEMS (pyproject.toml)
+  running bdist_wheel
+  running build
+  running build_py
+  creating build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/automesh.py -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/nf2ff.py -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/__init__.py -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/ports.py -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/__fallback_version__.py -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/physical_constants.py -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/compare.py -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/utilities.py -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/sar_utils.py -> build/lib.linux-x86_64-cpython-312/openEMS
+  running egg_info
+  creating openEMS.egg-info
+  writing openEMS.egg-info/PKG-INFO
+  writing dependency_links to openEMS.egg-info/dependency_links.txt
+  writing requirements to openEMS.egg-info/requires.txt
+  writing top-level names to openEMS.egg-info/top_level.txt
+  writing manifest file 'openEMS.egg-info/SOURCES.txt'
+  writing manifest file 'openEMS.egg-info/SOURCES.txt'
+  /workspace/openems-install/venv/lib/python3.12/site-packages/setuptools/command/build_py.py:215: _Warning: Package 'openEMS.resources.phantoms' is absent from the `packages` configuration.
+  !!
+
+          ********************************************************************************
+          ############################
+          # Package would be ignored #
+          ############################
+          Python recognizes 'openEMS.resources.phantoms' as an importable package[^1],
+          but it is absent from setuptools' `packages` configuration.
+
+          This leads to an ambiguous overall configuration. If you want to distribute this
+          package, please make sure that 'openEMS.resources.phantoms' is explicitly added
+          to the `packages` configuration field.
+
+          Alternatively, you can also rely on setuptools' discovery methods
+          (for example by using `find_namespace_packages(...)`/`find_namespace:`
+          instead of `find_packages(...)`/`find:`).
+
+          You can read more about "package discovery" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+          If you don't want 'openEMS.resources.phantoms' to be distributed and are
+          already explicitly excluding 'openEMS.resources.phantoms' via
+          `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+          you can try to use `exclude_package_data`, or `include-package-data=False` in
+          combination with a more fine grained `package-data` configuration.
+
+          You can read more about "package data files" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+          [^1]: For Python, any directory (with suitable naming) can be imported,
+                even if it does not contain any `.py` files.
+                On the other hand, currently there is no concept of package data
+                directory, all directories are treated like packages.
+          ********************************************************************************
+
+  !!
+    check.warn(importable)
+  copying openEMS/_nf2ff.pxd -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/_nf2ff.pyx -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/openEMS.pxd -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/openEMS.pyx -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/sar_calculation.pxd -> build/lib.linux-x86_64-cpython-312/openEMS
+  copying openEMS/sar_calculation.pyx -> build/lib.linux-x86_64-cpython-312/openEMS
+  creating build/lib.linux-x86_64-cpython-312/openEMS/resources/phantoms
+  copying openEMS/resources/phantoms/create_phantoms.py -> build/lib.linux-x86_64-cpython-312/openEMS/resources/phantoms
+  copying openEMS/resources/phantoms/phantom_body_128MHz.h5 -> build/lib.linux-x86_64-cpython-312/openEMS/resources/phantoms
+  copying openEMS/resources/phantoms/phantom_head_298MHz.h5 -> build/lib.linux-x86_64-cpython-312/openEMS/resources/phantoms
+  running build_ext
+  warning: openEMS/_nf2ff.pxd:26:139: The keyword 'nogil' should appear at the end of the function signature line. Placing it before 'except' or 'noexcept' will be disallowed in a future version of Cython.
+  Compiling openEMS/_nf2ff.pyx because it changed.
+  [1/1] Cythonizing openEMS/_nf2ff.pyx
+  building 'openEMS._nf2ff' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c openEMS/_nf2ff.cpp -o build/temp.linux-x86_64-cpython-312/openEMS/_nf2ff.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/openEMS/_nf2ff.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -lopenEMS -lnf2ff -o build/lib.linux-x86_64-cpython-312/openEMS/_nf2ff.cpython-312-x86_64-linux-gnu.so
+  warning: openEMS/sar_calculation.pxd:24:41: The keyword 'nogil' should appear at the end of the function signature line. Placing it before 'except' or 'noexcept' will be disallowed in a future version of Cython.
+  Compiling openEMS/sar_calculation.pyx because it changed.
+  [1/1] Cythonizing openEMS/sar_calculation.pyx
+  building 'openEMS.sar_calculation' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c openEMS/sar_calculation.cpp -o build/temp.linux-x86_64-cpython-312/openEMS/sar_calculation.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/openEMS/sar_calculation.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -lopenEMS -lnf2ff -o build/lib.linux-x86_64-cpython-312/openEMS/sar_calculation.cpython-312-x86_64-linux-gnu.so
+  warning: openEMS/openEMS.pxd:27:33: The keyword 'nogil' should appear at the end of the function signature line. Placing it before 'except' or 'noexcept' will be disallowed in a future version of Cython.
+  warning: openEMS/openEMS.pxd:62:38: The keyword 'nogil' should appear at the end of the function signature line. Placing it before 'except' or 'noexcept' will be disallowed in a future version of Cython.
+  warning: openEMS/openEMS.pxd:63:38: The keyword 'nogil' should appear at the end of the function signature line. Placing it before 'except' or 'noexcept' will be disallowed in a future version of Cython.
+  Compiling openEMS/openEMS.pyx because it changed.
+  [1/1] Cythonizing openEMS/openEMS.pyx
+  building 'openEMS.openEMS' extension
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -fPIC -I/workspace/openems-install/include -I/workspace/openems-install/include -I/usr/local/include -I/workspace/openems-install/venv/include -I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12 -c openEMS/openEMS.cpp -o build/temp.linux-x86_64-cpython-312/openEMS/openEMS.o -std=c++17
+  g++ -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -pthread -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=sha1 -Wl,--exclude-libs,ALL build/temp.linux-x86_64-cpython-312/openEMS/openEMS.o -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/workspace/openems-install/lib -L/workspace/openems-install/lib/64 -L/usr/local/lib -L/usr/local/lib/64 -L/install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib -Wl,--enable-new-dtags -Wl,-rpath,/workspace/openems-install/lib/64 -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,-rpath,/usr/local/lib/64 -lCSXCAD -lopenEMS -lnf2ff -o build/lib.linux-x86_64-cpython-312/openEMS/openEMS.cpython-312-x86_64-linux-gnu.so
+  installing to build/bdist.linux-x86_64/wheel
+  running install
+  running install_lib
+  creating build/bdist.linux-x86_64/wheel
+  creating build/bdist.linux-x86_64/wheel/openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/automesh.py -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/_nf2ff.pyx -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/_nf2ff.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/nf2ff.py -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/__init__.py -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/sar_calculation.pyx -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/ports.py -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/sar_calculation.pxd -> build/bdist.linux-x86_64/wheel/./openEMS
+  creating build/bdist.linux-x86_64/wheel/openEMS/resources
+  creating build/bdist.linux-x86_64/wheel/openEMS/resources/phantoms
+  copying build/lib.linux-x86_64-cpython-312/openEMS/resources/phantoms/phantom_head_298MHz.h5 -> build/bdist.linux-x86_64/wheel/./openEMS/resources/phantoms
+  copying build/lib.linux-x86_64-cpython-312/openEMS/resources/phantoms/phantom_body_128MHz.h5 -> build/bdist.linux-x86_64/wheel/./openEMS/resources/phantoms
+  copying build/lib.linux-x86_64-cpython-312/openEMS/resources/phantoms/create_phantoms.py -> build/bdist.linux-x86_64/wheel/./openEMS/resources/phantoms
+  copying build/lib.linux-x86_64-cpython-312/openEMS/__fallback_version__.py -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/physical_constants.py -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/_nf2ff.pxd -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/compare.py -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/utilities.py -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/sar_utils.py -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/openEMS.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/openEMS.pxd -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/openEMS.pyx -> build/bdist.linux-x86_64/wheel/./openEMS
+  copying build/lib.linux-x86_64-cpython-312/openEMS/sar_calculation.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./openEMS
+  running install_egg_info
+  Copying openEMS.egg-info to build/bdist.linux-x86_64/wheel/./openEMS-0.37.0.post1.dev1+g5fecbb58d-py3.12.egg-info
+  running install_scripts
+  creating build/bdist.linux-x86_64/wheel/openems-0.37.0.post1.dev1+g5fecbb58d.dist-info/WHEEL
+  creating '/tmp/pip-wheel-7jpbchxp/.tmp-l2ond_oa/openems-0.37.0.post1.dev1+g5fecbb58d-cp312-cp312-linux_x86_64.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+  adding 'openEMS/__fallback_version__.py'
+  adding 'openEMS/__init__.py'
+  adding 'openEMS/_nf2ff.cpython-312-x86_64-linux-gnu.so'
+  adding 'openEMS/_nf2ff.pxd'
+  adding 'openEMS/_nf2ff.pyx'
+  adding 'openEMS/automesh.py'
+  adding 'openEMS/compare.py'
+  adding 'openEMS/nf2ff.py'
+  adding 'openEMS/openEMS.cpython-312-x86_64-linux-gnu.so'
+  adding 'openEMS/openEMS.pxd'
+  adding 'openEMS/openEMS.pyx'
+  adding 'openEMS/physical_constants.py'
+  adding 'openEMS/ports.py'
+  adding 'openEMS/sar_calculation.cpython-312-x86_64-linux-gnu.so'
+  adding 'openEMS/sar_calculation.pxd'
+  adding 'openEMS/sar_calculation.pyx'
+  adding 'openEMS/sar_utils.py'
+  adding 'openEMS/utilities.py'
+  adding 'openEMS/resources/phantoms/create_phantoms.py'
+  adding 'openEMS/resources/phantoms/phantom_body_128MHz.h5'
+  adding 'openEMS/resources/phantoms/phantom_head_298MHz.h5'
+  adding 'openems-0.37.0.post1.dev1+g5fecbb58d.dist-info/METADATA'
+  adding 'openems-0.37.0.post1.dev1+g5fecbb58d.dist-info/WHEEL'
+  adding 'openems-0.37.0.post1.dev1+g5fecbb58d.dist-info/top_level.txt'
+  adding 'openems-0.37.0.post1.dev1+g5fecbb58d.dist-info/RECORD'
+  removing build/bdist.linux-x86_64/wheel
+  Building wheel for openEMS (pyproject.toml): finished with status 'done'
+  Created wheel for openEMS: filename=openems-0.37.0.post1.dev1+g5fecbb58d-cp312-cp312-linux_x86_64.whl size=1355117 sha256=3c6204ae60a65431ad11cf998de45137926460125445b8aaf5098852eab310b6
+  Stored in directory: /tmp/pip-ephem-wheel-cache-9ss0y5hz/wheels/c9/33/8f/2414b33d2c7fd04e6d68ffa26e87028a1715863f5ae3b4904f
+Successfully built openEMS
+Installing collected packages: openEMS
+Successfully installed openEMS-0.37.0.post1.dev1+g5fecbb58d
+/workspace/openems-source

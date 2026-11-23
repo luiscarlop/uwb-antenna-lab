@@ -1,0 +1,16 @@
+{
+ "evidence": "GUIDE_MODEL (not EM)",
+ "L_scaled_mm": 7.322184244791667,
+ "L_chosen_mm": 7.322,
+ "L_uncertainty": "+-0.7 % in fr (US3 -> US3_MS2 scaling check), ~+-55 MHz",
+ "G1_S": 0.0009692854142306912,
+ "G12_S": 0.0006962695099745924,
+ "R_edge_TL_model_ohm": 300.20024721704937,
+ "R_edge_EM_uslot_US3_MS2_ohm": [
+  243,
+  296
+ ],
+ "R_matched_by_Zt_102p5_ohm": 210.125,
+ "transformer": "unchanged from US3_MS3 (w 0.80 mm, l 6.60 mm, Zt ~102.5 ohm)",
+ "note": "TL model ignores substrate thickness k0h~0.35 and fringing reactance; R_edge uncertainty order +-30 %."
+}

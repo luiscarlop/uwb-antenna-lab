@@ -1,0 +1,574 @@
+{
+  "version": 1,
+  "mission": "IR-UWB antenna EM research channel 9 only",
+  "branch": "codex/uwb-ch9-antenna-design",
+  "timezone": "Europe/Madrid",
+  "proposed_schedule": "09:00 weekdays",
+  "automation_created": false,
+  "automation_id": null,
+  "status": "PAUSED",
+  "runs_completed": 0,
+  "max_runs": 5,
+  "max_em_solves_per_run": 1,
+  "max_subagents": 3,
+  "allowed_frequencies_hz": [
+    7737600000,
+    8236800000
+  ],
+  "resource_policy": {
+    "max_parallel_fdtd": 1,
+    "prohibit_paid_api": true,
+    "prohibit_unbounded_sweeps": true
+  },
+  "stop_conditions": [
+    "ready_for_hfss_review",
+    "no_em_solver_after_diagnosis",
+    "quota_or_billing_block",
+    "missing_persistent_state",
+    "critical_test_failure",
+    "max_runs_reached",
+    "human_decision_required"
+  ],
+  "history": [
+    {
+      "date": "2026-11-03",
+      "event": "Initial campaign blocked: solver unavailable; Codex automation tooling unavailable. No scheduled run and no automatic rounds consumed."
+    },
+    {
+      "date": "2026-11-03",
+      "event": "Solver restored; official smoke and single P01 solve completed. Baseline fails adaptation, spatial convergence pending. Automation remains uncreated; manual review before further solves."
+    }
+  ],
+  "claude_routine": {
+    "prompt": "antenna_design/CLAUDE_CYCLE.md",
+    "setup_script": "antenna_design/claude_cloud_setup.sh",
+    "schedule": "hourly (CRON_TZ=Europe/Madrid 0 * * * *)",
+    "status": "ACTIVE",
+    "runs_completed": 51,
+    "max_runs": 60,
+    "max_em_solves_per_run": 1,
+    "max_subagents": 3,
+    "authorized_by": "owner",
+    "history": [
+      {
+        "date": "2026-11-03",
+        "event": "Owner authorized an hourly Claude Code routine with its own counter (max 40 rounds). Codex fields untouched."
+      },
+      {
+        "date": "2026-11-03",
+        "run": 1,
+        "id": "CLAUDE-RUN-001",
+        "mode": "manual session",
+        "em_status": "EM_NOT_RUN",
+        "em_solves_executed": 0,
+        "event": "Solver diagnosis: no openEMS/CSXCAD Python bindings in apt (noble), PyPI or conda-forge; setup script package names do not exist. Owner decision needed: authorize source build (update_openEMS.sh --python). Report reports/claude_run_001.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "event": "Owner: replaced the 20-minute recent-commit stop with a candado (lock) field; Codex/owner commits no longer stop Claude rounds."
+      },
+      {
+        "date": "2026-11-03",
+        "run": 2,
+        "id": "CLAUDE-RUN-002",
+        "mode": "manual session",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "Solver rebuilt via claude_cloud_setup.sh (284 s). P01_OPENEMS_002 mesh refinement: fails -6 dB like 001; mesh convergence NOT_ESTABLISHED. Validator: APROBAR CON RESERVAS. Report reports/claude_run_002.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "run": 3,
+        "id": "CLAUDE-RUN-003",
+        "mode": "autonomous session (owner instruction)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P01_R1 (L 7.65 mm): resonance at 7.955 GHz, fails -6 dB; circuit fit Ls 1.2 nH Q 13.5. Validator APROBAR CON RESERVAS. Report reports/claude_run_003.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "run": 4,
+        "id": "CLAUDE-RUN-004",
+        "mode": "autonomous session (owner instruction)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P01_R2 meets -6 dB on all channel samples (worst -6.53 dB), fails -10 dB; not declared viable pending fine-mesh check (validator B). Report reports/claude_run_004.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "run": 5,
+        "id": "CLAUDE-RUN-005",
+        "mode": "autonomous session (owner instruction)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P01_R2 fine-mesh check passes pre-registered rule (worst -6.29 dB). Campaign set to READY_FOR_HFSS_REVIEW; Claude rounds stop until human review. Report reports/claude_run_005.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "run": 6,
+        "id": "CLAUDE-RUN-006",
+        "mode": "session (owner request P02/P03 microstrip+SMA)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P02_MS1 not matched in channel; MSL port de-embedding blocked by validator; campaign BLOCKED pending port fix. Report reports/claude_run_006.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "run": 7,
+        "id": "CLAUDE-RUN-007",
+        "mode": "session (owner request P02/P03 microstrip+SMA)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "MSL port fixed (validator: block lifted with reservations); P03_MS2 hexagon: -3.2..-10.5 dB in channel, gain/efficiency obtained. Report reports/claude_run_007.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "run": 8,
+        "id": "CLAUDE-RUN-008",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P03_MS3 (hexagon r 4.96 mm, feed unchanged): min |S11| moved to 8.035 GHz; worst in channel -5.48 dB at 7.7376 GHz (31/501 samples above -6 dB), -10.29 dB at f0. Fails -6 dB narrowly; port reservations inherited. No validator available (orchestrator model Sonnet 5.5; subagent not found). Report reports/claude_run_008.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "run": 9,
+        "id": "CLAUDE-RUN-009",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P03_MS4 (hexagon r 5.03 mm): meets -6 dB on 501 grid samples with margin 0.013 dB at 8.2368 GHz (worst), -10 dB not met; not declared viable (port uncertainty ~1.5 dB). No validator available (orchestrator Sonnet 5.5). Report reports/claude_run_009.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "run": 10,
+        "id": "CLAUDE-RUN-010",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P03_MS5 (hexagon r 5.007 mm): meets -6 dB on 501 grid samples, worst -6.50 dB (margin 0.50 dB, edges balanced), -10 dB not met (140/501); not declared viable (port uncertainty ~1.5 dB, single mesh). No validator available (orchestrator Sonnet 5.5). Report reports/claude_run_010.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-03",
+        "run": 11,
+        "id": "CLAUDE-RUN-011",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_NOT_RUN",
+        "em_solves_executed": 0,
+        "event": "P03_MS5 fine mesh aborted by budget rule (est. 2660 s > 1800 s); no FDTD. Human decision needed (recalibrate rate or authorize long run). Orchestrator Sonnet 5.5; no validator. Report reports/claude_run_011.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-04",
+        "run": 12,
+        "id": "CLAUDE-RUN-012",
+        "mode": "session (owner U-slot direction)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US0 reference: -6.15 dB worst, eff 0.85, gain 4.6-5.4 dBi; fine-mesh check next. Report reports/claude_run_012.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-04",
+        "run": 13,
+        "id": "CLAUDE-RUN-013",
+        "mode": "session (owner U-slot direction)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US0 fine mesh -5.70 dB: rejected; fine mesh adopted as series evaluation mesh. Report reports/claude_run_013.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-04",
+        "run": 14,
+        "id": "CLAUDE-RUN-014",
+        "mode": "session (owner U-slot direction)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US1 U-slot: loop at 7.30 GHz, -6 dB BW 585 MHz; channel fails. Report reports/claude_run_014.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-04",
+        "run": 15,
+        "id": "CLAUDE-RUN-015",
+        "mode": "session (owner U-slot direction)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US2 (L 6.85): min 7.725 GHz, loop lost. Report reports/claude_run_015.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-04",
+        "run": 16,
+        "id": "CLAUDE-RUN-016",
+        "mode": "session (owner U-slot direction)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3 meets -6 dB on fine mesh (-6.65 dB); xfine blocked by budget rule; owner decision needed. Report reports/claude_run_016.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "run": 17,
+        "id": "CLAUDE-RUN-017",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_NOT_RUN",
+        "em_solves_executed": 0,
+        "event": "STOP: human decision required. US3 xfine check is blocked by the budget rule (3747 s > 2700 s); no FDTD launched, no new geometry (owner decision pending, not overridden). Solver OK (openEMS 0.37.0.post1, CSXCAD 0.7.0.post1), tests 54 OK. Orchestrator Sonnet 5.5, no Opus; no subagents. Report reports/claude_run_017.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "event": "Owner: convergence-run time limit raised from 2700 s to 4000 s (US3 xfine, 3747 s est. without NF2FF, now fits). Owner: orchestrator must ALWAYS be Opus 5.5; if the session model is not Opus 5.5, do not run FDTD, report it and stop (model selector is set in the routine, not in the repo)."
+      },
+      {
+        "date": "2026-11-05",
+        "run": 18,
+        "id": "CLAUDE-RUN-018",
+        "mode": "session (owner U-slot direction)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3 xfine: MESH_SENSITIVE (-5.78 dB); cause: ideal probe inductance grows with refinement. STOP: owner decision on physical probe. Report reports/claude_run_018.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "run": 19,
+        "id": "CLAUDE-RUN-019",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_NOT_RUN",
+        "em_solves_executed": 0,
+        "event": "STOP: orchestrator model is Sonnet 5.5, required Opus 5.5; no FDTD. Owner must set the model in the routine and decide the physical probe. Report reports/claude_run_019.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "run": 20,
+        "id": "CLAUDE-RUN-020",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_NOT_RUN",
+        "em_solves_executed": 0,
+        "event": "STOP: human decision required (physical probe pin diameter / SMA part number still undecided). Orchestrator Opus 5.5. Solver OK (openEMS 0.37.0.post1, CSXCAD 0.7.0.post1), tests 54 OK, no FDTD. Report reports/claude_run_020.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "event": "Owner decision 2026-11-05: no SMA connector or coaxial probe in simulation. Feed every candidate with a 50-ohm microstrip line (inset or edge) and excite it with a 50-ohm vertical AddLumpedPort at the start of the microstrip line (board edge, strip width); S11 reference plane = line start, no de-embedding. Two-mesh convergence check. Ideal-probe results (P01_R2, US0, US3) must be redone with this feed. Resolves the physical-probe STOP of rounds 18-20."
+      },
+      {
+        "date": "2026-11-05",
+        "run": 21,
+        "id": "CLAUDE-RUN-021",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_MS1 (owner microstrip feed, 50 ohm lumped port at line start, base mesh): S11 -1.93..-4.09 dB in channel, fails -6 dB; resonance centred at 8.04 GHz but Re Zin ~300 ohm; eta_rad 0.50-0.56. Validator APROBAR CON RESERVAS. Next: quarter-wave transformer. Orchestrator Opus 5.5. Report reports/claude_run_021.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "run": 22,
+        "id": "CLAUDE-RUN-022",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_MS2 (edge feed, no notch, base mesh): S11 -2.40..-3.86 dB, fails -6 dB as expected; de-embedded edge fit Q 16.25, R_edge 243-296 ohm (eps_eff dependent); eta 0.55-0.59 (line/mismatch loss). Next: ~100 ohm lambda/4 transformer (US3_MS3). Validator APROBAR CON RESERVAS. Orchestrator Opus 5.5. Report reports/claude_run_022.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "run": 23,
+        "id": "CLAUDE-RUN-023",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_MS3 (US3_MS2 + lambda/4 0.80 x 6.60 mm, Zt ~102 ohm, base mesh, lumped port at line start): worst -8.18 dB in channel (margin 2.18 dB), -10 dB on 376/501, eta 0.65-0.67, Gr 3.2-4.0 dBi. Mesh convergence pending (fine mesh next, series rule). Validator APROBAR CON RESERVAS. Orchestrator Opus 5.5. Report reports/claude_run_023.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "run": 24,
+        "id": "CLAUDE-RUN-024",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_MS3 fine mesh: worst -8.04 dB (base -8.18), change 0.15 dB, but max |dGamma| 0.045 > 0.03 -> two-mesh rule FAILED (item 2); not READY_FOR_HFSS_REVIEW. xfine est. > 4000 s: owner decision. Next: P01_R2 with microstrip feed. Validator APROBAR CON RESERVAS. Orchestrator Opus 5.5. Report reports/claude_run_024.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "run": 25,
+        "id": "CLAUDE-RUN-025",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P01_MS1 (plain rectangle L 7.322, same FR4 h 2.07 + 50 ohm line + lambda/4 as US3_MS3, lumped port at line start, base mesh): worst -8.34 dB, 440/501 <= -10 dB, eta 0.72-0.76, Gr 3.99-4.80 dBi; equivalent to US3_MS3 in matching, better eta/gain. Fine mesh next. Validator APROBAR CON RESERVAS. Orchestrator Opus 5.5. Report reports/claude_run_025.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-05",
+        "run": 26,
+        "id": "CLAUDE-RUN-026",
+        "mode": "routine (scheduled)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P01_MS1 fine mesh: worst -8.17 dB, max |dGamma| 0.029, edges 9.65/6.07 MHz -> BOUNDED_SENSITIVITY_PASS (tight margins). Campaign READY_FOR_HFSS_REVIEW (P01_MS1). Claude rounds stop until human review. Validator APROBAR CON RESERVAS. Orchestrator Opus 5.5. Report reports/claude_run_026.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-13",
+        "run": 27,
+        "id": "CLAUDE-RUN-027",
+        "mode": "session (owner request after HFSS review)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P01_MS2 (transformer 7.1 mm): base mesh worst -10.42 dB. Report reports/claude_run_027.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-13",
+        "run": 28,
+        "id": "CLAUDE-RUN-028",
+        "mode": "session (owner request after HFSS review)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P01_MS2 passes the pre-registered -10 dB two-mesh rule; campaign READY_FOR_HFSS_REVIEW. Report reports/claude_run_028.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-13",
+        "run": 29,
+        "id": "CLAUDE-RUN-029",
+        "mode": "session (owner request after HFSS patch_L sweep)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_MS4 (u_Wu 4.4->7.0) negative: patch mode 7.92->6.83 GHz, channel worst -1.37 dB; validator APROBAR CON RESERVAS. Report reports/claude_run_029.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-14",
+        "run": 30,
+        "id": "CLAUDE-RUN-030",
+        "mode": "session (owner request: inset tests in openEMS)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "P01_IN1 direct inset negative (channel worst -2.06 dB); validator APROBAR CON RESERVAS. Report reports/claude_run_030.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-15",
+        "run": 31,
+        "id": "CLAUDE-RUN-031",
+        "mode": "session (owner request: U-slot + buried parasitic)",
+        "em_status": "EM_SIMULATED (truncated)",
+        "em_solves_executed": 1,
+        "event": "US3_PS1: second resonance, in-channel -10 dB unchanged, eta 0.23 at f0; validator APROBAR CON RESERVAS. Report reports/claude_run_031.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-15",
+        "run": 32,
+        "id": "CLAUDE-RUN-032",
+        "mode": "session (diagnostic re-run of 031)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS1 converged (-50.84 dB at 33228 steps): eta dip confirmed, channel worst -5.96 dB; validator APROBAR CON RESERVAS. Report reports/claude_run_032.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-15",
+        "run": 33,
+        "id": "CLAUDE-RUN-033",
+        "mode": "session (owner decision: inverted stack)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS2: no eta dip in channel, detuned (main resonance 7.085 GHz, worst -2.73 dB); validator OK con observaciones. Report reports/claude_run_033.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-15",
+        "run": 34,
+        "id": "CLAUDE-RUN-034",
+        "mode": "session (refinement 1 of US3_PS2)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS3: H1 and H2 met (-7.59 dB, eta 0.654-0.746), not better than P01_MS2; validator OK con observaciones. Report reports/claude_run_034.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-15",
+        "run": 35,
+        "id": "CLAUDE-RUN-035",
+        "mode": "session (US3_PS3 base mesh with new mesh hints)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS3 base with new hints: worst -8.10 dB, eta 0.665-0.743; fine-mesh run 036 not launched (owner decision pending, then path changed).",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 36,
+        "id": "CLAUDE-RUN-036",
+        "mode": "session (owner decision: shift both US3_PS1 modes up)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS4: S11 -10.66 dB worst in channel, eta valley 0.24 at 8.14 GHz; validator OK con observaciones. Report reports/claude_run_036.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 37,
+        "id": "CLAUDE-RUN-037",
+        "mode": "session (design-reviewer proposal approved by the owner)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS5: eta 0.64-0.69 without valley, worst S11 -6.87 dB (shifted up). Report reports/claude_run_037.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 38,
+        "id": "CLAUDE-RUN-038",
+        "mode": "session (design-reviewer decision rule applied to 037)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS6: worst S11 -8.16 dB, 88% of channel <= -10 dB, eta 0.59-0.68 without valley; not better than P01_MS2. Report reports/claude_run_038.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 39,
+        "id": "CLAUDE-RUN-039",
+        "mode": "session (US3_PS6 decision rule: fine-mesh two-mesh check)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS6 fine mesh: worst S11 -8.14 dB (base -8.16), minimum still 8.005 GHz, eta 0.63-0.69; two meshes agree within |dGamma| <= 0.056 (partial; convergence not demonstrated). Report reports/claude_run_039.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 40,
+        "id": "CLAUDE-RUN-040",
+        "mode": "session (owner request: US3_PS4_1)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS4_1 (Wp 7 mm): a single S11 minimum at 7.972 GHz (cause not identified), worst S11 -7.71 dB, eta 0.52-0.68. Guide model failed (H0 false). Report reports/claude_run_040.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 41,
+        "id": "CLAUDE-RUN-041",
+        "mode": "session (owner decision: HFSS scripts of US3_PS6)",
+        "em_status": "NOT_RUN (no FDTD; HFSS scripts)",
+        "em_solves_executed": 0,
+        "event": "US3_PS6 HFSS element and 1x5 arr_d scripts (c851b05); design-reviewer: READY WITH MINOR CORRECTIONS, applied (64f3d00).",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 42,
+        "id": "CLAUDE-RUN-042",
+        "mode": "session (owner request: Wp sweep 10/9/8 mm)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS4_2 (Wp 10 mm), base mesh. Report reports/claude_run_044.md. A first launch was aborted after a few seconds (monitor time cap), no results; folder deleted and relaunched.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 43,
+        "id": "CLAUDE-RUN-043",
+        "mode": "session (owner request: Wp sweep 10/9/8 mm)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS4_3 (Wp 9 mm), base mesh. Report reports/claude_run_044.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 44,
+        "id": "CLAUDE-RUN-044",
+        "mode": "session (owner request: Wp sweep 10/9/8 mm)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS4_4 (Wp 8 mm), base mesh. Report reports/claude_run_044.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 45,
+        "id": "CLAUDE-RUN-045",
+        "mode": "session (owner request: patch_L refinement)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS4_2_1 (Wp 10 mm, patch_L 6.222), base mesh. Report reports/claude_run_046.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 46,
+        "id": "CLAUDE-RUN-046",
+        "mode": "session (owner request: patch_L refinement)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS6_1 (patch_L 6.32), base mesh. Report reports/claude_run_046.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 47,
+        "id": "CLAUDE-RUN-047",
+        "mode": "session (owner request: fine mesh of US3_PS4_2_1)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS4_2_1 fine mesh: whole channel <= -10 dB (worst -11.38), upper minimum moved +53 MHz vs base (|dGamma| 0.20). Report reports/claude_run_047.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "run": 48,
+        "id": "CLAUDE-RUN-048",
+        "mode": "session (owner request: US3_PS6_2, patch_L 6.38)",
+        "em_status": "EM_SIMULATED",
+        "em_solves_executed": 1,
+        "event": "US3_PS6_2: minimum 7.953 GHz, worst -8.23 dB (upper edge); H1 false, not sent to design-reviewer. Report reports/claude_run_048.md.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "event": "Owner raised the round limit of the Claude routine from 50 to 60 (chat, 2026-11-16) and asked for: US3_PS4_2_1 fine mesh, its HFSS scripts with design-reviewer verification, and US3_PS6_2 (patch_L 6.38 mm; to design-reviewer only if the whole channel is <= -10 dB).",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-16",
+        "event": "Owner raised the round limit of the Claude routine from 40 to 50 (chat, 2026-11-16) and asked for US3_PS4_1 (US3_PS4 with the lower resonance moved up) after round 39.",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-19",
+        "event": "Rounds 49-50: US3_PS6_3 and US3_PS6_4 (owner request to widen US3_PS6). US3_PS6_4 meets worst S11 <= -10 dB on the base mesh; fine mesh needs owner permission (> 1800 s).",
+        "status_after": "ACTIVE"
+      },
+      {
+        "date": "2026-11-19",
+        "event": "Round 51: fine mesh of US3_PS6_4 with owner authorisation beyond 1800 s (3012 s wall).",
+        "status_after": "ACTIVE"
+      }
+    ],
+    "consecutive_runs_without_solver": 0,
+    "candado": null,
+    "required_orchestrator_model": "Opus 5.5"
+  }
+}

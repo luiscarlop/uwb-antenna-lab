@@ -1,0 +1,404 @@
+{
+  "id": "US3_PS6_4",
+  "family": "USLOT_MSL_H207_PARASITIC",
+  "base_design": "US3_PS6",
+  "evidence": "GEOMETRY_ONLY",
+  "substrate": {
+    "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ]
+  },
+  "metal": {
+    "conductivity_S_m": 58000000.0,
+    "thickness_m": 3.5e-05
+  },
+  "patch_polygon_mm": [
+    [
+      -7.0,
+      -3.145
+    ],
+    [
+      7.0,
+      -3.145
+    ],
+    [
+      7.0,
+      3.145
+    ],
+    [
+      -7.0,
+      3.145
+    ]
+  ],
+  "slots_polygon_mm": [
+    [
+      [
+        -2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        1.95
+      ],
+      [
+        1.4,
+        1.95
+      ],
+      [
+        1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        1.95
+      ],
+      [
+        -2.2,
+        1.95
+      ]
+    ]
+  ],
+  "feed": {
+    "type": "microstrip_edge_qw",
+    "z0_ohm": 50,
+    "line_width_mm": 3.92,
+    "line_x_mm": 0.0,
+    "line_start_y_mm": -13.0,
+    "line_end_y_mm": -10.395,
+    "connector": {
+      "type": "none",
+      "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed: 50 ohm line (w 3.92 mm, y -13 -> -10.395, length 2.605 mm) + lambda/4-type transformer (w 1.00 mm, l 7.25 mm, y -10.395 -> -3.145) touching the radiating edge y=-3.145 (no inset, no notch)."
+    },
+    "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+    "transformer_width_mm": 1.0,
+    "transformer_length_mm": 7.25,
+    "transformer_start_y_mm": -10.395,
+    "patch_edge_y_mm": -3.145,
+    "feed_polygons_mm": [
+      [
+        [
+          -1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -10.395
+        ],
+        [
+          -1.96,
+          -10.395
+        ]
+      ],
+      [
+        [
+          -0.5,
+          -10.395
+        ],
+        [
+          0.5,
+          -10.395
+        ],
+        [
+          0.5,
+          -3.145
+        ],
+        [
+          -0.5,
+          -3.145
+        ]
+      ]
+    ],
+    "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 1.00 mm -> Zt 94.9 ohm; Kirschning-Jansen eps_eff(f0) 3.238, 17.26 deg/mm -> 125.1 deg at 7.25 mm (US3_PS6: 0.80 mm, 102.5 ohm, 113.2 deg) (GUIDE_MODEL)"
+  },
+  "uslot_params": {
+    "L_mm": 6.29,
+    "W_mm": 14.0,
+    "s_over_L": 0.34,
+    "Wu_mm": 4.4,
+    "Lu_mm": 2.65,
+    "t_mm": 0.8,
+    "y0_mm": -0.7,
+    "open_toward": "+y"
+  },
+  "parasitic_patches": [
+    {
+      "name": "par1",
+      "z_mm": 1.035,
+      "polygon_mm": [
+        [
+          -6.79,
+          -2.91
+        ],
+        [
+          6.79,
+          -2.91
+        ],
+        [
+          6.79,
+          4.14
+        ],
+        [
+          -6.79,
+          4.14
+        ]
+      ]
+    }
+  ],
+  "parasitic_params": {
+    "Wp_mm": 13.58,
+    "Lp_mm": 7.05,
+    "x_centre_mm": 0.0,
+    "y_min_mm": -2.91,
+    "y_max_mm": 4.14,
+    "y_centre_mm": 0.615,
+    "z_mm": 1.035,
+    "h2_parasitic_to_patch_mm": 1.035,
+    "overhang_beyond_patch_plus_y_mm": 0.995,
+    "inset_from_patch_edge_minus_y_mm": 0.235,
+    "inset_from_patch_edge_x_mm": 0.21,
+    "clearance_to_transformer_mm": 0.235,
+    "note": "Floating sheet (no via, no probe), same metal as the patch. US3_PS6 parasitic (Lp 7.05, y -2.91...4.14, z 1.035) with ONLY the width scaled with the patch: Wp 11.0 -> 13.58 mm, i.e. the same 0.21 mm x inset from the patch side edges as US3_PS6 (0.2106). Lp, y edges (-2.91 must not be moved: prepare grading check) and z unchanged. The patch edge is y=-3.145 (patch_L/2); the transformer ends there on z=h and the sheet (z=1.035) starts 0.235 mm above it in y.",
+    "h1_ground_to_parasitic_mm": 1.035,
+    "parasitic_area_note": "area 95.74 mm2 (13.58 x 7.05)"
+  },
+  "geometry_checks": {
+    "patch_mm": [
+      14.0,
+      6.29
+    ],
+    "parasitic_mm": [
+      13.58,
+      7.05
+    ],
+    "parasitic_y_range_mm": [
+      -2.91,
+      4.14
+    ],
+    "par_clearance_to_transformer_plan_mm": 0.235,
+    "slot_copper_to_patch_edge_mm": {
+      "plus_y": 1.195,
+      "minus_y": 2.445,
+      "x_side": 4.8
+    },
+    "overhang_plus_y_mm": 0.995,
+    "parasitic_area_mm2": 95.74,
+    "parasitic_fraction_under_patch_pct": 85.9,
+    "parasitic_fraction_note": "plan-geometric (6.055/7.05); the prepare tool reports 85.8 %",
+    "parasitic_inside_patch_x": "yes: parasitic x +-6.79 < patch x +-7.0 (0.21 mm inset each side, as US3_PS6)",
+    "feed_mm": {
+      "line_50ohm_length": 2.605,
+      "transformer": [
+        1.0,
+        7.25
+      ],
+      "line_width": 3.92
+    },
+    "u_slot_unchanged_absolute_mm": {
+      "Wu": 4.4,
+      "Lu": 2.65,
+      "t": 0.8,
+      "y0": -0.7
+    },
+    "board_margin_mm": "26 x 26 mm board: patch side edge x=+-7.00 is 6.00 mm from the board edge x=+-13 (parasitic +-6.79: 6.21 mm); patch top y=3.145 is 9.855 mm and parasitic top y=4.14 is 8.86 mm from y=+13; PML box +-35 mm unchanged. The x margin is 6.0 mm (0.16 lambda0) vs 7.29 mm in US3_PS6; the finite ground-plane effect on the pattern is not quantified.",
+    "min_line_length_note": "50 ohm section shortened 3.255 -> 2.605 mm (0.66 x its width 3.92 mm, 1.26 x h) because the transformer is 0.65 mm longer; the lumped port sits closer to the 3.92 -> 1.0 mm step (UNVALIDATED effect on the port-plane Zin)."
+  },
+  "rationale": "Owner request 2026-11-19 after round 049 (US3_PS6_3, Lp 7.25: worst S11 -10.94 dB and minimum 7.928 GHz, but eta_rad falls to 0.34 at 8.2368 GHz because the poorly radiating parasitic mode came back into the upper channel, tau_g ripple 474 ps; H2 false). Goal: worst S11 <= -10 dB and minimum towards 7.9 GHz while keeping the flat eta >= 0.55 of US3_PS6 (Lp 7.05, no dark mode in the channel). Idea: LOWER THE Q OF THE MAIN RESONANCE by radiating more per stored energy, with the parasitic unchanged in length. Options ranked with GUIDE numbers (see computation): (d) wider patch W 11.42 -> 14.0 mm (Lp, y edges, z of the parasitic unchanged; Wp scaled to keep the 0.21 mm inset); (c) U-slot Wu 4.4 -> 5.0 mm. (d) is chosen because (i) the cavity model gives a quantitative lever: the radiation conductance per unit width G_rad/W grows 1.19x (G1+G12 per mm, W/lambda0 0.30 -> 0.37), so Q_total falls about 8-11% (dielectric loss tan_delta 0.017 does not scale), i.e. the -10 dB band grows by about 10% (+35-50 MHz) at equal impedance level; (ii) the Y-scaling guide on the US3_PS6 de-embedded Zin predicts +0.5...+1.5 dB on the worst S11 at a minimum of 7.925 GHz once the lambda/4 transformer is re-tuned to the new edge resistance (about 170 -> 118 ohm); (iii) the mode structure is not touched: scaling the parasitic with the patch keeps the (patch, parasitic) coupling per unit width and the detuning to the dark mode (Lp unchanged), whereas narrowing it vs the patch is known (PS4_x Wp sweep) to change the coupling, so Wp/W is kept at 0.97. (c) has NO quantitative model and one strong warning: Wu 4.4 -> 7.0 (US3_MS4) moved the resonance by hundreds of MHz (Re Zin peak 6.83 GHz) and destroyed the match (-1.4 dB), so Wu +0.6 is expected to shift the resonance by tens to about 250 MHz in an unknown direction of Q; it stays as the fallback US3_PS6_5. HONEST LIMIT: the guide does NOT reach -10 dB: predicted worst about -8.9 dB (range -7.6...-10.2) with the minimum at 7.925 GHz, and about -9.5 at a minimum of 7.97 GHz; the owner's two goals compete (see computation.min_vs_worst_tradeoff). Round 049 showed that the guide underestimates the parasitic lever (it predicted -9.4, EM gave -10.94), so a part of the unexplained gain may also exist here, but nothing supports it. GEOMETRY_ONLY; no S11, efficiency, gain or group delay is claimed.",
+  "purpose": "Lower the Q of the main resonance of US3_PS6 (Lp 7.05, no dark mode in the channel) by widening the patch 11.42 -> 14.0 mm (parasitic Wp scaled to 13.58 mm, Lp unchanged) and re-tuning the lambda/4 transformer (w 1.00, l 7.25 mm); openEMS base + fine mesh.",
+  "changed_vs_previous": {
+    "US3_PS6": {
+      "patch_W_mm": [
+        11.421266,
+        14.0
+      ],
+      "parasitic_Wp_mm": [
+        11.0,
+        13.58
+      ],
+      "transformer_w_mm": [
+        0.8,
+        1.0
+      ],
+      "transformer_l_mm": [
+        6.6,
+        7.25
+      ],
+      "derived": {
+        "line_50ohm_length_mm": [
+          3.255,
+          2.605
+        ],
+        "transformer_start_y_mm": [
+          -9.745,
+          -10.395
+        ],
+        "parasitic_area_mm2": [
+          77.55,
+          95.74
+        ],
+        "parasitic_fraction_under_patch_pct": [
+          85.9,
+          85.9
+        ],
+        "Zt_ohm": [
+          102.5,
+          94.9
+        ],
+        "transformer_electrical_length_deg_f0": [
+          113.2,
+          125.1
+        ]
+      },
+      "note": "One physical change (patch width W, with its parasitic scaled to the same x inset 0.21 mm) plus the two consequent transformer parameters re-tuned to the lower edge resistance (documented multi-change exception: width alone would leave the transformer mismatched, guide worst -7.4 dB). patch_L 6.29 (edge y=-3.145), Lp 7.05, parasitic y -2.91...4.14, z 1.035, U-slot (absolute Wu 4.4, Lu 2.65, t 0.8, y0 -0.7), material, board 26 x 26 mm and port unchanged. All derived metadata recomputed from the polygons; the stale text values of variants/US3_PS6.errata.json were NOT copied."
+    }
+  },
+  "pre_registered_hypothesis": {
+    "H0": "Single S11 minimum at 7.93 GHz in openEMS base mesh, range 7.87-7.99 GHz (HFSS would be about 50 MHz lower, 7.88). Derivation (GUIDE_MODEL, not an EM result): 038 minimum 8.005 GHz; the cavity eps_eff(W) rises 3.654 -> 3.721 (+1.8%, f -0.9%, i.e. -45...-73 MHz with the empirical sensitivity 0.6-1.0 of the cavity one), minus an unquantified positive shift from the U-slot becoming relatively smaller (Wu/W 0.385 -> 0.31); the Y-scaling guide says the minimum of the retuned design needs a resonance shift of about +40-60 MHz down to reach 7.925, so patch_L stays 6.29 (patch_L slope 5.7 MHz per 0.01 mm, calibrated 038/046/048, would correct +-20 MHz per +-0.035 mm). Band edges 7.7376 / 8.2368 GHz expected about -11.3 dB (range -9.8...-13) and about -8.9 dB (range -7.5...-10.3). Contiguous -10 dB band about 485 MHz (range 440-540). No second minimum in the channel (Lp unchanged, dark mode as in 038/048).",
+    "H1": "Worst S11 over the whole channel (1 MHz grid, 501 samples) <= -10 dB (owner target; 038 -8.16, 048 -8.23, 049 -10.94 dB). GUIDE_MODEL expectation: NOT reached, worst about -8.9 dB (range -7.6...-10.2), at 8.2368 GHz. Reason: a minimum at 7.925 GHz needs a contiguous band >= 2 x (8.2368 - (7.925+0.0175)) = 589 MHz; the guide gives about 485 MHz (+35 MHz from the Q fall, +about 0 from the impedance level after the retune). Probability of H1 about 15-20%: it needs the real Q fall to be about 2x the cavity estimate or the minimum to stay near 7.96-7.97 GHz (guide worst -9.5 there). The guide underestimated the parasitic lever in round 049 (predicted -9.4, EM -10.94), so an upside is not excluded.",
+    "H2": "eta_rad >= 0.55 over the 11 NF2FF points and realized broadside gain >= 2 dBi, no valley. 038: eta 0.592-0.683, gain 3.10-4.23 dBi; 048 (minimum 52 MHz lower): eta 0.526-0.683, gain 2.08-4.22 dBi; 049 (H2 false): eta 0.342 at 8.2368, gain 0.65 dBi. GUIDE_MODEL: G_rad/W +19% raises the main-mode plateau 0.68 -> about 0.72 and the upper-edge value of a 048-like detuning 0.526 -> about 0.57 (loss/radiation ratio divided by 1.19); expected eta 0.57-0.73 over the channel with the minimum at the upper edge 8.2368 GHz (range 0.50-0.62: marginal, about 50% to stay >= 0.55), realized gain min about 3.0 dBi (range 2.2-3.8). tau_g broadside ripple expected 100-250 ps (038 91 ps, 049 474 ps; no model, qualitative: no dark-mode inflection inside the channel). A valley below 0.45 anywhere in the channel means the dark mode moved down (the wider parasitic couples more): then the parasitic width is the cause.",
+    "decision_rule": "Compare with 038/039/048/049 on the same grid. (1) H1 true and eta_min >= 0.55 and gain >= 2 dBi -> run the fine mesh (needs owner approval: fine budget exceeds the 1800 s abort rule) and ask the owner whether to simulate in HFSS now; if yes, design-reviewer (Fable 5.2) on this design. (2) H1 false, worst <= -9.3 dB, minimum 7.90-7.95, eta_min >= 0.55 -> the Q fall works but is not enough: next one change only, US3_PS6_5 = this design with Lp 7.05 -> 7.15 (half of the 049 step; 049 showed the parasitic length is the strong lever, the dark mode cost is the limit) or W 14.0 -> 14.5. (3) eta valley < 0.45 in the channel or worst > -8.0 dB -> abandon (d): US3_PS6_5 = US3_PS6 with Wu 5.0 mm (option c, patch_L to be re-calibrated). (4) minimum outside 7.87-7.99 GHz -> recalibrate patch_L with 5.7 MHz per 0.01 mm (needs a new mesh-hint check) before any other change. Never claim H1 from a single mesh: US3_PS4_2_1 showed |dGamma| up to 0.20 between meshes."
+  },
+  "computation": {
+    "evidence": "GUIDE_MODEL (not an EM result). Scripts: scratchpad ana4/cav.py (cavity radiation conductance), ana4/ym.py, run1.py-run4.py (Y-scaling of the de-embedded Zin of 038/039/046/048/HFSS) on top of scratchpad ana/lib.py, model.py, grid.py of the previous session; transmission-line functions as em/circuit_fits/US3_MS3_qw_design.py (Hammerstad-Jensen Z0 with Wheeler 35 um, Kirschning-Jansen eps_eff, ideal lossless TEM lines, eps_r 4.4, h 2.07 mm). Honest uncertainty: worst S11 +-1.4 dB, band +-70 MHz (retrospective test of the transmission-line step on P01_MS1/MS2: 0.6-1.4 dB and +-70 MHz); the width->Y scaling and the radiation-conductance ratio are NOT validated against any EM run (no earlier variant changed W); a width change of the transformer is not validated either (junction not modelled).",
+    "data_used": {
+      "openEMS": "em/US3_PS6_OPENEMS_038, em/US3_PS6_FINE_OPENEMS_039, em/US3_PS6_1_OPENEMS_046, em/US3_PS6_2_OPENEMS_048 (s11_complex.csv zin at port plane y=-13 mm, 1 MHz grid; nf2ff_summary.json eta_rad for 038/039/046/048), em/US3_PS6_3_OPENEMS_049 (nf2ff_summary.json, run_numeric.json: result of the parasitic Lp lever)",
+      "HFSS": "hfss/results/results_US3_PS6/US3_PS6/US3_PS6.s1p"
+    },
+    "cavity_radiation_conductance": {
+      "formula": "Balanis cavity model: G1 = 1/(120 pi^2) int[sin(k0 W/2 cos t)/cos t]^2 sin^3 t dt, mutual G12 with J0(k0 L_eff sin t), L_eff = 8.11 mm (6.29 + 2 x 0.909 Hammerstad dL), f0 7.9872 GHz",
+      "G1_plus_G12_mS": {
+        "W_11.421": 1.61,
+        "W_12.5": 1.905,
+        "W_13.0": 2.048,
+        "W_13.5": 2.195,
+        "W_14.0": 2.346,
+        "W_14.5": 2.5
+      },
+      "rho_Grad_per_W_vs_W11.421": {
+        "12.5": 1.081,
+        "13.0": 1.118,
+        "13.5": 1.154,
+        "14.0": 1.189,
+        "14.5": 1.223
+      },
+      "Q_reading": "Y of the whole stack is scaled by s = W/11.421 (C and conductances ~ W); only the radiating part (eta ~ 0.68) gets the extra factor rho -> Q_total x 1/(eta*rho + 1 - eta): -9.5% (W 13.5), -11.7% (W 14.0), -13% (W 14.5); the cavity absolute resonance of the model (9.7 GHz) does not match the stack (8.0 GHz, U-slot, parasitic): only ratios are used."
+    },
+    "resonance_shift_W": {
+      "eps_eff_Hammerstad": {
+        "W_11.421": 3.654,
+        "W_13.5": 3.709,
+        "W_14.0": 3.721
+      },
+      "dL_mm": {
+        "W_11.421": 0.909,
+        "W_14.0": 0.92
+      },
+      "f_shift_MHz": "-45 to -73 (eps_eff only, sensitivity 0.6-1.0 of the cavity one); U-slot dilution (Wu/W 0.385 -> 0.31) acts the other way and is not quantified",
+      "TM01_f_GHz": "c/(2 W sqrt(eps_eff)) = 5.55 GHz at W 14.0: odd in x, not excited by the symmetric feed; TM20/TM11 above 11.9 GHz: no extra mode in the channel"
+    },
+    "edge_impedance": {
+      "Z_edge_f0_ohm": {
+        "038_deembedded": "170.8+85.1j",
+        "W14_Y_scaled_rho1.19": "118.2+36.2j"
+      },
+      "reading": "R_edge falls about 30% (s = 1.226 and rho 1.19): with the unchanged transformer the guide worst is -7.4 dB at a minimum of 7.925 GHz (retune needed)"
+    },
+    "options_ranked": {
+      "d_wider_patch": "chosen; guide +0.5...+1.5 dB worst, +35...+50 MHz band, eta plateau +0.04",
+      "c_Wu_5.0": "no model; evidence only US3_MS4 (Wu 7.0: resonance moved about -1.1 GHz, worst -1.4 dB); not chosen"
+    },
+    "W_scan_retuned_transformer_mean_worst_dB_5datasets_minimum_free": {
+      "11.421": -8.82,
+      "13.0": -9.36,
+      "13.5": -9.44,
+      "14.0": -9.55,
+      "14.5": -9.62,
+      "note": "best (w,l) per W; diminishing return +0.1 dB per +0.5 mm; W 14.0 is the middle of the owner range 13.5-14.5 and keeps 6.0 mm of board margin (14.5: 5.75 mm)"
+    },
+    "transformer_retune_W14.0": {
+      "chosen": {
+        "w_mm": 1.0,
+        "l_mm": 7.25,
+        "Zt_ohm": 94.9,
+        "deg_f0": 125.1
+      },
+      "length_only_alternative": "w 0.8 l 7.75 (mean worst -9.26 vs -9.55 for w 1.0 l 7.25; the 50 ohm line would be only 2.1 mm); w 1.0 l 7.0 gives -9.2 (line 2.9 mm) and is the fallback if the short 50 ohm line is a concern",
+      "caveat": "a Zt/width change is unvalidated (junction 3.92 -> 1.00 mm is not modelled); the length of the 50 ohm port line is 2.605 mm vs 3.21-3.255 mm in 038-048"
+    },
+    "model_prediction_W14.0_w1.0_l7.25_minimum_at_7.925_GHz": {
+      "rho_1.19": {
+        "038": {
+          "worst_dB": -8.2,
+          "edges_dB": [
+            -11.3,
+            -8.2
+          ],
+          "bw10_MHz": 485,
+          "band_GHz": [
+            7.698,
+            8.183
+          ]
+        },
+        "039": {
+          "worst_dB": -9.47,
+          "edges_dB": [
+            -11.4,
+            -9.5
+          ],
+          "bw10_MHz": 522
+        },
+        "046": {
+          "worst_dB": -8.11,
+          "bw10_MHz": 479
+        },
+        "048": {
+          "worst_dB": -8.12,
+          "bw10_MHz": 470
+        },
+        "HFSS": {
+          "worst_dB": -8.7,
+          "bw10_MHz": 450
+        }
+      },
+      "rho_1.0": "worst -7.4 ... -8.7 (dB), bw 414-508 MHz",
+      "rho_1.4": "worst -8.6 ... -9.4 (dB), bw 476-508 MHz"
+    },
+    "min_vs_worst_tradeoff": {
+      "rule": "worst <= -10 dB over 499.2 MHz needs a contiguous band >= 2 x (8.2368 - (f_min + 0.0175 GHz)): 589 MHz at 7.925, 549 at 7.945, 509 at 7.965",
+      "guide_at_minimum_7.97_GHz": "worst about -9.5 dB (mean of 5 datasets, rho 1.19: 038 -9.79, 039 -10.11, 046 -9.65, 048 -9.46, HFSS -8.88), bw about 450-525 MHz",
+      "reading": "the two owner goals (minimum 7.90-7.95 GHz, worst <= -10 dB) compete with the Q reachable by W alone; 049 reached both with the parasitic (band 555 MHz, centre 7.9925 GHz, i.e. 65 MHz above the minimum, not 17 MHz), which the guide did not predict"
+    }
+  },
+  "manufacturability": {
+    "layers": "3 copper layers (L1 patch + feed + U-slot at z=h, L2 floating parasitic at z=1.035 mm, L3 ground at z=0) and 2 dielectric layers of ~1.035 mm each: a standard 3-copper-layer FR4 multilayer (core + prepreg/core). Same stack-up as US3_PS6.",
+    "vias": "none: the parasitic is floating (no probe, no plated through hole in the antenna region); the feed is a planar microstrip.",
+    "min_feature_mm": "U-slot arms 0.8 mm and gaps unchanged; parasitic a solid rectangle 13.58 x 7.05 mm; transformer 1.00 mm wide (wider than the 0.80 mm of US3_PS6: easier to etch); smallest planar gap: 0.235 mm in y between the transformer end and the sheet edge (different layers, z offset 1.035 mm, as in US3_PS6); no copper feature < 0.8 mm.",
+    "stackup_note": "Dielectric thickness and the exact z of the buried copper depend on the fabricator's core/prepreg library (NOT verified against a datasheet). The model assumes ONE homogeneous eps_r=4.4 over 2.07 mm, so the fabricator must give the real stackup.",
+    "tolerances_to_specify": "patch_L (5.7 MHz per 0.01 mm, +-0.05 mm = +-28 MHz); patch W (about -0.8 MHz per +0.1 mm by the eps_eff guide, weak); transformer width (+-0.05 mm = +-1.8 ohm in Zt) and length (17.3 deg/mm, +-0.1 mm = +-1.7 deg); layer registration and z_par (moves the parasitic coupling and the dark mode).",
+    "risks": "(1) the dark mode of the parasitic may come down with the wider parasitic (PS4_x Wp sweep: wider = deeper eta valley); (2) the minimum at 7.925 GHz sits 0.5 dB closer to the dark mode than 038 (eta 0.526 at 8.2368 in 048); (3) the 50 ohm port line is 2.6 mm (0.66 w): port-to-step distance shorter than in all earlier runs; (4) 6.0 mm board margin in x (7.29 mm in US3_PS6): finite ground effects not quantified; (5) homogeneous provisional FR4 model; a floating inner sheet cannot be inspected or tuned after lamination."
+  },
+  "mesh_hint_lines_mm": {
+    "y": [
+      -0.215,
+      -3.06
+    ]
+  },
+  "mesh_hint_note": "MESH ONLY, no geometry effect. Same hints as US3_PS6 (y -0.215 inside the U base; y -3.06 near the patch edge -3.145 / parasitic edge -2.91). Prepare-only check 2026-11-19 (--mesh base and fine, --edge-port lumped --nf2ff --nf2ff-points 11 --excitation-fc-hz 2.5e9 --max-timesteps 60000, taskset -c 0,1): both pass the 1.5 grading with the original hints, no hint change needed. Base: x 160 / y 198 / z 84 cells (2.66 M, 2.72 M nodal), max neighbour ratio x 1.385 / y 1.409 / z 1.326, min step x 0.181 / y 0.083 / z 0.259 mm, max step 0.5 / 0.5 / 0.79 mm; fine: x 218 / y 228 / z 110 (5.47 M cells, 5.57 M nodal), ratios 1.400 / 1.457 / 1.305, min step 0.151 / 0.058 / 0.207 mm. Effective mesh vs US3_PS6_3 (049: x 156 / y 171 / z 84, 2.24 M cells): +4 x lines (patch +-7.0, parasitic +-6.79, transformer +-0.5 fixed lines; the 14 mm patch needs about 0.5 mm steps over +-7 mm), +27 y lines because the 50 ohm line section is 2.605 mm long (y -13 -> -10.395) and the transformer is 7.25 mm: the hard lines at the port (y -13), at the transformer start (-10.395) and at the patch edge (-3.145) keep a 0.083-0.10 mm step in the line section to satisfy the 1.5 grading; the z mesh is unchanged. Budget (prepare, base): 2.72 M nodal cells, RAM x2 margin 0.97 GiB (measured basis), about 14000 steps, engine about 994 s, external wall limit 1492 s, launch allowed; budget (fine): 5.57 M nodal, RAM x2 1.96 GiB, about 2670 s > the 1800 s abort rule, so the fine mesh is NOT allowed by the rule and needs an explicit owner override of the time limit (same as the fine prepare of US3_PS6_3). Prepared trees (scratchpad): prep_US3_PS6_4_base, prep_US3_PS6_4_fine. Any later edit of the geometry (patch_L, transformer, W) needs a new prepare check.",
+  "owner_request_2026_11_19": "Owner after round 049 (US3_PS6_3, H2 false): from US3_PS6 (Lp 7.05) lower the Q of the main resonance without a second mode in the channel (options d wider patch / c wider U-slot), minimum 7.90-7.95 GHz (openEMS), worst S11 <= -10 dB, eta >= 0.55 on the 11 points; 49 of 60 rounds used, one FDTD per round."
+}

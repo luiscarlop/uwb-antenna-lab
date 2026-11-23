@@ -1,0 +1,90 @@
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using CMAKE_INSTALL_PREFIX: /workspace/openems-install
+-- Build AppCSXCAD: NO
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/tmp.jP9zuRALs2
+[  4%] Creating directories for 'fparser'
+[  8%] No download step for 'fparser'
+[ 12%] No update step for 'fparser'
+[ 16%] No patch step for 'fparser'
+[ 20%] Performing configure step for 'fparser'
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/tmp.jP9zuRALs2/fparser-prefix/src/fparser-build
+[ 25%] Performing build step for 'fparser'
+[ 33%] Building CXX object CMakeFiles/fparser.dir/fparser.cc.o
+[ 66%] Building CXX object CMakeFiles/fparser.dir/fpoptimizer.cc.o
+[100%] Linking CXX shared library libfparser.so
+[100%] Built target fparser
+[ 29%] Performing install step for 'fparser'
+[100%] Built target fparser
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /workspace/openems-install/lib/libfparser.so.4.5.1
+-- Installing: /workspace/openems-install/lib/libfparser.so.4
+-- Installing: /workspace/openems-install/lib/libfparser.so
+-- Installing: /workspace/openems-install/include/fparser.hh
+[ 33%] Completed 'fparser'
+[ 33%] Built target fparser
+[ 37%] Creating directories for 'CSXCAD'
+[ 41%] No download step for 'CSXCAD'
+[ 45%] No update step for 'CSXCAD'
+[ 50%] No patch step for 'CSXCAD'
+[ 54%] Performing configure step for 'CSXCAD'
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/local/bin/git (found version "2.52.0")
+-- Found Git repository, CSXCAD version tag: 626b99f
+-- FPARSER_ROOT_DIR: /workspace/openems-install
+-- fparser_INCLUDE_DIR: /workspace/openems-install/include
+-- TinyXML_ROOT_DIR 
+-- Found TinyXML: /workspace/openems-deps/usr/lib/x86_64-linux-gnu/libtinyxml.so
+-- TinyXML_INCLUDE_DIR: /workspace/openems-deps/usr/include
+-- TinyXML_LIBRARY: /workspace/openems-deps/usr/lib/x86_64-linux-gnu/libtinyxml.so
+CMake Warning (dev) at CMakeLists.txt:107 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  Environment variable HDF5_ROOT is set to:
+
+    /workspace/openems-deps/usr
+
+  For compatibility, CMake is ignoring the variable.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Error at /workspace/openems-install/venv/lib/python3.12/site-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:233 (message):
+  Could NOT find HDF5 (missing: HDF5_LIBRARIES HDF5_INCLUDE_DIRS
+  HDF5_HL_LIBRARIES C HL)
+Call Stack (most recent call first):
+  /workspace/openems-install/venv/lib/python3.12/site-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:603 (_FPHSA_FAILURE_MESSAGE)
+  /workspace/openems-install/venv/lib/python3.12/site-packages/cmake/data/share/cmake-3.31/Modules/FindHDF5.cmake:1027 (find_package_handle_standard_args)
+  CMakeLists.txt:107 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+make[2]: *** [CMakeFiles/CSXCAD.dir/build.make:93: CSXCAD-prefix/src/CSXCAD-stamp/CSXCAD-configure] Error 1
+make[1]: *** [CMakeFiles/Makefile2:125: CMakeFiles/CSXCAD.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2

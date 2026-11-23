@@ -1,0 +1,88 @@
+{
+  "id": "P01_OPENEMS_001",
+  "design_id": "P01_rectangular_patch",
+  "status": "PREPARED_NOT_RUN",
+  "openEMS_version": "0.37.0.post1.dev1+g5fecbb58d",
+  "CSXCAD_version": "0.7.0.post1.dev1+g626b99f2f",
+  "script_sha256": "fc6356f3fc863c9558cc6596d574418fd39d54457174ad913383be7f09754b55",
+  "geometry_source_sha256": "9a08a1b912821d367b45aad2b4098d3c3e15654c25eb86d5593990bfecdf8efe",
+  "native_xml_sha256": "f829132846f178cc041d92afa5e2a45b3bd4030890872bdf57b1440e94036959",
+  "center_hz": 7987200000.0,
+  "channel_band_hz": [
+    7737600000,
+    8236800000
+  ],
+  "materials": {
+    "substrate": "generic FR4 provisional; not manufacturer specified",
+    "eps_r": 4.4,
+    "tan_delta_at_f0": 0.017,
+    "h_mm": 1.6,
+    "dielectric_conductivity_S_m": 0.03323722487554589,
+    "dielectric_loss_model": "constant conductivity; tan_delta(f)=tan_delta(f0)*f0/f",
+    "metal_model": "2D finite conducting sheet",
+    "conductivity_S_m": 58000000.0,
+    "sheet_thickness_m": 3.5e-05,
+    "sheet_API_roundtrip_verified": true,
+    "roughness": "not modeled"
+  },
+  "port": {
+    "reference_ohm": 50,
+    "start_mm": [
+      0.0,
+      -1.8216034557658907,
+      0
+    ],
+    "stop_mm": [
+      0.0,
+      -1.8216034557658907,
+      1.6
+    ],
+    "type": "ideal vertical lumped line; no pin/coax connector/aperture/deembedding",
+    "priority": 5
+  },
+  "mesh": {
+    "x": {
+      "cells": 144,
+      "min_step_mm": 0.25,
+      "max_step_mm": 0.5,
+      "max_neighbor_ratio": 1.259921049894876,
+      "pml_inner_low_mm": -31.0,
+      "pml_inner_high_mm": 31.0
+    },
+    "y": {
+      "cells": 145,
+      "min_step_mm": 0.25,
+      "max_step_mm": 0.5,
+      "max_neighbor_ratio": 1.2599210498948754,
+      "pml_inner_low_mm": -31.0,
+      "pml_inner_high_mm": 31.0
+    },
+    "z": {
+      "cells": 86,
+      "min_step_mm": 0.19999999999999996,
+      "max_step_mm": 0.7933989262527774,
+      "max_neighbor_ratio": 1.3195079107728949,
+      "pml_inner_low_mm": -18.768957891113168,
+      "pml_inner_high_mm": 28.652808589977845
+    }
+  },
+  "total_cells": 1795680,
+  "budget_before_solve": {
+    "maximum_CPUs_threads": 2,
+    "estimated_RAM_bytes": 3677552640,
+    "RAM_basis": "conservative 2048 bytes/cell, unmeasured",
+    "courant_upper_bound_s": 4.418164372450769e-13,
+    "maximum_record_upper_bound_s": 1.3254493117352308e-08,
+    "maximum_timesteps": 30000,
+    "external_wall_limit_required_s": 900
+  },
+  "boundaries": "PML_8 all six; coordinates mm",
+  "excitation": {
+    "type": "Gaussian",
+    "center_hz": 7987200000.0,
+    "corner_offset_hz": 1000000000.0
+  },
+  "energy_end_criterion": 1e-05,
+  "mesh_convergence": "NOT_ESTABLISHED: single mesh",
+  "far_field": "not recorded; gain/efficiency/radiated group delay unavailable"
+}

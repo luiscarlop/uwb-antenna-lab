@@ -1,0 +1,268 @@
+openEMS - dump simulation statistics to 'openEMS_run_stats.txt' and 'openEMS_stats.txt'
+Note: limiting the default thread count to 2 of 4 visible CPUs (CPU affinity and/or a cgroup CPU quota)
+openEMS - fixed number of threads: 2
+openEMS - verbose level 1
+ ---------------------------------------------------------------------- 
+ | openEMS 64bit -- version v0.37.0-40-g5fecbb5
+ | (C) 2010-2026 Thorsten Liebig <thorsten.liebig@gmx.de>  GPL license
+ ---------------------------------------------------------------------- 
+	Used external libraries:
+		CSXCAD -- Version: v0.7.0-8-g626b99f
+		hdf5   -- Version: 1.10.10
+		          compiled against: HDF5 library version: 1.10.10
+		tinyxml -- compiled against: 2.6.2
+		fparser
+		boost  -- compiled against: 1_83
+		zlib   -- Version: 1.3
+		          compiled against: 1.3
+
+Create FDTD operator (compressed SSE + multi-threading)
+Building the operator on 2 threads.
+Compressing the FDTD operator... this may take a while...
+------- Stat: FDTD Operator -------
+Dimensions		: 207x208x113 = 4.86533e+06 Cells (4.86533 MCells)
+Size of Operator	: 233535744 Byte (222.717 MiB) 
+Size of Field-Data	: 116767872 Byte (111.359 MiB) 
+-----------------------------------
+Background materials (epsR/mueR/kappa/sigma): 1/1/0/0
+-----------------------------------
+Number of PEC edges	: 0
+in x direction		: 0
+in y direction		: 0
+in z direction		: 0
+-----------------------------------
+Timestep (s)		: 3.75617e-13
+Timestep method name	: Rennings_2
+Nyquist criteria (TS)	: 148
+Nyquist criteria (s)	: 5.55914e-11
+-----------------------------------
+SSE compression enabled	: yes
+Unique SSE operators	: 31092
+-----------------------------------
+-----------------------------------
+--- Excitation Extension ---
+Voltage excitations	: 10	 (0, 0, 10)
+Current excitations	: 0	 (0, 0, 0)
+Excitation Length (TS)	: 7627
+Excitation Length (s)	: 2.86483e-09
+--- Uniaxial PML Extension ---
+ PML range		: [0,0,0] to [8,207,112]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [198,0,0] to [206,207,112]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,0,0] to [197,8,112]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,199,0] to [197,207,112]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,9,0] to [197,198,8]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,9,104] to [197,198,112]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Conducting Sheet Extension ---
+ Max. Dispersion Order N = 2
+ N=0:	 Active cells		: 7550
+ N=0:	 Voltage ADE is 	: On
+ N=0:	 Voltage Lor-ADE is 	: Off
+ N=0:	 Current ADE is 	: Off
+ N=0:	 Current Lor-ADE is 	: Off
+ N=1:	 Active cells		: 7550
+ N=1:	 Voltage ADE is 	: On
+ N=1:	 Voltage Lor-ADE is 	: Off
+ N=1:	 Current ADE is 	: Off
+ N=1:	 Current Lor-ADE is 	: Off
+--- Series/Parallel Lumped RLC load ---
+Active cells		: 0
+-----------------------------------
+Creation time for operator: 19.5077 s
+FDTD simulation size: 207x208x113 --> 4.86533e+06 FDTD cells 
+FDTD timestep is: 3.75617e-13 s; Nyquist rate: 148 timesteps @8.9942e+09 Hz
+Excitation signal length is: 7627 timesteps (2.86483e-09s)
+Max. number of timesteps: 30000 ( --> 3.93339 * Excitation signal length)
+Create FDTD engine (compressed SSE + multi-threading)
+Setting up processing...
+Running FDTD engine... this may take a while... grab a cup of coffee?!?
+Evaluating the end criteria every 148 timestep(s) during the first 60 s, with the progress report after that
+Multithreaded engine using 2 threads. Utilization: (104;103)
+[@        6s] Timestep:           74 || Speed:   53.7 MC/s (9.052e-02 s/TS) || Energy: ~0.00e+00 (- 0.00dB)
+[@       13s] Timestep:          148 || Speed:   53.1 MC/s (9.168e-02 s/TS) || Energy: ~6.40e-23 (- 0.00dB)
+[@       20s] Timestep:          222 || Speed:   52.9 MC/s (9.202e-02 s/TS) || Energy: ~6.40e-23 (- 0.00dB)
+[@       26s] Timestep:          296 || Speed:   54.4 MC/s (8.941e-02 s/TS) || Energy: ~1.53e-22 (- 0.00dB)
+[@       33s] Timestep:          370 || Speed:   52.8 MC/s (9.213e-02 s/TS) || Energy: ~1.53e-22 (- 0.00dB)
+[@       40s] Timestep:          444 || Speed:   49.8 MC/s (9.765e-02 s/TS) || Energy: ~4.45e-22 (- 0.00dB)
+[@       47s] Timestep:          518 || Speed:   57.3 MC/s (8.485e-02 s/TS) || Energy: ~4.45e-22 (- 0.00dB)
+[@       53s] Timestep:          592 || Speed:   54.7 MC/s (8.902e-02 s/TS) || Energy: ~1.87e-21 (- 0.00dB)
+Evaluating the end criteria with the progress report only from here on
+[@     1m01s] Timestep:          666 || Speed:   49.8 MC/s (9.769e-02 s/TS) || Energy: ~7.32e-21 (- 0.00dB)
+[@     1m07s] Timestep:          740 || Speed:   54.2 MC/s (8.977e-02 s/TS) || Energy: ~8.75e-21 (- 0.00dB)
+[@     1m15s] Timestep:          814 || Speed:   49.1 MC/s (9.915e-02 s/TS) || Energy: ~1.81e-20 (- 0.00dB)
+[@     1m22s] Timestep:          888 || Speed:   49.0 MC/s (9.922e-02 s/TS) || Energy: ~3.61e-20 (- 0.00dB)
+[@     1m29s] Timestep:          962 || Speed:   50.3 MC/s (9.672e-02 s/TS) || Energy: ~4.17e-20 (- 0.00dB)
+[@     1m36s] Timestep:         1036 || Speed:   51.7 MC/s (9.405e-02 s/TS) || Energy: ~1.23e-19 (- 0.00dB)
+[@     1m40s] Timestep:         1073 || Speed:   41.6 MC/s (1.169e-01 s/TS) || Energy: ~1.09e-19 (- 0.54dB)
+[@     1m48s] Timestep:         1147 || Speed:   49.7 MC/s (9.786e-02 s/TS) || Energy: ~2.01e-19 (- 0.00dB)
+[@     1m55s] Timestep:         1221 || Speed:   48.6 MC/s (1.001e-01 s/TS) || Energy: ~3.77e-19 (- 0.00dB)
+[@     2m02s] Timestep:         1295 || Speed:   50.1 MC/s (9.709e-02 s/TS) || Energy: ~4.34e-19 (- 0.00dB)
+[@     2m09s] Timestep:         1369 || Speed:   50.1 MC/s (9.708e-02 s/TS) || Energy: ~1.11e-18 (- 0.00dB)
+[@     2m16s] Timestep:         1443 || Speed:   54.5 MC/s (8.922e-02 s/TS) || Energy: ~1.01e-18 (- 0.38dB)
+[@     2m22s] Timestep:         1517 || Speed:   55.3 MC/s (8.800e-02 s/TS) || Energy: ~2.73e-18 (- 0.00dB)
+[@     2m29s] Timestep:         1591 || Speed:   57.8 MC/s (8.413e-02 s/TS) || Energy: ~2.69e-18 (- 0.06dB)
+[@     2m35s] Timestep:         1665 || Speed:   53.7 MC/s (9.053e-02 s/TS) || Energy: ~5.83e-18 (- 0.00dB)
+[@     2m42s] Timestep:         1739 || Speed:   52.8 MC/s (9.210e-02 s/TS) || Energy: ~7.31e-18 (- 0.00dB)
+[@     2m50s] Timestep:         1813 || Speed:   47.3 MC/s (1.029e-01 s/TS) || Energy: ~1.14e-17 (- 0.00dB)
+[@     2m57s] Timestep:         1887 || Speed:   48.8 MC/s (9.973e-02 s/TS) || Energy: ~1.82e-17 (- 0.00dB)
+[@     3m04s] Timestep:         1961 || Speed:   49.7 MC/s (9.795e-02 s/TS) || Energy: ~2.19e-17 (- 0.00dB)
+[@     3m11s] Timestep:         2035 || Speed:   51.9 MC/s (9.375e-02 s/TS) || Energy: ~3.95e-17 (- 0.00dB)
+[@     3m18s] Timestep:         2109 || Speed:   55.8 MC/s (8.716e-02 s/TS) || Energy: ~4.39e-17 (- 0.00dB)
+[@     3m24s] Timestep:         2183 || Speed:   58.5 MC/s (8.315e-02 s/TS) || Energy: ~7.61e-17 (- 0.00dB)
+[@     3m30s] Timestep:         2257 || Speed:   57.0 MC/s (8.535e-02 s/TS) || Energy: ~8.94e-17 (- 0.00dB)
+[@     3m37s] Timestep:         2331 || Speed:   51.9 MC/s (9.372e-02 s/TS) || Energy: ~1.36e-16 (- 0.00dB)
+[@     3m44s] Timestep:         2405 || Speed:   52.7 MC/s (9.230e-02 s/TS) || Energy: ~1.73e-16 (- 0.00dB)
+[@     3m51s] Timestep:         2479 || Speed:   53.0 MC/s (9.182e-02 s/TS) || Energy: ~2.36e-16 (- 0.00dB)
+[@     3m57s] Timestep:         2553 || Speed:   58.5 MC/s (8.311e-02 s/TS) || Energy: ~3.02e-16 (- 0.00dB)
+[@     4m03s] Timestep:         2627 || Speed:   55.9 MC/s (8.700e-02 s/TS) || Energy: ~4.11e-16 (- 0.00dB)
+[@     4m10s] Timestep:         2701 || Speed:   56.8 MC/s (8.572e-02 s/TS) || Energy: ~4.82e-16 (- 0.00dB)
+[@     4m17s] Timestep:         2775 || Speed:   52.5 MC/s (9.272e-02 s/TS) || Energy: ~6.95e-16 (- 0.00dB)
+[@     4m23s] Timestep:         2849 || Speed:   52.5 MC/s (9.276e-02 s/TS) || Energy: ~7.40e-16 (- 0.00dB)
+[@     4m30s] Timestep:         2923 || Speed:   52.6 MC/s (9.256e-02 s/TS) || Energy: ~1.08e-15 (- 0.00dB)
+[@     4m37s] Timestep:         2997 || Speed:   56.8 MC/s (8.568e-02 s/TS) || Energy: ~1.16e-15 (- 0.00dB)
+[@     4m43s] Timestep:         3071 || Speed:   55.7 MC/s (8.736e-02 s/TS) || Energy: ~1.49e-15 (- 0.00dB)
+[@     4m50s] Timestep:         3145 || Speed:   55.3 MC/s (8.799e-02 s/TS) || Energy: ~1.87e-15 (- 0.00dB)
+[@     4m56s] Timestep:         3219 || Speed:   55.6 MC/s (8.749e-02 s/TS) || Energy: ~1.82e-15 (- 0.13dB)
+[@     5m02s] Timestep:         3293 || Speed:   57.6 MC/s (8.453e-02 s/TS) || Energy: ~2.93e-15 (- 0.00dB)
+[@     5m08s] Timestep:         3367 || Speed:   59.4 MC/s (8.196e-02 s/TS) || Energy: ~2.11e-15 (- 1.43dB)
+[@     5m15s] Timestep:         3441 || Speed:   58.1 MC/s (8.375e-02 s/TS) || Energy: ~4.13e-15 (- 0.00dB)
+[@     5m21s] Timestep:         3515 || Speed:   57.9 MC/s (8.406e-02 s/TS) || Energy: ~2.68e-15 (- 1.88dB)
+[@     5m27s] Timestep:         3589 || Speed:   58.5 MC/s (8.320e-02 s/TS) || Energy: ~4.98e-15 (- 0.00dB)
+[@     5m33s] Timestep:         3663 || Speed:   58.8 MC/s (8.273e-02 s/TS) || Energy: ~3.95e-15 (- 1.01dB)
+[@     5m40s] Timestep:         3737 || Speed:   56.3 MC/s (8.637e-02 s/TS) || Energy: ~5.03e-15 (- 0.00dB)
+[@     5m46s] Timestep:         3811 || Speed:   58.1 MC/s (8.379e-02 s/TS) || Energy: ~6.02e-15 (- 0.00dB)
+[@     5m52s] Timestep:         3885 || Speed:   58.1 MC/s (8.368e-02 s/TS) || Energy: ~4.36e-15 (- 1.40dB)
+[@     5m58s] Timestep:         3959 || Speed:   56.9 MC/s (8.558e-02 s/TS) || Energy: ~8.30e-15 (- 0.00dB)
+[@     6m05s] Timestep:         4033 || Speed:   52.7 MC/s (9.239e-02 s/TS) || Energy: ~3.76e-15 (- 3.44dB)
+[@     6m12s] Timestep:         4107 || Speed:   50.6 MC/s (9.614e-02 s/TS) || Energy: ~9.68e-15 (- 0.00dB)
+[@     6m19s] Timestep:         4181 || Speed:   50.0 MC/s (9.735e-02 s/TS) || Energy: ~4.17e-15 (- 3.66dB)
+[@     6m26s] Timestep:         4255 || Speed:   53.1 MC/s (9.157e-02 s/TS) || Energy: ~9.30e-15 (- 0.17dB)
+[@     6m33s] Timestep:         4329 || Speed:   52.7 MC/s (9.228e-02 s/TS) || Energy: ~5.93e-15 (- 2.13dB)
+[@     6m40s] Timestep:         4403 || Speed:   54.3 MC/s (8.962e-02 s/TS) || Energy: ~7.31e-15 (- 1.22dB)
+[@     6m46s] Timestep:         4477 || Speed:   56.2 MC/s (8.665e-02 s/TS) || Energy: ~8.28e-15 (- 0.68dB)
+[@     6m53s] Timestep:         4551 || Speed:   55.6 MC/s (8.751e-02 s/TS) || Energy: ~4.89e-15 (- 2.96dB)
+[@     7m00s] Timestep:         4625 || Speed:   50.8 MC/s (9.580e-02 s/TS) || Energy: ~9.85e-15 (- 0.00dB)
+[@     7m06s] Timestep:         4699 || Speed:   53.2 MC/s (9.138e-02 s/TS) || Energy: ~3.37e-15 (- 4.66dB)
+[@     7m13s] Timestep:         4773 || Speed:   51.6 MC/s (9.424e-02 s/TS) || Energy: ~9.65e-15 (- 0.09dB)
+[@     7m20s] Timestep:         4847 || Speed:   52.2 MC/s (9.316e-02 s/TS) || Energy: ~3.35e-15 (- 4.69dB)
+[@     7m27s] Timestep:         4921 || Speed:   57.6 MC/s (8.442e-02 s/TS) || Energy: ~7.75e-15 (- 1.04dB)
+[@     7m33s] Timestep:         4995 || Speed:   53.9 MC/s (9.025e-02 s/TS) || Energy: ~4.34e-15 (- 3.57dB)
+[@     7m40s] Timestep:         5069 || Speed:   49.7 MC/s (9.783e-02 s/TS) || Energy: ~5.13e-15 (- 2.83dB)
+[@     7m47s] Timestep:         5143 || Speed:   55.3 MC/s (8.805e-02 s/TS) || Energy: ~5.30e-15 (- 2.69dB)
+[@     7m53s] Timestep:         5217 || Speed:   55.7 MC/s (8.742e-02 s/TS) || Energy: ~2.95e-15 (- 5.23dB)
+[@     8m00s] Timestep:         5291 || Speed:   57.8 MC/s (8.415e-02 s/TS) || Energy: ~5.45e-15 (- 2.57dB)
+[@     8m06s] Timestep:         5365 || Speed:   53.9 MC/s (9.033e-02 s/TS) || Energy: ~1.79e-15 (- 7.40dB)
+[@     8m13s] Timestep:         5439 || Speed:   56.0 MC/s (8.684e-02 s/TS) || Energy: ~4.63e-15 (- 3.28dB)
+[@     8m19s] Timestep:         5513 || Speed:   54.5 MC/s (8.920e-02 s/TS) || Energy: ~1.54e-15 (- 8.05dB)
+[@     8m26s] Timestep:         5587 || Speed:   58.2 MC/s (8.363e-02 s/TS) || Energy: ~3.28e-15 (- 4.78dB)
+[@     8m32s] Timestep:         5661 || Speed:   60.2 MC/s (8.088e-02 s/TS) || Energy: ~1.70e-15 (- 7.63dB)
+[@     8m38s] Timestep:         5735 || Speed:   53.8 MC/s (9.039e-02 s/TS) || Energy: ~1.96e-15 (- 7.01dB)
+[@     8m45s] Timestep:         5809 || Speed:   55.8 MC/s (8.719e-02 s/TS) || Energy: ~1.80e-15 (- 7.38dB)
+[@     8m52s] Timestep:         5883 || Speed:   52.6 MC/s (9.256e-02 s/TS) || Energy: ~1.05e-15 (- 9.73dB)
+[@     8m58s] Timestep:         5957 || Speed:   54.6 MC/s (8.916e-02 s/TS) || Energy: ~1.64e-15 (- 7.79dB)
+[@     9m05s] Timestep:         6031 || Speed:   52.3 MC/s (9.303e-02 s/TS) || Energy: ~5.86e-16 (-12.25dB)
+[@     9m12s] Timestep:         6105 || Speed:   50.9 MC/s (9.564e-02 s/TS) || Energy: ~1.27e-15 (- 8.91dB)
+[@     9m19s] Timestep:         6179 || Speed:   52.0 MC/s (9.353e-02 s/TS) || Energy: ~4.33e-16 (-13.57dB)
+[@     9m26s] Timestep:         6253 || Speed:   54.2 MC/s (8.974e-02 s/TS) || Energy: ~8.35e-16 (-10.72dB)
+[@     9m33s] Timestep:         6327 || Speed:   50.8 MC/s (9.575e-02 s/TS) || Energy: ~4.06e-16 (-13.85dB)
+[@     9m40s] Timestep:         6401 || Speed:   52.4 MC/s (9.293e-02 s/TS) || Energy: ~4.77e-16 (-13.15dB)
+[@     9m46s] Timestep:         6475 || Speed:   54.1 MC/s (9.000e-02 s/TS) || Energy: ~3.86e-16 (-14.07dB)
+[@     9m52s] Timestep:         6549 || Speed:   60.1 MC/s (8.092e-02 s/TS) || Energy: ~2.46e-16 (-16.03dB)
+[@     9m59s] Timestep:         6623 || Speed:   55.0 MC/s (8.849e-02 s/TS) || Energy: ~3.29e-16 (-14.77dB)
+[@    10m05s] Timestep:         6697 || Speed:   57.1 MC/s (8.521e-02 s/TS) || Energy: ~1.29e-16 (-18.82dB)
+[@    10m12s] Timestep:         6771 || Speed:   55.1 MC/s (8.832e-02 s/TS) || Energy: ~2.44e-16 (-16.07dB)
+[@    10m18s] Timestep:         6845 || Speed:   53.3 MC/s (9.127e-02 s/TS) || Energy: ~8.45e-17 (-20.67dB)
+[@    10m25s] Timestep:         6919 || Speed:   52.7 MC/s (9.237e-02 s/TS) || Energy: ~1.57e-16 (-17.97dB)
+[@    10m32s] Timestep:         6993 || Speed:   54.9 MC/s (8.866e-02 s/TS) || Energy: ~7.11e-17 (-21.41dB)
+[@    10m38s] Timestep:         7067 || Speed:   57.5 MC/s (8.467e-02 s/TS) || Energy: ~8.91e-17 (-20.44dB)
+[@    10m45s] Timestep:         7141 || Speed:   55.6 MC/s (8.755e-02 s/TS) || Energy: ~6.41e-17 (-21.87dB)
+[@    10m50s] Timestep:         7215 || Speed:   63.8 MC/s (7.626e-02 s/TS) || Energy: ~4.55e-17 (-23.36dB)
+[@    10m56s] Timestep:         7289 || Speed:   62.2 MC/s (7.818e-02 s/TS) || Energy: ~5.37e-17 (-22.64dB)
+[@    11m02s] Timestep:         7363 || Speed:   58.4 MC/s (8.331e-02 s/TS) || Energy: ~2.31e-17 (-26.31dB)
+[@    11m08s] Timestep:         7437 || Speed:   62.4 MC/s (7.802e-02 s/TS) || Energy: ~3.99e-17 (-23.93dB)
+[@    11m14s] Timestep:         7511 || Speed:   61.0 MC/s (7.972e-02 s/TS) || Energy: ~1.39e-17 (-28.51dB)
+[@    11m20s] Timestep:         7585 || Speed:   56.6 MC/s (8.599e-02 s/TS) || Energy: ~2.60e-17 (-25.78dB)
+[@    11m26s] Timestep:         7659 || Speed:   60.2 MC/s (8.081e-02 s/TS) || Energy: ~1.09e-17 (-29.56dB)
+[@    11m32s] Timestep:         7733 || Speed:   58.2 MC/s (8.360e-02 s/TS) || Energy: ~1.50e-17 (-28.18dB)
+[@    11m39s] Timestep:         7807 || Speed:   58.3 MC/s (8.348e-02 s/TS) || Energy: ~9.62e-18 (-30.10dB)
+[@    11m45s] Timestep:         7881 || Speed:   58.9 MC/s (8.266e-02 s/TS) || Energy: ~7.74e-18 (-31.05dB)
+[@    11m51s] Timestep:         7955 || Speed:   54.5 MC/s (8.923e-02 s/TS) || Energy: ~8.13e-18 (-30.83dB)
+[@    11m57s] Timestep:         8029 || Speed:   58.5 MC/s (8.318e-02 s/TS) || Energy: ~3.86e-18 (-34.07dB)
+[@    12m03s] Timestep:         8103 || Speed:   59.8 MC/s (8.141e-02 s/TS) || Energy: ~6.18e-18 (-32.03dB)
+[@    12m09s] Timestep:         8177 || Speed:   62.3 MC/s (7.812e-02 s/TS) || Energy: ~2.18e-18 (-36.55dB)
+[@    12m15s] Timestep:         8251 || Speed:   58.2 MC/s (8.359e-02 s/TS) || Energy: ~4.13e-18 (-33.77dB)
+[@    12m22s] Timestep:         8325 || Speed:   56.6 MC/s (8.594e-02 s/TS) || Energy: ~1.61e-18 (-37.86dB)
+[@    12m28s] Timestep:         8399 || Speed:   56.8 MC/s (8.567e-02 s/TS) || Energy: ~2.44e-18 (-36.06dB)
+[@    12m34s] Timestep:         8473 || Speed:   56.6 MC/s (8.601e-02 s/TS) || Energy: ~1.41e-18 (-38.46dB)
+[@    12m41s] Timestep:         8547 || Speed:   53.1 MC/s (9.167e-02 s/TS) || Energy: ~1.29e-18 (-38.84dB)
+[@    12m48s] Timestep:         8621 || Speed:   52.2 MC/s (9.324e-02 s/TS) || Energy: ~1.21e-18 (-39.11dB)
+[@    12m55s] Timestep:         8695 || Speed:   53.5 MC/s (9.092e-02 s/TS) || Energy: ~6.39e-19 (-41.88dB)
+[@    13m01s] Timestep:         8769 || Speed:   56.9 MC/s (8.550e-02 s/TS) || Energy: ~9.44e-19 (-40.19dB)
+[@    13m07s] Timestep:         8843 || Speed:   60.5 MC/s (8.036e-02 s/TS) || Energy: ~3.45e-19 (-44.56dB)
+[@    13m13s] Timestep:         8917 || Speed:   57.9 MC/s (8.400e-02 s/TS) || Energy: ~6.50e-19 (-41.80dB)
+[@    13m20s] Timestep:         8991 || Speed:   55.9 MC/s (8.702e-02 s/TS) || Energy: ~2.40e-19 (-46.13dB)
+[@    13m26s] Timestep:         9065 || Speed:   53.8 MC/s (9.041e-02 s/TS) || Energy: ~3.95e-19 (-43.97dB)
+[@    13m34s] Timestep:         9139 || Speed:   49.8 MC/s (9.768e-02 s/TS) || Energy: ~2.05e-19 (-46.81dB)
+[@    13m41s] Timestep:         9213 || Speed:   51.0 MC/s (9.532e-02 s/TS) || Energy: ~2.13e-19 (-46.65dB)
+[@    13m48s] Timestep:         9287 || Speed:   52.0 MC/s (9.360e-02 s/TS) || Energy: ~1.79e-19 (-47.40dB)
+[@    13m54s] Timestep:         9361 || Speed:   54.4 MC/s (8.951e-02 s/TS) || Energy: ~1.06e-19 (-49.67dB)
+[@    14m01s] Timestep:         9435 || Speed:   53.8 MC/s (9.046e-02 s/TS) || Energy: ~1.43e-19 (-48.37dB)
+[@    14m08s] Timestep:         9509 || Speed:   54.1 MC/s (8.991e-02 s/TS) || Energy: ~5.54e-20 (-52.50dB)
+RunFDTD: end-criteria of -50.00dB reached after 9509 timesteps (-52.50dB)
+Time for 9509 iterations with 4865328.00 cells : 848.16 sec
+Speed: 54.55 MCells/s 
+{
+  "id": "P01_R2",
+  "numeric_outputs_finite": true,
+  "samples": 1003,
+  "channel_samples": 501,
+  "reference_ohm": 50,
+  "channel_worst_s11_db": -6.2887893934719585,
+  "channel_worst_frequency_hz": 7737600000.0,
+  "channel_best_s11_db": -16.68977882586821,
+  "channel_best_frequency_hz": 8053000000.0,
+  "channel_meets_minus6db_on_sampled_grid": true,
+  "channel_meets_minus10db_on_sampled_grid": false,
+  "wideband": {
+    "grid_hz": [
+      6980000000.0,
+      9000000000.0,
+      5000000.0
+    ],
+    "samples": 405,
+    "valid_rule": "u_inc within 20 dB of its peak (as reanalyze_port_dft.py)",
+    "valid_range_hz": [
+      6980000000.0,
+      8995000000.0
+    ],
+    "valid_samples": 404,
+    "re_zin_peak_ohm": 107.75370661568036,
+    "re_zin_peak_hz": 7720000000.0,
+    "im_zin_at_re_peak_ohm": 63.25152799005614,
+    "min_s11_db": -16.68832195449267,
+    "min_s11_hz": 8055000000.0
+  },
+  "wall_seconds": 868.0407960090006,
+  "cpu_seconds": 1514.3964930000002,
+  "peak_rss_kib": 752620,
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "frequency_evaluation_step_hz": 1000000.0,
+  "frequency_grid_caveat": "DTFT evaluation spacing is not physical resolution; finite-record decay/truncation governs accuracy",
+  "coverage_caveat": "sampled frequencies including exact endpoints; no mathematical guarantee between samples",
+  "native_xml_sha256": "7d23039cde56b05cc52c8347ba0651c0b1ae29c0eec9f6117660917b1516d49b",
+  "variant_sha256": "f99937125786d8cc5c6ce11bf1e955d411c4c766e22d523a48dcad8dc271facc",
+  "far_field": "NOT_RECORDED"
+}

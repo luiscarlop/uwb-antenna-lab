@@ -1,0 +1,52 @@
++ set -euo pipefail
++ source /workspace/openems-install/venv/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ case "$(uname)" in
++++ uname
+++ export VIRTUAL_ENV=/workspace/openems-install/venv
+++ VIRTUAL_ENV=/workspace/openems-install/venv
+++ _OLD_VIRTUAL_PATH=/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback
+++ PATH=/workspace/openems-install/venv/bin:/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback
+++ export PATH
+++ VIRTUAL_ENV_PROMPT='(venv) '
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='((venv) ) '
+++ export PS1
+++ hash -r
++ export CMAKE_PREFIX_PATH=/workspace/openems-deps/usr
++ CMAKE_PREFIX_PATH=/workspace/openems-deps/usr
++ export HDF5_ROOT=/workspace/openems-deps/usr
++ HDF5_ROOT=/workspace/openems-deps/usr
++ export CPATH=/workspace/openems-deps/usr/include:/workspace/openems-deps/usr/include/hdf5/serial
++ CPATH=/workspace/openems-deps/usr/include:/workspace/openems-deps/usr/include/hdf5/serial
++ export LIBRARY_PATH=/workspace/openems-deps/usr/lib/x86_64-linux-gnu:/workspace/openems-deps/usr/lib/x86_64-linux-gnu/hdf5/serial
++ LIBRARY_PATH=/workspace/openems-deps/usr/lib/x86_64-linux-gnu:/workspace/openems-deps/usr/lib/x86_64-linux-gnu/hdf5/serial
++ export LD_LIBRARY_PATH=/workspace/openems-install/lib:/workspace/openems-deps/usr/lib/x86_64-linux-gnu
++ LD_LIBRARY_PATH=/workspace/openems-install/lib:/workspace/openems-deps/usr/lib/x86_64-linux-gnu
++ export CMAKE_BUILD_PARALLEL_LEVEL=2
++ CMAKE_BUILD_PARALLEL_LEVEL=2
++ export OMP_NUM_THREADS=2
++ OMP_NUM_THREADS=2
++ export OPENBLAS_NUM_THREADS=2
++ OPENBLAS_NUM_THREADS=2
++ cd /workspace/openems-source
++ exec timeout --signal=TERM --kill-after=15s 1200s taskset -c 0,1 ./update_openEMS.sh /workspace/openems-install --disable-GUI --python --njobs=2 --skip-dep-check --python-venv-mode=disable --python-use-network=disable
+disabling AppCSXCAD build
+enabling Python Extension build
+skipping build dependency check
+setting install path to: /workspace/openems-install
+logging build output to: /workspace/openems-source/build_20261103_102507.log
+configuring /workspace/openems-source via CMake ... please wait
+compiling /workspace/openems-source ... please wait
+make for /workspace/openems-source failed
+build incomplete, cleaning up tmp dir ...

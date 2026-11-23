@@ -1,0 +1,266 @@
+═══════════════════════════════════════════════════════════════════════════════
+  BEAMFORMING RADAR TFG - CODING DECISION AGENTS
+  Quick Reference Card
+═══════════════════════════════════════════════════════════════════════════════
+
+YOUR 6 AGENTS:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 1. ALGORITHM & RESEARCH AGENT                                               │
+│    "Which algorithm should I use? Is my implementation correct?"            │
+│    Use when: Choosing algorithms, validating against theory                 │
+│    Time: 20-30 min per session                                              │
+│    See: agent_prompt_templates.md → Template 1.1, 1.2, 1.3                 │
+│                                                                              │
+│    Quick questions:                                                          │
+│    • "Compare Capon vs. MUSIC vs. DAS for my scenario"                     │
+│    • "Is my Capon implementation mathematically correct?"                  │
+│    • "Why do my results differ from theory?"                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 2. ARCHITECTURE & DESIGN AGENT                                              │
+│    "How should I structure my code? Should I refactor?"                    │
+│    Use when: Planning system, organizing modules, design patterns           │
+│    Time: 30-40 min per session                                              │
+│    See: agent_prompt_templates.md → Template 2.1, 2.2, 2.3                │
+│                                                                              │
+│    Quick questions:                                                          │
+│    • "How should I organize my beamforming implementations?"              │
+│    • "Is my class hierarchy good?"                                         │
+│    • "How do I swap algorithms easily?"                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 3. PERFORMANCE & OPTIMIZATION AGENT                                         │
+│    "Code is too slow. Where should I optimize?"                           │
+│    Use when: Profiling shows bottleneck, need real-time feasibility        │
+│    Time: 30-60 min per session                                              │
+│    See: agent_prompt_templates.md → Template 3.1, 3.2, 3.3                │
+│                                                                              │
+│    Quick questions:                                                          │
+│    • "Why is my beamforming 45ms when I need <30ms?"                      │
+│    • "Should I use Capon (slower) or DAS (faster)?"                       │
+│    • "Can I use GPU acceleration for this?"                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 4. CODE QUALITY & BEST PRACTICES AGENT                                      │
+│    "Is this production-ready? What tests do I need?"                       │
+│    Use when: Code review, designing test strategy, reproducibility         │
+│    Time: 20-45 min per session                                              │
+│    See: agent_prompt_templates.md → Template 4.1, 4.2, 4.3                │
+│                                                                              │
+│    Quick questions:                                                          │
+│    • "Please review this function for correctness"                         │
+│    • "What unit tests should I write?"                                     │
+│    • "Is my code reproducible for thesis review?"                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 5. DEBUGGING & TROUBLESHOOTING AGENT                                        │
+│    "Algorithm gives wrong results. Where's the bug?"                       │
+│    Use when: Silent failures, unexpected behavior, theory/code mismatch     │
+│    Time: 30-90 min per session                                              │
+│    See: agent_prompt_templates.md → Template 5.1, 5.2, 5.3                │
+│                                                                              │
+│    Quick questions:                                                          │
+│    • "Results look wrong. How do I debug this systematically?"             │
+│    • "Code has no errors but produces wrong output"                        │
+│    • "Why does this work sometimes but not always?"                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 6. THESIS & DOCUMENTATION AGENT                                             │
+│    "How do I write about this in my thesis?"                              │
+│    Use when: Writing methodology, results, system design sections           │
+│    Time: 20-30 min per session                                              │
+│    See: agent_prompt_templates.md → Template 6.1, 6.2, 6.3                │
+│                                                                              │
+│    Quick questions:                                                          │
+│    • "Why did I choose Capon beamforming? (for thesis)"                    │
+│    • "How do I document my system architecture?"                           │
+│    • "How do I present these results clearly?"                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CHOOSING YOUR AGENT:
+
+┌──────────────────────────┬──────────────────────────┬──────────────────────┐
+│ Problem Type             │ Best Agent(s)            │ Typical Time         │
+├──────────────────────────┼──────────────────────────┼──────────────────────┤
+│ Algorithm selection      │ Algorithm + Performance  │ 30-45 min            │
+│ Code structure           │ Architecture + Quality   │ 30-50 min            │
+│ Code too slow            │ Performance + Quality    │ 45-60 min            │
+│ Results wrong            │ Debugging + Algorithm    │ 45-90 min            │
+│ Writing methodology      │ Thesis + Algorithm       │ 20-30 min            │
+│ Production-ready check   │ Quality + Performance    │ 30-45 min            │
+│ Test strategy            │ Quality + Architecture   │ 25-35 min            │
+│ Mysterious bug           │ Debugging + Algorithm    │ Variable             │
+└──────────────────────────┴──────────────────────────┴──────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+
+HOW TO USE AN AGENT (5 Steps):
+
+1. COPY the appropriate template from agent_prompt_templates.md
+2. FILL IN your specific context (be detailed!)
+3. PASTE the template into chat
+4. READ the agent's analysis carefully
+5. RECORD the decision in your decision log
+
+═══════════════════════════════════════════════════════════════════════════════
+
+DAILY USAGE PATTERN:
+
+Monday:       Planning phase
+              → Algorithm Agent (15 min) - validate this week's approach
+              → Architecture Agent (15 min) - any refactoring needed?
+              
+Tuesday-Thu:  Implementation
+              → Debugging Agent (as needed) - fix issues
+              → Performance Agent (if slow) - optimize
+              → Quality Agent (code review) - before committing
+              
+Friday:       Review & documentation
+              → Thesis Agent (20 min) - document what you learned
+              → Decision Log - update all decisions made this week
+              
+Thesis Phase:  Final 2-3 weeks
+              → Thesis Agent - all sections (methodology, results, etc)
+              → Quality Agent - reproducibility check
+
+═══════════════════════════════════════════════════════════════════════════════
+
+KEY PRINCIPLES:
+
+✓ BE SPECIFIC with context - agent quality depends on detail
+✓ INCLUDE ACTUAL CODE - don't describe, paste it
+✓ SHOW YOUR THINKING - explain what you've tried
+✓ FOLLOW UP - tell agent if recommendation worked
+✓ DOCUMENT DECISIONS - keep decision log for thesis
+✓ VALIDATE CLAIMS - don't just accept first recommendation
+✓ ITERATE - first answer often needs refinement
+✓ CHALLENGE - ask "why" and "when would this fail?"
+
+═══════════════════════════════════════════════════════════════════════════════
+
+DECISION LOG ENTRY (copy this format):
+
+Date: YYYY-MM-DD
+Topic: [What decision was needed?]
+
+Context: [Why this decision matters]
+
+Options: [What you considered]
+
+Decision: [What you chose]
+
+Reasoning: [Why you chose it]
+
+Agent Used: [Which agent helped?]
+
+Status: [✓ Implemented / → Next sprint / ? Testing]
+
+Thesis Reference: [Where this goes in thesis]
+
+═══════════════════════════════════════════════════════════════════════════════
+
+YOUR 3 CORE DOCUMENTS:
+
+1. beamforming_agents_system.md
+   → Complete system overview (this explains everything)
+   → Read this first to understand the full system
+   → Refer back when you need the big picture
+
+2. agent_prompt_templates.md
+   → Ready-to-use prompt templates
+   → Copy and paste, customize, use immediately
+   → Your main working document
+
+3. workflow_examples.md
+   → Real-world examples (6 actual workflows)
+   → Shows agents in action solving real problems
+   → Reference when facing similar issues
+
+4. QUICK_REFERENCE.txt (this file)
+   → One-page quick lookup
+   → Print this out and keep it visible
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FIRST WEEK PLAN:
+
+Monday:   Read beamforming_agents_system.md (30 min)
+          → Understand the framework
+          
+Tuesday:  Use Algorithm Agent with Template 1.1 (30 min)
+          → Validate your beamforming approach
+          → Record in decision log
+          
+Wed/Thu:  Use Architecture Agent with Template 2.1 (40 min)
+          → Review/plan your codebase structure
+          → Decide if refactoring needed
+          
+Friday:   Try one more agent based on current need
+          → Performance? Debugging? Quality?
+          → Document what you learned
+
+═══════════════════════════════════════════════════════════════════════════════
+
+COMMON MISTAKES TO AVOID:
+
+✗ Vague questions → "Help with my code" (too vague)
+✓ Specific questions → "Capon beamforming gives 3° angle error instead of 1°"
+
+✗ No context → Pasting code with no explanation
+✓ Full context → Array config, signal type, expected vs. actual behavior
+
+✗ One question then never follow up
+✓ Sessions where you validate recommendations worked
+
+✗ Accepting first answer without thinking
+✓ Asking "Why?" and "When would this fail?"
+
+✗ Not recording decisions
+✓ Decision log entry for every major choice
+
+═══════════════════════════════════════════════════════════════════════════════
+
+YOUR SUCCESS METRICS:
+
+After 2 weeks:
+  □ Running agent sessions 2-3x per week
+  □ Decision log has 5+ entries
+  □ Code structure improved
+  □ Understanding why you made technical choices
+
+After 4 weeks:
+  □ Major refactoring done (if needed)
+  □ Algorithm choice validated
+  □ Performance optimized
+  □ 15-20 decision log entries
+
+After 8 weeks (thesis writing):
+  □ Thesis sections nearly complete
+  □ Design choices well-documented
+  □ Reproducibility verified
+  □ 30+ decision log entries (basis for methodology section)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+NEED HELP?
+
+1. Check workflow_examples.md for similar problem
+2. Use appropriate template from agent_prompt_templates.md
+3. Start agent session with specific context
+4. Record decision and outcome
+5. Review what you learned
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Good luck with your TFG! 🎯
+
+The agents are here to help you make better decisions.
+Your decision log will become your thesis.

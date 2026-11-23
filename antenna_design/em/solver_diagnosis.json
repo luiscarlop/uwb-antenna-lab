@@ -1,0 +1,63 @@
+{
+  "timestamp_utc": "2026-11-03T10:16:02.242957+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "modules": {
+    "openEMS": {
+      "available": false,
+      "error": "ModuleNotFoundError: No module named 'openEMS'"
+    },
+    "CSXCAD": {
+      "available": false,
+      "error": "ModuleNotFoundError: No module named 'CSXCAD'"
+    }
+  },
+  "executables": {
+    "openEMS": null,
+    "openems": null,
+    "AppCSXCAD": null,
+    "octave": null,
+    "conda": null,
+    "mamba": null,
+    "micromamba": null
+  },
+  "resources": {
+    "memory.max": "34359738368",
+    "cpu.max": "400000 100000",
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "network_probes": [
+    {
+      "url": "https://pypi.org/pypi/openEMS/json",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://pypi.org/pypi/CSXCAD/json",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://deb.debian.org/debian/dists/trixie/main/binary-amd64/Packages.xz",
+      "http_status": 200,
+      "bytes": 9678380,
+      "sha256": "7778d3e3f303b7ddb8ce0fe7c8d57473a076c6bf2e8f241f75421d2396352498",
+      "matching_packages": []
+    },
+    {
+      "url": "https://raw.githubusercontent.com/thliebig/openEMS/master/python/Tutorials/Simple_Patch_Antenna.py",
+      "http_status": 200,
+      "bytes": 5226,
+      "sha256": "48745681b3b4b09a9a182a2e257f318714fa1210fec0d0350f88ba63dd3686ac"
+    }
+  ],
+  "em_status": "EM_NOT_RUN",
+  "solves_started": 0,
+  "solver_operational": false,
+  "python_bindings_importable": false,
+  "operational_verification": "NOT_RUN; imports alone cannot verify solver execution"
+}

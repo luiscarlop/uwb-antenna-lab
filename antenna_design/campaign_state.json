@@ -1,0 +1,1919 @@
+{
+  "version": 1,
+  "branch": "codex/uwb-ch9-antenna-design",
+  "band_hz": [
+    7737600000,
+    8236800000
+  ],
+  "center_hz": 7987200000,
+  "phase": "EM_SIMULATED",
+  "designs": {
+    "P01_rectangular_patch": "EM_SIMULATED",
+    "P02_u_slot_patch": "GEOMETRY_ONLY",
+    "P03_hex_slot_patch": "GEOMETRY_ONLY",
+    "P01_R1": "EM_SIMULATED",
+    "P01_R2": "EM_SIMULATED",
+    "P02_MS1": "EM_SIMULATED",
+    "P03_MS2": "EM_SIMULATED",
+    "P03_MS3": "EM_SIMULATED",
+    "P03_MS4": "EM_SIMULATED",
+    "P03_MS5": "EM_SIMULATED",
+    "US0": "EM_SIMULATED",
+    "US1": "EM_SIMULATED",
+    "US2": "EM_SIMULATED",
+    "US3": "EM_SIMULATED",
+    "US3_MS2": "EM_SIMULATED",
+    "US3_MS3": "HFSS_VALIDATED (-6 dB criterion only)",
+    "P01_MS1": "HFSS_VALIDATED (-6 dB criterion only)",
+    "P01_MS2": "EM_SIMULATED",
+    "US3_MS4": "EM_SIMULATED (negative experiment)",
+    "P01_IN1": "EM_SIMULATED (negative: direct inset stopped by pre-registered rule)",
+    "ARR1x5_P01_MS2_dparam": "HFSS re-export with convergence (owner, 2026-11-20; same stored solution as the 2026-11-15 data, solving version not confirmed): 16 pitches 13.5-20.5 mm, all converged at dS 0.02 / 1 pass (10-12 of 15 passes). At 18.2 mm: Sii -10.25, neighbour -16.90, non-neighbour -27.27 dB, active broadside -9.27 dB (TARC -10.16); HPBW xz physical 20.6, virtual (a) 16.4, (b) with monostatic 11.9 deg. EM_SIMULATED (lumped). Report reports/claude_hfss_array_P01_MS2_1x5_2026-11-21.md",
+    "US3_PS1": "EM_SIMULATED (round 32 converged: channel worst -5.96 dB, eta 0.225 at f0); discarded",
+    "US3_PS2": "EM_SIMULATED (round 33: no eta dip in channel, detuned: main resonance 7.085 GHz, channel worst -2.73 dB)",
+    "US3_PS3": "EM_SIMULATED (round 34: channel worst -7.59 dB, eta 0.65-0.75; acceptable, not better than P01_MS2)",
+    "US3_PS4": "EM_SIMULATED (round 36: channel worst -10.66 dB, both modes +140 MHz; eta 0.24 / realized gain -0.5 dBi in the upper channel)",
+    "US3_PS5": "EM_SIMULATED (round 37, design-reviewer proposal: no eta valley, eta 0.64-0.69, gain 3.0-4.25 dBi; S11 shifted up, worst -6.87 dB)",
+    "US3_PS6": "EM_SIMULATED, two meshes (038 base / 039 fine, partial agreement |dGamma|<=0.056): worst -8.14 dB, ~88% of channel <= -10 dB, eta 0.63-0.69; not better than P01_MS2. HFSS scripts round 41 (design-reviewer review in progress) | HFSS scripts (round 41, c851b05) reviewed by design-reviewer 2026-11-16: READY WITH MINOR CORRECTIONS, applied in 64f3d00; errata variants/US3_PS6.errata.json",
+    "US3_PS4_1": "EM_SIMULATED (round 40: single minimum 7.972 GHz, worst -7.71 dB, eta 0.52-0.68); cause not identified; not proposed for HFSS",
+    "US3_PS4_2": "EM_SIMULATED (Wp sweep, Wp 10 mm: worst -8.56 dB, eta min 0.301); report reports/claude_run_044.md",
+    "US3_PS4_3": "EM_SIMULATED (Wp sweep, Wp 9 mm: worst -7.87 dB, eta min 0.389); report reports/claude_run_044.md",
+    "US3_PS4_4": "EM_SIMULATED (Wp sweep, Wp 8 mm: worst -7.97 dB, eta min 0.496); report reports/claude_run_044.md",
+    "US3_PS4_2_1": "EM_SIMULATED, two meshes (045 base / 047 fine): whole channel <= -10 dB on both (worst -10.35 / -11.38 dB) but |dGamma| up to 0.20, upper minimum 8.137 vs 8.190 GHz; eta_rad valley 0.27 in-channel. HFSS scripts reviewed by design-reviewer (READY WITH MINOR CORRECTIONS, applied 90a732b/369cdef)",
+    "US3_PS6_1": "EM_SIMULATED (046: minimum 7.988 GHz, worst -8.57 dB, eta 0.57-0.68 without valley)",
+    "US3_PS6_2": "EM_SIMULATED (048: minimum 7.953 GHz, edges -9.59/-8.23 dB, eta_rad 0.53-0.68); does not reach <= -10 dB over the channel, not sent to design-reviewer (owner rule)",
+    "US3_PS6_3": "EM_SIMULATED (049: minima 7.928/8.192 GHz, worst -10.94 dB, eta_rad 0.34-0.69 falling at the upper edge); H2 false, not proposed for HFSS",
+    "US3_PS6_4": "openEMS EM_SIMULATED on two meshes (050/051). HFSS element (2026-11-20, converged 12 passes dS 0.0099): worst S11 -9.82 dB at the upper edge (96.4 % of the channel <= -10 dB, 100 % <= -6 dB), single minimum 7.886 GHz, eta_rad 0.742-0.775, realized gain broadside 4.42-5.02 dBi, tau_g ripple 18.4 ps. S11 EM_SIMULATED (lumped port, -10 dB within dS uncertainty); radiation HFSS_VALIDATED with lumped-port reservation. Report reports/claude_hfss_US3_PS6_4_2026-11-20.md",
+    "ARR1x5_US3_PS6_dparam": "HFSS (owner, 2026-11-20): 16 pitches 13.5-20.5 mm, converged at 13.5/18.2/20.5 mm (15 passes, dS < 0.01). At 18.2 mm: Sii -8.64 dB, neighbour coupling -18.25 dB, active broadside -9.62 dB; HPBW xz physical 20.6, virtual 16.4, with monostatic 11.9 deg (sidelobe -8.1 dB at 30 deg steer). EM_SIMULATED (lumped port). Report reports/claude_hfss_array_US3_PS6_2026-11-20.md",
+    "ARR1x5_US3_PS6_4_dparam": "HFSS (owner, 2026-11-20): 11 pitches 16-20.5 mm, all converged (14-17 passes, dS 0.0054-0.0095). At 18.2 mm: Sii -10.73 dB, neighbour coupling -16.28 dB, active broadside -9.23 dB; HPBW xz physical 20.5, virtual 16.3, with monostatic 11.8 deg. Pre-registered coupling refuted (better), active within range. EM_SIMULATED (lumped). Report reports/claude_hfss_array_US3_PS6_4_2026-11-20.md",
+    "P01_MS2_HFSS_2026_11_20": "HFSS element re-simulated (owner): converged dS 0.0156 (target 0.02, 1 pass); worst S11 -9.81 dB at the upper edge (98.2 % <= -10 dB), minimum 7.937 GHz, eta 0.81-0.85 and realized gain broadside 4.7-5.2 dBi at 3 frequencies. S11 EM_SIMULATED (lumped); radiation HFSS_VALIDATED with lumped-port and dS 0.02 reservation (owner decision 2026-11-21). Report reports/claude_hfss_P01_MS2_2026-11-20.md",
+    "ARR1x4_P01_MS2_dparam": "HFSS (owner, 2026-11-20): 16 pitches 13.5-20.5 mm, converged at target 0.02 (1 pass). At 18.2 mm: Sii -10.18, coupling -16.74, active broadside -10.04 dB; HPBW physical 25.7, virtual 22.5, with monostatic 15.2 deg. Against the 1x5 of the same element at 18.2 mm the fifth element narrows the virtual beam by 27 % (a) and 22 % (b). EM_SIMULATED.",
+    "ARR1x5_US3_PS4_2_1_dparam": "HFSS (owner, 2026-11-21): adaptive refinement continued from the 2026-11-20 sweep to dS 0.01 / 2 passes (max 25); 15 pitches 13.5-20.5 mm, all converged (17-23 passes); arr_d = 20 mm not solved. At 18.2 mm (less refined than neighbours, ~0.4 dB): Sii -10.49, neighbour -18.25 dB, active broadside -10.25 dB (all ports <= -10, not robust), 30 deg -9.12 dB; HPBW xz physical 20.7, virtual 16.4, with monostatic 11.9 deg; eta 0.37 at 8.112 GHz. EM_SIMULATED (lumped). Report reports/claude_hfss_array_US3_PS4_2_1_2026-11-21.md"
+  },
+  "em_runs": [
+    {
+      "id": "P01_OPENEMS_001",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_OPENEMS_001",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "temporal_energy_criterion_met": true,
+      "mesh_convergence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "P01_OPENEMS_002",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_OPENEMS_002",
+      "change_vs": "P01_OPENEMS_001 mesh only",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -1.752,
+      "temporal_energy_criterion_met": true,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "mesh_sensitivity_max_abs_delta_s11_channel": 0.0954,
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_002.md"
+    },
+    {
+      "id": "P01_R1_OPENEMS_003",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_R1_OPENEMS_003",
+      "variant": "variants/P01_R1.json",
+      "change_vs": "P01 base: L 8.28->7.65 mm (single variable), mesh rules of 001",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -3.12,
+      "re_zin_peak_hz": 7955000000.0,
+      "temporal_energy_criterion_met": true,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_003.md"
+    },
+    {
+      "id": "P01_R2_OPENEMS_004",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_R2_OPENEMS_004",
+      "variant": "variants/P01_R2.json",
+      "change_vs": "P01_R1: L 7.65->7.95 mm and probe s/L 0.22->0.34 (joint matching design point)",
+      "meets_minus6db": "true_on_sampled_grid_501_samples",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -6.526,
+      "margin_db_over_minus6": 0.53,
+      "mesh_grading_limit_used": 1.5,
+      "temporal_energy_criterion_met": true,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS; recommends fine-mesh verification before READY_FOR_HFSS_REVIEW",
+      "report": "reports/claude_run_004.md"
+    },
+    {
+      "id": "P01_R2_FINE_OPENEMS_005",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_R2_FINE_OPENEMS_005",
+      "variant": "variants/P01_R2.json",
+      "change_vs": "P01_R2_OPENEMS_004: mesh only (fine profile = 002 rules)",
+      "meets_minus6db": "true_on_sampled_grid_501_samples",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -6.289,
+      "temporal_energy_criterion_met": true,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS; READY_FOR_HFSS_REVIEW: SI",
+      "report": "reports/claude_run_005.md"
+    },
+    {
+      "id": "P02_MS1_OPENEMS_006",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED (partial validity, see VALIDITY.json)",
+      "path": "em/P02_MS1_OPENEMS_006",
+      "variant": "variants/P02_MS1.json",
+      "feed": "microstrip inset, MSL port at board edge (SMA launch plane)",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "valid_metric": "measurement-plane S11 fixed 50 ohm ~ -0.70 dB over channel",
+      "invalid": "launch-plane S11 (|S11| up to 1.26), efficiency/gain/group delay",
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "physical conclusion APROBAR CON RESERVAS; MSL port BLOQUEAR",
+      "report": "reports/claude_run_006.md"
+    },
+    {
+      "id": "P02_MS1_OPENEMS_006_REPROC_R7",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED (reprocess of 006, no new solve)",
+      "path": "em/P02_MS1_OPENEMS_006_REPROC_R7",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -0.701
+    },
+    {
+      "id": "P03_MS2_OPENEMS_007",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P03_MS2_OPENEMS_007",
+      "variant": "variants/P03_MS2.json",
+      "feed": "50 ohm microstrip + quarter-wave transformer, MSL port at board edge (SMA launch plane), fixed 50 ohm",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -3.203,
+      "channel_best_s11_db": -10.529,
+      "min_s11_hz": 8250000000.0,
+      "radiation_efficiency": [
+        0.69,
+        0.74
+      ],
+      "realized_gain_broadside_dbi": [
+        -1.37,
+        2.91
+      ],
+      "group_delay": "DIAGNOSTIC (piecewise beta artefact)",
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_007.md"
+    },
+    {
+      "id": "P03_MS3_OPENEMS_008",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P03_MS3_OPENEMS_008",
+      "variant": "variants/P03_MS3.json",
+      "change_vs": "P03_MS2_OPENEMS_007: hexagon circumradius 4.8->4.96 mm only (bottom flat side and feed unchanged)",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -5.479,
+      "channel_samples_above_minus6db": "31/501 (7.7376-7.767 GHz)",
+      "channel_samples_at_or_below_minus10db": "142/501",
+      "s11_min_hz": 8035000000.0,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "NOT_AVAILABLE",
+      "report": "reports/claude_run_008.md"
+    },
+    {
+      "id": "P03_MS4_OPENEMS_009",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P03_MS4_OPENEMS_009",
+      "variant": "variants/P03_MS4.json",
+      "change_vs": "P03_MS3_OPENEMS_008: hexagon circumradius 4.96->5.03 mm only",
+      "meets_minus6db": "true_on_sampled_grid_501_samples (margin 0.013 dB, not robust)",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -6.013,
+      "channel_worst_frequency_hz": 8236800000.0,
+      "radiation_efficiency": [
+        0.7,
+        0.73
+      ],
+      "realized_gain_broadside_dbi": [
+        1.8,
+        3.25
+      ],
+      "group_delay": "DIAGNOSTIC",
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "none available",
+      "report": "reports/claude_run_009.md"
+    },
+    {
+      "id": "P03_MS5_OPENEMS_010",
+      "date": "2026-11-03",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P03_MS5_OPENEMS_010",
+      "variant": "variants/P03_MS5.json",
+      "change_vs": "P03_MS4: hexagon r 5.03->5.007 mm (single variable)",
+      "meets_minus6db": "true_on_sampled_grid_501_samples",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -6.4998,
+      "margin_db_over_minus6": 0.5,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "none available",
+      "report": "reports/claude_run_010.md"
+    },
+    {
+      "id": "US0_OPENEMS_012",
+      "date": "2026-11-04",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US0_OPENEMS_012",
+      "variant": "variants/US0.json",
+      "family": "USLOT_PROBE_H207",
+      "meets_minus6db": "true_on_sampled_grid_501_samples (margin 0.15 dB)",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -6.15,
+      "channel_best_s11_db": -9.28,
+      "radiation_efficiency": [
+        0.84,
+        0.86
+      ],
+      "realized_gain_broadside_dbi": [
+        4.6,
+        5.4
+      ],
+      "radiated_group_delay_ripple_ps_diagnostic": 31,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_012.md"
+    },
+    {
+      "id": "US0_FINE_OPENEMS_013",
+      "date": "2026-11-04",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US0_FINE_OPENEMS_013",
+      "variant": "variants/US0.json",
+      "mesh": "fine",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -5.704,
+      "pre_registered_rule": "REJECTED (change 0.44 dB > margin 0.15 dB)",
+      "radiation_efficiency": [
+        0.843,
+        0.856
+      ],
+      "realized_gain_broadside_dbi": [
+        4.49,
+        5.31
+      ],
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_013.md"
+    },
+    {
+      "id": "US1_FINE_OPENEMS_014",
+      "date": "2026-11-04",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US1_FINE_OPENEMS_014",
+      "variant": "variants/US1.json",
+      "mesh": "fine",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -1.379,
+      "min_s11": [
+        -25.73,
+        7300000000.0
+      ],
+      "bw_minus6db_mhz": 585,
+      "bw_minus10db_mhz": 335,
+      "radiation_efficiency": [
+        0.757,
+        0.774
+      ],
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_014.md"
+    },
+    {
+      "id": "US2_FINE_OPENEMS_015",
+      "date": "2026-11-04",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US2_FINE_OPENEMS_015",
+      "variant": "variants/US2.json",
+      "mesh": "fine",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -2.68,
+      "min_s11": [
+        -17.38,
+        7725000000.0
+      ],
+      "bw_minus6db_mhz": 515,
+      "double_resonance_loop": false,
+      "radiation_efficiency": [
+        0.74,
+        0.75
+      ],
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_015.md"
+    },
+    {
+      "id": "US3_FINE_OPENEMS_016",
+      "date": "2026-11-04",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_FINE_OPENEMS_016",
+      "variant": "variants/US3.json",
+      "mesh": "fine",
+      "meets_minus6db": "true_on_sampled_grid_501_samples (fine mesh, margin 0.65 dB; NOT accepted until xfine)",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -6.654,
+      "channel_best_s11_db": -13.644,
+      "radiation_efficiency": [
+        0.79,
+        0.806
+      ],
+      "realized_gain_broadside_dbi": [
+        4.35,
+        5.42
+      ],
+      "radiated_group_delay_ripple_ps_diagnostic": 46,
+      "pre_registered_hypothesis": "FALSIFIED (no X=0 crossing)",
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_016.md"
+    },
+    {
+      "id": "US3_XFINE_OPENEMS_018",
+      "date": "2026-11-05",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_XFINE_OPENEMS_018",
+      "variant": "variants/US3.json",
+      "mesh": "xfine",
+      "meets_minus6db": false,
+      "channel_worst_s11_db": -5.776,
+      "pre_registered_rule": "MESH_SENSITIVE (change 0.88 dB): US3 NOT accepted",
+      "diagnosis": "ideal lumped probe inductance grows ~ln(1/cell) (US3 1.83->1.97 nH); patch resonance stable; series-L removal leaves |dGamma| 0.007",
+      "mesh_convergence": "NOT_ESTABLISHED (ill-posed with ideal probe)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_018.md"
+    },
+    {
+      "id": "US3_MS1_OPENEMS_021",
+      "date": "2026-11-05",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_MS1_OPENEMS_021",
+      "variant": "variants/US3_MS1.json",
+      "mesh": "base",
+      "feed": "50 ohm microstrip inset (w 3.92 mm, inset 2.0 mm, gap 0.5 mm), 50 ohm vertical lumped port at the line start (board edge), no de-embedding",
+      "meets_minus6db": false,
+      "channel_worst_s11_db": -1.928,
+      "channel_best_s11_db": -4.088,
+      "re_zin_peak_ohm": 298.9,
+      "re_zin_peak_hz": 8040000000.0,
+      "radiation_efficiency": [
+        0.5,
+        0.56
+      ],
+      "mesh_convergence": "NOT_ESTABLISHED (single mesh)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_021.md"
+    },
+    {
+      "id": "US3_MS2_OPENEMS_022",
+      "date": "2026-11-05",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_MS2_OPENEMS_022",
+      "variant": "variants/US3_MS2.json",
+      "mesh": "base",
+      "change_vs": "US3_MS1: feed notch removed (direct 50 ohm edge feed), single variable",
+      "feed": "50 ohm microstrip w 3.92 mm to the radiating edge, 50 ohm vertical lumped port at the line start (board edge), no de-embedding",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -2.404,
+      "channel_best_s11_db": -3.865,
+      "patch_edge_fit_deembedded": {
+        "fr_hz": 7935000000.0,
+        "Q": 16.25,
+        "R_ohm": 296,
+        "eps_eff_dependence": "R 243-296 ohm, fr 7.94-8.14 GHz for eps_eff 3.31-3.64"
+      },
+      "radiation_efficiency": [
+        0.55,
+        0.59
+      ],
+      "dmax_direction": "theta 35-40 deg, phi 270 (toward line)",
+      "pre_registered": "H1 NOT confirmed (Q<20 ok at edge plane; eta and broadside fail, attributed to mismatched line); H2 holds",
+      "mesh_convergence": "NOT_ESTABLISHED (single mesh)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_022.md"
+    },
+    {
+      "id": "US3_MS3_OPENEMS_023",
+      "date": "2026-11-05",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_MS3_OPENEMS_023",
+      "variant": "variants/US3_MS3.json",
+      "mesh": "base",
+      "change_vs": "US3_MS2: last 6.60 mm of the 50 ohm line replaced by a lambda/4 transformer w 0.80 mm (Zt ~102.5 ohm); qw-path mesh extras + y hint -0.215 mm",
+      "feed": "50 ohm microstrip (w 3.92 mm) + lambda/4 transformer to the radiating edge, 50 ohm vertical lumped port at the line start (board edge), no de-embedding",
+      "meets_minus6db": "true_on_sampled_grid_501_samples (margin 2.18 dB)",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -8.182,
+      "channel_worst_frequency_hz": 7737600000.0,
+      "channel_best_s11_db": -16.388,
+      "channel_samples_at_or_below_minus10db": "376/501 (7.798-8.173 GHz)",
+      "bw_minus6db_hz": [
+        7638000000.0,
+        8381000000.0
+      ],
+      "radiation_efficiency": [
+        0.648,
+        0.673
+      ],
+      "realized_gain_broadside_dbi": [
+        3.22,
+        4.02
+      ],
+      "dmax_direction": "theta 15-20 deg, phi 270 (toward line)",
+      "radiated_group_delay_ripple_ps_diagnostic": 67,
+      "pre_registered": "H1 confirmed; H2 not (eta < 0.70, Dmax ~20 deg)",
+      "wall_s": 494,
+      "peak_rss_mib": 439,
+      "mesh_convergence": "NOT_ESTABLISHED (single mesh)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_023.md"
+    },
+    {
+      "id": "US3_MS3_FINE_OPENEMS_024",
+      "date": "2026-11-05",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_MS3_FINE_OPENEMS_024",
+      "variant": "variants/US3_MS3.json",
+      "mesh": "fine",
+      "change_vs": "US3_MS3_OPENEMS_023: mesh only (base -> fine)",
+      "feed": "same as 023 (50 ohm microstrip + lambda/4, 50 ohm lumped port at line start, no de-embedding)",
+      "meets_minus6db": "true_on_sampled_grid_501_samples (margin 2.04 dB)",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -8.035,
+      "channel_worst_frequency_hz": 7737600000.0,
+      "channel_best_s11_db": -18.302,
+      "channel_samples_at_or_below_minus10db": "387/501",
+      "bw_minus6db_hz": [
+        7647200000.0,
+        8389000000.0
+      ],
+      "radiation_efficiency": [
+        0.648,
+        0.677
+      ],
+      "realized_gain_broadside_dbi": [
+        3.27,
+        4.1
+      ],
+      "radiated_group_delay_ripple_ps_diagnostic": 67,
+      "wall_s": 910,
+      "peak_rss_mib": 941,
+      "two_mesh_comparison": "em/US3_MS3_FINE_OPENEMS_024/mesh_comparison.json",
+      "worst_change_db": 0.147,
+      "max_abs_dgamma_channel": 0.045,
+      "minus6_edge_shift_mhz": [
+        9.5,
+        7.9
+      ],
+      "mesh_convergence": "RULE_FAILED (item 2: |dGamma| 0.045 > 0.03; worst-case change 0.15 dB; edges pass)",
+      "validator": "APROBAR CON RESERVAS (not READY_FOR_HFSS_REVIEW)",
+      "report": "reports/claude_run_024.md"
+    },
+    {
+      "id": "P01_MS1_OPENEMS_025",
+      "date": "2026-11-05",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_MS1_OPENEMS_025",
+      "variant": "variants/P01_MS1.json",
+      "mesh": "base",
+      "change_vs": "US3_MS3_OPENEMS_023: element only (U-slot removed, L 6.502 -> 7.322 mm rescaled from US0 fit to keep fr at f0); same FR4 h 2.07, feed, port and mesh profile",
+      "feed": "50 ohm microstrip (w 3.92 mm) + lambda/4 0.80 x 6.60 mm to the radiating edge, 50 ohm vertical lumped port at the line start, no de-embedding",
+      "meets_minus6db": "true_on_sampled_grid_501_samples (margin 2.34 dB)",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -8.344,
+      "channel_worst_frequency_hz": 7737600000.0,
+      "channel_samples_at_or_below_minus10db": "440/501",
+      "min_s11_hz": 8053000000.0,
+      "bw_minus6db_hz": [
+        7620000000.0,
+        8640000000.0
+      ],
+      "radiation_efficiency": [
+        0.72,
+        0.759
+      ],
+      "realized_gain_broadside_dbi": [
+        3.99,
+        4.8
+      ],
+      "dmax_direction": "theta 15 deg, phi 270 (toward line)",
+      "radiated_group_delay_ripple_ps_diagnostic": 35,
+      "pre_registered": "H1 confirmed (min 8.053 GHz); H2 refuted (not worse than US3_MS3)",
+      "wall_s": 336,
+      "peak_rss_mib": 425,
+      "mesh_convergence": "NOT_ESTABLISHED (single mesh)",
+      "validator": "APROBAR CON RESERVAS (transformer ~2.5 cells wide; 0.16 dB advantage within US3_MS3 mesh sensitivity)",
+      "report": "reports/claude_run_025.md"
+    },
+    {
+      "id": "P01_MS1_FINE_OPENEMS_026",
+      "date": "2026-11-05",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_MS1_FINE_OPENEMS_026",
+      "variant": "variants/P01_MS1.json",
+      "mesh": "fine",
+      "change_vs": "P01_MS1_OPENEMS_025: mesh only (base -> fine)",
+      "feed": "same as 025 (50 ohm microstrip + lambda/4 0.80 x 6.60 mm, 50 ohm lumped port at line start, no de-embedding)",
+      "meets_minus6db": "true_on_sampled_grid_501_samples (margin 2.17 dB)",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -8.166,
+      "channel_worst_frequency_hz": 7737600000.0,
+      "channel_best_s11_db": -34.31,
+      "channel_samples_at_or_below_minus10db": "434/501",
+      "bw_minus6db_hz": [
+        7625100000.0,
+        8634600000.0
+      ],
+      "radiation_efficiency": [
+        0.717,
+        0.759
+      ],
+      "realized_gain_broadside_dbi": [
+        3.94,
+        4.82
+      ],
+      "radiated_group_delay_ripple_ps_diagnostic": 35,
+      "wall_s": 983,
+      "peak_rss_mib": 915,
+      "two_mesh_comparison": "em/P01_MS1_FINE_OPENEMS_026/mesh_comparison.json",
+      "worst_change_db": 0.178,
+      "max_abs_dgamma_channel": 0.0291,
+      "minus6_contiguous_edge_shift_mhz": [
+        9.65,
+        6.07
+      ],
+      "mesh_convergence": "BOUNDED_SENSITIVITY_PASS (two meshes; tight margins: dGamma 0.029/0.03, edge 9.65/10 MHz; transformer width not refined)",
+      "validator": "APROBAR CON RESERVAS; READY_FOR_HFSS_REVIEW: SI",
+      "report": "reports/claude_run_026.md"
+    },
+    {
+      "id": "P01_MS2_OPENEMS_027",
+      "date": "2026-11-13",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_MS2_OPENEMS_027",
+      "variant": "variants/P01_MS2.json",
+      "mesh": "base",
+      "change_vs": "P01_MS1: transformer length 6.6 -> 7.1 mm (50 ohm line shortened 0.5 mm as consequence)",
+      "meets_minus6db": "true_on_sampled_grid",
+      "meets_minus10db": "true_on_sampled_grid_base_mesh_only (margin 0.42 dB)",
+      "channel_worst_s11_db": -10.42,
+      "minus10db_band_ghz": [
+        7.724,
+        8.306
+      ],
+      "radiation_efficiency": [
+        0.728,
+        0.761
+      ],
+      "realized_gain_broadside_dbi": [
+        4.3,
+        4.78
+      ],
+      "mesh_convergence": "NOT_ESTABLISHED (base only)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_027.md"
+    },
+    {
+      "id": "P01_MS2_FINE_OPENEMS_028",
+      "date": "2026-11-13",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_MS2_FINE_OPENEMS_028",
+      "variant": "variants/P01_MS2.json",
+      "mesh": "fine",
+      "meets_minus6db": "true_on_sampled_grid",
+      "meets_minus10db": "true_on_sampled_grid_both_meshes (BOUNDED_SENSITIVITY_PASS)",
+      "channel_worst_s11_db": -10.36,
+      "minus10db_band_ghz": [
+        7.726,
+        8.305
+      ],
+      "max_abs_dgamma_channel": 0.0291,
+      "radiation_efficiency": [
+        0.726,
+        0.762
+      ],
+      "realized_gain_broadside_dbi": [
+        4.33,
+        4.81
+      ],
+      "mesh_convergence": "BOUNDED_SENSITIVITY_PASS (two meshes, not convergence)",
+      "validator": "APROBAR CON RESERVAS; READY_FOR_HFSS_REVIEW: SI",
+      "report": "reports/claude_run_028.md"
+    },
+    {
+      "id": "US3_MS4_OPENEMS_029",
+      "date": "2026-11-13",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_MS4_OPENEMS_029",
+      "variant": "variants/US3_MS4.json",
+      "mesh": "base",
+      "change_vs": "US3_MS3: u_Wu 4.4 -> 7.0 mm (single variable)",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -1.374,
+      "re_zin_peak_hz": 6830000000.0,
+      "second_re_zin_peak_hz": 10300000000.0,
+      "second_peak_mode_attribution": "NOT_IDENTIFIED",
+      "hypotheses": {
+        "H1": "formally met, no mode attribution",
+        "H2": "not evaluable (band truncated at 10.52 GHz)"
+      },
+      "temporal_energy_db": -50.08,
+      "mesh_convergence": "NOT_ESTABLISHED (base only)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_029.md"
+    },
+    {
+      "id": "P01_IN1_OPENEMS_030",
+      "date": "2026-11-14",
+      "evidence": "EM_SIMULATED",
+      "path": "em/P01_IN1_OPENEMS_030",
+      "variant": "variants/P01_IN1.json",
+      "mesh": "base",
+      "change_vs": "P01_MS2: lambda/4 transformer replaced by direct inset (depth 2.1 mm, notch gap 1.0 mm), same patch",
+      "meets_minus6db": false,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -2.062,
+      "channel_best_s11_db": -4.217,
+      "re_zin_port_peak_hz": 8340000000.0,
+      "min_s11": {
+        "db": -14.0,
+        "hz": 8770000000.0
+      },
+      "minus10db_band_ghz": [
+        8.59,
+        8.98
+      ],
+      "hypotheses": {
+        "H1": "false",
+        "H2": "formally met (Re Z_tip peak 39.2 ohm at 8.665 GHz), model-dependent; cos^2 not validated"
+      },
+      "temporal_energy_db": -51.41,
+      "mesh_convergence": "NOT_ESTABLISHED (base only)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_030.md"
+    },
+    {
+      "id": "US3_PS1_OPENEMS_031",
+      "date": "2026-11-15",
+      "evidence": "EM_SIMULATED (truncated: NrTS 30000, energy -43 dB)",
+      "path": "em/US3_PS1_OPENEMS_031",
+      "variant": "variants/US3_PS1.json",
+      "mesh": "base",
+      "change_vs": "US3_MS3 + buried parasitic 11.0 x 7.6 mm at z = h/2",
+      "meets_minus6db": "borderline (-6.02 dB)",
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -6.02,
+      "minima_ghz_db": [
+        [
+          7.675,
+          -32
+        ],
+        [
+          8.03,
+          -26
+        ]
+      ],
+      "minus10db_band_ghz": [
+        7.49,
+        8.115
+      ],
+      "in_channel_minus10_mhz": 378,
+      "radiation_efficiency": [
+        0.226,
+        0.636
+      ],
+      "realized_gain_broadside_dbi_f0": -0.58,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_031.md",
+      "note": "not converged in time (NrTS cap); superseded by 032; its -6 dB pass does not hold"
+    },
+    {
+      "id": "US3_PS1_OPENEMS_032",
+      "date": "2026-11-15",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS1_OPENEMS_032",
+      "variant": "variants/US3_PS1.json",
+      "mesh": "base",
+      "change_vs": "031 with --max-timesteps 60000 (XML differs only in NumberOfTimesteps)",
+      "temporal_energy_db": -50.84,
+      "steps": 33228,
+      "meets_minus6db": false,
+      "channel_worst_s11_db": -5.96,
+      "radiation_efficiency": [
+        0.225,
+        0.638
+      ],
+      "realized_gain_broadside_dbi_f0": -0.61,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_032.md"
+    },
+    {
+      "id": "US3_PS2_OPENEMS_033",
+      "date": "2026-11-15",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS2_OPENEMS_033",
+      "variant": "variants/US3_PS2.json",
+      "mesh": "base",
+      "change_vs": "inverted stack: driven U-slot + buried feed at z_d 1.29375 mm, parasitic 11.421 x 7.15 mm on top (multi-variable vs PS1)",
+      "temporal_energy_db": -50.07,
+      "meets_minus6db": false,
+      "channel_worst_s11_db": -2.73,
+      "main_min": {
+        "ghz": 7.085,
+        "db": -13.3
+      },
+      "radiation_efficiency": [
+        0.539,
+        0.72
+      ],
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK con observaciones",
+      "report": "reports/claude_run_033.md"
+    },
+    {
+      "id": "US3_PS3_OPENEMS_034",
+      "date": "2026-11-15",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS3_OPENEMS_034",
+      "variant": "variants/US3_PS3.json (previous mesh hints)",
+      "mesh": "base",
+      "change_vs": "US3_PS2: z_d 1.29375->1.5525 mm and transformer 0.5x5.7->0.5x7.8 mm (documented two-change exception)",
+      "temporal_energy_db": -51.5,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -7.59,
+      "minus10db_band_ghz": [
+        7.837,
+        8.172
+      ],
+      "radiation_efficiency": [
+        0.654,
+        0.746
+      ],
+      "realized_gain_broadside_dbi": [
+        3.61,
+        4.77
+      ],
+      "mesh_convergence": "pending (035 base + 036 fine with new hints)",
+      "validator": "OK con observaciones",
+      "report": "reports/claude_run_034.md"
+    },
+    {
+      "id": "US3_PS4_OPENEMS_036",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS4_OPENEMS_036",
+      "variant": "variants/US3_PS4.json",
+      "mesh": "base",
+      "change_vs": "US3_PS1: patch_L 6.502->6.302, Lp 7.60->7.46 mm, parasitic centre 0.80->0.75 (mesh)",
+      "temporal_energy_db": -51.02,
+      "meets_minus6db": true,
+      "meets_minus10db": "true on base mesh (margin 0.66 dB, 8 MHz)",
+      "channel_worst_s11_db": -10.66,
+      "minus10db_band_ghz": [
+        7.631,
+        8.245
+      ],
+      "radiation_efficiency": [
+        0.244,
+        0.677
+      ],
+      "realized_gain_broadside_dbi": [
+        -0.48,
+        4.33
+      ],
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK con observaciones",
+      "report": "reports/claude_run_036.md"
+    },
+    {
+      "id": "US3_PS5_OPENEMS_037",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS5_OPENEMS_037",
+      "variant": "variants/US3_PS5.json",
+      "mesh": "base",
+      "change_vs": "US3_PS4: patch_L 6.302->6.18, Lp 7.46->7.05 (design-reviewer proposal)",
+      "temporal_energy_db": -51.95,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -6.87,
+      "min": {
+        "ghz": 8.063,
+        "db": -22.71
+      },
+      "minus10db_band_ghz": [
+        7.85,
+        8.32
+      ],
+      "radiation_efficiency": [
+        0.639,
+        0.688
+      ],
+      "realized_gain_broadside_dbi": [
+        2.99,
+        4.25
+      ],
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK with observations (2026-11-16, audited with 038); report corrected",
+      "report": "reports/claude_run_037.md"
+    },
+    {
+      "id": "US3_PS6_OPENEMS_038",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS6_OPENEMS_038",
+      "variant": "variants/US3_PS6.json",
+      "mesh": "base",
+      "change_vs": "US3_PS5: patch_L 6.18->6.29 plus mesh hint y -3.06 (mesh changes too: 184->199 y lines, +8% cells)",
+      "temporal_energy_db": -50.21,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -8.16,
+      "min": {
+        "ghz": 8.005,
+        "db": -20.43
+      },
+      "minus10db_band_ghz": [
+        7.797,
+        8.248
+      ],
+      "channel_fraction_le_minus10db": 0.88,
+      "radiation_efficiency": [
+        0.592,
+        0.683
+      ],
+      "realized_gain_broadside_dbi": [
+        3.1,
+        4.23
+      ],
+      "hypotheses": "H0 true; H1 true by 0.16 dB on base mesh (not robust); H2 true (eta margin 0.04 at 8.2368)",
+      "vs_P01_MS2": "worse on every worst-case metric; no demonstrated advantage",
+      "mesh_convergence": "NOT_ESTABLISHED (fine mesh = round 039)",
+      "validator": "OK with observations (2026-11-16)",
+      "report": "reports/claude_run_038.md",
+      "note": "-10 dB band on the 1 MHz grid"
+    },
+    {
+      "id": "US3_PS6_FINE_OPENEMS_039",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS6_FINE_OPENEMS_039",
+      "variant": "variants/US3_PS6.json",
+      "mesh": "fine",
+      "change_vs": "US3_PS6_OPENEMS_038: same geometry, fine mesh (two-mesh check)",
+      "temporal_energy_db": -50.01,
+      "cells": 5316960,
+      "timesteps": 45140,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -8.14,
+      "min": {
+        "ghz": 8.003,
+        "db": -24.72
+      },
+      "minus10db_band_ghz": [
+        7.796,
+        8.278
+      ],
+      "radiation_efficiency": [
+        0.625,
+        0.69
+      ],
+      "realized_gain_broadside_dbi": [
+        3.4,
+        4.32
+      ],
+      "two_mesh_check": {
+        "worst_s11_diff_db": 0.02,
+        "min_freq_diff_mhz": 2,
+        "max_abs_dGamma_channel_1mhz": 0.056,
+        "unstable": "null depth (4.3 dB), -10 dB upper edge (+30 MHz), eta at 8.2368 (+0.033)"
+      },
+      "mesh_convergence": "TWO_MESH_AGREEMENT_PARTIAL (not demonstrated; |dGamma| <= 0.056)",
+      "validator": "OK with observations (2026-11-16); report corrected",
+      "report": "reports/claude_run_039.md",
+      "nodal_cells": 5414247,
+      "hypotheses": "H0 true; H1 true by 0.14 dB (not robust: below the mesh difference); H2 true (Dmax at theta 15-20 deg, sampled grid)"
+    },
+    {
+      "id": "US3_PS4_1_OPENEMS_040",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS4_1_OPENEMS_040",
+      "variant": "variants/US3_PS4_1.json",
+      "mesh": "base",
+      "change_vs": "US3_PS4: parasitic Wp 11.0->7.0 mm (owner request: raise the lower resonance)",
+      "temporal_energy_db": -50.97,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -7.71,
+      "min": {
+        "ghz": 7.972,
+        "db": -19.55
+      },
+      "minus10db_band_ghz": [
+        7.82,
+        8.19
+      ],
+      "channel_fraction_le_minus10db": 0.75,
+      "radiation_efficiency": [
+        0.517,
+        0.676
+      ],
+      "realized_gain_broadside_dbi": [
+        2.54,
+        3.88
+      ],
+      "hypotheses": "H0 false (modes merged into one minimum), H1 false, H2 false (2/11 points eta<0.55, shallow valley at 7.84-7.89 GHz)",
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK with observations (2026-11-16); report corrected",
+      "report": "reports/claude_run_040.md",
+      "cells": 2311680,
+      "nodal_cells": 2367505,
+      "note": "single S11 minimum observed; cause (coupling, parasitic self-frequency or mode crossing) not identified"
+    },
+    {
+      "id": "US3_PS4_2_OPENEMS_042",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS4_2_OPENEMS_042",
+      "variant": "variants/US3_PS4_2.json",
+      "mesh": "base",
+      "change_vs": "US3_PS4: Wp 11->10 mm (owner Wp sweep 11/10/9/8/7)",
+      "temporal_energy_db": -50.71,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -8.56,
+      "channel_worst_ghz": 8.2368,
+      "minima_1mhz_ghz_db": [
+        [
+          7.868,
+          -28.87
+        ],
+        [
+          8.098,
+          -27.33
+        ]
+      ],
+      "channel_fraction_le_minus10db": 0.932,
+      "radiation_efficiency": [
+        0.301,
+        0.672
+      ],
+      "realized_gain_broadside_min_dbi": 0.43,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK with observations (2026-11-16); report corrected",
+      "report": "reports/claude_run_044.md",
+      "mesh_note": "same base mesh profile as 036/040; effective x lines and timestep differ with Wp; 036 lacks the y -2.99 hint"
+    },
+    {
+      "id": "US3_PS4_3_OPENEMS_043",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS4_3_OPENEMS_043",
+      "variant": "variants/US3_PS4_3.json",
+      "mesh": "base",
+      "change_vs": "US3_PS4: Wp 11->9 mm (owner Wp sweep 11/10/9/8/7)",
+      "temporal_energy_db": -50.22,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -7.87,
+      "channel_worst_ghz": 8.2368,
+      "minima_1mhz_ghz_db": [
+        [
+          7.932,
+          -23.81
+        ]
+      ],
+      "channel_fraction_le_minus10db": 0.856,
+      "radiation_efficiency": [
+        0.389,
+        0.67
+      ],
+      "realized_gain_broadside_min_dbi": 1.65,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK with observations (2026-11-16); report corrected",
+      "report": "reports/claude_run_044.md",
+      "note": "broad minimum at 7.932 GHz with a plateau to 8.00 GHz; the 7.999 GHz 'minimum' has 0.008 dB prominence (not physical). Re(Zin) peaks 7.853 / 8.056 GHz",
+      "mesh_note": "same base mesh profile as 036/040; effective x lines and timestep differ with Wp; 036 lacks the y -2.99 hint"
+    },
+    {
+      "id": "US3_PS4_4_OPENEMS_044",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS4_4_OPENEMS_044",
+      "variant": "variants/US3_PS4_4.json",
+      "mesh": "base",
+      "change_vs": "US3_PS4: Wp 11->8 mm (owner Wp sweep 11/10/9/8/7)",
+      "temporal_energy_db": -52.17,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -7.97,
+      "channel_worst_ghz": 8.2368,
+      "minima_1mhz_ghz_db": [
+        [
+          7.972,
+          -15.35
+        ]
+      ],
+      "channel_fraction_le_minus10db": 0.752,
+      "radiation_efficiency": [
+        0.496,
+        0.657
+      ],
+      "realized_gain_broadside_min_dbi": 2.51,
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK with observations (2026-11-16); report corrected",
+      "report": "reports/claude_run_044.md",
+      "mesh_note": "same base mesh profile as 036/040; effective x lines and timestep differ with Wp; 036 lacks the y -2.99 hint"
+    },
+    {
+      "id": "US3_PS4_2_1_OPENEMS_045",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS4_2_1_OPENEMS_045",
+      "variant": "variants/US3_PS4_2_1.json",
+      "mesh": "base",
+      "change_vs": "US3_PS4_2: patch_L 6.302->6.222 mm (mesh y hints also changed)",
+      "temporal_energy_db": -51.49,
+      "meets_minus6db": true,
+      "meets_minus10db": true,
+      "channel_worst_s11_db": -10.35,
+      "channel_worst_ghz": 8.2368,
+      "minima_1mhz_ghz": [
+        7.88,
+        8.137
+      ],
+      "channel_fraction_le_minus10db": 1.0,
+      "radiation_efficiency": [
+        0.273,
+        0.67
+      ],
+      "realized_gain_broadside_dbi": [
+        -0.07,
+        4.22
+      ],
+      "hypotheses": "H0 true, H1 true on base mesh only (margin 0.35 dB, below the 038/039 mesh difference; not robust), H2 false; not a candidate by its own decision rule (eta min 0.273 < 0.30)",
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK with observations (2026-11-16); report corrected",
+      "report": "reports/claude_run_046.md",
+      "mesh_note": "effective y lines: of hints -3.07/-3.03/-2.97 only -2.97 survives; parasitic-edge line -2.97 vs -2.99 in 042"
+    },
+    {
+      "id": "US3_PS6_1_OPENEMS_046",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS6_1_OPENEMS_046",
+      "variant": "variants/US3_PS6_1.json",
+      "mesh": "base",
+      "change_vs": "US3_PS6: patch_L 6.29->6.32 mm (mesh y hint -3.06 -> -3.078)",
+      "temporal_energy_db": -50.61,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -8.57,
+      "channel_worst_ghz": 7.7376,
+      "minima_1mhz_ghz": [
+        7.988
+      ],
+      "channel_fraction_le_minus10db": 0.888,
+      "radiation_efficiency": [
+        0.571,
+        0.683
+      ],
+      "realized_gain_broadside_dbi": [
+        2.81,
+        4.23
+      ],
+      "hypotheses": "H0 true (-17 MHz), H1 false, H2 true",
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK with observations (2026-11-16); report corrected",
+      "report": "reports/claude_run_046.md"
+    },
+    {
+      "id": "US3_PS4_2_1_FINE_OPENEMS_047",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS4_2_1_FINE_OPENEMS_047",
+      "variant": "variants/US3_PS4_2_1.json",
+      "mesh": "fine",
+      "change_vs": "US3_PS4_2_1_OPENEMS_045: same geometry, fine mesh",
+      "temporal_energy_db": -50.68,
+      "nodal_cells": 5744250,
+      "timesteps": 49096,
+      "meets_minus6db": true,
+      "meets_minus10db": true,
+      "channel_worst_s11_db": -11.38,
+      "channel_worst_ghz": 7.7376,
+      "minima_1mhz_ghz": [
+        7.89,
+        8.19
+      ],
+      "channel_fraction_le_minus10db": 1.0,
+      "radiation_efficiency": [
+        0.268,
+        0.675
+      ],
+      "realized_gain_broadside_dbi": [
+        -0.12,
+        4.27
+      ],
+      "two_mesh_check": {
+        "max_abs_dGamma_channel_1mhz": 0.2,
+        "upper_minimum_shift_mhz": 53,
+        "lower_minimum_shift_mhz": 10,
+        "max_at_ghz": 8.155,
+        "vs_campaign_rule_0p03": "fails (x6.8)",
+        "rigid_shift_42mhz_residual": 0.06
+      },
+      "mesh_convergence": "NOT_ESTABLISHED (whole channel <= -10 dB on both meshes, but |dGamma| up to 0.20; upper mode mesh-sensitive)",
+      "validator": "OK with observations (2026-11-16); report corrected",
+      "report": "reports/claude_run_047.md"
+    },
+    {
+      "id": "US3_PS6_2_OPENEMS_048",
+      "date": "2026-11-16",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS6_2_OPENEMS_048",
+      "variant": "variants/US3_PS6_2.json",
+      "mesh": "base",
+      "change_vs": "US3_PS6_1: patch_L 6.32->6.38 mm (mesh y hint -3.078 -> -3.104)",
+      "temporal_energy_db": -50.45,
+      "meets_minus6db": true,
+      "meets_minus10db": false,
+      "channel_worst_s11_db": -8.23,
+      "channel_worst_ghz": 8.2368,
+      "minima_1mhz_ghz": [
+        7.953
+      ],
+      "channel_fraction_le_minus10db": 0.872,
+      "radiation_efficiency": [
+        0.526,
+        0.683
+      ],
+      "realized_gain_broadside_dbi": [
+        2.08,
+        4.22
+      ],
+      "hypotheses": "H0 true (7.953 vs guide 7.954), H1 false (as predicted), H2 false (eta_rad 0.526 at 8.2368)",
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "validator": "OK with observations (2026-11-16); report corrected",
+      "report": "reports/claude_run_048.md"
+    },
+    {
+      "id": "US3_PS6_3_OPENEMS_049",
+      "date": "2026-11-19",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS6_3_OPENEMS_049",
+      "variant": "variants/US3_PS6_3.json",
+      "mesh": "base (grading 1.4; not comparable to 038)",
+      "change_vs": "US3_PS6: parasitic Lp 7.05->7.25 mm (mesh also changed: 171 vs 198 y cells)",
+      "temporal_energy_db": -51.48,
+      "meets_minus6db": true,
+      "meets_minus10db": true,
+      "channel_worst_s11_db": -10.94,
+      "channel_worst_ghz": 7.7376,
+      "minima_1mhz_ghz": [
+        7.928,
+        8.192
+      ],
+      "channel_fraction_le_minus10db": 1.0,
+      "radiation_efficiency": [
+        0.342,
+        0.687
+      ],
+      "realized_gain_broadside_dbi": [
+        0.65,
+        4.36
+      ],
+      "group_delay_ripple_ps_copol_diag": 474,
+      "hypotheses": "H0 partial (second minimum 8.192), H1 true, H2 false (eta 0.342 at 8.237)",
+      "mesh_convergence": "NOT_ESTABLISHED",
+      "resources": {
+        "threads": 2,
+        "wall_s": 877,
+        "cpu_s": 1539,
+        "peak_rss_kib": 461888
+      },
+      "software": "openEMS 0.37.0.post1.dev40, CSXCAD 0.7.0.post1.dev8",
+      "validator": "OK with observations (2026-11-19); cause of eta drop confounded with mesh",
+      "report": "reports/claude_run_050.md"
+    },
+    {
+      "id": "US3_PS6_4_OPENEMS_050",
+      "date": "2026-11-19",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS6_4_OPENEMS_050",
+      "variant": "variants/US3_PS6_4.json",
+      "mesh": "base",
+      "change_vs": "US3_PS6: W 11.421->14.0, Wp 11.0->13.58, transformer 1.0x7.25 mm (94.9 ohm), 50-ohm line 2.605 mm (multi-parameter, documented exception)",
+      "temporal_energy_db": -51.26,
+      "meets_minus6db": true,
+      "meets_minus10db": true,
+      "channel_worst_s11_db": -10.92,
+      "channel_worst_ghz": 8.2368,
+      "minima_1mhz_ghz": [
+        7.936
+      ],
+      "channel_fraction_le_minus10db": 1.0,
+      "le_minus10db_region_ghz": [
+        7.687,
+        8.318
+      ],
+      "radiation_efficiency": [
+        0.654,
+        0.709
+      ],
+      "realized_gain_broadside_dbi": [
+        4.03,
+        4.71
+      ],
+      "group_delay_ripple_ps_copol_diag": 32,
+      "hypotheses": "H0 true (7.936), H1 true on base mesh only, H2 true",
+      "mesh_convergence": "NOT_ESTABLISHED (single mesh; margin dGamma 0.032 below observed mesh sensitivity)",
+      "resources": {
+        "threads": 2,
+        "wall_s": 915,
+        "cpu_s": 1612,
+        "peak_rss_kib": 533328
+      },
+      "software": "openEMS 0.37.0.post1.dev40, CSXCAD 0.7.0.post1.dev8",
+      "validator": "OK with observations (2026-11-19); fine mesh recommended before HFSS",
+      "report": "reports/claude_run_050.md"
+    },
+    {
+      "id": "US3_PS6_4_FINE_OPENEMS_051",
+      "date": "2026-11-19",
+      "evidence": "EM_SIMULATED",
+      "path": "em/US3_PS6_4_FINE_OPENEMS_051",
+      "variant": "variants/US3_PS6_4.json",
+      "mesh": "fine",
+      "change_vs": "US3_PS6_4_OPENEMS_050: same geometry, fine mesh (two-mesh check)",
+      "temporal_energy_db": -50.01,
+      "energy_note": "criterion met in an energy valley; peak envelope ~-43 dB; truncating 30% of the port record changes |Gamma| <= 0.006",
+      "meets_minus6db": true,
+      "meets_minus10db": true,
+      "channel_worst_s11_db": -11.24,
+      "channel_worst_ghz": 8.2368,
+      "minima_1mhz_ghz": [
+        7.947
+      ],
+      "channel_fraction_le_minus10db": 1.0,
+      "le_minus10db_region_ghz": [
+        7.695,
+        8.38
+      ],
+      "radiation_efficiency": [
+        0.661,
+        0.712
+      ],
+      "realized_gain_broadside_dbi": [
+        4.13,
+        4.71
+      ],
+      "group_delay_ripple_ps_copol_diag": 15,
+      "max_abs_dgamma_vs_base_in_channel": 0.015,
+      "mesh_convergence": "BOUNDED_SENSITIVITY_PASS (two meshes, not convergence)",
+      "resources": {
+        "threads": 2,
+        "wall_s": 3012,
+        "cpu_s": 5436,
+        "peak_rss_kib": 985096,
+        "nodal_cells": 5566761
+      },
+      "software": "openEMS 0.37.0-40-g5fecbb5, CSXCAD 0.7.0-8-g626b99f",
+      "owner_authorisation": "chat 2026-11-19: fine mesh beyond 1800 s",
+      "validator": "OK with observations (2026-11-19)",
+      "report": "reports/claude_run_051.md"
+    }
+  ],
+  "iterations": 0,
+  "max_iterations": 2,
+  "max_em_runs_first_task": 1,
+  "next_task": "OWNER: HFSS check of P01_MS2 (set tr_l = 7.1mm in the P01_MS1 HFSS design and re-analyze), focus on 8.2368 GHz (HFSS ~-0.9 % shift risk). Claude rounds stop until review.",
+  "automation_policy": "antenna_design/automation_policy.json",
+  "recurrence_prompt": "antenna_design/AUTOMATED_CYCLE.md",
+  "status": "READY_FOR_HFSS_REVIEW",
+  "last_campaign_id": "CH9-INITIAL-2026-11-03",
+  "history": [
+    {
+      "id": "CH9-INITIAL-2026-11-03",
+      "date": "2026-11-03",
+      "status": "BLOCKED",
+      "em_status": "EM_NOT_RUN",
+      "reason": "No operational openEMS/CSXCAD installation after bounded diagnosis",
+      "geometry_exports": "outputs/manifest.json",
+      "reports": "reports/",
+      "em_solves_executed": 0
+    },
+    {
+      "id": "CLAUDE-RUN-001",
+      "date": "2026-11-03",
+      "status": "BLOCKED",
+      "em_status": "EM_NOT_RUN",
+      "reason": "No openEMS/CSXCAD Python bindings available via apt (Ubuntu noble), PyPI or conda-forge; official route is a source build requiring owner consent",
+      "diagnosis": "em/solver_diagnosis_claude_run_001.json",
+      "report": "reports/claude_run_001.md",
+      "em_solves_executed": 0
+    },
+    {
+      "id": "SOLVER-RECOVERY-2026-11-03",
+      "status": "PAUSED",
+      "solver": "openEMS installed and verified with official waveguide example",
+      "p01_runs": 1,
+      "result": "Baseline fails full-band adaptation; independent convergence study pending",
+      "report": "reports/solver_recovery.md"
+    },
+    {
+      "id": "CLAUDE-RUN-002",
+      "date": "2026-11-03",
+      "status": "PAUSED",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P01_OPENEMS_002 mesh refinement",
+      "result": "Fails -6 dB on both meshes (worst -1.94/-1.75 dB at 8.2368 GHz); max |dS11| 0.095; resonance below channel (~7.63 GHz)",
+      "resources": "4.75 M cells, 963 s wall, 2 CPU, peak RSS 740 MiB; orchestrator overrode own 8 GiB brief threshold (documented)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_002.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-003",
+      "date": "2026-11-03",
+      "status": "PAUSED",
+      "em_status": "EM_SIMULATED",
+      "experiment": "Wideband re-analysis of 001/002 (resonance 7.47 GHz) + P01_R1 length retune",
+      "result": "Resonance moved to 7.955 GHz; channel S11 -3.1..-7.3 dB, fails -6 dB; residual +60 ohm series reactance (fit Ls 1.2 nH, Q 13.5)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_003.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-004",
+      "date": "2026-11-03",
+      "status": "PAUSED",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P01_R2 matching design point",
+      "result": "First full-channel -6 dB on sampled grid (worst -6.53 dB, -16 dB at f0); fails -10 dB; margin 0.53 dB < measured mesh sensitivity",
+      "validator": "APROBAR CON RESERVAS (B)",
+      "report": "reports/claude_run_004.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-005",
+      "date": "2026-11-03",
+      "status": "READY_FOR_HFSS_REVIEW",
+      "previous_status": "PAUSED",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P01_R2 fine-mesh verification (pre-registered rule)",
+      "result": "Fine mesh worst -6.29 dB, all channel samples <= -6 dB; -10 dB fails; candidate P01_R2 ready for human HFSS review with mandatory reservations",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_005.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-CONTEXT-EUCAP2027",
+      "date": "2026-11-03",
+      "status": "READY_FOR_HFSS_REVIEW",
+      "em_status": "NO_NEW_RUN",
+      "event": "Owner supplied EuCAP2027 paper. Context review written; erratum: '-10 dB unreachable with Q~13' valid only within guide model (Bode-Fano ch9 bound ~-33.6 dB). Owner decisions listed (band scope, 13.5 mm pitch, stack).",
+      "report": "not included in the public repository",
+      "em_solves_executed": 0
+    },
+    {
+      "id": "OWNER-DECISION-2026-11-03-P02-P03",
+      "date": "2026-11-03",
+      "status": "ACTIVE",
+      "previous_status": "READY_FOR_HFSS_REVIEW",
+      "event": "Owner asked to simulate P02 (U-slot) and P03 (hex slot) with a microstrip feed ending in an SMA connector. Claude EM rounds resume; P01_R2 remains the HFSS-review candidate (not reviewed yet)."
+    },
+    {
+      "id": "CLAUDE-RUN-006",
+      "date": "2026-11-03",
+      "status": "BLOCKED",
+      "previous_status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P02_MS1 U-slot with microstrip inset feed + MSL port + NF2FF",
+      "result": "Not matched in channel 9 (|S11| ~ -0.7 dB at measurement plane); resonance likely < 7 GHz",
+      "reason": "validator BLOQUEAR: MSL port Z_line/beta extraction invalid under strong standing wave; launch-plane S11 non-physical",
+      "report": "reports/claude_run_006.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-007",
+      "date": "2026-11-03",
+      "status": "ACTIVE",
+      "previous_status": "BLOCKED",
+      "em_status": "EM_SIMULATED",
+      "experiment": "MSL port fix + P03_MS2 hexagon with quarter-wave microstrip feed",
+      "result": "Port block lifted (|S11|/power); P03_MS2 channel S11 -3.2..-10.5 dB, min at 8.25 GHz; rad. eff 0.69-0.74; realized broadside gain -1.4..+2.9 dBi",
+      "validator": "APROBAR CON RESERVAS (port and 007)",
+      "report": "reports/claude_run_007.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-008",
+      "date": "2026-11-03",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P03_MS3_OPENEMS_008",
+      "result": "worst -5.48 dB at 7.7376 GHz, fails -6 dB narrowly; min at 8.035 GHz; realized gain +0.97..+3.25 dBi",
+      "report": "reports/claude_run_008.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-009",
+      "date": "2026-11-03",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P03_MS4_OPENEMS_009 hexagon r 5.03 mm",
+      "result": "-6 dB met on 501 grid samples but worst -6.013 dB at 8.2368 GHz (margin 0.013 dB, inside port uncertainty); -10 dB not met",
+      "resources": "300 s wall, 2 CPU, RSS 439 MiB",
+      "validator": "none",
+      "report": "reports/claude_run_009.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-010",
+      "date": "2026-11-03",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P03_MS5_OPENEMS_010 hexagon r 5.007 mm",
+      "result": "worst -6.50 dB in channel (margin 0.50 dB), -10 dB not met; gain +1.55..+3.25 dBi",
+      "report": "reports/claude_run_010.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-011",
+      "date": "2026-11-03",
+      "status": "ACTIVE",
+      "em_status": "EM_NOT_RUN",
+      "experiment": "P03_MS5 fine mesh (not launched)",
+      "result": "budget rule aborts: est. 2660 s > 1800 s; measured rate in run 010 (~135 Mcell*step/s) suggests ~1000 s; owner decision required",
+      "report": "reports/claude_run_011.md",
+      "em_solves_executed": 0
+    },
+    {
+      "id": "OWNER-DECISION-2026-11-04-USLOT",
+      "date": "2026-11-04",
+      "status": "ACTIVE",
+      "event": "Owner: prioritise U-slot designs inspired by the EuCAP paper (research approximation, not a reproduction), one dimension at a time, same feed and material when comparing; S11 <= -6 dB full band, target -10 dB; check convergence before accepting improvements; evaluate efficiency and radiated delay when fields exist. Owner budget decision: fine-mesh convergence runs may use up to 2700 s (rate basis unchanged); resolves round-11 block."
+    },
+    {
+      "id": "CLAUDE-RUN-012",
+      "date": "2026-11-04",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "U-slot series reference US0 (probe, FR4 h 2.07 mm)",
+      "result": "channel S11 -6.15..-9.28 dB (meets -6 dB, 0.15 dB margin); eff 0.84-0.86; realized gain 4.6-5.4 dBi; GD ripple 31 ps diagnostic",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_012.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-013",
+      "date": "2026-11-04",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "US0 fine-mesh check",
+      "result": "fine mesh worst -5.70 dB: rule rejects; far field stable. Method: fine = evaluation mesh for the U-slot series; xfine for candidate convergence",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_013.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-014",
+      "date": "2026-11-04",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "US1 = US0 + U-slot (fine mesh)",
+      "result": "U-slot creates double-resonance loop: -6 dB BW 585 MHz (vs 510) but centred at 7.30 GHz; channel -1.4..-3.8 dB",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_014.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-015",
+      "date": "2026-11-04",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "US2 = US1 with L 6.85 mm",
+      "result": "minimum moves to 7.725 GHz, loop lost; channel -2.68..-17.2 dB",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_015.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-016",
+      "date": "2026-11-04",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "US3 = US2 with Lu 2.65 mm",
+      "result": "meets -6 dB on fine mesh (worst -6.65 dB), eff 0.79-0.81, gain 4.4-5.4 dBi; hypothesis falsified; xfine check blocked by budget rule (3747 s > 2700 s)",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_016.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-017",
+      "date": "2026-11-05",
+      "status": "ACTIVE",
+      "em_status": "EM_NOT_RUN",
+      "experiment": "US3 xfine (not launched)",
+      "result": "Blocked by budget rule awaiting owner decision (rate recalibration, longer limit or intermediate mesh)",
+      "report": "reports/claude_run_017.md",
+      "em_solves_executed": 0
+    },
+    {
+      "id": "OWNER-DECISION-2026-11-05",
+      "date": "2026-11-05",
+      "status": "ACTIVE",
+      "event": "Time limit for convergence runs raised to 4000 s; orchestrator must be Opus 5.5 always."
+    },
+    {
+      "id": "CLAUDE-RUN-018",
+      "date": "2026-11-05",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "US3 xfine convergence check",
+      "result": "MESH_SENSITIVE, not accepted; mesh dependence fully explained by ideal-probe inductance -> need physical-radius probe",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_018.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-020",
+      "date": "2026-11-05",
+      "status": "ACTIVE",
+      "em_status": "EM_NOT_RUN",
+      "experiment": "none (awaiting owner probe decision)",
+      "result": "STOP: physical probe/SMA decision pending; no FDTD",
+      "report": "reports/claude_run_020.md",
+      "em_solves_executed": 0
+    },
+    {
+      "id": "OWNER-FEED-DECISION-2026-11-05",
+      "date": "2026-11-05",
+      "status": "ACTIVE",
+      "event": "Owner decision 2026-11-05: no SMA connector or coaxial probe in simulation. Feed every candidate with a 50-ohm microstrip line (inset or edge) and excite it with a 50-ohm vertical AddLumpedPort at the start of the microstrip line (board edge, strip width); S11 reference plane = line start, no de-embedding. Two-mesh convergence check. Ideal-probe results (P01_R2, US0, US3) must be redone with this feed."
+    },
+    {
+      "id": "CLAUDE-RUN-021",
+      "date": "2026-11-05",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "US3_MS1 base mesh (owner microstrip feed, lumped port at line start)",
+      "result": "Not matched: S11 -1.93..-4.09 dB in channel; resonance centred (8.04 GHz) but Re Zin ~300 ohm at the 2.0 mm inset; efficiency 0.50-0.56, beam tilted to -y",
+      "validator": "APROBAR CON RESERVAS (notch gap under-meshed; stale SMA text in port description)",
+      "report": "reports/claude_run_021.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-022",
+      "date": "2026-11-05",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "US3_MS2 base mesh: edge-fed U-slot without notch (R_edge/Q characterisation)",
+      "result": "Not matched (-2.40..-3.86 dB). Patch-edge fit Q 16.25, R_edge 243-296 ohm; eta 0.55-0.59 mostly line/mismatch loss (guide). Ideal-TL guide: ~100 ohm lambda/4 gives ~-7.4 dB worst in band.",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_022.md",
+      "em_solves_executed": 1
+    },
+    {
+      "date": "2026-11-05",
+      "event": "Claude round 23: US3_MS3 (lambda/4 transformer 0.80 x 6.60 mm) base mesh: worst -8.18 dB, 376/501 <= -10 dB, eta 0.65-0.67, realized gain 3.2-4.0 dBi. First owner-feed candidate meeting -6 dB; mesh convergence pending. Validator APROBAR CON RESERVAS. Report reports/claude_run_023.md."
+    },
+    {
+      "id": "CLAUDE-RUN-024",
+      "date": "2026-11-05",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "US3_MS3 fine mesh (two-mesh check vs 023)",
+      "result": "Worst -8.04 dB (change 0.15 dB), 387/501 <= -10 dB; -6 dB edges move 9.5/7.9 MHz; max |dGamma| 0.045 > 0.03 -> pre-registered rule FAILED (item 2). Not READY_FOR_HFSS_REVIEW. eta 0.65-0.68, Gr 3.27-4.10 dBi. xfine exceeds 4000 s: owner decision.",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_024.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-025",
+      "date": "2026-11-05",
+      "status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P01_MS1 base mesh (rectangle, same FR4 h 2.07 and feed as US3_MS3)",
+      "result": "Worst -8.34 dB (US3_MS3 base -8.18), 440/501 <= -10 dB, min 8.053 GHz; eta 0.72-0.76, Gr 3.99-4.80 dBi, GD ripple 35 ps (diag). H2 refuted. Single mesh.",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_025.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-026",
+      "date": "2026-11-05",
+      "status": "READY_FOR_HFSS_REVIEW",
+      "previous_status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P01_MS1 fine mesh (two-mesh check vs 025)",
+      "result": "Worst -8.17 dB (change 0.18 dB), 434/501 <= -10 dB; max |dGamma| 0.029 <= 0.03; contiguous -6 dB edges move 9.65/6.07 MHz -> BOUNDED_SENSITIVITY_PASS (tight). eta 0.72-0.76, Gr 3.94-4.82 dBi. First owner-feed candidate passing the two-mesh rule; READY_FOR_HFSS_REVIEW (P01_MS1 supersedes P01_R2).",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_026.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "HFSS-REVIEW-2026-11-13",
+      "date": "2026-11-13",
+      "status": "READY_FOR_HFSS_REVIEW",
+      "event": "Owner HFSS results for P01_MS1 and US3_MS3: both meet -6 dB; P01_MS1 worst -9.36 dB (-10 dB band 7.758-8.268 GHz); US3_MS3 worst -6.80 dB, min 7.906 GHz; HFSS ~0.9 % lower than openEMS; beams tilted 10-15 deg to feed side.",
+      "report": "reports/claude_hfss_review_2026-11-13.md"
+    },
+    {
+      "id": "HFSS-REVIEW-2026-11-13b",
+      "date": "2026-11-13",
+      "status": "READY_FOR_HFSS_REVIEW",
+      "event": "HFSS convergence received (P01_MS1 9 passes dS 0.0159; US3_MS3 8 passes dS 0.0031). Both HFSS_VALIDATED for -6 dB only. E-plane beam squint over channel: P01_MS1 2.7 deg, US3_MS3 5.7 deg (column-frequency mapping assumed).",
+      "report": "reports/claude_hfss_review_2026-11-13.md"
+    },
+    {
+      "id": "CLAUDE-RUN-027",
+      "date": "2026-11-13",
+      "status": "ACTIVE",
+      "previous_status": "READY_FOR_HFSS_REVIEW",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P01_MS2 transformer 7.1 mm (owner asked new openEMS iterations after HFSS review)",
+      "result": "base mesh worst -10.42 dB, all channel samples <= -10 dB; guide model qualitative only",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_027.md",
+      "em_solves_executed": 1
+    },
+    {
+      "id": "CLAUDE-RUN-028",
+      "date": "2026-11-13",
+      "status": "READY_FOR_HFSS_REVIEW",
+      "previous_status": "ACTIVE",
+      "em_status": "EM_SIMULATED",
+      "experiment": "P01_MS2 fine-mesh check (pre-registered -10 dB rule)",
+      "result": "BOUNDED_SENSITIVITY_PASS for -10 dB over the channel in openEMS (worst -10.36 dB fine, -10.42 base); candidate for HFSS review",
+      "validator": "APROBAR CON RESERVAS",
+      "report": "reports/claude_run_028.md",
+      "em_solves_executed": 1
+    },
+    {
+      "date": "2026-11-13",
+      "event": "Owner HFSS patch_L sweep of US3_MS3 analysed; round 29 US3_MS4 (u_Wu 7.0) negative (channel worst -1.37 dB). U-slot bandwidth path not recommended; P01_MS2 remains the HFSS review candidate."
+    },
+    {
+      "date": "2026-11-14",
+      "event": "Round 30: P01_IN1 direct inset negative (channel worst -2.06 dB, resonance moved up ~4.2 % at the port plane, cause unknown); direct-inset path stopped by pre-registered rule. P01_MS2 remains the element candidate."
+    },
+    {
+      "date": "2026-11-15",
+      "event": "Owner HFSS 1x5 array (P01_MS2, 17 mm) analysed: ports ~-10 dB in array, neighbour coupling -15 dB, physical HPBW 21.7 deg, virtual 17.7 deg. EM_SIMULATED pending convergence data."
+    },
+    {
+      "date": "2026-11-15",
+      "event": "Round 31: US3_PS1 (buried parasitic) shows a second resonance but no in-channel bandwidth gain and an efficiency dip to 0.23 at f0; run truncated at NrTS 30000. Round 32: diagnostic re-run with NrTS 60000."
+    },
+    {
+      "date": "2026-11-15",
+      "event": "Round 32: US3_PS1 converged re-run confirms the efficiency dip (0.225 at f0) and a -5.96 dB channel worst; US3_PS1 discarded. Owner chose the inverted stack (US3_PS2)."
+    },
+    {
+      "date": "2026-11-15",
+      "event": "Round 33: US3_PS2 inverted stack converged; no efficiency valley in the channel but detuned (7.085 GHz). Refinement 1 (US3_PS3) being designed."
+    },
+    {
+      "date": "2026-11-15",
+      "event": "Round 34: US3_PS3 meets H1/H2 (-7.59 dB, eta >= 0.654) but is not better than P01_MS2; two-mesh pair 035/036 under way."
+    },
+    {
+      "date": "2026-11-16",
+      "event": "Round 36: US3_PS4 reaches -10.66 dB over the channel (two minima 7.826/8.158 GHz) but the efficiency valley follows the upper mode (0.24, -0.5 dBi). design-reviewer (Fable) asked for design advice (owner instruction)."
+    },
+    {
+      "date": "2026-11-16",
+      "event": "Round 37: US3_PS5 (design-reviewer proposal) removes the efficiency valley (eta 0.64-0.69) but S11 shifts ~70 MHz up (worst -6.87 dB). HFSS scripts of US3_PS4 verified by design-reviewer (minor corrections applied). Round 38: US3_PS6 recentred."
+    },
+    {
+      "date": "2026-11-19",
+      "event": "Rounds 49-50 (owner: widen US3_PS6). 049 US3_PS6_3 (Lp 7.25) covers the channel at -10 dB but eta drops to 0.34. 050 US3_PS6_4 (wide patch W 14 mm) covers the channel at -10 dB with a single minimum at 7.936 GHz and flat eta 0.65-0.71 (base mesh only). Validator OK with observations."
+    },
+    {
+      "date": "2026-11-19",
+      "event": "Round 51 (owner authorised): fine mesh of US3_PS6_4 confirms channel coverage at -10 dB (worst -11.24 dB, max |dGamma| 0.015 vs base). Validator OK with observations. US3_PS6_4 declared candidate."
+    },
+    {
+      "date": "2026-11-19",
+      "event": "Owner sends US3_PS6_4 to HFSS. em-solver builds element and ARR1x5 scripts; design-reviewer: element ready, array needs MaximumPasses 25 (applied), arr_d grid 16.5-20.5, wave-port control copy procedure rewritten. rf-designer pre-registers HFSS hypotheses. code-auditor LISTO."
+    },
+    {
+      "date": "2026-11-20",
+      "event": "HFSS element of US3_PS6_4 (owner): H_HFSS0 and H_HFSS2 met, worst S11 -9.82 dB (misses -10 dB by 0.18 dB, within the convergence uncertainty). Validator OK with observations; wave-port check pending before HFSS_VALIDATED for S11. HFSS 1x5 array of US3_PS6 exported (16 pitches)."
+    },
+    {
+      "date": "2026-11-20",
+      "event": "HFSS 1x5 array of US3_PS6_4 (owner): converged at all 11 pitches; validator OK with observations. Owner re-simulating P01_MS2 (element and arrays) and the US3_PS4_2_1 array for consistent exports."
+    },
+    {
+      "date": "2026-11-20",
+      "event": "HFSS P01_MS2 element and 1x4 array (owner re-simulation): validator OK with observations. 1x4 vs 1x5 virtual HPBW ratio 0.72-0.76 justifies the fifth element."
+    },
+    {
+      "date": "2026-11-21",
+      "event": "HFSS 1x5 array of P01_MS2 re-exported with convergence.conv (same stored solution as 2026-11-15): validator OK with observations. 1x4 vs 1x5 at 18.2 mm: virtual HPBW 22.5 -> 16.4 deg (a), 15.2 -> 11.9 deg (b). Evidence text of the array analysis scripts now reads convergence.conv."
+    },
+    {
+      "date": "2026-11-21",
+      "event": "HFSS 1x5 array of US3_PS4_2_1 converged at dS 0.01 (15 pitches, 20 mm not solved): validator OK with observations. Worst Sii improves 0.2-0.7 dB, beams unchanged; 18.2 mm less refined than neighbours."
+    }
+  ],
+  "hfss_review_candidate": {
+    "id": "P01_MS2",
+    "variant": "variants/P01_MS2.json",
+    "evidence": "EM_SIMULATED",
+    "runs": [
+      "em/P01_MS2_OPENEMS_027",
+      "em/P01_MS2_FINE_OPENEMS_028"
+    ],
+    "change_vs_P01_MS1": "tr_l 6.6 -> 7.1 mm (in HFSS: set variable tr_l = 7.1mm in the P01_MS1 design)",
+    "channel_worst_s11_db": {
+      "base_mesh": -10.42,
+      "fine_mesh": -10.36
+    },
+    "meets_minus10db": "openEMS, all 501 channel samples on both meshes (BOUNDED_SENSITIVITY_PASS)",
+    "mandatory_reservations": [
+      "energy margin 0.05 dB on fine mesh",
+      "|dGamma| 0.0291 vs 0.03",
+      "two meshes = sensitivity, not convergence",
+      "HFSS ~-0.9 % shift would give ~-9.9 dB at 8.2368 GHz",
+      "provisional FR4",
+      "no SMA",
+      "2D metal, no roughness",
+      "sampled grid only",
+      "gain/efficiency single mesh; radiated group delay not evaluated"
+    ],
+    "hfss_checks": [
+      "worst channel S11 especially at 8.2368 GHz",
+      "convergence passes/dS"
+    ],
+    "report": "reports/claude_run_028.md"
+  },
+  "hfss_review_2026_11_13": {
+    "by": "owner",
+    "data": "hfss/results/results_P01_MS1/ and hfss/results/results_US3_MS3/ (owner commits 1093b2a, 6648401; moved from the repository root; moved again in the 2026-11-17 hfss/ reorganisation)",
+    "comparison": "hfss/results/results_<design>/hfss_vs_openems.json (P01_MS1 and US3_MS3, one file each)",
+    "report": "reports/claude_hfss_review_2026-11-13.md",
+    "P01_MS1": {
+      "hfss_worst_channel_db": -9.36,
+      "hfss_minus10db_band_ghz": [
+        7.758,
+        8.268
+      ],
+      "hfss_min_ghz": 7.991,
+      "meets_minus6db_hfss": true,
+      "meets_minus10db_hfss": false
+    },
+    "US3_MS3": {
+      "hfss_worst_channel_db": -6.8,
+      "hfss_minus10db_band_ghz": [
+        7.74,
+        8.09
+      ],
+      "hfss_min_ghz": 7.906,
+      "meets_minus6db_hfss": true,
+      "meets_minus10db_hfss": false
+    },
+    "hfss_vs_openems": "HFSS resonances 0.8-1.0 % lower; |dGamma| max 0.10-0.13 in channel",
+    "pattern_f0": "both tilted 10-15 deg toward -y (feed side) in HFSS and openEMS; squint vs frequency not yet measurable",
+    "missing": [],
+    "evidence_status": "HFSS_VALIDATED for the -6 dB full-channel criterion only (openEMS two meshes + converged HFSS); -10 dB not met; FR4 provisional; no SMA",
+    "convergence": {
+      "P01_MS1": {
+        "passes": 9,
+        "final_dS": 0.015885,
+        "target": 0.02,
+        "converged": true
+      },
+      "US3_MS3": {
+        "passes": 8,
+        "final_dS": 0.0030792,
+        "target": 0.02,
+        "converged": true
+      },
+      "files": [
+        "hfss/results/results_P01_MS1/Project1_P01_MS1.conv",
+        "hfss/results/results_US3_MS3/Project1_US3_MS3.conv"
+      ],
+      "note": "single adaptive frequency 7.9872 GHz; interpolating sweep"
+    },
+    "beam_squint": {
+      "file": "hfss/results/results_<design>/hfss_beam_squint.json (P01_MS1 and US3_MS3, one file each)",
+      "assumption": "confirmed by owner: GainTotal=f0, _1=7.7376, _2=8.2368 GHz",
+      "P01_MS1": {
+        "e_plane_peak_deg": [
+          -12.0,
+          -10.6,
+          -9.3
+        ],
+        "squint_deg": 2.7,
+        "h_plane_squint_deg": 1.1
+      },
+      "US3_MS3": {
+        "e_plane_peak_deg": [
+          -15.8,
+          -13.1,
+          -10.0
+        ],
+        "squint_deg": 5.7,
+        "h_plane_squint_deg": 0.6
+      }
+    }
+  },
+  "hfss_parametric_patch_L_2026_11_13": {
+    "design": "US3_MS3",
+    "source": "hfss/results/results_US3_MS3/hfss_parametric_patch_L.json",
+    "finding": "patch_L 6.402-6.502 mm only shifts the response (~-7 MHz per +0.01 mm); -10 dB width 349-359 MHz < 499.2 MHz channel; best channel worst -7.94 dB at 6.432 mm"
+  },
+  "virtual_array_mimo": {
+    "date": "2026-11-14",
+    "decided_by": "owner",
+    "sequence": "RF_CONFIGS of src/main/uwb_cir_walk/config.py (12 configs, rotating TX, 2 RX, 1 off); pinned by tests/test_hfss_array.py",
+    "off_port_termination": "50 ohm (gamma_off = 0)",
+    "monostatic_channels": false,
+    "pitch": "OPEN: HFSS script and EuCAP use 13.5 mm; TFG MIMOConfig uses lambda/2 ~18.77 mm",
+    "evidence": "GEOMETRY_ONLY / GUIDE_MODEL; no array simulated",
+    "tools": [
+      "hfss/build/P01_MS2/claude_aedt_array1x4_ch9.py",
+      "hfss/analysis/virtual_array_pattern.py",
+      "hfss/analysis/array_mimo_metrics.py"
+    ]
+  },
+  "hfss_array_1x5_2026_11_15": {
+    "design": "ARR1x5_P01_MS2_dparam",
+    "arr_d_mm": 17,
+    "evidence": "EM_SIMULATED (Touchstones exported with HFSS 2024.2.0 / 2025.1.0; solving version and convergence not provided)",
+    "data": "hfss/results/results_P01_MS2/ARR1x5_P01_MS2_dparam/legacy_2026-11-15/manual_d17mm_hfss2024/",
+    "analysis": "array_analysis_d17mm.json",
+    "report": "reports/claude_hfss_array_1x5_2026-11-15.md",
+    "summary": {
+      "port_match_worst_db": "~-10.0 (-10.00..-10.69)",
+      "adjacent_coupling_worst_db": "-15.0..-15.4",
+      "active_s_worst_db": {
+        "0deg": -8.51,
+        "15deg": -9.34,
+        "30deg": -7.84
+      },
+      "physical_hpbw_xz_deg_f0": 21.7,
+      "physical_realized_gain_dbi_f0": 11.5,
+      "virtual_hpbw_xz_deg_f0": 17.7
+    },
+    "validator": "APROBAR CON RESERVAS",
+    "pitch_sweep": {
+      "data": "hfss/results/results_P01_MS2/ARR1x5_P01_MS2_dparam/",
+      "analysis": "array_pitch_sweep_hfss.json",
+      "pitches_mm": [
+        13.5,
+        20.5,
+        0.5
+      ],
+      "fields_exported_mm": [
+        13.5,
+        17.0
+      ],
+      "reading": "13.5 mm: neighbour coupling -10.3 dB, broadside active S -4.9 dB (fails -6 dB, crossing ~14.3 mm); coupling monotonic with pitch; 18-18.2 mm proposed (lambda/2 at 8.2368 GHz, coupling ~-17 dB, active S -8.1..-9.8 dB up to 30 deg)",
+      "status": "validator APROBAR CON RESERVAS"
+    },
+    "superseded_by": "designs.ARR1x5_P01_MS2_dparam (2026-11-21 re-export with convergence.conv; identical S and fields)"
+  },
+  "status_note_2026_11_16": "Claude rounds continued after READY_FOR_HFSS_REVIEW by owner decision (rounds 36-48, limit 60); next_task/status kept for history",
+  "hfss_status_owner_2026_11_17": {
+    "simulated_in_hfss_and_exported": [
+      "P01_MS2 (element)",
+      "ARR1x5_P01_MS2_dparam",
+      "US3_PS4_2_1 (element, export upload pending)",
+      "ARR1x5_US3_PS4_2_1_dparam (export upload pending)"
+    ],
+    "note": "Owner statement in chat 2026-11-17. P01_MS2 element and ARR1x5_P01_MS2_dparam were not reviewed by design-reviewer (they predate it); evidence stays EM_SIMULATED until HFSS convergence data are provided."
+  }
+}

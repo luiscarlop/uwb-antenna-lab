@@ -1,0 +1,259 @@
+{
+ "id": "US3_PS1",
+ "family": "USLOT_MSL_H207_PARASITIC",
+ "base_design": "US3_MS3",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 2.07,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.251
+  ],
+  [
+   5.710633,
+   -3.251
+  ],
+  [
+   5.710633,
+   3.251
+  ],
+  [
+   -5.710633,
+   3.251
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    -2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    1.95
+   ],
+   [
+    1.4,
+    1.95
+   ],
+   [
+    1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    1.95
+   ],
+   [
+    -2.2,
+    1.95
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "microstrip_edge_qw",
+  "z0_ohm": 50,
+  "line_width_mm": 3.92,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -9.851,
+  "connector": {
+   "type": "none",
+   "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed: 50 ohm line (w 3.92 mm, y -13 -> -9.851) + lambda/4 transformer (w 0.80 mm, l 6.60 mm) touching the radiating edge y=-3.251 (no inset, no notch)."
+  },
+  "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+  "transformer_width_mm": 0.8,
+  "transformer_length_mm": 6.6,
+  "transformer_start_y_mm": -9.851,
+  "patch_edge_y_mm": -3.251,
+  "feed_polygons_mm": [
+   [
+    [
+     -1.96,
+     -13.0
+    ],
+    [
+     1.96,
+     -13.0
+    ],
+    [
+     1.96,
+     -9.851
+    ],
+    [
+     -1.96,
+     -9.851
+    ]
+   ],
+   [
+    [
+     -0.4,
+     -9.851
+    ],
+    [
+     0.4,
+     -9.851
+    ],
+    [
+     0.4,
+     -3.251
+    ],
+    [
+     -0.4,
+     -3.251
+    ]
+   ]
+  ],
+  "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 0.80 mm -> Zt 102.5 ohm; Kirschning-Jansen eps_eff(f0) 3.197 (GUIDE_MODEL)"
+ },
+ "uslot_params": {
+  "L_mm": 6.502,
+  "W_mm": 11.421266,
+  "s_over_L": 0.34,
+  "Wu_mm": 4.4,
+  "Lu_mm": 2.65,
+  "t_mm": 0.8,
+  "y0_mm": -0.7,
+  "open_toward": "+y"
+ },
+ "parasitic_patches": [
+  {
+   "name": "par1",
+   "z_mm": 1.035,
+   "polygon_mm": [
+    [
+     -5.5,
+     -3.0
+    ],
+    [
+     5.5,
+     -3.0
+    ],
+    [
+     5.5,
+     4.6
+    ],
+    [
+     -5.5,
+     4.6
+    ]
+   ]
+  }
+ ],
+ "parasitic_params": {
+  "Wp_mm": 11.0,
+  "Lp_mm": 7.6,
+  "x_centre_mm": 0.0,
+  "y_min_mm": -3.0,
+  "y_max_mm": 4.6,
+  "y_centre_mm": 0.8,
+  "z_mm": 1.035,
+  "h1_ground_to_parasitic_mm": 1.035,
+  "h2_parasitic_to_patch_mm": 1.035,
+  "overhang_beyond_patch_plus_y_mm": 1.349,
+  "inset_from_patch_edge_minus_y_mm": 0.251,
+  "inset_from_patch_edge_x_mm": 0.211,
+  "note": "Floating sheet (no via, no probe), same metal as the patch. The polygon stays inside y>=-3.0 so no part of it lies under the 0.8 mm transformer / 50 ohm line (patch edge y=-3.251, transformer at y<-3.251 on z=h)."
+ },
+ "changed_vs_previous": {
+  "US3_MS3": {
+   "parasitic_patches": [
+    null,
+    "par1: 11.0 x 7.6 mm floating sheet at z=1.035 mm (x -5.5..5.5, y -3.0..4.6)"
+   ],
+   "note": "Single change: ONE buried parasitic patch is added. Patch (11.421 x 6.502 mm), U-slot (Wu 4.4, Lu 2.65, t 0.8, y0 -0.7), feed (50 ohm line 3.92 mm + 0.80 x 6.60 mm transformer, port at y=-13), FR4 (eps_r 4.4, tan_delta 0.017, h 2.07 mm homogeneous), board 26 x 26 mm, metal and mesh hint are identical to US3_MS3. patch_L and the transformer are NOT retuned on purpose (the first EM run must show what the parasitic does by itself; retuning is a refinement round)."
+  }
+ },
+ "rationale": "Owner request 2026-11-15: US3_MS3 in HFSS has -10 dB over 7.740-8.090 GHz (~350 MHz, worst -6.8 dB) and a single resonance; the HFSS patch_L sweep only shifts it (-7 MHz per +0.01 mm, width fixed ~350 MHz) and round 29 showed that widening the U only lowers the patch mode. A second coupled resonance is needed (coupled-resonator broadening), as in the EuCAP stacked element (driven patch on top, buried parasitic below). Choices: (1) z=h/2=1.035 mm (h1=h2): heuristic of maximum coupling between driven patch and parasitic for a capacitive divider (V_par/V_top = h1/(h1+h2), parasitic energy fraction ~ h1*h2/(h1+h2)^2 is maximal at h1=h2); too close to the ground (small h1) the parasitic has V~0 and decouples and has a high Q, too close to the patch (small h2) the two behave as one thicker patch. This is a heuristic, not verified; it also gives two equal dielectrics (1.035 mm) = 2 dielectrics + 3 copper layers. (2) Size 11.0 x 7.6 mm: the parasitic is embedded in eps_r 4.4 (eps_eff_p ~4.2-4.4, little fringing into air), so it must be LONGER than a top-air patch of the same frequency (unslotted P01_MS1 is 7.322 mm at 7.991 GHz in HFSS) and longer than the slot-loaded driven patch (6.502 mm); the guide gives Lp ~7.6 mm for f2 ~7.99 GHz (HFSS frame, f2/f1 ~1.01). (3) Offset +0.8 mm in y, not centred: a centred 7.6 mm sheet would overhang the radiating edge y=-3.251 by 0.55 mm and run under the 0.8 mm transformer (local Z0 change of a high-Z section, uncontrolled); with y_min=-3.0 the whole sheet is clear of the feed and the 1.349 mm overhang goes to +y (opposite to the feed side; expected, not verified, to counter the known -y tilt of 10-15 deg). (4) Width 11.0 mm (0.2 mm inset from the patch x edges) to avoid loading the non-radiating edges. (5) patch_L and the transformer unchanged: one variable only, so that the splitting/shift can be read from the EM run. GEOMETRY_ONLY; no S11, gain, efficiency or bandwidth is claimed.",
+ "computation": {
+  "label": "GUIDE_MODEL (geometric estimate, NOT EM, no result)",
+  "method": "(a) Parasitic resonance: Hammerstad/Jensen patch formula (eps_eff and DeltaL) with h=h1=1.035 mm, W=11.0 mm and eps_eff_p in 4.0-4.4 (embedded, ~eps_r), multiplied by the ratio 0.931 = f_HFSS(P01_MS1)/f_formula(P01_MS1) (7.991/8.580 GHz) to take out the systematic offset of the formula for this FR4 stack (assumes the same offset applies to the embedded patch; unverified). (b) Coupled response: two-resonator coupled-mode model (S11 = 1 - (2/Qe)*[A^-1]_11, A=[[1/Qe+1/Qu1+2j(f-f1)/f0, jk],[jk, 1/Qu2+2j(f-f2)/f0]]), Qe=Qu1=15 chosen so the single-resonator baseline reproduces the HFSS -10 dB width of US3_MS3 (model 7.738-8.092 GHz vs HFSS 7.740-8.090 GHz; the model does NOT reproduce the HFSS depth: worst in channel -5.7 dB vs HFSS -6.8 dB). Parasitic Qu2 25-35 assumed (dielectric Q=1/tan_delta=58.8 plus radiation of a half-height aperture; assumed, not computed). k is an unknown of the model: it is scanned, NOT derived from the geometry. Feed matching, transformer, U-slot and radiation resistance changes are not modelled.",
+  "inputs": {
+   "eps_r": 4.4,
+   "tan_delta": 0.017,
+   "h_mm": 2.07,
+   "z_par_mm": 1.035,
+   "Wp_mm": 11.0,
+   "f1_ghz_HFSS_frame": 7.915,
+   "f1_source": "US3_MS3 HFSS minus10_centre 7.915 GHz (hfss_parametric_patch_L_2026-11-13.json, patch_L 6.502)",
+   "P01_MS1_HFSS_min_ghz": 7.991,
+   "P01_MS1_L_mm": 7.322
+  },
+  "outputs": {
+   "eps_eff_top_patch_HJ": 3.654,
+   "deltaL_top_mm": 0.909,
+   "deltaL_embedded_h1_mm": 0.464,
+   "formula_calibration_factor": 0.931,
+   "f2_ghz_vs_Lp_eps_eff_p_4p2": {
+    "7.3": 8.279,
+    "7.5": 8.083,
+    "7.6": 7.99,
+    "7.7": 7.896,
+    "8.0": 7.63
+   },
+   "f2_ghz_Lp_7p6_range_eps_eff_p_4p0_to_4p4": [
+    7.81,
+    8.18
+   ],
+   "f2_slope_mhz_per_0p01mm_Lp": -9.6,
+   "f2_over_f1_at_Lp_7p6": 1.009,
+   "uncertainty_f2": "about +-4 % (+-0.3 GHz): eps_eff_p, the h1-only fringing and the calibration are all assumptions; the first EM run measures f2",
+   "coupled_model_two_resonances": {
+    "needed_for_minus10_over_channel": "k ~0.04-0.05 with f2/f1 = 1.00-1.02: model -10 dB band ~7.65-8.20 GHz (~530-580 MHz) and worst-in-channel -7.7 to -9.3 dB (model, Lorentzian single-mode shapes; it does not reproduce the HFSS depth of US3_MS3, so treat as order of magnitude of the widening, ~1.5x, not as a prediction)",
+    "k_0p02": "band ~7.72-8.12 GHz (~400 MHz), worst in channel ~-6.3 dB",
+    "k_0p06": "two humps with a dip above -10 dB between them (over-coupled), worst in channel ~-6 dB",
+    "split_at_f2_eq_f1": "two modes split by ~k*f0 = 0.3-0.4 GHz for k 0.04-0.05",
+    "centering": "in the model with f2/f1=1.01, k=0.04 the band centre is 7.93 GHz (lower edge margin ~75 MHz, upper edge ~40 MHz short of 8.2368): a small patch_L reduction (~-0.05 mm, ~+35 MHz from the -7 MHz/0.01 mm HFSS sweep) would be the first retune, as a refinement, not in this variant"
+   },
+   "openEMS_vs_HFSS_frame": "all frequencies above are in the HFSS frame (HFSS resonances ~0.9 % below openEMS); openEMS should show the same pattern ~+0.9 % higher",
+   "overlap": {
+    "parasitic_area_mm2": 83.6,
+    "patch_area_mm2": 74.3,
+    "note": "parasitic 11.0 x 7.6 mm; patch 11.421 x 6.502 mm"
+   }
+  }
+ },
+ "pre_registered_hypothesis": {
+  "H1": "In the same solver and mesh as US3_MS3 (openEMS 023 base: -10 dB 7.80-8.18 GHz, ~380 MHz, worst in channel -8.18 dB), US3_PS1 shows a second resonance feature (second local minimum of S11 or maximum of Re(Zin), or a loop in the Smith chart) between 7.5 and 8.6 GHz AND a contiguous -10 dB band >= 450 MHz; worst |S11| in 7.7376-8.2368 GHz <= -8.5 dB.",
+  "H2": "Radiation pattern at f0 stays usable: Dmax within 20 deg of broadside (US3_MS3: 15 deg) and radiation efficiency >= 0.55 (US3_MS3: 0.65-0.67), beam squint over the channel in the E plane not worse than US3_MS3 (5.7 deg HFSS).",
+  "H3_null": "If no second feature appears (single resonance, band ~350-400 MHz), the coupling is too weak or f2 is out of the 7.5-8.6 GHz window: the parasitic mode must be found first (Re(Zin)/field monitor) before changing anything.",
+  "decision_rule": "Next round (one change only, max 2 refinements per candidate): (a) H1 holds and the band is just offset (one edge misses by <60 MHz): retune patch_L (guide -7 MHz per +0.01 mm; calibrate with the new run, the parasitic changes the slope). (b) A second feature is visible but off position or two humps with a dip above -10 dB in the band centre: change Lp (guide -9.6 MHz per +0.01 mm, i.e. +-0.1 mm = -+96 MHz, calibrate with the run) to move f2 closer (dip: bring f2 nearer to f1; band edge: move f2 toward the missing edge). (c) Single resonance only (no splitting although a second mode exists in the window) or splitting clearly too large (dip above -10 dB with f2 already close to f1): change z_par, the coupling lever (1.035 -> 0.80 or 1.30 mm, total h kept). The heuristic puts the maximum coupling at h1=h2, so moving z away from the middle should REDUCE k (use for the over-coupled/dip case); if the run shows too little splitting at h1=h2, the heuristic is wrong and the opposite direction must be tested from the run data, or Wp enlarged. Do not alter z and Lp in the same round. (d) H2 fails (Dmax > 20 deg or eta < 0.55) while S11 improves: reduce the +y overhang (shift the parasitic y_min/y_max toward the patch) before touching the feed. H1 and H2 both hold: fine mesh (two-mesh convergence rule), then owner decision on HFSS.",
+  "evidence_rule": "Nothing here is a result. A single FDTD base-mesh run of US3_PS1 only tests the pre-registered hypotheses; HFSS is needed to validate."
+ },
+ "manufacturability": {
+  "layers": "3 copper layers (L1 patch + feed + U-slot at z=h, L2 floating parasitic at z=1.035 mm, L3 ground at z=0) and 2 dielectric layers of ~1.035 mm each: a standard 3-copper-layer FR4 multilayer (core + prepreg/core).",
+  "vias": "none: the parasitic is floating (no probe, no plated through hole in the antenna region); the feed is a planar microstrip.",
+  "min_feature_mm": "U-slot arms 0.8 mm and gaps as in US3_MS3 (unchanged); parasitic is a solid rectangle 11.0 x 7.6 mm, no feature < 0.8 mm.",
+  "stackup_note": "Dielectric thickness and the exact z of the buried copper depend on the fabricator's core/prepreg library; typical core thicknesses of ~1.0-1.2 mm and prepreg of 0.1-0.2 mm are only an orientation (NOT verified against a datasheet). The model assumes ONE homogeneous eps_r=4.4 over 2.07 mm, so the fabricator must give the real stackup (the prepreg/core eps_r can differ from the core and sets z_par and k).",
+  "tolerances_to_specify": "layer-to-layer registration and dielectric thickness ( +-z_par moves k and f2 ); etching of Lp (guide: ~10 MHz per 0.01 mm). Same rough FR4 + copper-roughness caveat as the rest of the campaign.",
+  "risks": "z_par and registration are not controlled by the TFG; the model is homogeneous FR4 (provisional); a floating inner sheet cannot be seen or tuned after lamination."
+ },
+ "purpose": "Widen the US3_MS3 band with a second coupled resonance (buried parasitic) to cover 7.7376-8.2368 GHz with -10 dB margin, keeping a broadside pattern; first EM test of the parasitic format.",
+ "mesh_hint_lines_mm": {
+  "y": [
+   -0.215
+  ]
+ },
+ "mesh_hint_note": "Hard y line at -0.215 mm (inside the U-slot base, metal-free): microstrip_edge_qw adds plain y lines across the slot (<= 0.3 mm), which without this hint gave a y grading ratio 1.507 > 1.5 near y -0.37..-0.07 mm. Found by prepare-only trials (round 23). Same hint reused; parasitic z=1.035 mm and the x/y edge lines of the sheet are added by the solver (round 24 parasitic support), not by this file."
+}

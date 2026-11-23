@@ -1,0 +1,693 @@
+{
+  "evidence": "EM_SIMULATED (HFSS, owner Optimetrics on arr_d; Touchstone exported with HFSS 2025.1.0; solving version not confirmed); adaptive convergence.conv exported for 16 of 16 pitches, 16 of them converged; lumped port, no wave-port check, so not HFSS_VALIDATED",
+  "design": "ARR1x5_P01_MS2_dparam",
+  "channel_hz": [
+    7737600000.0,
+    8236800000.0
+  ],
+  "steer_deg": [
+    0,
+    15,
+    30,
+    45
+  ],
+  "notes": [
+    "channel grid of the 1 MHz sweep (7.738-8.236 GHz)",
+    "ECC from S assumes lossless antennas",
+    "active reflection: uniform amplitude, progressive phase, all ports 50 ohm"
+  ],
+  "rows": [
+    {
+      "pitch_mm": 13.5,
+      "file": "ARR1x5_P01_MS2_dparam_d13p5mm/ARR1x5_d13p5mm.s5p",
+      "port_match_worst_db": -9.57,
+      "port_match_worst_by_port_db": [
+        -11.03,
+        -9.71,
+        -10.29,
+        -9.57,
+        -11.14
+      ],
+      "neighbour_coupling_worst_db": -10.28,
+      "non_neighbour_coupling_worst_db": -16.22,
+      "ecc_s_param_max": 0.0727,
+      "reciprocity_max_abs": 1.1001331263314575e-14,
+      "active": {
+        "0": {
+          "worst_db": -4.88,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -6.69
+        },
+        "15": {
+          "worst_db": -6.3,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -6.88
+        },
+        "30": {
+          "worst_db": -6.61,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -8.2
+        },
+        "45": {
+          "worst_db": -7.41,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.45
+        }
+      }
+    },
+    {
+      "pitch_mm": 14.0,
+      "file": "ARR1x5_P01_MS2_dparam_d14mm/ARR1x5_d14mm.s5p",
+      "port_match_worst_db": -9.2,
+      "port_match_worst_by_port_db": [
+        -10.45,
+        -9.2,
+        -9.64,
+        -9.27,
+        -10.38
+      ],
+      "neighbour_coupling_worst_db": -10.93,
+      "non_neighbour_coupling_worst_db": -17.55,
+      "ecc_s_param_max": 0.0682,
+      "reciprocity_max_abs": 1.4039630553837805e-14,
+      "active": {
+        "0": {
+          "worst_db": -5.7,
+          "worst_port": 4,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -7.38
+        },
+        "15": {
+          "worst_db": -7.06,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -7.64
+        },
+        "30": {
+          "worst_db": -7.07,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.11
+        },
+        "45": {
+          "worst_db": -7.89,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.78
+        }
+      }
+    },
+    {
+      "pitch_mm": 14.5,
+      "file": "ARR1x5_P01_MS2_dparam_d14p5mm/ARR1x5_d14p5mm.s5p",
+      "port_match_worst_db": -9.78,
+      "port_match_worst_by_port_db": [
+        -10.82,
+        -9.78,
+        -9.97,
+        -9.85,
+        -10.78
+      ],
+      "neighbour_coupling_worst_db": -11.49,
+      "non_neighbour_coupling_worst_db": -18.55,
+      "ecc_s_param_max": 0.0558,
+      "reciprocity_max_abs": 1.0647040253265457e-14,
+      "active": {
+        "0": {
+          "worst_db": -6.26,
+          "worst_port": 4,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -7.61
+        },
+        "15": {
+          "worst_db": -7.3,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -7.89
+        },
+        "30": {
+          "worst_db": -6.98,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.21
+        },
+        "45": {
+          "worst_db": -8.05,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.89
+        }
+      }
+    },
+    {
+      "pitch_mm": 15.0,
+      "file": "ARR1x5_P01_MS2_dparam_d15mm/ARR1x5_d15mm.s5p",
+      "port_match_worst_db": -9.67,
+      "port_match_worst_by_port_db": [
+        -10.79,
+        -9.69,
+        -10.07,
+        -9.67,
+        -10.85
+      ],
+      "neighbour_coupling_worst_db": -12.11,
+      "non_neighbour_coupling_worst_db": -19.66,
+      "ecc_s_param_max": 0.048,
+      "reciprocity_max_abs": 6.192122115868944e-15,
+      "active": {
+        "0": {
+          "worst_db": -7.12,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -7.95
+        },
+        "15": {
+          "worst_db": -7.68,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -8.32
+        },
+        "30": {
+          "worst_db": -6.97,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.53
+        },
+        "45": {
+          "worst_db": -8.25,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.73
+        }
+      }
+    },
+    {
+      "pitch_mm": 15.5,
+      "file": "ARR1x5_P01_MS2_dparam_d15p5mm/ARR1x5_d15p5mm.s5p",
+      "port_match_worst_db": -9.68,
+      "port_match_worst_by_port_db": [
+        -10.79,
+        -9.74,
+        -9.75,
+        -9.68,
+        -10.79
+      ],
+      "neighbour_coupling_worst_db": -12.84,
+      "non_neighbour_coupling_worst_db": -20.97,
+      "ecc_s_param_max": 0.0411,
+      "reciprocity_max_abs": 6.039580727808093e-15,
+      "active": {
+        "0": {
+          "worst_db": -7.82,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -8.44
+        },
+        "15": {
+          "worst_db": -8.39,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -8.88
+        },
+        "30": {
+          "worst_db": -7.2,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.98
+        },
+        "45": {
+          "worst_db": -8.16,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.38
+        }
+      }
+    },
+    {
+      "pitch_mm": 16.0,
+      "file": "ARR1x5_P01_MS2_dparam_d16mm/ARR1x5_d16mm.s5p",
+      "port_match_worst_db": -9.73,
+      "port_match_worst_by_port_db": [
+        -10.74,
+        -9.74,
+        -9.78,
+        -9.73,
+        -10.83
+      ],
+      "neighbour_coupling_worst_db": -13.56,
+      "non_neighbour_coupling_worst_db": -22.13,
+      "ecc_s_param_max": 0.0336,
+      "reciprocity_max_abs": 3.3953887546716366e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.03,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -8.87
+        },
+        "15": {
+          "worst_db": -8.73,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.36
+        },
+        "30": {
+          "worst_db": -7.45,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.32
+        },
+        "45": {
+          "worst_db": -8.34,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.26
+        }
+      }
+    },
+    {
+      "pitch_mm": 16.5,
+      "file": "ARR1x5_P01_MS2_dparam_d16p5mm/ARR1x5_d16p5mm.s5p",
+      "port_match_worst_db": -9.77,
+      "port_match_worst_by_port_db": [
+        -10.72,
+        -9.89,
+        -9.77,
+        -9.99,
+        -10.6
+      ],
+      "neighbour_coupling_worst_db": -14.3,
+      "non_neighbour_coupling_worst_db": -23.32,
+      "ecc_s_param_max": 0.0269,
+      "reciprocity_max_abs": 2.493680533756782e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.35,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.21
+        },
+        "15": {
+          "worst_db": -8.89,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.73
+        },
+        "30": {
+          "worst_db": -7.52,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.48
+        },
+        "45": {
+          "worst_db": -8.37,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.25
+        }
+      }
+    },
+    {
+      "pitch_mm": 17.0,
+      "file": "ARR1x5_P01_MS2_dparam_d17mm/ARR1x5_d17mm.s5p",
+      "port_match_worst_db": -10.0,
+      "port_match_worst_by_port_db": [
+        -10.58,
+        -10.0,
+        -10.03,
+        -10.13,
+        -10.69
+      ],
+      "neighbour_coupling_worst_db": -15.03,
+      "non_neighbour_coupling_worst_db": -24.58,
+      "ecc_s_param_max": 0.0209,
+      "reciprocity_max_abs": 8.012725103924699e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.51,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.58
+        },
+        "15": {
+          "worst_db": -9.34,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.09
+        },
+        "30": {
+          "worst_db": -7.84,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.71
+        },
+        "45": {
+          "worst_db": -8.39,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.2
+        }
+      }
+    },
+    {
+      "pitch_mm": 17.5,
+      "file": "ARR1x5_P01_MS2_dparam_d17p5mm/ARR1x5_d17p5mm.s5p",
+      "port_match_worst_db": -10.16,
+      "port_match_worst_by_port_db": [
+        -10.16,
+        -10.51,
+        -10.41,
+        -10.51,
+        -10.26
+      ],
+      "neighbour_coupling_worst_db": -15.76,
+      "non_neighbour_coupling_worst_db": -25.6,
+      "ecc_s_param_max": 0.0148,
+      "reciprocity_max_abs": 2.940126521493194e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.62,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.69
+        },
+        "15": {
+          "worst_db": -9.49,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.14
+        },
+        "30": {
+          "worst_db": -7.78,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.54
+        },
+        "45": {
+          "worst_db": -8.58,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.36
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.0,
+      "file": "ARR1x5_P01_MS2_dparam_d18mm/ARR1x5_d18mm.s5p",
+      "port_match_worst_db": -10.21,
+      "port_match_worst_by_port_db": [
+        -10.21,
+        -10.47,
+        -10.37,
+        -10.35,
+        -10.36
+      ],
+      "neighbour_coupling_worst_db": -16.55,
+      "non_neighbour_coupling_worst_db": -26.76,
+      "ecc_s_param_max": 0.0106,
+      "reciprocity_max_abs": 2.581417751465236e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.77,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.92
+        },
+        "15": {
+          "worst_db": -9.82,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.35
+        },
+        "30": {
+          "worst_db": -8.08,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.59
+        },
+        "45": {
+          "worst_db": -8.61,
+          "worst_port": 2,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.28
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.2,
+      "file": "ARR1x5_P01_MS2_dparam_d18p2mm/ARR1x5_d18p2mm.s5p",
+      "port_match_worst_db": -10.25,
+      "port_match_worst_by_port_db": [
+        -10.25,
+        -10.54,
+        -10.56,
+        -10.62,
+        -10.28
+      ],
+      "neighbour_coupling_worst_db": -16.9,
+      "non_neighbour_coupling_worst_db": -27.27,
+      "ecc_s_param_max": 0.0099,
+      "reciprocity_max_abs": 2.9661742453466474e-15,
+      "active": {
+        "0": {
+          "worst_db": -9.27,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.16
+        },
+        "15": {
+          "worst_db": -9.8,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.56
+        },
+        "30": {
+          "worst_db": -8.05,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.71
+        },
+        "45": {
+          "worst_db": -8.26,
+          "worst_port": 2,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.06
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.5,
+      "file": "ARR1x5_P01_MS2_dparam_d18p5mm/ARR1x5_d18p5mm.s5p",
+      "port_match_worst_db": -10.47,
+      "port_match_worst_by_port_db": [
+        -10.57,
+        -10.54,
+        -10.6,
+        -10.47,
+        -10.61
+      ],
+      "neighbour_coupling_worst_db": -17.37,
+      "non_neighbour_coupling_worst_db": -28.04,
+      "ecc_s_param_max": 0.0082,
+      "reciprocity_max_abs": 2.592584715281538e-15,
+      "active": {
+        "0": {
+          "worst_db": -9.58,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.53
+        },
+        "15": {
+          "worst_db": -10.16,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.9
+        },
+        "30": {
+          "worst_db": -8.38,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.97
+        },
+        "45": {
+          "worst_db": -7.99,
+          "worst_port": 2,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -8.83
+        }
+      }
+    },
+    {
+      "pitch_mm": 19.0,
+      "file": "ARR1x5_P01_MS2_dparam_d19mm/ARR1x5_d19mm.s5p",
+      "port_match_worst_db": -10.3,
+      "port_match_worst_by_port_db": [
+        -10.3,
+        -10.69,
+        -11.0,
+        -10.92,
+        -10.53
+      ],
+      "neighbour_coupling_worst_db": -18.12,
+      "non_neighbour_coupling_worst_db": -28.08,
+      "ecc_s_param_max": 0.0051,
+      "reciprocity_max_abs": 2.377733269312885e-15,
+      "active": {
+        "0": {
+          "worst_db": -9.98,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.53
+        },
+        "15": {
+          "worst_db": -10.17,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.75
+        },
+        "30": {
+          "worst_db": -8.43,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.61
+        },
+        "45": {
+          "worst_db": -8.13,
+          "worst_port": 2,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.12
+        }
+      }
+    },
+    {
+      "pitch_mm": 19.5,
+      "file": "ARR1x5_P01_MS2_dparam_d19p5mm/ARR1x5_d19p5mm.s5p",
+      "port_match_worst_db": -10.85,
+      "port_match_worst_by_port_db": [
+        -10.86,
+        -10.97,
+        -11.0,
+        -11.01,
+        -10.85
+      ],
+      "neighbour_coupling_worst_db": -18.93,
+      "non_neighbour_coupling_worst_db": -28.8,
+      "ecc_s_param_max": 0.0036,
+      "reciprocity_max_abs": 3.4457739489332885e-15,
+      "active": {
+        "0": {
+          "worst_db": -10.71,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -11.11
+        },
+        "15": {
+          "worst_db": -10.46,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -11.27
+        },
+        "30": {
+          "worst_db": -8.76,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.83
+        },
+        "45": {
+          "worst_db": -7.64,
+          "worst_port": 2,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -8.81
+        }
+      }
+    },
+    {
+      "pitch_mm": 20.0,
+      "file": "ARR1x5_P01_MS2_dparam_d20mm/ARR1x5_d20mm.s5p",
+      "port_match_worst_db": -10.63,
+      "port_match_worst_by_port_db": [
+        -10.74,
+        -11.21,
+        -11.33,
+        -11.11,
+        -10.63
+      ],
+      "neighbour_coupling_worst_db": -19.78,
+      "non_neighbour_coupling_worst_db": -29.33,
+      "ecc_s_param_max": 0.0019,
+      "reciprocity_max_abs": 1.8507995567016808e-15,
+      "active": {
+        "0": {
+          "worst_db": -10.85,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -11.03
+        },
+        "15": {
+          "worst_db": -10.2,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -11.05
+        },
+        "30": {
+          "worst_db": -8.7,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.36
+        },
+        "45": {
+          "worst_db": -7.96,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.28
+        }
+      }
+    },
+    {
+      "pitch_mm": 20.5,
+      "file": "ARR1x5_P01_MS2_dparam_d20p5mm/ARR1x5_d20p5mm.s5p",
+      "port_match_worst_db": -10.7,
+      "port_match_worst_by_port_db": [
+        -10.7,
+        -11.33,
+        -11.61,
+        -11.23,
+        -10.78
+      ],
+      "neighbour_coupling_worst_db": -20.63,
+      "non_neighbour_coupling_worst_db": -30.25,
+      "ecc_s_param_max": 0.0011,
+      "reciprocity_max_abs": 2.090994547293238e-15,
+      "active": {
+        "0": {
+          "worst_db": -11.17,
+          "worst_port": 1,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -11.38
+        },
+        "15": {
+          "worst_db": -10.37,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -11.3
+        },
+        "30": {
+          "worst_db": -8.89,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.3
+        },
+        "45": {
+          "worst_db": -7.9,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.38
+        }
+      }
+    }
+  ]
+}

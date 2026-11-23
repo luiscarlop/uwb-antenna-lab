@@ -1,0 +1,418 @@
+{
+ "id": "P03_MS2",
+ "base_design": "P03_hex_slot_patch",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "generic_FR4_PROVISIONAL",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 1.6,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_center_mm": [
+  0.0,
+  3.3
+ ],
+ "patch_polygon_mm": [
+  [
+   4.8,
+   3.3
+  ],
+  [
+   2.4,
+   7.456922
+  ],
+  [
+   -2.4,
+   7.456922
+  ],
+  [
+   -4.8,
+   3.3
+  ],
+  [
+   -2.4,
+   -0.856922
+  ],
+  [
+   2.4,
+   -0.856922
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    1.1,
+    3.3
+   ],
+   [
+    0.55,
+    4.252628
+   ],
+   [
+    -0.55,
+    4.252628
+   ],
+   [
+    -1.1,
+    3.3
+   ],
+   [
+    -0.55,
+    2.347372
+   ],
+   [
+    0.55,
+    2.347372
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "microstrip_edge_qw",
+  "z0_ohm": 50,
+  "line_width_mm": 3.02,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -6.076922,
+  "transformer_width_mm": 0.72,
+  "transformer_length_mm": 5.22,
+  "transformer_start_y_mm": -6.076922,
+  "patch_edge_y_mm": -0.856922,
+  "connector": {
+   "type": "SMA_edge_launch",
+   "modeled": "50 ohm port at board edge y=-13 (reference plane); connector body not modeled"
+  },
+  "feed_polygons_mm": [
+   [
+    [
+     -1.51,
+     -13.0
+    ],
+    [
+     1.51,
+     -13.0
+    ],
+    [
+     1.51,
+     -6.076922
+    ],
+    [
+     -1.51,
+     -6.076922
+    ]
+   ],
+   [
+    [
+     -0.36,
+     -6.076922
+    ],
+    [
+     0.36,
+     -6.076922
+    ],
+    [
+     0.36,
+     -0.856922
+    ],
+    [
+     -0.36,
+     -0.856922
+    ]
+   ]
+  ]
+ },
+ "changed_vs_base": {
+  "hexagon_circumradius_mm": [
+   6.0535,
+   4.8
+  ],
+  "feed": [
+   "probe at y = -0.42 r",
+   "microstrip_edge_qw: 50 ohm line w = 3.02 mm from y = -13, lambda/4 transformer w = 0.72 mm (Zt = 97.1 ohm) l = 5.22 mm ending on the bottom flat side; no notch, no inset"
+  ],
+  "hex_slot_radius_mm": [
+   1.1,
+   1.1
+  ],
+  "patch_polygon": "regular hexagon, vertices at 0, 60 ... 300 deg, circumradius 4.8 mm, centre (0, 3.3) mm, convex, 6 vertices; flat sides toward +-y (4.8 mm long, apothem 4.1569 mm)"
+ },
+ "changed_vs_previous": {
+  "from": "P03_MS1 (not simulated; kept as record)",
+  "hexagon_circumradius_mm": [
+   5.2,
+   4.8
+  ],
+  "feed": [
+   "inset 2.0 mm with 0.5 mm gaps (notch 4.02 mm in a 5.2 mm flat side)",
+   "edge feed through a lambda/4 transformer, no notch"
+  ],
+  "patch_centre_y_mm": [
+   0.0,
+   3.3
+  ],
+  "reason": "P02_MS1 (EM_SIMULATED) with the same inset gave |S11| ~ -0.7 dB in the channel and an impedance of ~2 ohm at the inset base at f0; a 0.5 mm notch/tab is poorly resolved by a 0.25-0.46 mm mesh; patch moved +3.3 mm in y so the 50 ohm section is long enough for the openEMS MSL port (measurement plane >= 2h from source and from the transformer)."
+ },
+ "rationale": "Revision fabricable y mallable de P03_MS1 (que se conserva sin simular). Cambios: (1) sin muesca ni inset: el hexagono es convexo de 6 vertices y no hay huecos de cobre estrechos; (2) la linea de 50 ohm (3.02 mm, desde y = -13) entra por el borde y se adapta al borde del lado plano inferior con un transformador lambda/4 de 0.72 mm de ancho (Zt = 97.1 ohm) y 5.22 mm de largo, que toca el parche a lo largo de su lado plano (4.8 mm) con 2.04 mm de cobre a cada lado; (3) circunradio 4.8 mm en lugar de 5.2 mm, para que la resonancia quede algo por ENCIMA de f0 una vez aplicados el sesgo observado en P01 y la carga de la ranura central; (4) ranura hexagonal r = 1.1 mm mantenida (lado 1.1 mm, 1.905 mm entre lados planos, 3.20 mm de cobre alrededor); (5) el parche se desplaza a (0, +3.3) mm para que la seccion de 50 ohm mida 6.92 mm y el puerto MSL de openEMS pueda situar su plano de medida a >= 2h de la fuente y del transformador. La orientacion (lados planos a +-y) y el modo excitado (analogo TM11 a lo largo de y, campo maximo entre los lados planos) son los de P03_MS1. R_borde es la incertidumbre dominante: el transformador esta calculado para 188 ohm, punto medio geometrico de la hipotesis 110-320 ohm, y es una calibracion, no una adaptacion establecida. Todo es GEOMETRY_ONLY: no hay S11, ganancia, fase ni retardo de grupo.",
+ "computation": {
+  "inputs": {
+   "f0_Hz": 7987200000.0,
+   "eps_r": 4.4,
+   "h_mm": 1.6,
+   "t_mm": 0.035,
+   "r_mm": 4.8,
+   "hex_slot_r_mm": 1.1,
+   "empirical_bias_fr_FDTD_over_model": 0.93525,
+   "bias_source": "P01 FDTD fr 7.47 GHz / 7.9872 GHz (variants/README.md, P01_R1 step 2); the circular-cavity formula is not known to share this bias"
+  },
+  "line_50ohm": {
+   "u_w_over_h": 1.8855,
+   "w_mm_exact": 3.0169,
+   "w_mm_t0_exact": 3.0621,
+   "eps_eff_quasi_static": 3.331,
+   "w_mm_chosen": 3.02,
+   "cross_check": "Hammerstad 1975 synthesis (w/h>2 formula, t=0) gives w/h = 1.913, i.e. 3.061 mm, equal to the t=0 bisection (3.062 mm); the 35 um copper narrows the line by 0.045 mm",
+   "method": "Hammerstad-Jensen, same as P03_MS1 (see variants/P03_MS1.json computation.line_50ohm)"
+  },
+  "radius_estimate": {
+   "method": "same equal-area circle + TM11 + Garg/Bahl fringing (cited from memory) as P03_MS1",
+   "fr_GHz_vs_r_mm": {
+    "4.8": {
+     "A_pure": 8.865,
+     "B_biased_x0.93525": 8.291
+    },
+    "5.0": {
+     "A_pure": 8.528,
+     "B_biased_x0.93525": 7.976
+    },
+    "5.2": {
+     "A_pure": 8.216,
+     "B_biased_x0.93525": 7.684
+    },
+    "5.357": {
+     "A_pure": 7.987,
+     "B_biased_x0.93525": 7.469
+    }
+   },
+   "estimate_A_pure_model_r_mm": 5.357,
+   "estimate_B_with_P01_bias_r_mm": 4.993,
+   "slot_loading_proxy": {
+    "what": "fraction of the TM11 (J1) magnetic energy that lies under the footprint of the central hole (equal-area circle radius 1.000 mm, a_equal_area = 4.365 mm)",
+    "value": 0.105,
+    "area_fraction": 0.0525,
+    "reading": "order of magnitude only: a relative downward shift up to ~5 % (half of the energy fraction) is plausible. It is a proxy, NOT a prediction and NOT an EM result."
+   },
+   "edge_feed_loading": "No notch; the transformer joint adds a small, unquantified perturbation (fringing is already inside the effective radius).",
+   "estimate_expected_range_GHz": "B (biased) minus up to ~5 % slot loading: 7.9-8.3; A (pure) minus the same: 8.4-8.9. Both bracket f0 from above, which is the intent (next excitation covers ~5.5-9.5 GHz).",
+   "choice": "r = 4.8 mm. With the observed bias plus slot loading the model sits at about f0 (B 8.29 GHz less up to 5 % -> 7.9 GHz); without bias it sits ~0.4-0.9 GHz above. Preferring 'above' as requested. P03_MS1's r = 5.2 mm gave B = 7.68 GHz, i.e. already below f0 before slot loading.",
+   "uncertainty": "fr of the main mode +-5 % or more (hexagon vs circle, bias transfer, slot, board edge 5.5 mm above the patch). Not an EM result."
+  },
+  "hex_slot": {
+   "r_mm": 1.1,
+   "decision": "kept (traceability with designs.py)",
+   "sizes_mm": {
+    "side": 1.1,
+    "flat_to_flat": 1.905,
+    "vertex_to_vertex": 2.2,
+    "copper_around_min": 3.204
+   },
+   "justification": "All void dimensions >= 1.9 mm (>= 7 cells at 0.25-0.3 mm) so it is well resolved; at the TM11 centre E_z ~ 0 and current is max, so it loads inductively (proxy above); enlarging it would lower fr further. Its staircase edges at 60 deg are the only non-grid detail."
+  },
+  "R_edge_hypothesis": {
+   "status": "HYPOTHESIS TO CALIBRATE; not a measured or simulated value for this geometry",
+   "range_ohm": [
+    110,
+    320
+   ],
+   "nominal_ohm": 188.5,
+   "lower_110": "P01 probe-derived R_edge 111.7 / 125.7 / 132.7 ohm (em/circuit_fits/*.json, cos^2/sin^2 law), i.e. 110-135 ohm, used with no width scaling. It is an interior-probe extrapolation, not an edge value.",
+   "upper_320": "135 ohm x (11.42 mm W of P01 / 4.8 mm flat side of P03_MS2) = 321 ohm: edge conductance taken proportional to the radiating width. Assumes only the 4.8 mm flat side radiates; the oblique sides of the hexagon also radiate in a TM11-like mode, which argues for lower values.",
+   "not_used_cavity_model": "Slot-model cavity G1 (Balanis integral, computed here with k0 = 2 pi/lambda0 at f0): R = 1/(2 G1) = 516 ohm for W = 11.42 mm (P01), 2374 ohm for 5.2 mm and 2781 ohm for 4.8 mm. It overestimates the P01 probe-derived value by a factor 3.8-4.7, so its absolute values are not usable; scaling P01 by its G1 ratio (5.4 for 4.8 mm) would give ~730 ohm, which the lambda/4 line cannot match (Zt = 191 ohm, w < 0.1 mm). Literature values for FR4 patch edges are larger than 110-135 ohm (as the orchestrator noted); no literature number is quoted here because none was checked.",
+   "nominal": "geometric mean sqrt(110 x 320) = 187.6 ohm (rounded to 188.5 ohm = Zt^2/50 for the chosen w = 0.72 mm); Zt = 97.1 ohm",
+   "effect_on_transformer": {
+    "Zt_vs_R": {
+     "110": 74.2,
+     "150": 86.6,
+     "188.5": 97.1,
+     "250": 111.8,
+     "320": 126.5,
+     "500": 158.1,
+     "730": 191.0
+    },
+    "w_mm_vs_Zt": {
+     "74.2": 1.414,
+     "86.6": 0.98,
+     "97.1": 0.72,
+     "110": 0.491,
+     "126.5": 0.297,
+     "158.1": 0.106,
+     "191.0": "<0.05 (outside Hammerstad-Jensen validity)"
+    },
+    "feasibility": "w >= 0.7 mm needs Zt <= ~98 ohm (R_edge <= ~192 ohm); w >= 0.5 mm needs Zt <= ~110 ohm (R_edge <= ~242 ohm). Above that the matched transformer is thinner than the mesh/fabrication limit; the fixed Zt = 97.1 ohm then leaves a mismatch (table).",
+    "mismatch_table_arithmetic": [
+     {
+      "R_edge_ohm": 110,
+      "note": "low (P01 probe-derived)",
+      "Zt_ideal_ohm": 74.2,
+      "Zin_at_line_ohm_at_f0_ideal_QW": 85.7,
+      "mismatch_G_arith": 0.263,
+      "mismatch_dB_arith": -11.6
+     },
+     {
+      "R_edge_ohm": 150,
+      "note": "",
+      "Zt_ideal_ohm": 86.6,
+      "Zin_at_line_ohm_at_f0_ideal_QW": 62.8,
+      "mismatch_G_arith": 0.114,
+      "mismatch_dB_arith": -18.9
+     },
+     {
+      "R_edge_ohm": 188.5,
+      "note": "match",
+      "Zt_ideal_ohm": 97.1,
+      "Zin_at_line_ohm_at_f0_ideal_QW": 50.0,
+      "mismatch_G_arith": 0.0,
+      "mismatch_dB_arith": "~0 by construction"
+     },
+     {
+      "R_edge_ohm": 250,
+      "note": "",
+      "Zt_ideal_ohm": 111.8,
+      "Zin_at_line_ohm_at_f0_ideal_QW": 37.7,
+      "mismatch_G_arith": 0.14,
+      "mismatch_dB_arith": -17.1
+     },
+     {
+      "R_edge_ohm": 320,
+      "note": "high (linear-in-W scaling)",
+      "Zt_ideal_ohm": 126.5,
+      "Zin_at_line_ohm_at_f0_ideal_QW": 29.5,
+      "mismatch_G_arith": 0.259,
+      "mismatch_dB_arith": -11.8
+     },
+     {
+      "R_edge_ohm": 500,
+      "note": "outside hypothesis",
+      "Zt_ideal_ohm": 158.1,
+      "Zin_at_line_ohm_at_f0_ideal_QW": 18.9,
+      "mismatch_G_arith": 0.452,
+      "mismatch_dB_arith": -6.9
+     },
+     {
+      "R_edge_ohm": 730,
+      "note": "outside hypothesis (cavity-G1 scaling)",
+      "Zt_ideal_ohm": 191.0,
+      "Zin_at_line_ohm_at_f0_ideal_QW": 12.9,
+      "mismatch_G_arith": 0.589,
+      "mismatch_dB_arith": -4.6
+     }
+    ],
+    "mismatch_note": "Arithmetic of the assumed load R_edge through an ideal quarter-wave line at f0 (Zin = Zt^2/R). It is NOT the S11 of the design: it ignores the patch reactance, the band, the junction, the slot and losses."
+   }
+  },
+  "transformer": {
+   "topology": "lambda/4 microstrip section between the 50 ohm line and the bottom flat side; Zt = sqrt(50 x R_edge)",
+   "width": {
+    "Zt_ohm": 97.09,
+    "w_mm_chosen": 0.72,
+    "w_over_h": 0.45,
+    "method": "Hammerstad-Jensen with thickness correction (same formulas as the 50 ohm line), solved for w; w = 0.72 mm gives Zt = 97.09 ohm (target 97.1 ohm)",
+    "eps_eff_static": 3.044,
+    "t_mm": 0.035
+   },
+   "length": {
+    "eps_eff_dispersive_f0": 3.232,
+    "dispersion": "Getsinger: eps_eff(f) = eps_r - (eps_r - eps_eff0)/(1 + G (f/fp)^2), G = 0.6 + 0.009 Z0, fp = Z0/(2 mu0 h) = 24.1 GHz at Z0 = 97 ohm. Chosen because FDTD includes dispersion and a narrow line has eps_eff0 = 3.04 (static) rising to 3.23 at f0 (+6 %).",
+    "lambda0_mm": 37.534,
+    "lambda_g_over_4_static_mm": 5.378,
+    "lambda_g_over_4_dispersive_mm": 5.219,
+    "l_mm_chosen": 5.22,
+    "uncertainty": "static vs dispersive differ by 0.16 mm (3 %) = 2.7 deg of line phase at f0; a lambda/4 transformer is broadband relative to the patch, so this is second order. End effects (50->97 ohm step, line-to-patch junction) are not included."
+   },
+   "position": {
+    "transformer_start_y_mm": -6.076922,
+    "patch_edge_y_mm": -0.856922,
+    "line50_end_y_mm": -6.076922,
+    "line50_length_mm": 6.923078
+   }
+  },
+  "board_layout": {
+   "patch_centre_mm": [
+    0.0,
+    3.3
+   ],
+   "patch_bbox_mm": [
+    -4.8,
+    4.8,
+    -0.856922,
+    7.456922
+   ],
+   "margin_to_board_edge_mm": {
+    "x": 8.2,
+    "y_top": 5.543078,
+    "y_bottom_patch_to_edge": 12.143078
+   },
+   "why_offset": "With the patch at the origin the 50 ohm section would be 3.6 mm, and add_edge_port (em/patch_openems.py) needs d_src >= h and warns below 2h = 3.2 mm: the 50 ohm section is now 6.92 mm (measurement plane 3.71 mm from the launch plane, 3.21 mm from source and from the transformer). Top margin 5.54 mm = 3.5 h. If the orchestrator prefers a centred patch, em-solver must relax the port constraint instead (feed_shift 0.3 mm)."
+  },
+  "geometry_checks": {
+   "patch_simple_ccw": true,
+   "slot_simple_ccw": true,
+   "feed_rects_simple_ccw": true,
+   "slot_vertices_in_metal": true,
+   "slot_to_patch_boundary_mm": 3.2042939850851506,
+   "slot_to_transformer_mm": 3.204294,
+   "slot_to_patch_boundary_ge_0.7": true,
+   "inside_board": true,
+   "patch_margin_mm": {
+    "x": 8.2,
+    "y_top": 5.543078,
+    "y_bottom_patch_to_edge": 12.143078
+   },
+   "line_touches_y_-13": true,
+   "line_transformer_shared_edge": true,
+   "transformer_touches_patch_edge": true,
+   "transformer_x_inside_patch_bottom_flat": true,
+   "flat_side_length_mm": 4.8,
+   "copper_each_side_of_transformer_on_flat_mm": 2.04,
+   "transformer_width_mm": 0.72,
+   "transformer_length_mm": 5.22,
+   "line50_length_mm": 6.923078,
+   "feed_rects_no_overlap_with_patch": true,
+   "min_copper_detail_mm": 0.72,
+   "min_void_detail_mm_slot_flat_to_flat": 1.905255888325765,
+   "slot_side_mm": 1.1,
+   "patch_bbox_mm": [
+    -4.8,
+    4.8,
+    -0.856922,
+    7.456922
+   ],
+   "line_x_range": [
+    -1.51,
+    1.51
+   ],
+   "msl_port_geometry_mm": {
+    "meas_plane_from_launch": 3.711539,
+    "d_src": 3.211539,
+    "d_to_transformer_start": 3.211539,
+    "ge_2h_3.2": true,
+    "stop_after_meas_fits": true
+   }
+  },
+  "checks_script": "pure-python (segment intersection, point-in-polygon, point-segment distance); reproducible from the coordinates in this JSON",
+  "manufacturability": {
+   "min_copper_detail_mm": 0.72,
+   "min_void_detail_mm": 1.905,
+   "no_gaps_below_mm": "no copper-to-copper gap exists (no notch); the only narrow feature is the 0.72 mm transformer",
+   "note": "Not a verified fabricator capability; 0.72 mm line tolerance of +-0.05 mm moves Zt by about +-5 ohm (estimate from the w(Z) table, not computed separately)."
+  },
+  "mesh_note_for_em_solver": "Transformer 0.72 mm: needs >= 3 cells across (<= 0.24 mm) or mesh lines at its two edges plus one in the middle. Copper joints: line/transformer shared edge at y = -6.076922 and transformer/patch shared edge at y = -0.856922, coordinates bit-identical in feed_polygons_mm and patch_polygon_mm. Slot 1.905 mm flat to flat: >= 6 cells at 0.3 mm.",
+  "uncertainty_summary": "r from two model estimates (A/B differ 7 %) plus slot loading proxy; R_edge hypothesis spans a factor ~3; hole and junction effects unquantified."
+ }
+}

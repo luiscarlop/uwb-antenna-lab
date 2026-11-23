@@ -1,0 +1,3313 @@
+{
+  "evidence": "GUIDE_MODEL (not EM): HFSS element GainTotal magnitude, identical elements, no coupling",
+  "element_pattern": "hfss/results/results_P01_MS1/Gain P01_MS1 3D 3freq.csv (xz cut, 5 deg, interpolated)",
+  "sequence": "TFG RF_CONFIGS (12 configs, 24 channels), off ports 50 ohm",
+  "rows": [
+    {
+      "pitch_mm": 12.0,
+      "gap_between_patches_mm": 0.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.3197,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 32.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -41.14,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 31.0,
+              "pointing_error_deg": -3.75,
+              "max_sidelobe_db": -32.19,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 29.75,
+              "pointing_error_deg": -9.0,
+              "max_sidelobe_db": -21.9,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 28.75,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -13.25,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 28.5,
+              "pointing_error_deg": -25.0,
+              "max_sidelobe_db": -7.5,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.3097,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 32.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -42.55,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 32.0,
+              "pointing_error_deg": -4.25,
+              "max_sidelobe_db": -32.93,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 31.0,
+              "pointing_error_deg": -9.75,
+              "max_sidelobe_db": -23.55,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 30.0,
+              "pointing_error_deg": -15.25,
+              "max_sidelobe_db": -14.48,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 29.25,
+              "pointing_error_deg": -25.0,
+              "max_sidelobe_db": -8.51,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.3297,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 32.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -39.37,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 30.5,
+              "pointing_error_deg": -2.75,
+              "max_sidelobe_db": -30.21,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 29.0,
+              "pointing_error_deg": -8.25,
+              "max_sidelobe_db": -20.12,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 28.25,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -12.09,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 28.5,
+              "pointing_error_deg": -25.0,
+              "max_sidelobe_db": -6.59,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 12.5,
+      "gap_between_patches_mm": 1.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.333,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 31.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -39.78,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 30.25,
+              "pointing_error_deg": -3.5,
+              "max_sidelobe_db": -31.44,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 29.25,
+              "pointing_error_deg": -8.5,
+              "max_sidelobe_db": -19.97,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 28.25,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -11.89,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 28.25,
+              "pointing_error_deg": -25.0,
+              "max_sidelobe_db": -6.39,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.3226,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 31.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -40.96,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 31.0,
+              "pointing_error_deg": -4.0,
+              "max_sidelobe_db": -32.08,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 30.0,
+              "pointing_error_deg": -9.0,
+              "max_sidelobe_db": -21.42,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 29.25,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -12.94,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 28.5,
+              "pointing_error_deg": -25.0,
+              "max_sidelobe_db": -7.33,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.3434,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 30.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -38.18,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 29.75,
+              "pointing_error_deg": -2.75,
+              "max_sidelobe_db": -28.12,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 28.25,
+              "pointing_error_deg": -7.5,
+              "max_sidelobe_db": -18.4,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 27.75,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -10.86,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 28.5,
+              "pointing_error_deg": -24.0,
+              "max_sidelobe_db": -5.58,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 13.0,
+      "gap_between_patches_mm": 1.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.3464,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 30.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -38.58,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 29.25,
+              "pointing_error_deg": -3.25,
+              "max_sidelobe_db": -29.27,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 28.5,
+              "pointing_error_deg": -8.0,
+              "max_sidelobe_db": -18.3,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 27.75,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -10.71,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 27.5,
+              "pointing_error_deg": -23.75,
+              "max_sidelobe_db": -5.45,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.3355,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 30.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -39.57,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 30.25,
+              "pointing_error_deg": -3.75,
+              "max_sidelobe_db": -31.38,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 29.25,
+              "pointing_error_deg": -8.5,
+              "max_sidelobe_db": -19.6,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 28.5,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -11.69,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 28.0,
+              "pointing_error_deg": -24.25,
+              "max_sidelobe_db": -6.27,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.3572,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 29.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -37.05,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 28.75,
+              "pointing_error_deg": -2.5,
+              "max_sidelobe_db": -26.39,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 27.5,
+              "pointing_error_deg": -7.0,
+              "max_sidelobe_db": -16.89,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -9.77,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 28.0,
+              "pointing_error_deg": -22.75,
+              "max_sidelobe_db": -4.8,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 13.5,
+      "gap_between_patches_mm": 2.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.3597,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 29.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -37.42,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 28.5,
+              "pointing_error_deg": -3.0,
+              "max_sidelobe_db": -27.3,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 27.75,
+              "pointing_error_deg": -7.5,
+              "max_sidelobe_db": -16.85,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": -14.75,
+              "max_sidelobe_db": -9.7,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 27.5,
+              "pointing_error_deg": -22.75,
+              "max_sidelobe_db": -4.68,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.3484,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 29.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -38.37,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 29.25,
+              "pointing_error_deg": -3.5,
+              "max_sidelobe_db": -29.3,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 28.75,
+              "pointing_error_deg": -8.0,
+              "max_sidelobe_db": -18.03,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 28.0,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -10.57,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 27.75,
+              "pointing_error_deg": -23.0,
+              "max_sidelobe_db": -5.42,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.3709,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 28.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -36.06,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 28.0,
+              "pointing_error_deg": -2.25,
+              "max_sidelobe_db": -24.87,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 26.75,
+              "pointing_error_deg": -6.5,
+              "max_sidelobe_db": -15.63,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 26.75,
+              "pointing_error_deg": -14.0,
+              "max_sidelobe_db": -8.92,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 27.75,
+              "pointing_error_deg": -21.75,
+              "max_sidelobe_db": -4.1,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 14.0,
+      "gap_between_patches_mm": 2.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.373,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 28.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -36.41,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 27.75,
+              "pointing_error_deg": -2.75,
+              "max_sidelobe_db": -25.53,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": -7.0,
+              "max_sidelobe_db": -15.62,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 26.5,
+              "pointing_error_deg": -14.0,
+              "max_sidelobe_db": -8.87,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": -21.75,
+              "max_sidelobe_db": -4.01,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.3613,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 28.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -37.31,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 28.5,
+              "pointing_error_deg": -3.25,
+              "max_sidelobe_db": -27.28,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 28.0,
+              "pointing_error_deg": -7.5,
+              "max_sidelobe_db": -16.66,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 27.5,
+              "pointing_error_deg": -14.25,
+              "max_sidelobe_db": -9.63,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 27.25,
+              "pointing_error_deg": -22.0,
+              "max_sidelobe_db": -4.68,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.3847,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 28.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -35.18,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 27.25,
+              "pointing_error_deg": -2.0,
+              "max_sidelobe_db": -23.43,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 26.25,
+              "pointing_error_deg": -6.25,
+              "max_sidelobe_db": -14.49,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 26.25,
+              "pointing_error_deg": -13.25,
+              "max_sidelobe_db": -8.15,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 27.25,
+              "pointing_error_deg": -20.75,
+              "max_sidelobe_db": -3.58,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 14.5,
+      "gap_between_patches_mm": 3.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.3863,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 27.25,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -35.53,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": -2.5,
+              "max_sidelobe_db": -23.93,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 26.5,
+              "pointing_error_deg": -6.5,
+              "max_sidelobe_db": -14.52,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 26.0,
+              "pointing_error_deg": -13.25,
+              "max_sidelobe_db": -8.12,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.5,
+              "pointing_error_deg": -20.75,
+              "max_sidelobe_db": -3.48,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.3742,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 28.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -36.39,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 27.75,
+              "pointing_error_deg": -3.0,
+              "max_sidelobe_db": -25.48,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 27.25,
+              "pointing_error_deg": -7.0,
+              "max_sidelobe_db": -15.51,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": -13.5,
+              "max_sidelobe_db": -8.85,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": -21.0,
+              "max_sidelobe_db": -4.06,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.3984,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -33.25,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 26.5,
+              "pointing_error_deg": -2.0,
+              "max_sidelobe_db": -22.08,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -5.75,
+              "max_sidelobe_db": -13.54,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 25.75,
+              "pointing_error_deg": -12.5,
+              "max_sidelobe_db": -7.55,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 27.25,
+              "pointing_error_deg": -20.0,
+              "max_sidelobe_db": -3.11,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 15.0,
+      "gap_between_patches_mm": 3.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.3996,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 26.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -34.74,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 26.25,
+              "pointing_error_deg": -2.5,
+              "max_sidelobe_db": -22.48,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 25.75,
+              "pointing_error_deg": -6.0,
+              "max_sidelobe_db": -13.61,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -12.5,
+              "max_sidelobe_db": -7.54,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.0,
+              "pointing_error_deg": -20.0,
+              "max_sidelobe_db": -2.99,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.3871,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -35.55,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 27.0,
+              "pointing_error_deg": -2.75,
+              "max_sidelobe_db": -23.88,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 26.75,
+              "pointing_error_deg": -6.5,
+              "max_sidelobe_db": -14.46,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 26.5,
+              "pointing_error_deg": -12.75,
+              "max_sidelobe_db": -8.13,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.5,
+              "pointing_error_deg": -20.25,
+              "max_sidelobe_db": -3.54,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.4121,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 26.25,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -31.11,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 25.75,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -20.81,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": -5.5,
+              "max_sidelobe_db": -12.73,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 25.25,
+              "pointing_error_deg": -12.0,
+              "max_sidelobe_db": -7.04,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.75,
+              "pointing_error_deg": -20.0,
+              "max_sidelobe_db": -2.72,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 15.5,
+      "gap_between_patches_mm": 4.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.413,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 25.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -32.76,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -2.25,
+              "max_sidelobe_db": -21.17,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 25.25,
+              "pointing_error_deg": -5.75,
+              "max_sidelobe_db": -12.82,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": -12.0,
+              "max_sidelobe_db": -7.03,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.75,
+              "pointing_error_deg": -20.0,
+              "max_sidelobe_db": -2.6,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.4001,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 26.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -34.79,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 26.25,
+              "pointing_error_deg": -2.75,
+              "max_sidelobe_db": -22.46,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 26.0,
+              "pointing_error_deg": -6.0,
+              "max_sidelobe_db": -13.59,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 26.0,
+              "pointing_error_deg": -12.25,
+              "max_sidelobe_db": -7.58,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.0,
+              "pointing_error_deg": -20.0,
+              "max_sidelobe_db": -3.06,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.4259,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -29.37,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -19.67,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -12.0,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 24.75,
+              "pointing_error_deg": -11.25,
+              "max_sidelobe_db": -6.59,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.75,
+              "pointing_error_deg": -19.75,
+              "max_sidelobe_db": -2.36,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 16.0,
+      "gap_between_patches_mm": 4.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.4263,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -31.02,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 24.75,
+              "pointing_error_deg": -2.0,
+              "max_sidelobe_db": -20.01,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 24.5,
+              "pointing_error_deg": -5.5,
+              "max_sidelobe_db": -12.09,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 24.5,
+              "pointing_error_deg": -11.25,
+              "max_sidelobe_db": -6.57,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -20.0,
+              "max_sidelobe_db": -2.22,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.413,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -33.5,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 25.75,
+              "pointing_error_deg": -2.5,
+              "max_sidelobe_db": -21.18,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -5.75,
+              "max_sidelobe_db": -12.84,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -11.5,
+              "max_sidelobe_db": -7.08,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.75,
+              "pointing_error_deg": -20.0,
+              "max_sidelobe_db": -2.66,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.4396,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 24.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -27.95,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -18.63,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 23.75,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -11.41,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 24.5,
+              "pointing_error_deg": -10.75,
+              "max_sidelobe_db": -6.25,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.5,
+              "pointing_error_deg": -19.0,
+              "max_sidelobe_db": -2.04,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 16.5,
+      "gap_between_patches_mm": 5.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.4396,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -29.54,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": -2.0,
+              "max_sidelobe_db": -18.97,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 24.0,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -11.52,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": -10.75,
+              "max_sidelobe_db": -6.22,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.25,
+              "pointing_error_deg": -19.25,
+              "max_sidelobe_db": -1.88,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.4259,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -31.73,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": -2.25,
+              "max_sidelobe_db": -20.05,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": -5.5,
+              "max_sidelobe_db": -12.14,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 24.75,
+              "pointing_error_deg": -11.0,
+              "max_sidelobe_db": -6.64,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -19.5,
+              "max_sidelobe_db": -2.29,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.4533,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 24.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -26.74,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 23.5,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -17.68,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.9,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.75,
+              "pointing_error_deg": -10.25,
+              "max_sidelobe_db": -5.95,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.5,
+              "pointing_error_deg": -18.25,
+              "max_sidelobe_db": -1.78,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 17.0,
+      "gap_between_patches_mm": 5.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.4529,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 23.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -28.24,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 23.5,
+              "pointing_error_deg": -2.0,
+              "max_sidelobe_db": -18.02,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 23.5,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -11.01,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.75,
+              "pointing_error_deg": -10.25,
+              "max_sidelobe_db": -5.9,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": -18.5,
+              "max_sidelobe_db": -1.6,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.4388,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 24.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -30.19,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": -2.25,
+              "max_sidelobe_db": -19.04,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": -5.25,
+              "max_sidelobe_db": -11.57,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 24.5,
+              "pointing_error_deg": -10.5,
+              "max_sidelobe_db": -6.29,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.25,
+              "pointing_error_deg": -19.0,
+              "max_sidelobe_db": -1.95,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.4671,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -25.7,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -16.85,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 23.0,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.43,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.5,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.67,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.25,
+              "pointing_error_deg": -17.5,
+              "max_sidelobe_db": -1.54,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 17.5,
+      "gap_between_patches_mm": 6.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.4662,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 23.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -27.1,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -17.19,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 22.75,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.54,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.61,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": -17.75,
+              "max_sidelobe_db": -1.34,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.4517,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 23.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -28.82,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 23.75,
+              "pointing_error_deg": -2.0,
+              "max_sidelobe_db": -18.11,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 23.75,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -11.08,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 24.0,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.97,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.0,
+              "pointing_error_deg": -18.25,
+              "max_sidelobe_db": -1.67,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.4808,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -24.81,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -16.11,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.03,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.47,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.25,
+              "pointing_error_deg": -17.0,
+              "max_sidelobe_db": -1.32,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.0,
+      "gap_between_patches_mm": 6.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.4796,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -26.05,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -16.46,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.14,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.0,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.39,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.75,
+              "pointing_error_deg": -17.25,
+              "max_sidelobe_db": -1.11,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.4646,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 23.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -27.6,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -2.0,
+              "max_sidelobe_db": -17.3,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.62,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.5,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.67,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.5,
+              "pointing_error_deg": -17.5,
+              "max_sidelobe_db": -1.41,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.4946,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -23.98,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -15.43,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.75,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.72,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.75,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.27,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 26.0,
+              "pointing_error_deg": -16.25,
+              "max_sidelobe_db": -1.14,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.198,
+      "gap_between_patches_mm": 6.777,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.4848,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.25,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -25.66,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -16.18,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 22.25,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.01,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.75,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.3,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.5,
+              "pointing_error_deg": -17.0,
+              "max_sidelobe_db": -1.03,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.4697,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -27.13,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 23.0,
+              "pointing_error_deg": -2.0,
+              "max_sidelobe_db": -17.01,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 23.0,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.44,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.58,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.5,
+              "pointing_error_deg": -17.25,
+              "max_sidelobe_db": -1.32,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.5,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -23.67,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 21.75,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -15.17,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.6,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.19,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.75,
+              "pointing_error_deg": -16.0,
+              "max_sidelobe_db": -1.07,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.5,
+      "gap_between_patches_mm": 7.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.4929,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -25.08,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -15.77,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.81,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.17,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.5,
+              "pointing_error_deg": -16.5,
+              "max_sidelobe_db": -0.91,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.4775,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -26.46,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 22.75,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -16.59,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 22.75,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.22,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.44,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.5,
+              "pointing_error_deg": -17.0,
+              "max_sidelobe_db": -1.18,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.5083,
+          "max_steer_without_grating_deg": 75.3,
+          "steer": {
+            "0": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -23.22,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -14.8,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.42,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.25,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.07,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.75,
+              "pointing_error_deg": -15.75,
+              "max_sidelobe_db": -0.97,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.767,
+      "gap_between_patches_mm": 7.346,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.5,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -24.61,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 21.75,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -15.43,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.75,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.65,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.06,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": -16.25,
+              "max_sidelobe_db": -0.81,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.4844,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -25.9,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 22.25,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -16.23,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -10.04,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 23.0,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.32,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": -16.5,
+              "max_sidelobe_db": -1.08,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.5156,
+          "max_steer_without_grating_deg": 70.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 21.25,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -22.83,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 21.25,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -14.52,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.25,
+              "pointing_error_deg": -4.75,
+              "max_sidelobe_db": -9.27,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": -9.75,
+              "max_sidelobe_db": -4.99,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -15.5,
+              "max_sidelobe_db": -0.88,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 19.0,
+      "gap_between_patches_mm": 7.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.5062,
+          "max_steer_without_grating_deg": 77.3,
+          "steer": {
+            "0": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -24.18,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 21.25,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -15.15,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.5,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.25,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -4.96,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.25,
+              "pointing_error_deg": -16.0,
+              "max_sidelobe_db": -0.73,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.4904,
+          "max_steer_without_grating_deg": 90.0,
+          "steer": {
+            "0": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -25.43,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -15.93,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 22.25,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.89,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.75,
+              "pointing_error_deg": -10.0,
+              "max_sidelobe_db": -5.21,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.0,
+              "pointing_error_deg": -16.25,
+              "max_sidelobe_db": -0.99,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.522,
+          "max_steer_without_grating_deg": 66.3,
+          "steer": {
+            "0": {
+              "hpbw_deg": 21.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -22.47,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -14.29,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.0,
+              "pointing_error_deg": -4.75,
+              "max_sidelobe_db": -9.14,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": -9.5,
+              "max_sidelobe_db": -4.92,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -15.25,
+              "max_sidelobe_db": -0.81,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 19.5,
+      "gap_between_patches_mm": 8.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.5195,
+          "max_steer_without_grating_deg": 67.6,
+          "steer": {
+            "0": {
+              "hpbw_deg": 21.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -23.33,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 21.0,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -14.63,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.25,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.21,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": -9.5,
+              "max_sidelobe_db": -4.79,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.0,
+              "pointing_error_deg": -15.5,
+              "max_sidelobe_db": -0.56,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.5033,
+          "max_steer_without_grating_deg": 80.7,
+          "steer": {
+            "0": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -24.47,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -1.75,
+              "max_sidelobe_db": -15.32,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.58,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.5,
+              "pointing_error_deg": -9.75,
+              "max_sidelobe_db": -5.0,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 23.75,
+              "pointing_error_deg": -15.75,
+              "max_sidelobe_db": -0.81,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.5358,
+          "max_steer_without_grating_deg": 60.1,
+          "steer": {
+            "0": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -21.71,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -13.82,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -4.5,
+              "max_sidelobe_db": -8.94,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 21.75,
+              "pointing_error_deg": -9.0,
+              "max_sidelobe_db": -4.78,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.5,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -0.67,
+              "grating_lobe": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 20.0,
+      "gap_between_patches_mm": 8.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.5328,
+          "max_steer_without_grating_deg": 61.2,
+          "steer": {
+            "0": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -22.54,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -14.16,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -4.75,
+              "max_sidelobe_db": -8.99,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -9.25,
+              "max_sidelobe_db": -4.64,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 24.0,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -0.42,
+              "grating_lobe": false
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.5162,
+          "max_steer_without_grating_deg": 69.6,
+          "steer": {
+            "0": {
+              "hpbw_deg": 21.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -23.58,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 21.25,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -14.8,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -5.0,
+              "max_sidelobe_db": -9.29,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 22.0,
+              "pointing_error_deg": -9.5,
+              "max_sidelobe_db": -4.82,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 23.75,
+              "pointing_error_deg": -15.25,
+              "max_sidelobe_db": -0.64,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.5495,
+          "max_steer_without_grating_deg": 55.1,
+          "steer": {
+            "0": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -20.98,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -13.38,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 20.25,
+              "pointing_error_deg": -4.25,
+              "max_sidelobe_db": -8.76,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -8.75,
+              "max_sidelobe_db": -4.66,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.25,
+              "pointing_error_deg": -14.75,
+              "max_sidelobe_db": -0.54,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 20.5,
+      "gap_between_patches_mm": 9.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.5462,
+          "max_steer_without_grating_deg": 56.2,
+          "steer": {
+            "0": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -21.79,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -13.72,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": -4.5,
+              "max_sidelobe_db": -8.79,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 21.25,
+              "pointing_error_deg": -8.75,
+              "max_sidelobe_db": -4.5,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 23.75,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -0.29,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.5291,
+          "max_steer_without_grating_deg": 62.9,
+          "steer": {
+            "0": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -22.76,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -14.34,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 21.0,
+              "pointing_error_deg": -4.75,
+              "max_sidelobe_db": -9.05,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 21.75,
+              "pointing_error_deg": -9.0,
+              "max_sidelobe_db": -4.67,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 23.5,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -0.51,
+              "grating_lobe": false
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.5632,
+          "max_steer_without_grating_deg": 50.8,
+          "steer": {
+            "0": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -20.28,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -12.97,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": -4.25,
+              "max_sidelobe_db": -8.59,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 21.0,
+              "pointing_error_deg": -8.5,
+              "max_sidelobe_db": -4.54,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 25.25,
+              "pointing_error_deg": -14.25,
+              "max_sidelobe_db": -0.42,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 21.0,
+      "gap_between_patches_mm": 9.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.5595,
+          "max_steer_without_grating_deg": 51.9,
+          "steer": {
+            "0": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -21.05,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 19.75,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -13.3,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": -4.25,
+              "max_sidelobe_db": -8.61,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 21.0,
+              "pointing_error_deg": -8.5,
+              "max_sidelobe_db": -4.36,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -14.75,
+              "max_sidelobe_db": -0.16,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.542,
+          "max_steer_without_grating_deg": 57.7,
+          "steer": {
+            "0": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -22.0,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 20.25,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -13.91,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -4.5,
+              "max_sidelobe_db": -8.85,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -8.75,
+              "max_sidelobe_db": -4.52,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 23.25,
+              "pointing_error_deg": -15.0,
+              "max_sidelobe_db": -0.38,
+              "grating_lobe": true
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.577,
+          "max_steer_without_grating_deg": 47.2,
+          "steer": {
+            "0": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -19.63,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -12.64,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": -4.0,
+              "max_sidelobe_db": -8.43,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -8.0,
+              "max_sidelobe_db": -4.45,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 23.5,
+              "pointing_error_deg": -106.0,
+              "max_sidelobe_db": -0.29,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 21.5,
+      "gap_between_patches_mm": 10.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.5728,
+          "max_steer_without_grating_deg": 48.2,
+          "steer": {
+            "0": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -20.36,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 19.25,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -12.96,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": -4.0,
+              "max_sidelobe_db": -8.43,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": -8.25,
+              "max_sidelobe_db": -4.26,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 23.0,
+              "pointing_error_deg": -14.25,
+              "max_sidelobe_db": -0.03,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.5549,
+          "max_steer_without_grating_deg": 53.3,
+          "steer": {
+            "0": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -21.29,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": -1.5,
+              "max_sidelobe_db": -13.5,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 20.25,
+              "pointing_error_deg": -4.25,
+              "max_sidelobe_db": -8.66,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 21.25,
+              "pointing_error_deg": -8.25,
+              "max_sidelobe_db": -4.39,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 23.0,
+              "pointing_error_deg": -14.75,
+              "max_sidelobe_db": -0.25,
+              "grating_lobe": true
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.5907,
+          "max_steer_without_grating_deg": 43.9,
+          "steer": {
+            "0": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -19.02,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -12.35,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": -3.75,
+              "max_sidelobe_db": -8.3,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": -7.75,
+              "max_sidelobe_db": -4.36,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 22.25,
+              "pointing_error_deg": -104.25,
+              "max_sidelobe_db": -1.47,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 22.0,
+      "gap_between_patches_mm": 10.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.5861,
+          "max_steer_without_grating_deg": 44.9,
+          "steer": {
+            "0": {
+              "hpbw_deg": 18.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -19.72,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -12.66,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 19.25,
+              "pointing_error_deg": -4.0,
+              "max_sidelobe_db": -8.28,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": -7.75,
+              "max_sidelobe_db": -4.16,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 21.5,
+              "pointing_error_deg": -105.0,
+              "max_sidelobe_db": -0.93,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.5678,
+          "max_steer_without_grating_deg": 49.6,
+          "steer": {
+            "0": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -20.63,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 19.25,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -13.14,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": -4.0,
+              "max_sidelobe_db": -8.48,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -8.0,
+              "max_sidelobe_db": -4.27,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 22.75,
+              "pointing_error_deg": -14.25,
+              "max_sidelobe_db": -0.13,
+              "grating_lobe": true
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.6045,
+          "max_steer_without_grating_deg": 40.9,
+          "steer": {
+            "0": {
+              "hpbw_deg": 18.25,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -18.46,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 18.25,
+              "pointing_error_deg": -0.75,
+              "max_sidelobe_db": -12.08,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -3.5,
+              "max_sidelobe_db": -8.2,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.25,
+              "pointing_error_deg": -7.5,
+              "max_sidelobe_db": -4.28,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -102.0,
+              "max_sidelobe_db": -2.51,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 22.5,
+      "gap_between_patches_mm": 11.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.5995,
+          "max_steer_without_grating_deg": 41.9,
+          "steer": {
+            "0": {
+              "hpbw_deg": 18.25,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -19.13,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 18.5,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -12.38,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": -3.75,
+              "max_sidelobe_db": -8.17,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": -7.5,
+              "max_sidelobe_db": -4.08,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 20.5,
+              "pointing_error_deg": -102.75,
+              "max_sidelobe_db": -1.91,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.5807,
+          "max_steer_without_grating_deg": 46.2,
+          "steer": {
+            "0": {
+              "hpbw_deg": 18.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -20.02,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -12.85,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 19.75,
+              "pointing_error_deg": -4.0,
+              "max_sidelobe_db": -8.31,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -7.75,
+              "max_sidelobe_db": -4.18,
+              "grating_lobe": false
+            },
+            "60": {
+              "hpbw_deg": 21.25,
+              "pointing_error_deg": -105.0,
+              "max_sidelobe_db": -0.4,
+              "grating_lobe": true
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.6182,
+          "max_steer_without_grating_deg": 38.1,
+          "steer": {
+            "0": {
+              "hpbw_deg": 18.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -17.92,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 18.0,
+              "pointing_error_deg": -0.75,
+              "max_sidelobe_db": -11.82,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.5,
+              "pointing_error_deg": -3.5,
+              "max_sidelobe_db": -8.1,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.75,
+              "pointing_error_deg": -7.25,
+              "max_sidelobe_db": -4.2,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": -100.0,
+              "max_sidelobe_db": -3.49,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 23.0,
+      "gap_between_patches_mm": 11.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.6128,
+          "max_steer_without_grating_deg": 39.2,
+          "steer": {
+            "0": {
+              "hpbw_deg": 18.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -18.59,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 18.0,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -12.12,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -3.5,
+              "max_sidelobe_db": -8.05,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.75,
+              "pointing_error_deg": -7.25,
+              "max_sidelobe_db": -3.99,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 19.75,
+              "pointing_error_deg": -100.5,
+              "max_sidelobe_db": -2.81,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.5936,
+          "max_steer_without_grating_deg": 43.2,
+          "steer": {
+            "0": {
+              "hpbw_deg": 18.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -19.45,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -12.57,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 19.25,
+              "pointing_error_deg": -3.75,
+              "max_sidelobe_db": -8.18,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.25,
+              "pointing_error_deg": -7.5,
+              "max_sidelobe_db": -4.09,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 20.75,
+              "pointing_error_deg": -103.75,
+              "max_sidelobe_db": -1.41,
+              "grating_lobe": true
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.6319,
+          "max_steer_without_grating_deg": 35.6,
+          "steer": {
+            "0": {
+              "hpbw_deg": 17.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -17.42,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 17.5,
+              "pointing_error_deg": -0.75,
+              "max_sidelobe_db": -11.57,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.25,
+              "pointing_error_deg": -3.25,
+              "max_sidelobe_db": -8.01,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.75,
+              "pointing_error_deg": -7.0,
+              "max_sidelobe_db": -4.14,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 19.25,
+              "pointing_error_deg": -99.0,
+              "max_sidelobe_db": -4.25,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 23.5,
+      "gap_between_patches_mm": 12.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.6261,
+          "max_steer_without_grating_deg": 36.7,
+          "steer": {
+            "0": {
+              "hpbw_deg": 17.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -18.07,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 17.75,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -11.86,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.25,
+              "pointing_error_deg": -3.5,
+              "max_sidelobe_db": -7.95,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": -7.0,
+              "max_sidelobe_db": -3.91,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": -99.75,
+              "max_sidelobe_db": -3.6,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.6065,
+          "max_steer_without_grating_deg": 40.4,
+          "steer": {
+            "0": {
+              "hpbw_deg": 18.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -18.91,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 18.25,
+              "pointing_error_deg": -1.25,
+              "max_sidelobe_db": -12.3,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -3.5,
+              "max_sidelobe_db": -8.07,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 20.0,
+              "pointing_error_deg": -7.25,
+              "max_sidelobe_db": -4.01,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 20.25,
+              "pointing_error_deg": -101.75,
+              "max_sidelobe_db": -2.3,
+              "grating_lobe": true
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.6457,
+          "max_steer_without_grating_deg": 33.3,
+          "steer": {
+            "0": {
+              "hpbw_deg": 17.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -16.95,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 17.0,
+              "pointing_error_deg": -0.75,
+              "max_sidelobe_db": -11.39,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 17.75,
+              "pointing_error_deg": -3.25,
+              "max_sidelobe_db": -7.92,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": -6.75,
+              "max_sidelobe_db": -3.13,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -97.0,
+              "max_sidelobe_db": -4.91,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 24.0,
+      "gap_between_patches_mm": 12.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.6394,
+          "max_steer_without_grating_deg": 34.3,
+          "steer": {
+            "0": {
+              "hpbw_deg": 17.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -17.58,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 17.25,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -11.65,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.0,
+              "pointing_error_deg": -3.25,
+              "max_sidelobe_db": -7.85,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.25,
+              "pointing_error_deg": -6.75,
+              "max_sidelobe_db": -3.77,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": -97.75,
+              "max_sidelobe_db": -4.28,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.6194,
+          "max_steer_without_grating_deg": 37.9,
+          "steer": {
+            "0": {
+              "hpbw_deg": 17.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -18.4,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 18.0,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -12.05,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.5,
+              "pointing_error_deg": -3.5,
+              "max_sidelobe_db": -7.95,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.75,
+              "pointing_error_deg": -7.0,
+              "max_sidelobe_db": -3.93,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": -100.0,
+              "max_sidelobe_db": -3.14,
+              "grating_lobe": true
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.6594,
+          "max_steer_without_grating_deg": 31.1,
+          "steer": {
+            "0": {
+              "hpbw_deg": 16.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -16.54,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 17.0,
+              "pointing_error_deg": -0.75,
+              "max_sidelobe_db": -11.22,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 17.5,
+              "pointing_error_deg": -3.0,
+              "max_sidelobe_db": -7.85,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": -6.5,
+              "max_sidelobe_db": -2.2,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 18.25,
+              "pointing_error_deg": -95.0,
+              "max_sidelobe_db": -5.55,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 24.5,
+      "gap_between_patches_mm": 13.079,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.6527,
+          "max_steer_without_grating_deg": 32.1,
+          "steer": {
+            "0": {
+              "hpbw_deg": 16.75,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -17.14,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 17.0,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -11.48,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 17.75,
+              "pointing_error_deg": -3.25,
+              "max_sidelobe_db": -7.76,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.0,
+              "pointing_error_deg": -6.5,
+              "max_sidelobe_db": -2.79,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 18.25,
+              "pointing_error_deg": -95.75,
+              "max_sidelobe_db": -4.92,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.6323,
+          "max_steer_without_grating_deg": 35.6,
+          "steer": {
+            "0": {
+              "hpbw_deg": 17.25,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -17.91,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 17.5,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -11.82,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.25,
+              "pointing_error_deg": -3.25,
+              "max_sidelobe_db": -7.85,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": -6.75,
+              "max_sidelobe_db": -3.86,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 19.5,
+              "pointing_error_deg": -98.75,
+              "max_sidelobe_db": -3.82,
+              "grating_lobe": true
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.6731,
+          "max_steer_without_grating_deg": 29.1,
+          "steer": {
+            "0": {
+              "hpbw_deg": 16.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -16.15,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 16.5,
+              "pointing_error_deg": -0.75,
+              "max_sidelobe_db": -11.07,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 17.25,
+              "pointing_error_deg": -3.0,
+              "max_sidelobe_db": -7.8,
+              "grating_lobe": true
+            },
+            "45": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -6.25,
+              "max_sidelobe_db": -1.39,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 17.75,
+              "pointing_error_deg": -94.25,
+              "max_sidelobe_db": -6.06,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_mm": 25.0,
+      "gap_between_patches_mm": 13.579,
+      "freq": {
+        "7.9872": {
+          "d_over_lambda": 0.6661,
+          "max_steer_without_grating_deg": 30.1,
+          "steer": {
+            "0": {
+              "hpbw_deg": 16.5,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -16.75,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 16.75,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -11.31,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 17.5,
+              "pointing_error_deg": -3.0,
+              "max_sidelobe_db": -7.69,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -6.25,
+              "max_sidelobe_db": -1.94,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 18.0,
+              "pointing_error_deg": -95.0,
+              "max_sidelobe_db": -5.51,
+              "grating_lobe": true
+            }
+          }
+        },
+        "7.7376": {
+          "d_over_lambda": 0.6452,
+          "max_steer_without_grating_deg": 33.4,
+          "steer": {
+            "0": {
+              "hpbw_deg": 17.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -17.46,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 17.25,
+              "pointing_error_deg": -1.0,
+              "max_sidelobe_db": -11.63,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 18.0,
+              "pointing_error_deg": -3.25,
+              "max_sidelobe_db": -7.75,
+              "grating_lobe": false
+            },
+            "45": {
+              "hpbw_deg": 19.25,
+              "pointing_error_deg": -6.5,
+              "max_sidelobe_db": -3.39,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 18.75,
+              "pointing_error_deg": -97.0,
+              "max_sidelobe_db": -4.45,
+              "grating_lobe": true
+            }
+          }
+        },
+        "8.2368": {
+          "d_over_lambda": 0.6869,
+          "max_steer_without_grating_deg": 27.1,
+          "steer": {
+            "0": {
+              "hpbw_deg": 16.0,
+              "pointing_error_deg": 0.0,
+              "max_sidelobe_db": -15.78,
+              "grating_lobe": false
+            },
+            "15": {
+              "hpbw_deg": 16.25,
+              "pointing_error_deg": -0.75,
+              "max_sidelobe_db": -10.92,
+              "grating_lobe": false
+            },
+            "30": {
+              "hpbw_deg": 17.0,
+              "pointing_error_deg": -2.75,
+              "max_sidelobe_db": -7.75,
+              "grating_lobe": true
+            },
+            "45": {
+              "hpbw_deg": 18.5,
+              "pointing_error_deg": -6.0,
+              "max_sidelobe_db": -0.62,
+              "grating_lobe": true
+            },
+            "60": {
+              "hpbw_deg": 17.5,
+              "pointing_error_deg": -92.25,
+              "max_sidelobe_db": -6.51,
+              "grating_lobe": true
+            }
+          }
+        }
+      }
+    }
+  ]
+}

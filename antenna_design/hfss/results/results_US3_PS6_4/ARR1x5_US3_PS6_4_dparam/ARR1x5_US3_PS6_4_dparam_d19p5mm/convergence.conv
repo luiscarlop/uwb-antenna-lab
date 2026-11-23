@@ -1,0 +1,35 @@
+DesignVariation : arr_d='19.5mm' board_m='13mm' board_x='104mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' par_L='7.0499999999999998mm' par_W='13.58mm' par_yc='0.61499999999999999mm' par_z='1.0349999999999999mm' patch_L='6.29mm' patch_W='14mm' sub_h='2.0699999999999998mm' tr_l='7.25mm' tr_w='1mm' u_Lu='2.6499999999999999mm' u_t='0.80000000000000004mm' u_Wu='4.4000000000000004mm' u_y0='-0.69999999999999996mm'
+Setup : Setup_ch9
+
+==================
+Number of Passes
+Completed : 17
+Maximum   : 25
+Minimum   : 1
+==================
+Criterion : Max Mag. Delta S
+Target    : 0.01
+Current   : 0.0072435
+Target Consecutive Passes  : 2
+Current Consecutive Passes : 2
+Converged : Yes
+==================
+Pass Number|Solved Elements|Max Mag. Delta S|
+          1|           4837|             N/A|
+          2|           6295|         0.62233|
+          3|           8187|         0.40144|
+          4|           9826|         0.18013|
+          5|          12774|         0.13841|
+          6|          15333|        0.099801|
+          7|          19936|         0.08123|
+          8|          25921|        0.075105|
+          9|          33703|        0.055103|
+         10|          43819|        0.037417|
+         11|          56966|         0.02449|
+         12|          74060|        0.021501|
+         13|          85485|        0.011496|
+         14|         100474|         0.01125|
+         15|         122043|        0.010992|
+         16|         153308|        0.008725|
+         17|         184929|       0.0072435|
+

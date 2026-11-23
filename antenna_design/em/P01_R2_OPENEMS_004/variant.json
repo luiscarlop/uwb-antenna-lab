@@ -1,0 +1,171 @@
+{
+ "id": "P01_R2",
+ "base_design": "P01_rectangular_patch",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "generic_FR4_PROVISIONAL",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 1.6,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.975
+  ],
+  [
+   5.710633,
+   -3.975
+  ],
+  [
+   5.710633,
+   3.975
+  ],
+  [
+   -5.710633,
+   3.975
+  ]
+ ],
+ "slots_polygon_mm": [],
+ "feed": {
+  "type": "probe_lumped_vertical",
+  "x_mm": 0.0,
+  "y_mm": -2.703,
+  "z0_ohm": 50
+ },
+ "changed_vs_base": {
+  "L_mm": [
+   8.28,
+   7.95
+  ],
+  "feed_y_mm": [
+   -1.8216,
+   -2.703
+  ],
+  "feed_s_over_L": [
+   0.22,
+   0.34
+  ]
+ },
+ "changed_vs_previous": {
+  "P01_R1": {
+   "L_mm": [
+    7.65,
+    7.95
+   ],
+   "feed_y_mm": [
+    -1.683,
+    -2.703
+   ],
+   "feed_s_over_L": [
+    0.22,
+    0.34
+   ],
+   "note": "Dos parametros ligados (L y posicion de sonda), derivados del mismo objetivo: poner la resonancia por debajo del canal y R_pico en ~85 ohm para compensar la reactancia serie de la sonda (Ls~1.2 nH). Con una sola simulacion no se podra atribuir el efecto a cada parametro por separado."
+  }
+ },
+ "rationale": "Segundo y ultimo refinamiento de P01 (limite de CLAUDE.md). Punto de diseno de adaptacion guiado por el modelo circuital de guia ajustado a P01_R1_OPENEMS_003 (NO prediccion EM). Cambian dos parametros ligados con un unico objetivo (minimizar el peor |S11| en 7.7376-8.2368 GHz con Ls~1.2 nH): (a) s/L de 0.22 a 0.34, que sube R_pico de 45.4 a ~85.7 ohm segun R(s)=R_edge*sin^2(pi s/L), R_edge=111.7 ohm calibrado con P01_R1; (b) L de 7.65 a 7.95 mm, que baja fr de 7.961 a ~7.706 GHz escalando L_eff=L+2dL a fr*L_eff constante. Operar por encima de la resonancia es lo que el modelo indica que compensa la reactancia inductiva de la sonda. No se pudo atribuir el efecto a L o a la sonda por separado: el efecto de ambos esta confundido por diseno. Compromiso de fabricabilidad: el optimo del modelo pedia R_pico 90-110 ohm (s/L 0.355-0.46), pero eso deja la sonda a 0.3-1.2 mm del borde radiante; se acepto s/L=0.34 (1.27 mm al borde, ~-7.1 dB nominal del modelo) en lugar de R_pico~100 ohm (~0.8 mm al borde, ~-8 dB). Fuera de GEOMETRY_ONLY nada de esto es resultado: S11, ganancia, etc. requieren FDTD.",
+ "computation": {
+  "method": "cavity-model probe position R(s)=R_edge*sin^2(pi*s/L) + L_eff scaling at constant fr*L_eff + guide circuit model em/fit_patch_circuit.py (model, worst_in_band_db), 300-point grid in band",
+  "inputs": {
+   "W_mm": 11.42126651368023,
+   "L_R1_mm": 7.65,
+   "delta_L_mm": 0.7132461024068693,
+   "circuit_fit_R1": {
+    "source": "em/circuit_fits/P01_R1_OPENEMS_003_fit.json",
+    "fr_hz": 7961000000.0,
+    "Q": 13.5,
+    "R_ohm": 45.3689388095957,
+    "Ls_H": 1.2007106420242053e-09,
+    "R0_ohm": 5.640413169318232,
+    "rms_error_ohm": 1.0344538867205861
+   },
+   "circuit_fit_base": {
+    "source": "em/circuit_fits/P01_OPENEMS_001_fit.json",
+    "fr_hz": 7467000000.0,
+    "Q": 13.5,
+    "R_ohm": 51.064333008173776,
+    "Ls_H": 1.2019114592476399e-09,
+    "R0_ohm": 4.118246294845265
+   },
+   "measured_re_zin_peak_R1": {
+    "hz": 7955000000.0,
+    "ohm": 50.9,
+    "source": "em/P01_R1_OPENEMS_003/result.json"
+   }
+  },
+  "anchor_choice": "fr del ajuste circuital (7.961 GHz), no el pico muestreado de Re(Zin) (7.955 GHz): es el parametro que usa el modelo con el que se evalua; la diferencia (6 MHz) es menor que la rejilla de 5 MHz y que la incertidumbre de escalado.",
+  "feed_resistance_model": {
+   "formula": "R(s)=R_edge*sin^2(pi*s/L), s = distancia del centro del parche, borde en s/L=0.5",
+   "R_edge_ohm_from_R1": 111.66107701908551,
+   "R_edge_ohm_from_base": 125.67846131212463,
+   "R_at_s_over_L": 0.34,
+   "R_peak_ohm": 85.74603702106252,
+   "R_peak_ohm_if_edge_from_base": 96.51017421744612,
+   "uncertainty": "Modelo de cavidad simple de un solo modo, calibrado con un unico punto (la calibracion con P01 base da R_edge un 12 % mayor). No contempla acoplo de modos de orden superior, la reactancia de la sonda ni el campo de borde: cerca del borde pierde validez. R no puede superar ~R_edge (~112-126 ohm) por mas que se acerque la sonda al borde; la curva es plana cerca del borde, por lo que la ganancia en R por mm de desplazamiento cae.",
+   "incertidumbre_estimada": "+-12 % en R (orden de magnitud, no medido)"
+  },
+  "L_scaling": {
+   "k_fr_Leff_GHz_mm_R1": 72.25795444252218,
+   "k_fr_Leff_GHz_mm_base": 72.47837729334418,
+   "relative_difference_k": 0.003050499457431255,
+   "L_for_fr_7p67_GHz_mm": 7.994362350925789,
+   "L_chosen_mm": 7.95,
+   "fr_predicted_Hz": 7706288542.044126,
+   "fr_choice": "El optimo del modelo para R_pico~86 ohm esta en fr~7.71 GHz (no 7.67 GHz, que corresponde a R_pico~100 ohm, inviable por distancia al borde). L=7.95 mm da 7.706 GHz.",
+   "uncertainty": "k difiere un 0.3 % entre P01 y P01_R1 (~+-23 MHz en fr); eso ya incluye el efecto de mover la sonda en R1. Mover la sonda mas hacia el borde puede mover fr algo mas; la sensibilidad +-50 MHz lo cubre solo en parte."
+  },
+  "guide_model_evaluation": {
+   "R0_ohm": 5.640413169318232,
+   "Ls_H": 1.2007106420242053e-09,
+   "Q": 13.5,
+   "R_ohm": 85.74603702106252,
+   "fr_hz": 7706288542.044126,
+   "worst_in_band_s11_db_nominal": -7.128975943566271,
+   "worst_frequency_hz": 8236800000.0,
+   "self_check_R1_fitted_model_worst_db": -3.053489433531999,
+   "sensitivity_one_at_a_time_worst_db": {
+    "Q_x0.85": -7.26,
+    "Q_x1.15": -5.71,
+    "Ls_x0.9": -7.9,
+    "Ls_x1.1": -6.27,
+    "fr_-50MHz": -6.15,
+    "fr_+50MHz": -6.19,
+    "R_x0.8": -5.21,
+    "R_x0.9": -6.11,
+    "R_x1.1": -7.16,
+    "R_x1.2": -6.89,
+    "R_edge_from_P01_base_fit": -7.1
+   },
+   "combined_corner_worst_db": {
+    "R_pm15pct_fr_pm50MHz_Q_pm15pct_Ls_pm10pct": -3.5372340172358356,
+    "fr_Q_Ls_only_R_nominal": -4.344558865836989
+   },
+   "target": "<= -6 dB con margen",
+   "verdict": "Nominal ~-7.1 dB; margen de ~1.1 dB sobre -6 dB. Una sola variacion (Q+15 %, Ls+10 %, fr-50 MHz, R-20 %) puede dejarlo cerca o por encima de -6 dB; la combinacion de esquinas no lo cumple. El margen es fino y no es una prediccion EM.",
+   "evidence": "GUIDE_MODEL, no EM_SIMULATED"
+  },
+  "manufacturability": {
+   "patch_mm": [
+    11.42126651368023,
+    7.95
+   ],
+   "probe_y_mm": -2.703,
+   "probe_to_nearest_radiating_edge_mm": 1.2720000000000002,
+   "probe_to_other_edge_mm": 6.678,
+   "patch_to_board_edge_mm": {
+    "x": 7.289366743159885,
+    "y": 9.025
+   },
+   "note": "La sonda queda a 1.272 mm del borde del parche en y=-L/2 (el mas cercano). Un pad/via de conector necesita su anillo de cobre y su holgura al borde del parche; el diametro total del pad debe caber en el doble de esa distancia menos la holgura, a verificar con las reglas del fabricante (no consultadas, no se inventan cifras). Con R_pico~100 ohm la distancia seria ~0.84 mm y se descarto por eso."
+  }
+ }
+}

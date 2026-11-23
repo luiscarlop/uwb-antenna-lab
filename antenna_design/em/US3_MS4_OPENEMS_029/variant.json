@@ -1,0 +1,176 @@
+{
+  "id": "US3_MS4",
+  "family": "USLOT_MSL_H207",
+  "base_design": "US3_MS3",
+  "evidence": "GEOMETRY_ONLY",
+  "substrate": {
+    "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ]
+  },
+  "metal": {
+    "conductivity_S_m": 58000000.0,
+    "thickness_m": 3.5e-05
+  },
+  "patch_polygon_mm": [
+    [
+      -5.710633,
+      -3.251
+    ],
+    [
+      5.710633,
+      -3.251
+    ],
+    [
+      5.710633,
+      3.251
+    ],
+    [
+      -5.710633,
+      3.251
+    ]
+  ],
+  "slots_polygon_mm": [
+    [
+      [
+        -3.5,
+        -0.7
+      ],
+      [
+        3.5,
+        -0.7
+      ],
+      [
+        3.5,
+        1.95
+      ],
+      [
+        2.7,
+        1.95
+      ],
+      [
+        2.7,
+        0.10000000000000009
+      ],
+      [
+        -2.7,
+        0.10000000000000009
+      ],
+      [
+        -2.7,
+        1.95
+      ],
+      [
+        -3.5,
+        1.95
+      ]
+    ]
+  ],
+  "feed": {
+    "type": "microstrip_edge_qw",
+    "z0_ohm": 50,
+    "line_width_mm": 3.92,
+    "line_x_mm": 0.0,
+    "line_start_y_mm": -13.0,
+    "line_end_y_mm": -9.851,
+    "connector": {
+      "type": "none",
+      "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed: 50 ohm line (w 3.92 mm, y -13 -> -9.851) + lambda/4 transformer (w 0.80 mm, l 6.60 mm) touching the radiating edge y=-3.251 (no inset, no notch)."
+    },
+    "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+    "transformer_width_mm": 0.8,
+    "transformer_length_mm": 6.6,
+    "transformer_start_y_mm": -9.851,
+    "patch_edge_y_mm": -3.251,
+    "feed_polygons_mm": [
+      [
+        [
+          -1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -9.851
+        ],
+        [
+          -1.96,
+          -9.851
+        ]
+      ],
+      [
+        [
+          -0.4,
+          -9.851
+        ],
+        [
+          0.4,
+          -9.851
+        ],
+        [
+          0.4,
+          -3.251
+        ],
+        [
+          -0.4,
+          -3.251
+        ]
+      ]
+    ],
+    "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 0.80 mm -> Zt 102.5 ohm; Kirschning-Jansen eps_eff(f0) 3.197 (GUIDE_MODEL)"
+  },
+  "uslot_params": {
+    "L_mm": 6.502,
+    "W_mm": 11.421266,
+    "s_over_L": 0.34,
+    "Wu_mm": 7.0,
+    "Lu_mm": 2.65,
+    "t_mm": 0.8,
+    "y0_mm": -0.7,
+    "open_toward": "+y"
+  },
+  "changed_vs_previous": {
+    "US3_MS3": {
+      "uslot_params.Wu_mm": [
+        4.4,
+        7.0
+      ],
+      "slots_polygon_mm": "x extent +-2.2 -> +-3.5 mm (arms move outward, arm width t, base y, Lu unchanged)",
+      "note": "Single design variable: U outer width. Patch L/W, Lu, t, y0, feed (50 ohm line + 0.80 x 6.60 mm transformer), material, board, port and mesh profile unchanged."
+    }
+  },
+  "rationale": "Owner HFSS sweep 2026-11-13 of US3_MS3 patch_L 6.402-6.502 mm: the -10 dB band only shifts (about -8 MHz per +0.01 mm) and keeps ~350 MHz width; HFSS and openEMS (024) show no Smith-chart loop and no second Re(Zin) peak in 5.5-10.5 GHz, so the U mode lies above 10.5 GHz. Crude one-point scaling (GUIDE_MODEL, not EM): US2 (probe, Lu 3.2, U mean length 9.2 mm) showed a second Re(Zin) peak at 10.36 GHz; U mean length 2(Lu-t/2)+(Wu-t) goes 8.1 -> 10.7 mm with Wu 7.0, which by inverse scaling puts the U mode near 8.9 GHz. The patch mode is also expected to drop because the wider U cuts more current.",
+  "computation": {
+    "method": "geometry only",
+    "geometry_checks": {
+      "copper_side_strip_each_mm": 2.210633,
+      "inner_island_width_mm": 5.4,
+      "slot_top_to_patch_edge_mm": 1.301,
+      "slot_base_to_feed_edge_mm": 2.551,
+      "slot_width_mm": 0.8,
+      "u_mean_length_mm": 10.7
+    },
+    "guide_u_mode_estimate_ghz": 8.91,
+    "evidence": "GUIDE_MODEL (not EM)"
+  },
+  "purpose": "Bring the U-slot resonance down toward the channel so that it adds a second resonance to the patch mode (bandwidth), instead of the single-resonance response of US3_MS3.",
+  "pre_registered_hypothesis": {
+    "H1": "Base mesh: a second resonance (local Re(Zin) maximum >= 20 ohm or a Smith-chart loop) appears between 8.24 and 10.5 GHz, i.e. the U mode moved down from > 10.5 GHz.",
+    "H2": "Base mesh: the contiguous -10 dB band is wider than US3_MS3 base (023: 7.800-8.170 GHz, 370 MHz, 5 MHz sampling), wherever it sits.",
+    "decision_rule": "H1 and H2 true -> next round recentres on the channel with patch_L only (rate from the owner's HFSS sweep). H1 true, H2 false -> the two modes are too far apart or badly coupled: next variable Lu or y0. H1 false -> the scaling model is wrong; report and stop the Wu path."
+  },
+  "mesh_hint_lines_mm": {
+    "y": [
+      -0.215
+    ]
+  },
+  "mesh_hint_note": "Hard y line at -0.215 mm (inside the U-slot base, metal-free): microstrip_edge_qw adds plain y lines across the slot (<= 0.3 mm), which without this hint gave a y grading ratio 1.507 > 1.5 near y -0.37..-0.07 mm. Found by prepare-only trials (round 23)."
+}

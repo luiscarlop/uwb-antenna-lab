@@ -1,0 +1,7 @@
+{
+  "exit_code": 0,
+  "wall_seconds": 963.6794197559357,
+  "timeout": false,
+  "completed_utc": "2026-11-03T12:11:08.371136+00:00",
+  "note": "CPU/RSS from run_numeric.json (getrusage inside solver process)"
+}

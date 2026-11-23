@@ -1,0 +1,180 @@
+{
+ "id": "US3",
+ "family": "USLOT_PROBE_H207",
+ "base_design": "P02_u_slot_patch",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 2.07,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.425
+  ],
+  [
+   5.710633,
+   -3.425
+  ],
+  [
+   5.710633,
+   3.425
+  ],
+  [
+   -5.710633,
+   3.425
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    -2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    1.95
+   ],
+   [
+    1.4,
+    1.95
+   ],
+   [
+    1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    1.95
+   ],
+   [
+    -2.2,
+    1.95
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "probe_lumped_vertical",
+  "x_mm": 0.0,
+  "y_mm": -2.329,
+  "z0_ohm": 50
+ },
+ "uslot_params": {
+  "L_mm": 6.85,
+  "W_mm": 11.421266,
+  "s_over_L": 0.34,
+  "Wu_mm": 4.4,
+  "Lu_mm": 2.65,
+  "t_mm": 0.8,
+  "y0_mm": -0.7,
+  "open_toward": "+y"
+ },
+ "series_common": {
+  "declared_by": "orquestador, ronda Claude 12",
+  "feed": "sonda vertical concentrada de 50 ohm (probe_lumped_vertical), x = 0, s/L comun a la serie (cambia con L solo si L es la variable)",
+  "material": "FR4 homogeneo eps_r 4.4, tan_delta 0.017, h = 2.07 mm (espesor total del articulo EuCAP 2027; el homogeneo es una aproximacion de su pila S1000H de seis capas), cobre 35 um, 5.8e7 S/m",
+  "board": "26 x 26 mm centrada, masa completa (la del laboratorio, NO la del articulo: 17.4 x 21 mm)",
+  "origin": "El articulo solo da: parche excitado por sonda, resonancia a lo largo de y, S1000H 2.07 mm, eps_r 4.4-4.7, tan_delta 0.017. NO da dimensiones de parche, ranuras ni posicion de sonda: ninguna dimension de esta serie procede del articulo, y las que salgan de optimizacion tampoco se le atribuyen. Un U-slot simple es una aproximacion de investigacion, no una reproduccion de su parche apilado con cavidad, parasito y peine de ranuras.",
+  "rule": "una sola dimension de la U cambia por variante; parche, sonda y material fijos al comparar"
+ },
+ "changed_vs_previous": {
+  "US2": {
+   "Lu_mm": [
+    3.2,
+    2.65
+   ],
+   "note": "Variable unica: Lu_mm 3.2 -> 2.65. El resto de parametros de uslot_params, el material, h y la placa no cambian."
+  }
+ },
+ "rationale": "US3: variante de US2 que cambia solo Lu_mm (3.2 -> 2.65). Parche, sonda (salvo lo derivado de s/L) y material fijos para poder atribuir cualquier diferencia de la simulacion a esta dimension. Generada por variants/uslot_family.py; la dimension nueva NO proviene del articulo EuCAP ni de ninguna optimizacion hasta que exista un resultado EM que la respalde. Estado GEOMETRY_ONLY.",
+ "computation": {
+  "method": "Hammerstad (eeff, dL) con escalado de P01_R2 por k_cal = fr_ajuste_EM / fr_Hammerstad (h = 1.6 mm) aplicado a h = 2.07 mm; longitud media de la U = Wu + 2 Lu - 2 t. Solo estimacion geometrica (GEOMETRY_ONLY).",
+  "inputs": {
+   "eps_r": 4.4,
+   "h_mm": 2.07,
+   "W_mm": 11.421266,
+   "P01_R2_reference": {
+    "h_mm": 1.6,
+    "L_mm": 7.95,
+    "W_mm": 11.42126651368023,
+    "s_over_L": 0.34,
+    "fr_fit_GHz_fine_005": 7.723,
+    "fr_fit_GHz_base_004": 7.721,
+    "source": "em/circuit_fits/P01_R2_FINE_OPENEMS_005_fit.json"
+   },
+   "hammerstad_h2p07": {
+    "eps_eff": 3.65408,
+    "delta_L_mm": 0.90872
+   },
+   "hammerstad_h1p6_R2": {
+    "eps_eff": 3.73823,
+    "delta_L_mm": 0.71325
+   },
+   "k_cal": 0.93405
+  },
+  "patch_resonance_estimate": {
+   "fr_calibrated_GHz": 8.4504,
+   "L_for_fr_7p723_GHz_mm": 7.6664,
+   "uncertainty": "k_cal varia 0.932-0.935 entre P01 (L 8.28), P01_R1 (7.65) y P01_R2 (7.95) a h = 1.6 mm (+-0.2 %, ~+-15 MHz); la extrapolacion a h = 2.07 mm (mayor Ls de sonda, otro campo de borde, FR4 homogeneo) no esta verificada: orden de magnitud +-2-3 % en fr (~+-200 MHz). Con una ranura en U el valor no aplica (la U perturba el modo).",
+   "evidence": "GEOMETRY_ONLY"
+  },
+  "geometry_checks": {
+   "patch_mm": [
+    11.421266,
+    6.85
+   ],
+   "probe_xy_mm": [
+    0.0,
+    -2.329
+   ],
+   "probe_to_patch_edge_mm": 1.096,
+   "probe_to_nearest_radiating_edge_mm": 1.096,
+   "patch_to_board_edge_mm": {
+    "x": 7.289367,
+    "y": 9.575
+   },
+   "slot_to_patch_edge_min_mm": 1.475,
+   "probe_to_slot_min_mm": 1.629,
+   "slot_width_mm": 0.8,
+   "island_between_arms_mm": 2.8,
+   "copper_side_strip_each_mm": 3.510633,
+   "u_y_extent_mm": [
+    -0.7,
+    1.95
+   ],
+   "u_mean_length_mm": 8.1
+  },
+  "series_margins_mm": {
+   "min_slot_width": 0.5,
+   "min_copper_slot_to_edge": 0.7,
+   "min_island": 0.7,
+   "min_probe_to_slot": 1.0,
+   "min_probe_to_patch_edge": 1.0,
+   "board_margin": 1.0,
+   "note": "criterios de diseno declarados; ninguna regla de fabricante consultada"
+  },
+  "slot_resonance_estimate": {
+   "f_half_wave_GHz": 9.6809,
+   "formula": "f = c / (2 sqrt(eps_eff) * l), l = longitud media de la U, eps_eff de Hammerstad del parche",
+   "status": "HIPOTESIS de ordenacion: no hay regla verificada que relacione l con la resonancia real de la U; la frecuencia real depende del acoplo con el parche y solo la dara la simulacion EM."
+  }
+ }
+}

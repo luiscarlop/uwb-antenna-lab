@@ -1,0 +1,117 @@
+{
+  "id": "P01_R2",
+  "base_design": "P01_rectangular_patch",
+  "status": "PREPARED_NOT_RUN",
+  "variant_evidence_at_input": "GEOMETRY_ONLY",
+  "variant_file": "/home/user/TFG_Beamforming_FBD/antenna_design/variants/P01_R2.json",
+  "variant_sha256": "f99937125786d8cc5c6ce11bf1e955d411c4c766e22d523a48dcad8dc271facc",
+  "openEMS_version": "0.37.0.post1.dev40+g5fecbb58d",
+  "CSXCAD_version": "0.7.0.post1.dev8+g626b99f2f",
+  "script_sha256": "ea461f733471d76b74a61a37c785ba954c6cc83b079cbe22b7cd97d8433093f7",
+  "native_xml_sha256": "fb51728ab14007601569180c351c44e288a8260822cdc37e865d479862c8753a",
+  "center_hz": 7987200000.0,
+  "channel_band_hz": [
+    7737600000,
+    8236800000
+  ],
+  "materials": {
+    "substrate": "generic_FR4_PROVISIONAL",
+    "eps_r": 4.4,
+    "tan_delta_at_f0": 0.017,
+    "h_mm": 1.6,
+    "size_mm": [
+      26.0,
+      26.0
+    ],
+    "dielectric_conductivity_S_m": 0.03323722487554589,
+    "dielectric_loss_model": "constant conductivity; tan_delta(f)=tan_delta(f0)*f0/f",
+    "metal_model": "2D finite conducting sheet",
+    "conductivity_S_m": 58000000.0,
+    "sheet_thickness_m": 3.5e-05,
+    "sheet_API_roundtrip_verified": true,
+    "roughness": "not modeled"
+  },
+  "geometry": {
+    "patch_primitive": "AddBox",
+    "patch_vertices": 4,
+    "slots": 0,
+    "slot_model": null,
+    "polygon_meshing": null
+  },
+  "port": {
+    "reference_ohm": 50,
+    "start_mm": [
+      0.0,
+      -2.703,
+      0
+    ],
+    "stop_mm": [
+      0.0,
+      -2.703,
+      1.6
+    ],
+    "type": "ideal vertical lumped line; no pin/coax connector/aperture/deembedding",
+    "priority": 5
+  },
+  "mesh": {
+    "x": {
+      "cells": 144,
+      "min_step_mm": 0.25,
+      "max_step_mm": 0.5,
+      "max_neighbor_ratio": 1.2599210498948739,
+      "pml_inner_low_mm": -31.0,
+      "pml_inner_high_mm": 31.0
+    },
+    "y": {
+      "cells": 147,
+      "min_step_mm": 0.25,
+      "max_step_mm": 0.5,
+      "max_neighbor_ratio": 1.428571428571428,
+      "pml_inner_low_mm": -31.0,
+      "pml_inner_high_mm": 31.0
+    },
+    "z": {
+      "cells": 86,
+      "min_step_mm": 0.19999999999999996,
+      "max_step_mm": 0.7933989262527774,
+      "max_neighbor_ratio": 1.3195079107728949,
+      "pml_inner_low_mm": -18.768957891113168,
+      "pml_inner_high_mm": 28.652808589977845
+    }
+  },
+  "mesh_ratio_above_1p4_by_axis": {
+    "y": 1.428571428571428
+  },
+  "total_cells": 1820448,
+  "box_half_mm": 35.0,
+  "mesh_grading_limit_used": 1.5,
+  "budget_before_solve": {
+    "maximum_CPUs_threads": 2,
+    "nodal_cells": 1867020,
+    "estimated_RAM_bytes_measured_basis": 299395761,
+    "estimated_RAM_bytes_measured_basis_x2_margin": 598791523,
+    "RAM_basis": "P01_OPENEMS_002 RSS 758256 KiB / 4841937 nodal cells = 0.156602 KiB/cell, x2.0 margin",
+    "estimated_RAM_bytes_conservative_reference_only": 3823656960,
+    "conservative_basis": "2048 B/cell, unmeasured; reference only, not used in the abort rule",
+    "yee_min_cell_reference_step_s": 4.418164372450769e-13,
+    "estimated_actual_timestep_s": 5.129378506969277e-13,
+    "estimated_timesteps": 7662,
+    "estimated_engine_seconds": 269.9076837735849,
+    "worst_case_engine_seconds_30000_steps": 1056.8037735849057,
+    "time_basis": "nodal cells * steps / 53 Mcell/s (measured in P01_OPENEMS_002); steps scale with 1/timestep from P01_OPENEMS_002 (10368 steps, record 3.930e-09 s); assumes the same physical record (resonator Q may lengthen it); capped by NrTS",
+    "maximum_timesteps": 30000,
+    "external_wall_limit_required_s": 900,
+    "abort_rule": "do not launch if RAM (measured basis x2) > 8 GiB or estimated time > 1800 s",
+    "launch_allowed_by_budget": true,
+    "abort_reasons": []
+  },
+  "boundaries": "PML_8 all six; coordinates mm",
+  "excitation": {
+    "type": "Gaussian",
+    "center_hz": 7987200000.0,
+    "corner_offset_hz": 1000000000.0
+  },
+  "energy_end_criterion": 1e-05,
+  "mesh_convergence": "NOT_ESTABLISHED: single mesh",
+  "far_field": "not recorded; gain/efficiency/radiated group delay unavailable"
+}

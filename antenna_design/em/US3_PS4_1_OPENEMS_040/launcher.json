@@ -1,0 +1,36 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "2400s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US3_PS4_1.json",
+    "--out",
+    "em/US3_PS4_1_OPENEMS_040",
+    "--mesh",
+    "base",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9",
+    "--max-timesteps",
+    "60000"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude round 40: owner request US3_PS4_1, US3_PS4 with Wp 11.0->7.0 mm)",
+  "started_utc": "2026-11-16T08:03:12.979778+00:00",
+  "pre_run_estimate": {
+    "basis": "rf-designer prepare: 2311680 cells, 0.85 GB with x2 margin, ~907 s; 036 (US3_PS4) reference",
+    "vcpu": 2
+  }
+}

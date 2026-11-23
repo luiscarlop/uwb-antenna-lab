@@ -1,0 +1,281 @@
+{
+ "id": "P02_MS1",
+ "base_design": "P02_u_slot_patch",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "generic_FR4_PROVISIONAL",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 1.6,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.825
+  ],
+  [
+   -2.01,
+   -3.825
+  ],
+  [
+   -2.01,
+   -1.825
+  ],
+  [
+   2.01,
+   -1.825
+  ],
+  [
+   2.01,
+   -3.825
+  ],
+  [
+   5.710633,
+   -3.825
+  ],
+  [
+   5.710633,
+   3.825
+  ],
+  [
+   -5.710633,
+   3.825
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    -3.140848,
+    -0.612
+   ],
+   [
+    3.140848,
+    -0.612
+   ],
+   [
+    3.140848,
+    2.754
+   ],
+   [
+    2.640848,
+    2.754
+   ],
+   [
+    2.640848,
+    -0.112
+   ],
+   [
+    -2.640848,
+    -0.112
+   ],
+   [
+    -2.640848,
+    2.754
+   ],
+   [
+    -3.140848,
+    2.754
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "microstrip_inset_edge",
+  "z0_ohm": 50,
+  "line_width_mm": 3.02,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -1.825,
+  "notch_gap_mm": 0.5,
+  "inset_depth_mm": 2.0,
+  "connector": {
+   "type": "SMA_edge_launch",
+   "modeled": "50 ohm port at board edge y=-13 (reference plane); connector body not modeled"
+  }
+ },
+ "changed_vs_base": {
+  "L_mm": [
+   8.28,
+   7.65
+  ],
+  "feed": [
+   "probe_lumped_vertical at y = -0.22 L",
+   "microstrip_inset_edge, w = 3.02 mm, y0 = 2.0 mm, g = 0.5 mm, entering at y = -13 along +y"
+  ],
+  "U_slot_width_t_mm": [
+   0.35,
+   0.5
+  ],
+  "U_slot_geometry": "designs.u_slot(W, L) rules (x = +-0.275 W, top = +0.36 L, bottom = -0.08 L) re-evaluated with L = 7.65 mm",
+  "patch_polygon": "rectangle 11.4213 x 7.65 mm with an inset notch of width w+2g = 4.02 mm and depth 2.0 mm on the y = -L/2 edge (non-convex, 8 vertices)"
+ },
+ "changed_vs_previous": {
+  "P01_R1": {
+   "L_mm": [
+    7.65,
+    7.65
+   ],
+   "note": "Same L and W as P01_R1 (fr of the probe-fed plain patch 7.961 GHz in FDTD). Everything else is new: U-slot, inset microstrip feed."
+  }
+ },
+ "rationale": "Primera iteracion del elemento P02 (parche rectangular con U-slot) alimentado con linea microstrip de 50 ohm con adaptacion por inset, terminada en un puerto de 50 ohm en el borde de placa (SMA modelado solo como plano de referencia). Parte de designs.py P02 con L corregido a 7.65 mm (el parche de P01 con L = 8.28 mm resuena en 7.47 GHz en FDTD; con L = 7.65 mm en 7.955-7.961 GHz). El U-slot sigue las reglas de designs.u_slot reevaluadas con L = 7.65 mm y con ancho de ranura 0.5 mm (en vez de 0.35 mm) para tener una unica dimension minima de 0.5 mm en todo el layout. La U se abre hacia +y (borde radiante lejano) y su base queda del lado de la linea: asi los brazos son paralelos a la corriente del modo TM10 (eje y) y la base, que corta la corriente, queda separada 1.213 mm del fondo del inset; si la U se abriera hacia -y, las muescas del inset y la linea entrarian en la boca de la U y la ranura y las muescas compartirian el mismo metal estrecho. Resonancias esperadas, cualitativas, sin promesa de valores: (1) modo del parche TM10 a lo largo de y, ancla L = 7.65 mm de P01_R1 (7.96 GHz sin ranura ni muescas); la ranura y las muescas alargan el camino de corriente y es de esperar que bajen su frecuencia, en una cantidad no estimada. (2) modo de la U: la ranura (linea central de ~12.0 mm) actua como un camino resonante adicional; una regla de media longitud de onda de ranura da del orden de 6.8-7.6 GHz segun el eps_eff que se suponga (3.33 microstrip o 2.7 interfaz aire/dielectrico), asi que ese modo puede quedar en el borde inferior del canal o por debajo; es una estimacion tosca, no una prediccion. Si ambos modos se acoplan, la respuesta puede ser doble resonancia con mayor ancho de banda que P01, pero tambien un valle entre modos o un modo fuera de banda. La adaptacion es el punto mas incierto (R_edge procede de sondas). Todo es GEOMETRY_ONLY: S11, ganancia, fase y retardo de grupo requieren FDTD.",
+ "computation": {
+  "inputs": {
+   "W_mm": 11.42126651368,
+   "L_mm": 7.65,
+   "L_source": "variants/P01_R1.json (L_eff scaling of the P01 FDTD resonance)",
+   "t_slot_mm": 0.5,
+   "f0_Hz": 7987200000.0,
+   "band_Hz": [
+    7737600000.0,
+    8236800000.0
+   ]
+  },
+  "line_50ohm": {
+   "method": "Hammerstad-Jensen (1980) microstrip analysis, thickness-corrected, solved by bisection for Z0 = 50 ohm",
+   "inputs": {
+    "eps_r": 4.4,
+    "h_mm": 1.6,
+    "t_mm": 0.035,
+    "Z0_target_ohm": 50.0
+   },
+   "formulas": [
+    "u = w/h ; f(u) = 6 + (2*pi-6)*exp(-(30.666/u)^0.7528) ; Z01(u) = (eta0/(2*pi))*ln(f(u)/u + sqrt(1+(2/u)^2)), eta0 = 376.73 ohm",
+    "a(u) = 1 + (1/49)*ln((u^4+(u/52)^2)/(u^4+0.432)) + (1/18.7)*ln(1+(u/18.1)^3) ; b(er) = 0.564*((er-0.9)/(er+3))^0.053",
+    "eps_eff(u,er) = (er+1)/2 + (er-1)/2*(1+10/u)^(-a*b) ; Z0 = Z01(u_r)/sqrt(eps_eff(u_r,er))",
+    "thickness: du1 = (t/(pi*h))*ln(1+4e/((t/h)*coth^2(sqrt(6.517*u)))) ; du_r = 0.5*(1+1/cosh(sqrt(er-1)))*du1 ; u_r = u + du_r"
+   ],
+   "result": {
+    "u_w_over_h": 1.8855,
+    "w_mm_exact": 3.0169,
+    "w_mm_t0_exact": 3.0621,
+    "eps_eff_quasi_static": 3.331,
+    "w_mm_chosen": 3.02,
+    "cross_check": "Hammerstad 1975 synthesis (w/h>2 formula, t=0) gives w/h = 1.913, i.e. 3.061 mm, equal to the t=0 bisection (3.062 mm); the 35 um copper narrows the line by 0.045 mm"
+   },
+   "dispersion_note": "Quasi-static value. Getsinger dispersion (G = 0.6+0.009*Z0, fp = Z0/(2*mu0*h) = 12.4 GHz) raises eps_eff to ~3.64-3.67 in 7.74-8.24 GHz, which shifts Z0 by a few percent (sign and size not evaluated here). Not corrected: the FDTD includes it and the port impedance is a reference, not a design result. FR4 eps_r itself is provisional.",
+   "uncertainty": "+-3 % in Z0 expected from the Hammerstad-Jensen formula and +-5-10 % from provisional eps_r; the real board fabricator's etch tolerance on w is not consulted."
+  },
+  "notch_gap": {
+   "g_mm": 0.5,
+   "justification": "0.5 mm is the smallest gap the owner/orchestrator allows as 'min distance' in this round and is applied uniformly to notch gap, U-slot width and all clearances so the layout has one minimum feature size. No fabricator rule was consulted and none is invented: whether 0.5 mm (and a copper tab of 0.59 mm in P03) is acceptable must be confirmed with the chosen PCB house. Electromagnetically g only weakly changes R(y0) for narrow gaps; a larger g is safer for etching but adds notch inductance and moves more current path, so g is kept at the minimum rather than inflated.",
+   "mesh_note": "g = 0.5 mm is ~1.4 cells at the 'base' 0.35 mm xy mesh; em-solver needs local lines at the notch walls (g/3 or better) or the gap is not resolved."
+  },
+  "inset_depth": {
+   "law": "R(y0) = R_edge*cos^2(pi*y0/L) (cavity model, y0 measured from the radiating edge along the resonant axis), target 50 ohm",
+   "R_edge_evidence_ohm": {
+    "P01_R1_probe_s/L=0.22 (45.4 ohm)": 111.7,
+    "P01_base_probe": 125.7,
+    "P01_R2_FDTD_fit_probe_s/L=0.34 (101.9 ohm)": 132.7,
+    "range_used": "110-135",
+    "midpoint": 123
+   },
+   "R_edge_R2_formula": "R_edge = 101.904/sin^2(pi*0.34) = 132.7 ohm (em/circuit_fits/P01_R2_OPENEMS_004_fit.json)",
+   "uncertainty": "R_edge comes from PROBE feeds. An inset microstrip feed sees a different edge conductance (fringing, notch, junction inductance of the notch gap), and the literature (Basilio et al. 2001, cited from memory, NOT checked here) reports that for narrow notches R_in(y0) falls closer to cos^4 than to cos^2. That alternative would require y0 = 1.48-1.65 mm instead of 2.02-2.23 mm. The first iteration is therefore a calibration point, not a matched design.",
+   "L_used_mm": 7.65,
+   "y0_for_50ohm_cos2_mm": {
+    "R_edge_110": 2.023,
+    "R_edge_123": 2.142,
+    "R_edge_135": 2.232
+   },
+   "y0_for_50ohm_cos4_mm_alternative": {
+    "R_edge_110": 1.479,
+    "R_edge_123": 1.573,
+    "R_edge_135": 1.646
+   },
+   "y0_chosen_mm": 2.0,
+   "y0_choice": "2.0 mm = low end of the cos^2 range (R_edge 110 ohm gives 2.02 mm), deliberately shifted ~0.14 mm toward the cos^4 alternative to limit the worst case between the two laws. y0/L = 0.261.",
+   "R_at_y0_2.0_ohm": {
+    "cos2_R_edge_110/123/135": [
+     51.1,
+     57.1,
+     62.7
+    ],
+    "cos4_R_edge_110/123/135": [
+     23.7,
+     26.5,
+     29.1
+    ]
+   },
+   "dR_dy0_cos2_ohm_per_0.1mm": "~ -5 ohm at y0 = 2 mm (R_edge = 123)"
+  },
+  "feed_line_geometry": "Line = rectangle x in [-w/2, w/2], y in [-13, line_end_y]. The notch removes the patch between x = +-(w/2+g) from the radiating edge up to line_end_y, so the line touches the patch only along its end segment at y = line_end_y (width w). em-solver adds the line as a separate PEC polygon; the shared edge may need the same mesh line.",
+  "port_note": "Reference plane at y = -13 (board edge). The line between the port and the patch is a real part of the circuit (about 9 mm long), so phase of S11 includes it; |S11| is unaffected except for line loss and radiation. An openEMS MSL port (or an equivalent line-mode port) is more appropriate than a lumped port across the open end, to be decided by em-solver. The SMA body, its pin transition and any solder fillet are NOT modeled (no part reference).",
+  "U_slot": {
+   "rule": "designs.u_slot(w=W, h=L, t): xl = -0.275 W, xr = +0.275 W, yi = xl + t, yo = xr - t, top yt = +0.36 L, bottom yb = -0.08 L",
+   "values_mm": {
+    "outer_x": [
+     -3.141,
+     3.141
+    ],
+    "inner_x": [
+     -2.641,
+     2.641
+    ],
+    "y_top": 2.754,
+    "y_bottom": -0.612,
+    "base_bar_y": [
+     -0.612,
+     -0.112
+    ],
+    "t": 0.5
+   },
+   "orientation": "open toward +y; base bar toward the feed",
+   "centerline_length_mm": 12.01,
+   "rule_of_thumb_slot_half_wave_GHz": {
+    "eps_eff_3.33": 6.84,
+    "eps_eff_2.7": 7.6,
+    "note": "f = c/(2*12.01 mm*sqrt(eps_eff)). Order of magnitude only, not validated; the patch mode and the slot mode are strongly coupled, so neither frequency is a prediction."
+   }
+  },
+  "geometry_checks": {
+   "patch_simple": true,
+   "slot_simple": true,
+   "patch_ccw": true,
+   "slot_ccw": true,
+   "slot_vertices_in_metal": true,
+   "slot_to_patch_boundary_mm": 1.0710000000000002,
+   "slot_to_notch_mm": 1.213,
+   "line_side_to_notch_wall_mm": 0.4999999999999998,
+   "notch_wall_to_nonadjacent_outer_edges_mm": 3.700633,
+   "patch_bbox_mm": [
+    -5.710633,
+    5.710633,
+    -3.825,
+    3.825
+   ],
+   "patch_margin_to_board_mm": {
+    "x": 7.289367,
+    "y_top": 9.175,
+    "y_bottom_to_edge": 9.175
+   },
+   "line_touches_board_edge": true,
+   "line_x_range": [
+    -1.51,
+    1.51
+   ],
+   "line_end_on_notch_bottom": true,
+   "line_end_segment_inside_notch_bottom_edge": true
+  },
+  "checks_script": "scratchpad-only pure-python check (segment intersection, point-in-polygon, segment-segment distances); not a repo file. The same checks can be re-run from the polygon coordinates in this JSON.",
+  "manufacturability": {
+   "min_feature_mm": 0.5,
+   "min_feature_note": "Notch gap, U-slot width and all clearances are >= 0.5 mm. The 0.5 mm value is a conservative choice, not a verified fabricator capability.",
+   "patch_to_board_edge_mm": {
+    "x": 7.289367,
+    "y_top": 9.175,
+    "y_bottom": 9.175
+   },
+   "line_length_outside_patch_mm": 9.175,
+   "risk": "Notch (4.02 mm wide) occupies 35 % of the patch width at the radiating edge; the 3.02 mm line is wide relative to the 7.65 mm patch, so the junction discontinuity and the line's own radiation are not negligible."
+  },
+  "uncertainty_summary": "fr of the patch mode: +-3-5 % (inset, slot and line loading not estimated); R at the inset: factor ~2 between cos^2 and cos^4 laws; U-slot mode frequency: +-15 % rule of thumb. FR4 provisional."
+ }
+}

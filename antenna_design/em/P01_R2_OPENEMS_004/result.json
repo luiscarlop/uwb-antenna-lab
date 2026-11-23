@@ -1,0 +1,57 @@
+{
+  "id": "P01_R2",
+  "numeric_outputs_finite": true,
+  "samples": 1003,
+  "channel_samples": 501,
+  "reference_ohm": 50,
+  "channel_worst_s11_db": -6.526190099190873,
+  "channel_worst_frequency_hz": 7737600000.0,
+  "channel_best_s11_db": -19.047937951520364,
+  "channel_best_frequency_hz": 8059000000.0,
+  "channel_meets_minus6db_on_sampled_grid": true,
+  "channel_meets_minus10db_on_sampled_grid": false,
+  "wideband": {
+    "grid_hz": [
+      6980000000.0,
+      9000000000.0,
+      5000000.0
+    ],
+    "samples": 405,
+    "valid_rule": "u_inc within 20 dB of its peak (as reanalyze_port_dft.py)",
+    "valid_range_hz": [
+      6980000000.0,
+      8995000000.0
+    ],
+    "valid_samples": 404,
+    "re_zin_peak_ohm": 107.48418468803813,
+    "re_zin_peak_hz": 7720000000.0,
+    "im_zin_at_re_peak_ohm": 59.33946540259435,
+    "min_s11_db": -19.04695713872517,
+    "min_s11_hz": 8060000000.0
+  },
+  "wall_seconds": 273.6318938569998,
+  "cpu_seconds": 467.108559,
+  "peak_rss_kib": 341544,
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "frequency_evaluation_step_hz": 1000000.0,
+  "frequency_grid_caveat": "DTFT evaluation spacing is not physical resolution; finite-record decay/truncation governs accuracy",
+  "coverage_caveat": "sampled frequencies including exact endpoints; no mathematical guarantee between samples",
+  "native_xml_sha256": "fb51728ab14007601569180c351c44e288a8260822cdc37e865d479862c8753a",
+  "variant_sha256": "f99937125786d8cc5c6ce11bf1e955d411c4c766e22d523a48dcad8dc271facc",
+  "far_field": "NOT_RECORDED",
+  "energy_end_criterion_met": true,
+  "maximum_timesteps_warning": false,
+  "solver_nodal_positions": 1867020,
+  "actual_timestep_s": 5.009403755785558e-13,
+  "actual_record_time_s": 3.503076046420841e-09,
+  "engine_wall_seconds": 266.054736,
+  "engine_cells_per_second": 49072875.21467011,
+  "inverse_record_time_hz": 285463400.3797088,
+  "mesh_convergence": "NOT_ESTABLISHED",
+  "evidence": "EM_SIMULATED",
+  "actual_timesteps": 6993,
+  "final_energy_decay_db": -52.82
+}

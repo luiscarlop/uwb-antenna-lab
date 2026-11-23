@@ -1,0 +1,10 @@
+{
+  "branch": "codex/uwb-ch9-antenna-design",
+  "initial_commits": [
+    "ef4b9cd",
+    "069b30e"
+  ],
+  "verified_remote_commit": "069b30ee952db66827f45303064299dab0881116",
+  "verification": "Normal push then fetch from origin; tree includes first campaign reports and all geometry exports",
+  "force_push": false
+}

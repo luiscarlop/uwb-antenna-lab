@@ -1,0 +1,21 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "900s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/P01_R1.json",
+    "--out",
+    "em/P01_R1_OPENEMS_003"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude autonomous rounds)",
+  "started_utc": "2026-11-03T12:26:14.223909+00:00"
+}

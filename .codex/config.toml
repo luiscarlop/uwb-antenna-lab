@@ -1,0 +1,12 @@
+# Codex project configuration. The Cloud model picker may override this default.
+# Confirm GPT-6 Astra / Medium is selected for the main task when starting it.
+model = "gpt-6-astra"
+model_reasoning_effort = "medium"
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+# Fallback for any spawned agent without an explicit per-role model.
+default_subagent_model = "gpt-6-luna"
+default_subagent_reasoning_effort = "high"
+# Custom agents are autodiscovered from .codex/agents/*.toml.

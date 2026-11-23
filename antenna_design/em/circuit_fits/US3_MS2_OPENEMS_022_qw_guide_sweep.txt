@@ -1,0 +1,7 @@
+w 0.70 Zt 107.3 ee 3.011 lq 5.41 mm -> worst-in-band -7.29 dB (best -17.93) at l 5.43 mm
+w 0.80 Zt 102.8 ee 3.025 lq 5.40 mm -> worst-in-band -7.39 dB (best -15.32) at l 5.48 mm
+w 0.90 Zt 98.7 ee 3.038 lq 5.38 mm -> worst-in-band -7.42 dB (best -13.47) at l 5.52 mm
+w 1.00 Zt 95.1 ee 3.051 lq 5.37 mm -> worst-in-band -7.32 dB (best -12.06) at l 5.56 mm
+w 1.10 Zt 91.9 ee 3.064 lq 5.36 mm -> worst-in-band -7.21 dB (best -10.87) at l 5.63 mm
+w 1.20 Zt 88.9 ee 3.076 lq 5.35 mm -> worst-in-band -7.04 dB (best -9.89) at l 5.70 mm
+w 1.40 Zt 83.6 ee 3.100 lq 5.33 mm -> worst-in-band -6.57 dB (best -8.32) at l 5.86 mm

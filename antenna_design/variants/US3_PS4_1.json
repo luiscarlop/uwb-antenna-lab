@@ -1,0 +1,342 @@
+{
+  "id": "US3_PS4_1",
+  "family": "USLOT_MSL_H207_PARASITIC",
+  "base_design": "US3_PS4",
+  "evidence": "GEOMETRY_ONLY",
+  "substrate": {
+    "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ]
+  },
+  "metal": {
+    "conductivity_S_m": 58000000.0,
+    "thickness_m": 3.5e-05
+  },
+  "patch_polygon_mm": [
+    [
+      -5.710633,
+      -3.151
+    ],
+    [
+      5.710633,
+      -3.151
+    ],
+    [
+      5.710633,
+      3.151
+    ],
+    [
+      -5.710633,
+      3.151
+    ]
+  ],
+  "slots_polygon_mm": [
+    [
+      [
+        -2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        1.95
+      ],
+      [
+        1.4,
+        1.95
+      ],
+      [
+        1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        1.95
+      ],
+      [
+        -2.2,
+        1.95
+      ]
+    ]
+  ],
+  "feed": {
+    "type": "microstrip_edge_qw",
+    "z0_ohm": 50,
+    "line_width_mm": 3.92,
+    "line_x_mm": 0.0,
+    "line_start_y_mm": -13.0,
+    "line_end_y_mm": -9.751,
+    "connector": {
+      "type": "none",
+      "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed: 50 ohm line (w 3.92 mm, y -13 -> -9.751) + lambda/4 transformer (w 0.80 mm, l 6.60 mm) touching the radiating edge y=-3.151 (no inset, no notch)."
+    },
+    "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+    "transformer_width_mm": 0.8,
+    "transformer_length_mm": 6.6,
+    "transformer_start_y_mm": -9.751,
+    "patch_edge_y_mm": -3.151,
+    "feed_polygons_mm": [
+      [
+        [
+          -1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -9.751
+        ],
+        [
+          -1.96,
+          -9.751
+        ]
+      ],
+      [
+        [
+          -0.4,
+          -9.751
+        ],
+        [
+          0.4,
+          -9.751
+        ],
+        [
+          0.4,
+          -3.151
+        ],
+        [
+          -0.4,
+          -3.151
+        ]
+      ]
+    ],
+    "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 0.80 mm -> Zt 102.5 ohm; Kirschning-Jansen eps_eff(f0) 3.197 (GUIDE_MODEL)"
+  },
+  "uslot_params": {
+    "L_mm": 6.302,
+    "W_mm": 11.421266,
+    "s_over_L": 0.34,
+    "Wu_mm": 4.4,
+    "Lu_mm": 2.65,
+    "t_mm": 0.8,
+    "y0_mm": -0.7,
+    "open_toward": "+y"
+  },
+  "parasitic_patches": [
+    {
+      "name": "par1",
+      "z_mm": 1.035,
+      "polygon_mm": [
+        [
+          -3.5,
+          -2.98
+        ],
+        [
+          3.5,
+          -2.98
+        ],
+        [
+          3.5,
+          4.48
+        ],
+        [
+          -3.5,
+          4.48
+        ]
+      ],
+      "note": "Floating sheet (no via, no probe), same metal as the patch, z = 1.035 mm. US3_PS4 sheet with ONLY the width reduced 11.0 -> 7.0 mm (x -3.5..3.5); y -2.98..4.48 (Lp 7.46, centre 0.75) and z unchanged, so the sheet edge at -2.98 (needed in PS4 against the patch edge -3.151) is kept."
+    }
+  ],
+  "parasitic_params": {
+    "Wp_mm": 7.0,
+    "Lp_mm": 7.46,
+    "x_centre_mm": 0.0,
+    "y_min_mm": -2.98,
+    "y_max_mm": 4.48,
+    "y_centre_mm": 0.75,
+    "z_mm": 1.035,
+    "h1_ground_to_parasitic_mm": 1.035,
+    "h2_parasitic_to_patch_mm": 1.035,
+    "overhang_beyond_patch_plus_y_mm": 1.329,
+    "inset_from_patch_edge_minus_y_mm": 0.171,
+    "inset_from_patch_edge_x_mm": 2.210633,
+    "note": "Only Wp changes with respect to US3_PS4 (11.0 -> 7.0 mm). Values of this block are those of the simulated PS4 geometry (the PS4 JSON block described the unsimulated rf-designer version).",
+    "clearance_to_transformer_mm": 0.171
+  },
+  "changed_vs_previous": {
+    "US3_PS4": {
+      "parasitic_par1_Wp_mm": [
+        11.0,
+        7.0
+      ],
+      "parasitic_par1_x_mm": [
+        [
+          -5.5,
+          5.5
+        ],
+        [
+          -3.5,
+          3.5
+        ]
+      ],
+      "derived": "none: patch (11.421266 x 6.302 mm, edge y = -3.151), U-slot, 50 ohm line (y -13 -> -9.751), transformer 0.80 x 6.60 mm, parasitic y range (-2.98..4.48), z_par 1.035 mm, material, board and port are IDENTICAL to US3_PS4. Mesh only: hint line y = -2.99 added (needed to pass the fine-mesh grading, see mesh_hint_note); it does not change the geometry.",
+      "note": "ONE design variable: parasitic width Wp 11.0 -> 7.0 mm (-36 %), to reduce the coupling between the two modes (overlap area / mode-overlap integral) and thereby let the lower mode rise without moving the whole pair. No exception to the one-change rule is needed."
+    }
+  },
+  "rationale": "Owner request 2026-11-16: US3_PS4 (round 036, base mesh) has S11 minima at 7.826 and 8.158 GHz, worst in channel -10.66 dB, -10 dB band 7.631-8.245 GHz, eta 0.677 at 7.7376 GHz falling to 0.244 near 8.14 GHz and 0.373 at 8.2368 GHz. The owner likes the S11 and the eta around 7.9 GHz and only wants the resonance between 7.5 and 8 GHz a little higher. WHY NOT A SIZE CHANGE: the two minima are separated by ~332 MHz, which is the coupling-limited floor of the two-mode model (PS1 calibration 2c/(f1+f2) ~ 0.33 GHz; PS4 itself is at the floor). A pure detuning (patch_L down / Lp up in frequency) lifts only the lower mode by ~+12 MHz with the upper fixed (below the ~13 MHz mesh uncertainty), and shifting the pair together (patch_L alone, PS4->PS5->PS6) moves both modes or merges them into one (PS5: single minimum 8.065 GHz). To lift f1 with f2 nearly fixed the coupling c itself must go down: the new floor is lower and the modes can approach each other. CHOICE: the buried-sheet width Wp 11.0 -> 7.0 mm, nothing else. Reasons: (1) The coupling coefficient of two stacked resonators scales with the overlap of their normalised modes; for the TM010-like field (uniform in x) the mutual capacitance goes with the overlap area (~Wp) while the sheet capacitance also goes with Wp, so k ~ Wp/sqrt(Wp_patch*Wp) ~ sqrt(Wp) (lower bound of the reduction, exponent 0.5) up to k ~ Wp (upper bound, exponent 1): Wp 7.0/11.0 = 0.636 -> k x0.80 ... x0.64, central x0.72 (-28 %). GUIDE only, NOT calibrated in openEMS. (2) z_par (h2) was rejected: with the documented capacitive-divider heuristic the coupling goes as 4 h1 h2/(h1+h2)^2 = 1 - (2d/h)^2, quadratic about the centre z = 1.035 mm; a -25 % effect would need d ~ 0.5 mm (z 0.52 or 1.55 mm) and would also change the frequency of both resonators (strongly loaded patch for small h2), plus a stack-up change that the TFG does not control. A y-offset of the sheet was rejected for the same reason (a +1.2 mm shift, +2.5 mm overhang at +y, tilts the pattern). Wp is a pure layout change on one buried layer, and keeps z_par, Lp and the y range of PS4 (the y mesh differs from PS4 in one line only, see mesh_hint_note). (3) A narrower sheet may also raise the sheet's own frequency slightly (smaller effective permittivity with W/h 10.6 -> 6.8): 0 to +15 MHz, sign and size uncertain; it helps to keep f2 up. EXPECTED (GUIDE_MODEL, two-mode f^2 matrix calibrated with PS4 minima 7.826/8.158, weight of the driven patch in the lower mode w = 0.67, range 0.55-0.80, alternative identification 0.244): f1 +41 MHz (7.867 GHz; range w 0.55-0.80 and k factor 0.64-0.80: +21 to +60, i.e. 7.847-7.886 GHz); f2 -39 MHz without sheet-frequency shift (8.119 GHz), -29 MHz if the sheet rises by +15 MHz (8.129 GHz); full range 8.100-8.151 GHz. Separation ~250-280 MHz (PS4: 332). The lower mode reaches the lower end of the 7.88-7.92 target only in the favourable corner of the uncertainty; if the run shows the right direction but too little, the next step would be a smaller Wp (6.0-6.4 mm), not a size change. WARNING (owner, kept): the upper mode stays at ~8.12-8.16 GHz, so the poorly radiating dark mode and the eta valley (0.24 at 8.14 GHz in 036) remain inside the channel; bringing the modes closer can make it worse (valley narrower in frequency but moved to ~8.10-8.13 GHz, with the whole 8.04-8.24 GHz part of the channel already below eta 0.55 in PS4). The S11 improvement, if any, is match-by-loss. GEOMETRY_ONLY; no S11, gain, efficiency or bandwidth is claimed.",
+  "computation": {
+    "label": "GUIDE_MODEL (two-mode f^2 coupled matrix calibrated with the openEMS 036 minima; NOT EM, no result for US3_PS4_1)",
+    "method": "M = [[fa^2, c],[c, fb^2]] with eigenvalues f1^2, f2^2 = 7.826^2, 8.158^2 (round 036, 1 MHz grid, base mesh). Driven-patch weight w in the lower mode: fa^2 = w f1^2 + (1-w) f2^2, fb^2 = (1-w) f1^2 + w f2^2, c = sqrt(w(1-w)) (f2^2 - f1^2). w = 0.67 (central; range 0.55-0.80; alternative identification 0.244) from the PS1/PS4 documentation. PS4 values (w 0.67): fa 7.937, fb 8.050 GHz, c 2.495 GHz^2 (separation 332 MHz). Change: c -> c*kf with kf = Wp/Wp_ref in the range (7/11)^1.0 = 0.64 to (7/11)^0.5 = 0.80, central (7/11)^0.75 = 0.72 (exponent between sqrt and linear overlap scaling); fa unchanged; fb unchanged or +15 MHz (narrower sheet, optional). Required kf for f1 = 7.88 GHz at fixed fa, fb is ~0.65 and f2 then falls to ~8.10: a coupling reduction alone cannot hold f2 at 8.16 (f2^2 + f1^2 is conserved when only c changes: f1 up and f2 down by the same ~40 MHz). Reaching 7.88-7.92 with f2 = 8.16 needs in addition a common shift (e.g. patch_L -0.05 mm, +22/+13 MHz): not applied, one-parameter rule. No S11 is predicted: the model has none.",
+    "inputs": {
+      "modes_036_ghz": [
+        7.826,
+        8.158
+      ],
+      "eta_036": {
+        "7.7376": 0.677,
+        "7.937": 0.615,
+        "8.137": 0.244,
+        "8.2368": 0.373
+      },
+      "Wp_mm": [
+        11.0,
+        7.0
+      ],
+      "kf": {
+        "low": 0.8,
+        "central": 0.72,
+        "high": 0.64
+      },
+      "identification_w": {
+        "central": 0.67,
+        "range": [
+          0.55,
+          0.8
+        ],
+        "alternative": 0.244
+      }
+    },
+    "outputs": {
+      "predicted_shift_mhz_f1_f2": {
+        "w0p67_kf0p72_dfb0": [
+          41.0,
+          -39.5
+        ],
+        "w0p67_kf0p72_dfb15": [
+          45.0,
+          -28.6
+        ],
+        "w0p67_kf0p80_dfb0": [
+          29.5,
+          -28.4
+        ],
+        "w0p67_kf0p64_dfb15": [
+          55.9,
+          -39.1
+        ],
+        "w0p55_kf0p64_dfb0": [
+          60.0,
+          -58.0
+        ],
+        "w0p80_kf0p80_dfb0": [
+          20.8,
+          -20.0
+        ],
+        "w0p244_kf0p72_dfb0": [
+          33.3,
+          -32.1
+        ]
+      },
+      "predicted_minima_ghz_central": {
+        "f1": [
+          7.867,
+          7.871
+        ],
+        "f2": [
+          8.118,
+          8.129
+        ]
+      },
+      "predicted_minima_ghz_full_range": {
+        "f1": [
+          7.847,
+          7.892
+        ],
+        "f2": [
+          8.1,
+          8.151
+        ]
+      },
+      "separation_mhz": "250-280 (PS4: 332)",
+      "expected_effect_on_S11_channel": "NOT predicted. Judgement: S11 minima would move towards each other; the worst-in-channel value (-10.66 dB at 8.2368 GHz in PS4) can only get worse if f2 moves down (the upper edge loses the support of the upper mode) and better at the lower edge; net effect on worst case unknown, the -10 dB margin at 8.2368 GHz in PS4 was only 0.66 dB.",
+      "expected_effect_on_eta": "Valley stays in the channel (0.2-0.3 expected around 8.10-8.14 GHz); H2 expected to FAIL at the upper half of the channel, as in PS4.",
+      "uncertainty": "Mesh ~13 MHz (round 031); k(Wp) law not calibrated (factor 0.64-0.80, a +-0.08 error in kf = about +-15 MHz in f1 and f2); identification w 0.55-0.80 (+-20 MHz); sheet-frequency shift of the narrower sheet unknown (0 to +15 MHz, sign not checked). Predicted shifts (+41, -39 MHz central) are 3 times the mesh uncertainty but of the order of the model uncertainty."
+    }
+  },
+  "pre_registered_hypothesis": {
+    "H0_shift": "Lower S11 minimum at 7.88 GHz (range 7.85-7.92, i.e. +25 to +95 MHz over US3_PS4 7.826) and upper minimum at 8.12-8.16 GHz (guide 8.12-8.13; mesh uncertainty ~13 MHz), separation 250-300 MHz. H0 is false if the lower minimum stays <= 7.85 GHz or the upper one leaves 8.10-8.18 GHz.",
+    "H1": "Worst S11 in the 7.7376-8.2368 GHz channel <= -10 dB (preferred objective; reference -6 dB), compared with -10.66 dB of US3_PS4 base mesh. A single point is not coverage: it must hold on the 1 MHz grid over all 501 samples. Not claimed.",
+    "H2": "eta and realized broadside gain at the 11 NF2FF points (7.7376 ... 8.2368 GHz, 49.92 MHz step): eta >= 0.55 and gain >= 2 dBi at all 11. EXPECTED TO FAIL, as in PS4 (eta 0.677 -> 0.244 -> 0.373; 5 of 11 points < 0.55, gain -0.48 dBi at 8.187 GHz): the upper mode stays at ~8.12-8.16 GHz, so the eta valley (~0.24 at ~8.14 GHz in PS4) stays inside the channel, and bringing the two modes closer may even deepen or widen it. Quantity to read: minimum eta and its frequency, number of points with eta < 0.55, minimum realized gain.",
+    "decision_rule": "H0 true and H1 true -> report as an S11 refinement of PS4 with the eta cost (H2 false is expected, match by loss); the decision to simulate in fine mesh is the owner's. H0 true (f1 up, f2 down as predicted) and H1 false -> the coupling reduction works as predicted but the upper edge loses margin: do not reduce Wp further. f1 up by less than 20 MHz (below mesh uncertainty) -> k(Wp) law not confirmed: report; further Wp reduction (6.0-6.4 mm) only with owner consent. f1 and f2 both move in the same direction -> the sheet changed its own frequency (width effect), recalibrate before any other change. Round budget: this is a refinement of US3_PS4 (check campaign_state counters before simulating); no simulation is started by this file."
+  },
+  "manufacturability": {
+    "layers": "3 copper layers (L1 patch + feed + U-slot at z=h, L2 floating parasitic at z=1.035 mm, L3 ground at z=0) and 2 dielectric layers of ~1.035 mm each: standard 3-copper-layer FR4 multilayer. Stack-up unchanged by this variant (z_par and h1/h2 NOT modified).",
+    "vias": "none: floating parasitic, planar microstrip feed.",
+    "min_feature_mm": "U-slot arms 0.8 mm (unchanged); the parasitic is a solid rectangle 7.0 x 7.46 mm, no feature < 0.8 mm. The narrower sheet leaves more FR4 prepreg/core copper-free around it on the inner layer (inner-layer copper density lower: ask the fabricator whether a dummy-fill/balancing rule is applied; any fill must stay outside a margin of several mm of the sheet and the patch).",
+    "stackup_note": "As US3_PS4: the model assumes ONE homogeneous eps_r 4.4 over 2.07 mm; the fabricator must give the real stack-up. z_par is not changed, so no new dependency on the stack-up is introduced.",
+    "tolerances_to_specify": "inner-layer etching of Wp (+-0.05 mm of 7.0 mm is 0.7 %; effect on k small compared with Lp) and layer-to-layer registration in x and y (a +-0.1 mm offset of the sheet is much smaller than the 2.2 mm clearance to the patch x edge and the 0.171 mm y clearance to the transformer end is a plan-view distance on different layers). Lp etching sensitivity of ~10 MHz per 0.01 mm of PS4 is unchanged.",
+    "risks": "The k(Wp) law is a guide and may under- or over-predict; the sheet is buried and cannot be inspected or tuned after lamination; homogeneous FR4 model is provisional; the dark upper mode is poorly radiating and dissipates in the FR4, so the improvement in S11, if any, is by loss."
+  },
+  "purpose": "Test, in openEMS base mesh, whether reducing the driven-patch/parasitic coupling through a narrower buried sheet (Wp 11.0 -> 7.0 mm) raises the lower S11 minimum of US3_PS4 (7.826 GHz) towards 7.88-7.92 GHz while the upper one stays near 8.16 GHz, and what that does to the eta valley.",
+  "mesh_hint_lines_mm": {
+    "y": [
+      -0.215,
+      -2.99
+    ]
+  },
+  "mesh_hint_note": "y -0.215 inherited from US3_PS4 (inside the U-slot base). y -2.99 ADDED (mesh only, no geometry change): prepare-only search 2026-11-16 on this geometry (patch edge y = -3.151, sheet edge y = -2.98, 0.171 mm apart) showed that the fine mesh FAILS the 1.5 y grading limit without it (ratio 1.724 near lines -3.2093, -3.151, -3.0504, -2.9217) while the base mesh passes (as in round 036). Hints -3.12...-3.03, -2.95 and pairs failed on one of the two meshes; -3.0 / -3.01 / -3.02 pass fine but fail base (1.53-1.77); -2.99 and -2.97 pass both. -2.99 chosen because in the base mesh it only replaces the relaxed sheet-edge line -2.9843 by -2.99 (one y line moved 5.7 um; all other 172 y lines and all x/z lines identical to the no-hint base mesh), whereas -2.97 moves 8 y lines. Consequence for comparison with round 036: the base y mesh is that of US3_PS4 up to this one line; the x mesh differs because of Wp (new lines at x = +-3.5 mm). Prepare (base): 2 311 680 cells, grading 1.4; (fine): 5 467 440 cells, grading 1.4 (x 1.403), limit 1.5.",
+  "geometry_checks": {
+    "patch_mm": [
+      11.421266,
+      6.302
+    ],
+    "parasitic_mm": [
+      7.0,
+      7.46
+    ],
+    "parasitic_y_range_mm": [
+      -2.98,
+      4.48
+    ],
+    "parasitic_x_range_mm": [
+      -3.5,
+      3.5
+    ],
+    "par_clearance_to_transformer_plan_mm": 0.171,
+    "slot_copper_to_patch_edge_mm": {
+      "plus_y": 1.201,
+      "minus_y": 2.451
+    },
+    "overhang_plus_y_mm": 1.329,
+    "parasitic_x_inset_from_patch_edge_mm": 2.210633,
+    "parasitic_x_vs_slot_mm": "sheet edge x = +-3.5 mm lies 1.3 mm outside the U-slot outer arm (x = +-2.2 mm); the sheet still covers the whole slot footprint in x",
+    "feed_checks": "unchanged from US3_PS4: patch edge y = -3.151, 50 ohm line w 3.92 mm y -13 -> -9.751 (3.249 mm), transformer 0.80 x 6.60 mm y -9.751 -> -3.151 touching the radiating edge; transformer and line lie fully inside the metal polygons",
+    "board_margin_mm": "as US3_PS4 (26 x 26 mm board, sheet smaller than before)"
+  },
+  "owner_request_2026_11_16": "Owner: in US3_PS4 S11 is good, efficiency is relatively good at 7.9 GHz and S11 stays below -10 dB; only move the resonance between 7.5 and 8 GHz a little higher. Name US3_PS4_1. Orchestrator constraint: one parameter preferred, prepare-only mesh check (no solve)."
+}

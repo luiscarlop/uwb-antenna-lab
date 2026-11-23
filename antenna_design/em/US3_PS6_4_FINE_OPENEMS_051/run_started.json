@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-11-19T16:58:03.865756+00:00",
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "native_xml_sha256": "8ce32db1f8003ab45af7a681a3b71fc098fa5df3bf6595e2c96b1c5d6b104e93"
+}

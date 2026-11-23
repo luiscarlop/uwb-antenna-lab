@@ -1,0 +1,146 @@
+{
+  "id": "P01_MS2",
+  "family": "P01_MSL_H207",
+  "base_design": "P01_MS1",
+  "evidence": "GEOMETRY_ONLY",
+  "substrate": {
+    "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ]
+  },
+  "metal": {
+    "conductivity_S_m": 58000000.0,
+    "thickness_m": 3.5e-05
+  },
+  "patch_polygon_mm": [
+    [
+      -5.710633,
+      -3.661
+    ],
+    [
+      5.710633,
+      -3.661
+    ],
+    [
+      5.710633,
+      3.661
+    ],
+    [
+      -5.710633,
+      3.661
+    ]
+  ],
+  "slots_polygon_mm": [],
+  "feed": {
+    "type": "microstrip_edge_qw",
+    "z0_ohm": 50,
+    "line_width_mm": 3.92,
+    "line_x_mm": 0.0,
+    "line_start_y_mm": -13.0,
+    "line_end_y_mm": -10.761,
+    "connector": {
+      "type": "none",
+      "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed identical to US3_MS3: 50 ohm line (w 3.92 mm, y -13 -> -10.761) + lambda/4 transformer (w 0.80 mm, l 7.10 mm) touching the radiating edge y=-3.661 (no inset, no notch)."
+    },
+    "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+    "transformer_width_mm": 0.8,
+    "transformer_length_mm": 7.1,
+    "transformer_start_y_mm": -10.761,
+    "patch_edge_y_mm": -3.661,
+    "feed_polygons_mm": [
+      [
+        [
+          -1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -10.761
+        ],
+        [
+          -1.96,
+          -10.761
+        ]
+      ],
+      [
+        [
+          -0.4,
+          -10.761
+        ],
+        [
+          0.4,
+          -10.761
+        ],
+        [
+          0.4,
+          -3.661
+        ],
+        [
+          -0.4,
+          -3.661
+        ]
+      ]
+    ],
+    "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 0.80 mm -> Zt 102.5 ohm; Kirschning-Jansen eps_eff(f0) 3.197 (GUIDE_MODEL)"
+  },
+  "patch_params": {
+    "L_mm": 7.322,
+    "W_mm": 11.421266
+  },
+  "changed_vs_previous": {
+    "P01_MS1": {
+      "transformer_length_mm": [
+        6.6,
+        7.1
+      ],
+      "derived": {
+        "transformer_start_y_mm": [
+          -10.261,
+          -10.761
+        ],
+        "line_50ohm_length_mm": [
+          2.739,
+          2.239
+        ]
+      },
+      "note": "Single design variable: transformer length. The 50 ohm line shortens by the same amount because the board edge is fixed (consequence; it changes only the phase of S11 at a 50 ohm reference). Patch, transformer width, material, board, port unchanged."
+    }
+  },
+  "rationale": "Step 1 of a 3-step single-variable feed retune proposed by em/feed_retune_guide.py (GUIDE_MODEL, not EM) from the P01_MS1 fine-mesh run 026: de-embedding the 50 ohm line and the lambda/4 transformer gives Z_patch(f); lengthening the transformer to 7.1 mm is predicted to widen the -10 dB band from 535 to 655 MHz (channel worst -8.22 -> -9.15 dB). Next steps (if the model holds): tr_w 0.8 -> 0.5 mm (predicted -10.43 dB), then tr_l 7.1 -> 7.6 mm (predicted -11.66 dB).",
+  "computation": {
+    "guide_model": "em/feed_retune_guide.py on em/P01_MS1_FINE_OPENEMS_026",
+    "predicted_fine_mesh": {
+      "worst_db": -9.15,
+      "minus10_band_ghz": [
+        7.78,
+        8.435
+      ],
+      "minus10_width_mhz": 655
+    },
+    "note": "Prediction is for the FINE mesh (model built on run 026); this round runs the BASE mesh, which in 025/026 was 0.17 dB better on the worst case."
+  },
+  "manufacturability": {
+    "min_feature_mm": 0.8,
+    "patch_to_board_edge_mm": {
+      "x": 7.289,
+      "y": 9.339
+    },
+    "note": "Transformer 0.80 x 7.10 mm; 50 ohm line 3.92 x 2.239 mm; no slots."
+  },
+  "purpose": "Test the feed-retune guide model with one variable (transformer length) on the plain rectangle, aiming at -10 dB over the whole channel.",
+  "pre_registered_hypothesis": {
+    "H1": "Base mesh, lumped port: the -10 dB band is wider than P01_MS1 base (025: 7.798-8.345 GHz, 547 MHz), i.e. the guide model's widening holds qualitatively.",
+    "H2": "Channel worst |S11| on the base mesh is within 1 dB of the guide-model value scaled to base (about -9.3 dB).",
+    "decision_rule": "H1 true -> step 2 (tr_w 0.5 mm) next round. H1 false -> the guide model is not usable; stop the feed path and report."
+  },
+  "mesh_hint_lines_mm": {}
+}

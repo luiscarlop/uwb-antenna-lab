@@ -1,0 +1,70 @@
+{
+  "id": "US3_PS4_2_1_ERRATA",
+  "fecha": "2026-11-16",
+  "evidence": "GEOMETRY_ONLY",
+  "refers_to": {
+    "file": "variants/US3_PS4_2_1.json",
+    "sha256": "5bd0ef44c135e1272304b32a64a0da8767f1c51b7869be67be88fca9074df2fe",
+    "note": "El JSON original NO se edita: su sha256 esta registrado en las ejecuciones openEMS 045 y 047 (prepared.json, variant_sha256). Esta fe de erratas lo complementa; ante discrepancia, mandan los poligonos y las mallas efectivas de las ejecuciones."
+  },
+  "unchanged_and_correct": {
+    "statement": "Los poligonos (patch_polygon_mm, slots_polygon_mm, feed.feed_polygons_mm, parasitic_patches[].polygon_mm), feed.*_y_mm, uslot_params y parasitic_params (Lp, Wp, centro, z) son correctos y no cambian. La unica errata es un texto de mesh_hint_note sobre la malla (no afecta a la geometria).",
+    "values_for_reference": {
+      "patch_edge_y_mm": -3.111,
+      "parasitic_y_mm": [
+        -2.98,
+        4.48
+      ],
+      "parasitic_mm": [
+        10.0,
+        7.46
+      ],
+      "parasitic_z_mm": 1.035
+    }
+  },
+  "corrections": [
+    {
+      "campo": "mesh_hint_note (texto)",
+      "linea_aprox": 235,
+      "valor_erroneo": "Mesh differs from the 042 base mesh (-2.99 hint removed, three lines added between patch edge and parasitic edge)",
+      "valor_correcto": "Los hints y [-0.215, -3.07, -3.03, -2.97] se pasan al preparador (qw_extra_lines_mm.hard en prepared.json de 045 y 047), pero NO se conservan como tres lineas distintas entre el borde del parche (y=-3.111) y el borde del parasito (y=-2.98). En la malla efectiva de 045 solo sobreviven, en y de -3.2 a -2.9 mm, las lineas -3.111 (borde del parche) y -2.97; -3.07 y -3.03 se fundieron ('merged_close', fusion de lineas a menos de 0.05 mm). Es decir, respecto de 042 se quito el hint -2.99 y se anadio una sola linea (-2.97) entre ambos bordes, no tres.",
+      "recalculo": "-3.07 y -3.03 distan 0.04 mm entre si; -3.07 esta a 0.041 mm de -3.111 y -3.03 a 0.06 mm de -2.97. La regla del preparador funde lineas a menos de 0.05 mm; el criterio exacto de cual se descarta no consta en los ficheros, solo el resultado (23 fusiones en y)."
+    }
+  ],
+  "effective_mesh_y_mm": {
+    "fuente": "em/<run>/native_mesh.csv (eje y) y patch_openems.xml (YLines); coincide con prepared.json (merged_close.y = 23 en ambas rondas, qw_extra_lines_mm.hard identico en 045 y 047).",
+    "tramo_y_mm": [
+      -3.2,
+      -2.9
+    ],
+    "OPENEMS_045_base": {
+      "lineas_en_el_tramo": [
+        -3.111,
+        -2.97
+      ],
+      "lineas_vecinas_fuera_del_tramo": [
+        -3.27767,
+        -2.80444
+      ],
+      "pasos_mm": "0.16667 (-3.27767 -> -3.111), 0.141 (-3.111 -> -2.97), 0.16556 (-2.97 -> -2.80444)",
+      "nota": "-3.07 y -3.03 fundidas. El borde -y del parasito (y=-2.98) no coincide con ninguna linea: la mas cercana es -2.97, a 0.01 mm. La malla base tiene 167 celdas en y."
+    },
+    "OPENEMS_047_fine": {
+      "estado_del_fichero": "em/US3_PS4_2_1_FINE_OPENEMS_047/native_mesh.csv existe (malla de la ronda 047; el FDTD estaba en curso al escribir esta nota y terminó después con la misma malla); se describe la malla preparada, no un resultado.",
+      "lineas_en_el_tramo": [
+        -3.16933,
+        -3.111,
+        -3.04192,
+        -2.9488
+      ],
+      "lineas_vecinas_fuera_del_tramo": [
+        -3.22767,
+        -2.82327
+      ],
+      "pasos_mm": "0.05833 (-3.22767 -> -3.16933), 0.05833 (-3.16933 -> -3.111), 0.06908 (-3.111 -> -3.04192), 0.09312 (-3.04192 -> -2.9488), 0.12553 (-2.9488 -> -2.82327)",
+      "nota": "-3.16933 y -3.22767 son las lineas 1/3-2/3 de la regla de borde (METAL_EDGE_RES 0.175) del borde del parche. Ninguna de las lineas de hint -3.07, -3.03, -2.97 sobrevive tal cual: aparecen -3.04192 y -2.9488, compatibles con hints desplazados por la relajacion (<= 0.04 mm) tras fundir -3.07/-3.03, pero los ficheros no permiten afirmar su origen. El borde -y del parasito (y=-2.98) tampoco cae en una linea (a 0.031 mm de -2.9488 y 0.062 mm de -3.04192). La malla fina tiene 229 celdas en y."
+    }
+  },
+  "consequence": "El efecto de malla entre 042 y 045 (una linea -2.97 anadida y -2.99 quitada, mas el cambio patch_L) no se puede separar del efecto de patch_L, como ya dice mesh_hint_note; la fe de erratas solo corrige cuantas lineas se anadieron. La malla efectiva (no el texto) es la que hay que citar al comparar rondas.",
+  "consumers_note": "Los scripts HFSS (claude_pyaedt_ch9.py DESIGNS['US3_PS4_2_1']) y los resultados openEMS 045/047 usan los poligonos y valores correctos; esta errata no los afecta. HFSS no usa estas lineas de malla (malla adaptativa propia)."
+}

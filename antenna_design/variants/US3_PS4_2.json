@@ -1,0 +1,241 @@
+{
+  "id": "US3_PS4_2",
+  "family": "USLOT_MSL_H207_PARASITIC",
+  "base_design": "US3_PS4",
+  "evidence": "GEOMETRY_ONLY",
+  "substrate": {
+    "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ]
+  },
+  "metal": {
+    "conductivity_S_m": 58000000.0,
+    "thickness_m": 3.5e-05
+  },
+  "patch_polygon_mm": [
+    [
+      -5.710633,
+      -3.151
+    ],
+    [
+      5.710633,
+      -3.151
+    ],
+    [
+      5.710633,
+      3.151
+    ],
+    [
+      -5.710633,
+      3.151
+    ]
+  ],
+  "slots_polygon_mm": [
+    [
+      [
+        -2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        1.95
+      ],
+      [
+        1.4,
+        1.95
+      ],
+      [
+        1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        1.95
+      ],
+      [
+        -2.2,
+        1.95
+      ]
+    ]
+  ],
+  "feed": {
+    "type": "microstrip_edge_qw",
+    "z0_ohm": 50,
+    "line_width_mm": 3.92,
+    "line_x_mm": 0.0,
+    "line_start_y_mm": -13.0,
+    "line_end_y_mm": -9.751,
+    "connector": {
+      "type": "none",
+      "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed: 50 ohm line (w 3.92 mm, y -13 -> -9.751) + lambda/4 transformer (w 0.80 mm, l 6.60 mm) touching the radiating edge y=-3.151 (no inset, no notch)."
+    },
+    "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+    "transformer_width_mm": 0.8,
+    "transformer_length_mm": 6.6,
+    "transformer_start_y_mm": -9.751,
+    "patch_edge_y_mm": -3.151,
+    "feed_polygons_mm": [
+      [
+        [
+          -1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -9.751
+        ],
+        [
+          -1.96,
+          -9.751
+        ]
+      ],
+      [
+        [
+          -0.4,
+          -9.751
+        ],
+        [
+          0.4,
+          -9.751
+        ],
+        [
+          0.4,
+          -3.151
+        ],
+        [
+          -0.4,
+          -3.151
+        ]
+      ]
+    ],
+    "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 0.80 mm -> Zt 102.5 ohm; Kirschning-Jansen eps_eff(f0) 3.197 (GUIDE_MODEL)"
+  },
+  "uslot_params": {
+    "L_mm": 6.302,
+    "W_mm": 11.421266,
+    "s_over_L": 0.34,
+    "Wu_mm": 4.4,
+    "Lu_mm": 2.65,
+    "t_mm": 0.8,
+    "y0_mm": -0.7,
+    "open_toward": "+y"
+  },
+  "parasitic_patches": [
+    {
+      "name": "par1",
+      "z_mm": 1.035,
+      "polygon_mm": [
+        [
+          -5.0,
+          -2.98
+        ],
+        [
+          5.0,
+          -2.98
+        ],
+        [
+          5.0,
+          4.48
+        ],
+        [
+          -5.0,
+          4.48
+        ]
+      ]
+    }
+  ],
+  "parasitic_params": {
+    "Wp_mm": 10.0,
+    "Lp_mm": 7.46,
+    "x_centre_mm": 0.0,
+    "y_min_mm": -2.98,
+    "y_max_mm": 4.48,
+    "y_centre_mm": 0.75,
+    "z_mm": 1.035,
+    "h1_ground_to_parasitic_mm": 1.035,
+    "h2_parasitic_to_patch_mm": 1.035,
+    "overhang_beyond_patch_plus_y_mm": 1.329,
+    "inset_from_patch_edge_minus_y_mm": 0.171,
+    "inset_from_patch_edge_x_mm": 0.710633,
+    "note": "Only Wp changes with respect to US3_PS4 (11.0 -> 10.0 mm); Wp sweep 11 (036) / 10 / 9 / 8 / 7 (040) requested by the owner on 2026-11-16.",
+    "clearance_to_transformer_mm": 0.171
+  },
+  "changed_vs_previous": {
+    "US3_PS4": {
+      "parasitic_Wp_mm": [
+        11.0,
+        10.0
+      ],
+      "note": "single change; everything else as US3_PS4 (and as US3_PS4_1 except Wp). Mesh hint y -2.99 as US3_PS4_1."
+    }
+  },
+  "rationale": "Intermediate point of a Wp sweep between US3_PS4 (Wp 11 mm, 036: S11 minima 7.826 / 8.158 GHz, worst -10.66 dB, eta valley 0.244 at 8.137 GHz) and US3_PS4_1 (Wp 7 mm, 040: single minimum 7.972 GHz, worst -7.71 dB, shallow eta valley 0.517 at 7.887 GHz). The cause of the 040 behaviour is NOT identified (stronger coupling reduction, parasitic self-frequency change or mode crossing, validator 2026-11-16); this sweep is the discriminating experiment. No interpolation between 036 and 040 is assumed: the validator noted that two points give no basis for a monotonic response. GEOMETRY_ONLY; no S11, efficiency or gain is claimed.",
+  "pre_registered_hypothesis": {
+    "H0_sweep": "Across Wp 11 -> 10 -> 9 -> 8 -> 7 the separation between the two S11 minima shrinks monotonically and the lower minimum rises monotonically, until they merge somewhere between 8 and 7 mm. H0 is false if any intermediate point breaks the monotonic order (e.g. a single minimum at 9 or 10 mm followed by two minima at 8 mm) or if the merge already happens at 10 mm.",
+    "H1": "Worst S11 in the channel (1 MHz grid, 501 samples) <= -10 dB for at least one of the three widths, with the lower minimum above 7.826 GHz. Not claimed.",
+    "H2": "eta >= 0.55 and realized broadside gain >= 2 dBi at the 11 NF2FF points. Expected to FAIL for the widths that keep two minima (the eta valley of 036 is tied to the upper mode); expected to pass or nearly pass for a merged/single-minimum response like 040.",
+    "decision_rule": "If one width meets H1 with a smaller eta valley than 036, report it as the candidate refinement of US3_PS4 (fine mesh and HFSS are owner decisions). If none meets H1, report the sweep as a map and keep US3_PS4 / US3_PS6 as references. If H0 is false, report the non-monotonic behaviour and do not extrapolate further."
+  },
+  "manufacturability": {
+    "layers": "3 copper layers (L1 patch + feed + U-slot at z=h, L2 floating parasitic at z=1.035 mm, L3 ground at z=0) and 2 dielectric layers of ~1.035 mm each: standard 3-copper-layer FR4 multilayer. Stack-up unchanged by this variant (z_par and h1/h2 NOT modified).",
+    "vias": "none: floating parasitic, planar microstrip feed.",
+    "min_feature_mm": "U-slot arms 0.8 mm (unchanged); the parasitic is a solid rectangle 10.0 x 7.46 mm, no feature < 0.8 mm. The narrower sheet leaves more FR4 prepreg/core copper-free around it on the inner layer (inner-layer copper density lower: ask the fabricator whether a dummy-fill/balancing rule is applied; any fill must stay outside a margin of several mm of the sheet and the patch).",
+    "stackup_note": "As US3_PS4: the model assumes ONE homogeneous eps_r 4.4 over 2.07 mm; the fabricator must give the real stack-up. z_par is not changed, so no new dependency on the stack-up is introduced.",
+    "tolerances_to_specify": "inner-layer etching of Wp (+-0.05 mm of 10.0 mm is 0.5 %; effect on k small compared with Lp) and layer-to-layer registration in x and y (a +-0.1 mm offset of the sheet is much smaller than the 0.711 mm clearance to the patch x edge and the 0.171 mm y clearance to the transformer end is a plan-view distance on different layers). Lp etching sensitivity of ~10 MHz per 0.01 mm of PS4 is unchanged.",
+    "risks": "The k(Wp) law is a guide and may under- or over-predict; the sheet is buried and cannot be inspected or tuned after lamination; homogeneous FR4 model is provisional; the dark upper mode is poorly radiating and dissipates in the FR4, so the improvement in S11, if any, is by loss."
+  },
+  "purpose": "Map the S11 / eta behaviour of US3_PS4 versus the buried-parasitic width Wp (point Wp = 10.0 mm), in openEMS base mesh with the 036/040 command.",
+  "mesh_hint_lines_mm": {
+    "y": [
+      -0.215,
+      -2.99
+    ]
+  },
+  "mesh_hint_note": "Hints y [-0.215, -2.99] as US3_PS4_1 (prepare-checked for base and fine meshes per variant before solving).",
+  "geometry_checks": {
+    "patch_mm": [
+      11.421266,
+      6.302
+    ],
+    "parasitic_mm": [
+      10.0,
+      7.46
+    ],
+    "parasitic_y_range_mm": [
+      -2.98,
+      4.48
+    ],
+    "parasitic_x_range_mm": [
+      -5.0,
+      5.0
+    ],
+    "par_clearance_to_transformer_plan_mm": 0.171,
+    "slot_copper_to_patch_edge_mm": {
+      "plus_y": 1.201,
+      "minus_y": 2.451
+    },
+    "overhang_plus_y_mm": 1.329,
+    "parasitic_x_inset_from_patch_edge_mm": 0.710633,
+    "parasitic_x_vs_slot_mm": "sheet edge x = +-5.0 mm lies 2.8 mm outside the U-slot outer arm (x = +-2.2 mm)",
+    "feed_checks": "unchanged from US3_PS4: patch edge y = -3.151, 50 ohm line w 3.92 mm y -13 -> -9.751 (3.249 mm), transformer 0.80 x 6.60 mm y -9.751 -> -3.151 touching the radiating edge; transformer and line lie fully inside the metal polygons",
+    "board_margin_mm": "as US3_PS4 (26 x 26 mm board, sheet smaller than before)"
+  },
+  "owner_request_2026_11_16": "US3_PS4_1 (Wp 7 mm, round 040) did not improve as expected: single S11 minimum at 7.972 GHz, worst -7.71 dB. Owner: try the three intermediate widths 10, 9 and 8 mm and show them in a separate chart."
+}

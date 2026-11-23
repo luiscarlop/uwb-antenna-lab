@@ -1,0 +1,36 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "2400s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US3_PS4_3.json",
+    "--out",
+    "em/US3_PS4_3_OPENEMS_043",
+    "--mesh",
+    "base",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9",
+    "--max-timesteps",
+    "60000"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude round 43: owner Wp sweep, Wp 9 mm; prepare run just before in the same folder)",
+  "started_utc": "2026-11-16T12:56:16.271991+00:00",
+  "pre_run_estimate": {
+    "basis": "040 (US3_PS4_1): 36720 steps, 754 s wall, 0.45 GiB",
+    "vcpu": 2
+  }
+}

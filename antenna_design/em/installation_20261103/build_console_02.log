@@ -1,0 +1,9 @@
+disabling AppCSXCAD build
+enabling Python Extension build
+skipping build dependency check
+setting install path to: /workspace/openems-install
+logging build output to: /workspace/openems-source/build_20261103_102615.log
+configuring /workspace/openems-source via CMake ... please wait
+compiling /workspace/openems-source ... please wait
+Building python modules ... please wait
+Python modules build failed, please see logfile for more details... /workspace/openems-source/build_20261103_102615.log

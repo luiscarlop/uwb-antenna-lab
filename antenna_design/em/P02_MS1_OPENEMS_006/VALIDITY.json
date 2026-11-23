@@ -1,0 +1,19 @@
+{
+  "run": "P02_MS1_OPENEMS_006",
+  "audit": "validator, Claude round 6 (reports/claude_run_006.md)",
+  "evidence": "EM_SIMULATED",
+  "valid": {
+    "measplane_reanalysis_50ohm.json": "S11 at the MSL measurement plane with fixed 50 ohm reference (|S11| ~ -0.70 dB over the channel, passive)",
+    "nf2ff Prad and normalised pattern shape": "valid with reservations; directivity uncertain (4 phi cuts integrate to 70-91 % of Prad)"
+  },
+  "INVALID_do_not_use": [
+    "s11_complex.csv (launch-plane S11/Zin from extracted Z_line/beta; |S11| up to 1.26)",
+    "s11_wideband.csv (same de-embedding)",
+    "result.json / run_numeric.json channel_* and wideband metrics (channel_worst_s11_db = +0.278 dB is non-physical)",
+    "z_line_* columns",
+    "nf2ff_summary.json efficiencies, gain, realized gain, P_inc, P_acc, mismatch loss",
+    "nf2ff_group_delay_broadside.csv (reference a_inc from the faulty shift; negative mean delay)"
+  ],
+  "cause": "MSL port Z_line/beta extraction ill-conditioned under strong standing wave (|Gamma| ~ 0.92); openEMS CalcPort ref_plane_shift reuses the extracted beta",
+  "physical_conclusion": "P02_MS1 is not matched in channel 9 (approved with reservations); resonance below 7 GHz is indicative only"
+}

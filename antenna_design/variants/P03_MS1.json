@@ -1,0 +1,257 @@
+{
+ "id": "P03_MS1",
+ "base_design": "P03_hex_slot_patch",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "generic_FR4_PROVISIONAL",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 1.6,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   5.2,
+   0.0
+  ],
+  [
+   2.6,
+   4.503332
+  ],
+  [
+   -2.6,
+   4.503332
+  ],
+  [
+   -5.2,
+   0.0
+  ],
+  [
+   -2.6,
+   -4.503332
+  ],
+  [
+   -2.01,
+   -4.503332
+  ],
+  [
+   -2.01,
+   -2.503332
+  ],
+  [
+   2.01,
+   -2.503332
+  ],
+  [
+   2.01,
+   -4.503332
+  ],
+  [
+   2.6,
+   -4.503332
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    1.1,
+    0.0
+   ],
+   [
+    0.55,
+    0.952628
+   ],
+   [
+    -0.55,
+    0.952628
+   ],
+   [
+    -1.1,
+    0.0
+   ],
+   [
+    -0.55,
+    -0.952628
+   ],
+   [
+    0.55,
+    -0.952628
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "microstrip_inset_edge",
+  "z0_ohm": 50,
+  "line_width_mm": 3.02,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -2.503332,
+  "notch_gap_mm": 0.5,
+  "inset_depth_mm": 2.0,
+  "connector": {
+   "type": "SMA_edge_launch",
+   "modeled": "50 ohm port at board edge y=-13 (reference plane); connector body not modeled"
+  }
+ },
+ "changed_vs_base": {
+  "hexagon_circumradius_mm": [
+   6.0535,
+   5.2
+  ],
+  "feed": [
+   "probe at y = -0.42 r",
+   "microstrip_inset_edge, w = 3.02 mm, y0 = 2.0 mm, g = 0.5 mm, entering at y = -13 along +y through the bottom flat side"
+  ],
+  "hex_slot_radius_mm": [
+   1.1,
+   1.1
+  ],
+  "patch_polygon": "regular hexagon, vertices at 0, 60 ... 300 deg (flat sides toward +-y, vertices toward +-x), circumradius 5.2 mm, with an inset notch of width 4.02 mm and depth 2.0 mm on the bottom flat side (non-convex, 10 vertices)"
+ },
+ "rationale": "Primera iteracion del elemento P03 (parche hexagonal con ranura hexagonal central) con la misma linea microstrip de 50 ohm, el mismo inset (y0 = 2.0 mm, g = 0.5 mm) y el mismo puerto de borde que P02_MS1. El hexagono de designs.py (radio 0.53 W = 6.05 mm) no estaba dimensionado para resonar; aqui r = 5.2 mm se elige con dos estimaciones que acotan el canal y con una restriccion de fabricacion. Orientacion: la orientacion natural de designs.hexagon (vertices a 0 grados) deja un lado plano hacia -y, de 5.2 mm, donde cabe la muesca (4.02 mm) con 0.59 mm de cobre a cada lado; con un vertice hacia -y la muesca no cabria hasta unos 1.5 mm de profundidad. El modo excitado es el analogo TM11 con campo maximo a lo largo de y (entre lados planos, distancia 9.01 mm), simetrico respecto de x = 0; la linea centrada solo acopla el modo simetrico, y la degeneracion con el modo a lo largo de x se rompe por el hexagono y la muesca. La ranura hexagonal (r = 1.1 mm, del mismo designs.py) cae en el centro, donde el campo electrico del modo es nulo y la corriente es maxima, por lo que carga inductivamente el modo y baja algo su frecuencia (no estimado); no se escala para mantener la trazabilidad con designs.py. Resonancia esperada, cualitativamente: un modo principal TM11-like a lo largo de y cerca del canal, con frecuencia entre ~7.7 y ~8.2 GHz segun la estimacion que se use, menos la carga de la ranura y de la muesca; el hexagono no es un circulo, asi que no se espera segundo modo util dentro del canal. Todo es GEOMETRY_ONLY.",
+ "computation": {
+  "inputs": {
+   "r_mm": 5.2,
+   "hex_slot_r_mm": 1.1,
+   "f0_Hz": 7987200000.0,
+   "eps_r": 4.4,
+   "h_mm": 1.6,
+   "k_TM11": 1.8412,
+   "empirical_bias_fr_FDTD_over_model": 0.93525,
+   "bias_source": "P01 FDTD fr 7.47 GHz / 7.9872 GHz (variants/README.md, P01_R1 step 2)"
+  },
+  "line_50ohm": {
+   "method": "Hammerstad-Jensen (1980) microstrip analysis, thickness-corrected, solved by bisection for Z0 = 50 ohm",
+   "inputs": {
+    "eps_r": 4.4,
+    "h_mm": 1.6,
+    "t_mm": 0.035,
+    "Z0_target_ohm": 50.0
+   },
+   "formulas": [
+    "u = w/h ; f(u) = 6 + (2*pi-6)*exp(-(30.666/u)^0.7528) ; Z01(u) = (eta0/(2*pi))*ln(f(u)/u + sqrt(1+(2/u)^2)), eta0 = 376.73 ohm",
+    "a(u) = 1 + (1/49)*ln((u^4+(u/52)^2)/(u^4+0.432)) + (1/18.7)*ln(1+(u/18.1)^3) ; b(er) = 0.564*((er-0.9)/(er+3))^0.053",
+    "eps_eff(u,er) = (er+1)/2 + (er-1)/2*(1+10/u)^(-a*b) ; Z0 = Z01(u_r)/sqrt(eps_eff(u_r,er))",
+    "thickness: du1 = (t/(pi*h))*ln(1+4e/((t/h)*coth^2(sqrt(6.517*u)))) ; du_r = 0.5*(1+1/cosh(sqrt(er-1)))*du1 ; u_r = u + du_r"
+   ],
+   "result": {
+    "u_w_over_h": 1.8855,
+    "w_mm_exact": 3.0169,
+    "w_mm_t0_exact": 3.0621,
+    "eps_eff_quasi_static": 3.331,
+    "w_mm_chosen": 3.02,
+    "cross_check": "Hammerstad 1975 synthesis (w/h>2 formula, t=0) gives w/h = 1.913, i.e. 3.061 mm, equal to the t=0 bisection (3.062 mm); the 35 um copper narrows the line by 0.045 mm"
+   },
+   "dispersion_note": "Quasi-static value. Getsinger dispersion (G = 0.6+0.009*Z0, fp = Z0/(2*mu0*h) = 12.4 GHz) raises eps_eff to ~3.64-3.67 in 7.74-8.24 GHz, which shifts Z0 by a few percent (sign and size not evaluated here). Not corrected: the FDTD includes it and the port impedance is a reference, not a design result. FR4 eps_r itself is provisional.",
+   "uncertainty": "+-3 % in Z0 expected from the Hammerstad-Jensen formula and +-5-10 % from provisional eps_r; the real board fabricator's etch tolerance on w is not consulted."
+  },
+  "notch_gap": {
+   "g_mm": 0.5,
+   "justification": "0.5 mm is the smallest gap the owner/orchestrator allows as 'min distance' in this round and is applied uniformly to notch gap, U-slot width and all clearances so the layout has one minimum feature size. No fabricator rule was consulted and none is invented: whether 0.5 mm (and a copper tab of 0.59 mm in P03) is acceptable must be confirmed with the chosen PCB house. Electromagnetically g only weakly changes R(y0) for narrow gaps; a larger g is safer for etching but adds notch inductance and moves more current path, so g is kept at the minimum rather than inflated.",
+   "mesh_note": "g = 0.5 mm is ~1.4 cells at the 'base' 0.35 mm xy mesh; em-solver needs local lines at the notch walls (g/3 or better) or the gap is not resolved."
+  },
+  "inset_depth": {
+   "law": "R(y0) = R_edge*cos^2(pi*y0/L) (cavity model, y0 measured from the radiating edge along the resonant axis), target 50 ohm",
+   "R_edge_evidence_ohm": {
+    "P01_R1_probe_s/L=0.22 (45.4 ohm)": 111.7,
+    "P01_base_probe": 125.7,
+    "P01_R2_FDTD_fit_probe_s/L=0.34 (101.9 ohm)": 132.7,
+    "range_used": "110-135",
+    "midpoint": 123
+   },
+   "R_edge_R2_formula": "R_edge = 101.904/sin^2(pi*0.34) = 132.7 ohm (em/circuit_fits/P01_R2_OPENEMS_004_fit.json)",
+   "uncertainty": "R_edge comes from PROBE feeds. An inset microstrip feed sees a different edge conductance (fringing, notch, junction inductance of the notch gap), and the literature (Basilio et al. 2001, cited from memory, NOT checked here) reports that for narrow notches R_in(y0) falls closer to cos^4 than to cos^2. That alternative would require y0 = 1.48-1.65 mm instead of 2.02-2.23 mm. The first iteration is therefore a calibration point, not a matched design.",
+   "hexagon_axis": "flat-to-flat 2*apothem = 9.007 mm along y; apothem 4.5033 mm",
+   "model_R(y0)": "Two versions: (i) cos^2 on the flat-to-flat length D = 9.007 mm: y0(50 ohm) = 2.38-2.63 mm for R_edge 110-135; (ii) circular-cavity Bessel TM11: R(y0) = R_edge*(J1(k*(apothem-y0)/a_e)/J1(k))^2 with k = 1.8412, a_e = 5.097 mm: y0(50 ohm) = 2.12-2.39 mm.",
+   "y0_chosen_mm": 2.0,
+   "y0_choice": "Same inset as P02_MS1 by instruction, to compare the two elements with the same feed. Both hexagon models give y0 for 50 ohm above 2.0 mm, so R at y0 = 2.0 mm is expected above 50 ohm in both cos^2/Bessel models: 54-66 ohm (Bessel) or 65-79 ohm (cos^2 on D); a cos^4-like law would lower it. R_edge of a hexagon is assumed equal to the rectangular probe-derived R_edge (not established).",
+   "R_at_y0_2.0_ohm": {
+    "bessel_R_edge_110/123/135": [
+     53.9,
+     60.3,
+     66.2
+    ],
+    "cos2_on_D_R_edge_110/123/135": [
+     64.6,
+     72.2,
+     79.3
+    ]
+   }
+  },
+  "feed_line_geometry": "Line = rectangle x in [-w/2, w/2], y in [-13, line_end_y]. The notch removes the patch between x = +-(w/2+g) from the radiating edge up to line_end_y, so the line touches the patch only along its end segment at y = line_end_y (width w). em-solver adds the line as a separate PEC polygon; the shared edge may need the same mesh line.",
+  "port_note": "Reference plane at y = -13 (board edge). The line between the port and the patch is a real part of the circuit (about 9 mm long), so phase of S11 includes it; |S11| is unaffected except for line loss and radiation. An openEMS MSL port (or an equivalent line-mode port) is more appropriate than a lumped port across the open end, to be decided by em-solver. The SMA body, its pin transition and any solder fillet are NOT modeled (no part reference).",
+  "radius_estimate": {
+   "equal_area_circle": "area(hexagon) = (3*sqrt(3)/2) r^2 = pi*a^2 -> r = 1.0996 a",
+   "TM11_circular_cavity": "fr = k*c/(2*pi*a_e*sqrt(eps_r)), k = 1.8412 ; a_e = a*sqrt(1 + (2h/(pi*a*eps_r))*(ln(pi*a/(2h)) + 1.7726)) (Garg/Bahl fringing formula, used as cited from memory)",
+   "estimate_A_pure_model": {
+    "a_mm": 4.871,
+    "a_e_mm": 5.243,
+    "r_hex_mm": 5.357,
+    "note": "fr = f0 by construction"
+   },
+   "estimate_B_with_P01_bias": {
+    "a_e_mm_target": 4.904,
+    "a_mm": 4.54,
+    "r_hex_mm": 4.993,
+    "note": "The P01 plain patch resonated 6.5 % below its transmission-line prediction in FDTD (7.47 vs 7.9872 GHz). B scales a_e by the same factor 0.93525 (same procedure used for P01_R1), then solves a. It assumes the circular formula has the same bias as the Hammerstad rectangle formula, which is NOT established."
+   },
+   "choice": "r = 5.2 mm: close to the midpoint of A and B (5.18 mm) and just above the fabrication constraint r >= 5.17 mm (see fabrication_constraint)",
+   "fr_at_r_5.2_GHz": {
+    "model_A": 8.216,
+    "model_B_biased": 7.684,
+    "note": "These two bracket the channel (7.7376-8.2368 GHz) but are model arithmetic, not predictions; the central hex slot and the notch are NOT included and will lower fr further."
+   },
+   "fabrication_constraint": "The notch (half-width w/2+g = 2.01 mm) must leave copper beside it on the bottom flat side of half-length r/2. Requiring >= 0.5 mm of copper strip measured perpendicular to the sloped side gives r/2 - 2.01 >= 0.5/sin(60 deg) = 0.577 mm -> r >= 5.17 mm. r = 5.2 mm leaves 0.59 mm of flat (a small copper tab; closest point to the wall is the vertex at 0.59 mm) and a wider strip above it.",
+   "uncertainty": "fr of the main mode: +-5 % or more (hexagon vs circle, bias transfer, slot and notch loading not included). It is more likely to end up BELOW f0 than above, since A and B are both unperturbed values and the hole and the notch add inductive loading."
+  },
+  "geometry_checks": {
+   "patch_simple": true,
+   "slot_simple": true,
+   "patch_ccw": true,
+   "slot_ccw": true,
+   "slot_vertices_in_metal": true,
+   "slot_to_patch_boundary_mm": 1.5507041555161978,
+   "slot_to_notch_mm": 1.5507041555161978,
+   "line_side_to_notch_wall_mm": 0.4999999999999998,
+   "notch_wall_to_nonadjacent_outer_edges_mm": 0.5900000000000007,
+   "patch_bbox_mm": [
+    -5.2,
+    5.2,
+    -4.50333209967908,
+    4.503332099679081
+   ],
+   "patch_margin_to_board_mm": {
+    "x": 7.8,
+    "y_top": 8.496667900320919,
+    "y_bottom_to_edge": 8.496667900320919
+   },
+   "line_touches_board_edge": true,
+   "line_x_range": [
+    -1.51,
+    1.51
+   ],
+   "line_end_on_notch_bottom": true,
+   "line_end_segment_inside_notch_bottom_edge": true
+  },
+  "checks_script": "scratchpad-only pure-python check; same checks reproducible from the polygon coordinates in this JSON.",
+  "manufacturability": {
+   "min_feature_mm": 0.5,
+   "min_feature_note": "Notch gap and clearances >= 0.5 mm; copper tab between notch wall and outer vertex is 0.59 mm long. Not a verified fabricator capability.",
+   "patch_to_board_edge_mm": {
+    "x": 7.8,
+    "y_top": 8.4967,
+    "y_bottom": 8.4967
+   },
+   "line_length_outside_patch_mm": 8.4967,
+   "hex_slot_note": "The 1.1 mm radius hexagonal hole (side 1.1 mm) is small; the FDTD needs mesh cells <= ~0.3 mm over it, and its oblique edges are staircased in openEMS."
+  },
+  "uncertainty_summary": "r from two model estimates with ~7 % spread; R at the inset: model dependent; hole effect unquantified."
+ }
+}

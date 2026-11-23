@@ -1,0 +1,805 @@
+{
+  "source_dir": "hfss/results/results_US3_PS6/ARR1x5_US3_PS6_dparam/ARR1x5_US3_PS6_dparam_d18p2mm",
+  "touchstone": "ARR1x5_d18p2mm.s5p",
+  "pitch_mm": 18.2,
+  "n_ports": 5,
+  "evidence": "EM_SIMULATED (HFSS, owner export; Touchstone exported with HFSS 2025.1.0; solving version not confirmed; adaptive converged: Max Mag. Delta S 0.0092359 (target 0.02, 2/2 consecutive passes), 15 of 25 passes; lumped port, no wave-port check, so not HFSS_VALIDATED); analysis by array_hfss_analysis.py",
+  "s_parameters": {
+    "n_ports": 5,
+    "pitch_mm": 18.2,
+    "channel_samples": 499,
+    "channel_first_last_ghz": [
+      7.738,
+      8.236
+    ],
+    "s_db_channel_worst": {
+      "S11": -9.1,
+      "S12": -18.37,
+      "S13": -27.96,
+      "S14": -26.62,
+      "S15": -26.98,
+      "S21": -18.37,
+      "S22": -8.66,
+      "S23": -18.25,
+      "S24": -28.37,
+      "S25": -26.63,
+      "S31": -27.96,
+      "S32": -18.25,
+      "S33": -8.64,
+      "S34": -18.25,
+      "S35": -27.9,
+      "S41": -26.62,
+      "S42": -28.37,
+      "S43": -18.25,
+      "S44": -8.67,
+      "S45": -18.34,
+      "S51": -26.98,
+      "S52": -26.63,
+      "S53": -27.9,
+      "S54": -18.34,
+      "S55": -9.04
+    },
+    "ecc_s_param_channel_max": {
+      "12": 0.01012293283651257,
+      "13": 0.001886942107047734,
+      "14": 0.0005349111918824161,
+      "15": 0.0004773655018739553,
+      "23": 0.012305371178302348,
+      "24": 0.0023141646559768883,
+      "25": 0.0005305397042459495,
+      "34": 0.012318820187422384,
+      "35": 0.001891795507118081,
+      "45": 0.010271197815785739
+    },
+    "active": {
+      "theta0_0deg": {
+        "active_s_db_channel_worst_per_port": [
+          -9.62,
+          -11.46,
+          -9.99,
+          -11.51,
+          -9.67
+        ],
+        "tarc_db_channel_worst": -10.37,
+        "all_ports_le_minus10db": false,
+        "all_ports_le_minus6db": true
+      },
+      "theta0_15deg": {
+        "active_s_db_channel_worst_per_port": [
+          -10.35,
+          -10.66,
+          -10.95,
+          -10.25,
+          -10.19
+        ],
+        "tarc_db_channel_worst": -10.54,
+        "all_ports_le_minus10db": true,
+        "all_ports_le_minus6db": true
+      },
+      "theta0_30deg": {
+        "active_s_db_channel_worst_per_port": [
+          -8.38,
+          -10.35,
+          -10.55,
+          -8.99,
+          -8.18
+        ],
+        "tarc_db_channel_worst": -9.61,
+        "all_ports_le_minus10db": false,
+        "all_ports_le_minus6db": true
+      }
+    },
+    "notes": [
+      "ECC from S assumes lossless antennas (indicative only).",
+      "Active S assumes uniform amplitude, progressive phase, all ports 50 ohm; x of port i = (i-(N-1)/2)*pitch.",
+      "Worst values are over the sampled channel grid only."
+    ]
+  },
+  "frequencies": {
+    "7.9872": {
+      "column_suffix": null,
+      "embedded": {
+        "P1": {
+          "peak_dbi": 4.91,
+          "peak_theta_phi_deg": [
+            15.0,
+            290.0
+          ],
+          "xz_cut": {
+            "peak_deg": 5.0,
+            "hpbw_deg": 102.63,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 90.09,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 12.28,
+          "radiated_power_w_per_1w_incident": 0.7325
+        },
+        "P2": {
+          "peak_dbi": 4.54,
+          "peak_theta_phi_deg": [
+            10.0,
+            230.0
+          ],
+          "xz_cut": {
+            "peak_deg": -5.0,
+            "hpbw_deg": 109.24,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 84.33,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 9.04,
+          "radiated_power_w_per_1w_incident": 0.717
+        },
+        "P3": {
+          "peak_dbi": 4.32,
+          "peak_theta_phi_deg": [
+            25.0,
+            345.0
+          ],
+          "xz_cut": {
+            "peak_deg": 25.0,
+            "hpbw_deg": 110.84,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 87.78,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 11.78,
+          "radiated_power_w_per_1w_incident": 0.7154
+        },
+        "P4": {
+          "peak_dbi": 4.61,
+          "peak_theta_phi_deg": [
+            10.0,
+            305.0
+          ],
+          "xz_cut": {
+            "peak_deg": 5.0,
+            "hpbw_deg": 108.3,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 82.35,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 9.07,
+          "radiated_power_w_per_1w_incident": 0.7173
+        },
+        "P5": {
+          "peak_dbi": 4.92,
+          "peak_theta_phi_deg": [
+            15.0,
+            250.0
+          ],
+          "xz_cut": {
+            "peak_deg": -5.0,
+            "hpbw_deg": 103.1,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 89.83,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 12.28,
+          "radiated_power_w_per_1w_incident": 0.7336
+        }
+      },
+      "physical": {
+        "theta0_0deg": {
+          "peak_dbi": 11.49,
+          "peak_theta_phi_deg": [
+            10.0,
+            270.0
+          ],
+          "xz_cut": {
+            "peak_deg": 0.0,
+            "hpbw_deg": 20.62,
+            "max_sidelobe_db": -13.628721778365499
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 86.24,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 10.78
+        },
+        "theta0_15deg": {
+          "peak_dbi": 11.28,
+          "peak_theta_phi_deg": [
+            20.0,
+            320.0
+          ],
+          "xz_cut": {
+            "peak_deg": 15.0,
+            "hpbw_deg": 21.19,
+            "max_sidelobe_db": -12.200952454989347
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 85.51,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 9.98
+        },
+        "theta0_30deg": {
+          "peak_dbi": 10.74,
+          "peak_theta_phi_deg": [
+            30.0,
+            345.0
+          ],
+          "xz_cut": {
+            "peak_deg": 30.0,
+            "hpbw_deg": 23.24,
+            "max_sidelobe_db": -11.176382157948714
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 90.54,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 13.85
+        }
+      },
+      "virtual": {
+        "theta0_0deg": {
+          "peak_db": 0.0,
+          "peak_theta_phi_deg": [
+            10.0,
+            270.0
+          ],
+          "xz_cut": {
+            "peak_deg": 0.0,
+            "hpbw_deg": 16.37,
+            "max_sidelobe_db": -24.416062228615694
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 55.44,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 21.62
+        },
+        "theta0_15deg": {
+          "peak_db": 0.0,
+          "peak_theta_phi_deg": [
+            20.0,
+            320.0
+          ],
+          "xz_cut": {
+            "peak_deg": 15.0,
+            "hpbw_deg": 17.08,
+            "max_sidelobe_db": -17.73570704734758
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 55.63,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 20.83
+        },
+        "theta0_30deg": {
+          "peak_db": 0.0,
+          "peak_theta_phi_deg": [
+            30.0,
+            340.0
+          ],
+          "xz_cut": {
+            "peak_deg": 30.0,
+            "hpbw_deg": 18.81,
+            "max_sidelobe_db": -13.891746011018762
+          },
+          "yz_cut": {
+            "peak_deg": -20.0,
+            "hpbw_deg": 81.05,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 10.07
+        }
+      }
+    },
+    "7.7376": {
+      "column_suffix": null,
+      "embedded": {
+        "P1": {
+          "peak_dbi": 4.41,
+          "peak_theta_phi_deg": [
+            15.0,
+            285.0
+          ],
+          "xz_cut": {
+            "peak_deg": 5.0,
+            "hpbw_deg": 91.21,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 91.06,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 11.89,
+          "radiated_power_w_per_1w_incident": 0.618
+        },
+        "P2": {
+          "peak_dbi": 4.04,
+          "peak_theta_phi_deg": [
+            15.0,
+            230.0
+          ],
+          "xz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 100.58,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 87.06,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 9.69,
+          "radiated_power_w_per_1w_incident": 0.5874
+        },
+        "P3": {
+          "peak_dbi": 3.98,
+          "peak_theta_phi_deg": [
+            15.0,
+            270.0
+          ],
+          "xz_cut": {
+            "peak_deg": 0.0,
+            "hpbw_deg": 102.56,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 89.47,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 11.16,
+          "radiated_power_w_per_1w_incident": 0.5846
+        },
+        "P4": {
+          "peak_dbi": 4.12,
+          "peak_theta_phi_deg": [
+            15.0,
+            310.0
+          ],
+          "xz_cut": {
+            "peak_deg": 10.0,
+            "hpbw_deg": 99.16,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 84.26,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 9.76,
+          "radiated_power_w_per_1w_incident": 0.5873
+        },
+        "P5": {
+          "peak_dbi": 4.42,
+          "peak_theta_phi_deg": [
+            15.0,
+            250.0
+          ],
+          "xz_cut": {
+            "peak_deg": -5.0,
+            "hpbw_deg": 90.74,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 91.31,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 11.67,
+          "radiated_power_w_per_1w_incident": 0.6189
+        }
+      },
+      "physical": {
+        "theta0_0deg": {
+          "peak_dbi": 11.09,
+          "peak_theta_phi_deg": [
+            15.0,
+            270.0
+          ],
+          "xz_cut": {
+            "peak_deg": 0.0,
+            "hpbw_deg": 21.15,
+            "max_sidelobe_db": -14.103524936562549
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 88.19,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 10.81
+        },
+        "theta0_15deg": {
+          "peak_dbi": 10.83,
+          "peak_theta_phi_deg": [
+            20.0,
+            315.0
+          ],
+          "xz_cut": {
+            "peak_deg": 15.0,
+            "hpbw_deg": 21.79,
+            "max_sidelobe_db": -12.220324736362652
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 87.97,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 10.25
+        },
+        "theta0_30deg": {
+          "peak_dbi": 10.11,
+          "peak_theta_phi_deg": [
+            30.0,
+            340.0
+          ],
+          "xz_cut": {
+            "peak_deg": 30.0,
+            "hpbw_deg": 23.85,
+            "max_sidelobe_db": -11.09296644081351
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 92.29,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 13.78
+        }
+      },
+      "virtual": {
+        "theta0_0deg": {
+          "peak_db": 0.0,
+          "peak_theta_phi_deg": [
+            15.0,
+            270.0
+          ],
+          "xz_cut": {
+            "peak_deg": 0.0,
+            "hpbw_deg": 16.95,
+            "max_sidelobe_db": -25.402257618803674
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 56.4,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 21.63
+        },
+        "theta0_15deg": {
+          "peak_db": 0.0,
+          "peak_theta_phi_deg": [
+            20.0,
+            315.0
+          ],
+          "xz_cut": {
+            "peak_deg": 15.0,
+            "hpbw_deg": 17.82,
+            "max_sidelobe_db": -19.917260792430927
+          },
+          "yz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 56.61,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 21.13
+        },
+        "theta0_30deg": {
+          "peak_db": 0.0,
+          "peak_theta_phi_deg": [
+            30.0,
+            335.0
+          ],
+          "xz_cut": {
+            "peak_deg": 25.0,
+            "hpbw_deg": 18.96,
+            "max_sidelobe_db": -14.740324176658335
+          },
+          "yz_cut": {
+            "peak_deg": -30.0,
+            "hpbw_deg": 64.05,
+            "max_sidelobe_db": -9.315796855682308
+          },
+          "front_to_back_db": 13.28
+        }
+      }
+    },
+    "8.2368": {
+      "column_suffix": null,
+      "embedded": {
+        "P1": {
+          "peak_dbi": 3.98,
+          "peak_theta_phi_deg": [
+            15.0,
+            200.0
+          ],
+          "xz_cut": {
+            "peak_deg": -15.0,
+            "hpbw_deg": 99.55,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 85.42,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 12.45,
+          "radiated_power_w_per_1w_incident": 0.6252
+        },
+        "P2": {
+          "peak_dbi": 4.16,
+          "peak_theta_phi_deg": [
+            5.0,
+            250.0
+          ],
+          "xz_cut": {
+            "peak_deg": 0.0,
+            "hpbw_deg": 96.08,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -5.0,
+            "hpbw_deg": 83.91,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 8.87,
+          "radiated_power_w_per_1w_incident": 0.6276
+        },
+        "P3": {
+          "peak_dbi": 4.12,
+          "peak_theta_phi_deg": [
+            20.0,
+            350.0
+          ],
+          "xz_cut": {
+            "peak_deg": 20.0,
+            "hpbw_deg": 98.42,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 82.77,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 12.01,
+          "radiated_power_w_per_1w_incident": 0.6322
+        },
+        "P4": {
+          "peak_dbi": 4.21,
+          "peak_theta_phi_deg": [
+            5.0,
+            290.0
+          ],
+          "xz_cut": {
+            "peak_deg": 0.0,
+            "hpbw_deg": 96.45,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -5.0,
+            "hpbw_deg": 83.03,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 8.9,
+          "radiated_power_w_per_1w_incident": 0.6294
+        },
+        "P5": {
+          "peak_dbi": 3.94,
+          "peak_theta_phi_deg": [
+            15.0,
+            240.0
+          ],
+          "xz_cut": {
+            "peak_deg": 15.0,
+            "hpbw_deg": 100.9,
+            "max_sidelobe_db": null
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 84.75,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 12.84,
+          "radiated_power_w_per_1w_incident": 0.6289
+        }
+      },
+      "physical": {
+        "theta0_0deg": {
+          "peak_dbi": 10.67,
+          "peak_theta_phi_deg": [
+            10.0,
+            270.0
+          ],
+          "xz_cut": {
+            "peak_deg": 0.0,
+            "hpbw_deg": 20.35,
+            "max_sidelobe_db": -13.261053430715315
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 83.45,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 10.75
+        },
+        "theta0_15deg": {
+          "peak_dbi": 10.58,
+          "peak_theta_phi_deg": [
+            15.0,
+            340.0
+          ],
+          "xz_cut": {
+            "peak_deg": 15.0,
+            "hpbw_deg": 20.71,
+            "max_sidelobe_db": -12.164172528159908
+          },
+          "yz_cut": {
+            "peak_deg": -5.0,
+            "hpbw_deg": 83.97,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 9.77
+        },
+        "theta0_30deg": {
+          "peak_dbi": 10.02,
+          "peak_theta_phi_deg": [
+            30.0,
+            350.0
+          ],
+          "xz_cut": {
+            "peak_deg": 30.0,
+            "hpbw_deg": 22.85,
+            "max_sidelobe_db": -11.473546523526588
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 85.32,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 13.88
+        }
+      },
+      "virtual": {
+        "theta0_0deg": {
+          "peak_db": 0.0,
+          "peak_theta_phi_deg": [
+            10.0,
+            270.0
+          ],
+          "xz_cut": {
+            "peak_deg": 0.0,
+            "hpbw_deg": 16.17,
+            "max_sidelobe_db": -22.451649952907033
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 54.16,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 21.65
+        },
+        "theta0_15deg": {
+          "peak_db": 0.0,
+          "peak_theta_phi_deg": [
+            15.0,
+            340.0
+          ],
+          "xz_cut": {
+            "peak_deg": 15.0,
+            "hpbw_deg": 16.42,
+            "max_sidelobe_db": -18.057489721904993
+          },
+          "yz_cut": {
+            "peak_deg": -10.0,
+            "hpbw_deg": 54.79,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 20.48
+        },
+        "theta0_30deg": {
+          "peak_db": 0.0,
+          "peak_theta_phi_deg": [
+            30.0,
+            350.0
+          ],
+          "xz_cut": {
+            "peak_deg": 30.0,
+            "hpbw_deg": 18.5,
+            "max_sidelobe_db": -13.637187011503118
+          },
+          "yz_cut": {
+            "peak_deg": 5.0,
+            "hpbw_deg": 62.81,
+            "max_sidelobe_db": null
+          },
+          "front_to_back_db": 11.31
+        }
+      }
+    }
+  },
+  "efficiency_check": {
+    "radiated_over_accepted_per_port": {
+      "7.9872": [
+        0.75,
+        0.739,
+        0.737,
+        0.74,
+        0.751
+      ],
+      "7.7376": [
+        0.718,
+        0.705,
+        0.703,
+        0.705,
+        0.72
+      ],
+      "8.2368": [
+        0.708,
+        0.703,
+        0.706,
+        0.705,
+        0.711
+      ]
+    },
+    "note": "order of magnitude only; does not discriminate the column mapping"
+  },
+  "frequency_mapping_check": {
+    "mapping": "Freq column (long format)",
+    "phase_slopes_rad": {
+      "7.9872": {
+        "P1": {
+          "observed": -12.276,
+          "expected_2kx": -12.187
+        },
+        "P5": {
+          "observed": 12.263,
+          "expected_2kx": 12.187
+        }
+      },
+      "7.7376": {
+        "P1": {
+          "observed": -11.785,
+          "expected_2kx": -11.806
+        },
+        "P5": {
+          "observed": 11.774,
+          "expected_2kx": 11.806
+        }
+      },
+      "8.2368": {
+        "P1": {
+          "observed": -12.547,
+          "expected_2kx": -12.568
+        },
+        "P5": {
+          "observed": 12.532,
+          "expected_2kx": 12.568
+        }
+      }
+    },
+    "observed_order_matches_frequency_order": true
+  },
+  "notes": [
+    "HPBW from cuts at phi = 0/180 (xz) and 90/270 (yz), 5 deg grid, -3 dB crossing interpolated linearly in dB (about +-0.5 deg, slight underestimate); global peaks lie ~5 deg off the xz plane (tilt toward -y).",
+    "front_to_back_db = G(theta=0) - G(theta=180), not peak-to-back.",
+    "Virtual array: off ports on 50 ohm (owner hardware decision), co-polar Ludwig-3 y.",
+    "ECC from S assumes lossless antennas; pattern-based ECC not computed yet."
+  ],
+  "virtual_sequence": "default 1 TX + 2 RX, 30 configurations"
+}

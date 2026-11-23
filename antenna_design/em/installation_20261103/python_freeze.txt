@@ -1,0 +1,20 @@
+cmake==3.31.10
+contourpy==1.4.0
+CSXCAD @ file:///workspace/openems-source/CSXCAD/python
+cycler==0.12.1
+Cython==3.3.1
+fonttools==4.68.0
+h5py==3.16.0
+kiwisolver==1.5.1
+matplotlib==3.11.2
+numpy==2.5.4
+openEMS @ file:///workspace/openems-source/openEMS/python
+packaging==26.3
+pillow==13.0.0
+pyparsing==3.3.3
+python-dateutil==4.0.0
+setuptools==84.2.1
+setuptools-scm==10.3.4
+tzdata==2026.6
+vcs-versioning==2.6.0
+wheel==0.48.0

@@ -1,0 +1,159 @@
+{
+  "id": "P01_EM_MODEL_SPEC_V1",
+  "design_id": "P01_rectangular_patch",
+  "evidence": "GEOMETRY_ONLY",
+  "em_status": "EM_NOT_RUN",
+  "artifact_type": "declarative_model_specification_not_solver_XML",
+  "implementation_validation": "NOT_VALIDATED_WITH_OPENEMS",
+  "source_geometry_sha256": "9a08a1b912821d367b45aad2b4098d3c3e15654c25eb86d5593990bfecdf8efe",
+  "units": "mm",
+  "center_hz": 7987200000.0,
+  "channel_band_hz": [
+    7737600000.0,
+    8236800000.0
+  ],
+  "frequency_samples_hz": {
+    "start": 7500000000.0,
+    "stop": 8500000000.0,
+    "step": 1000000.0,
+    "additional_exact_samples": [
+      7737600000.0,
+      8236800000.0
+    ],
+    "sampling_caveat": "DTFT evaluation spacing is not physical frequency resolution; finite record and decay govern accuracy"
+  },
+  "excitation": {
+    "type": "Gaussian",
+    "center_hz": 7987200000.0,
+    "corner_offset_hz": 1000000000.0
+  },
+  "substrate": {
+    "name": "generic_FR4_PROVISIONAL",
+    "epsilon_r": 4.4,
+    "tan_delta_at_center": 0.017,
+    "thickness_mm": 1.6,
+    "conductivity_S_per_m": 0.03323722487554589,
+    "loss_model": "constant electric conductivity; tan_delta varies as f0/f",
+    "box_start_mm": [
+      -13,
+      -13,
+      0
+    ],
+    "box_stop_mm": [
+      13,
+      13,
+      1.6
+    ]
+  },
+  "metal": {
+    "name": "copper_smooth_provisional",
+    "conductivity_S_per_m": 58000000.0,
+    "thickness_m": 3.5e-05,
+    "model": "finite conducting sheet, API needs verification",
+    "roughness": "not modeled",
+    "patch_polygon_mm": [
+      [
+        -5.710633256840115,
+        -4.140007854013388
+      ],
+      [
+        5.710633256840115,
+        -4.140007854013388
+      ],
+      [
+        5.710633256840115,
+        4.140007854013388
+      ],
+      [
+        -5.710633256840115,
+        4.140007854013388
+      ]
+    ],
+    "patch_z_mm": 1.6,
+    "ground_box_mm": [
+      [
+        -13,
+        -13,
+        0
+      ],
+      [
+        13,
+        13,
+        0
+      ]
+    ]
+  },
+  "port": {
+    "number": 1,
+    "reference_ohm": 50,
+    "type": "ideal vertical lumped port",
+    "axis": "z",
+    "start_mm": [
+      0.0,
+      -1.8216034557658907,
+      0
+    ],
+    "stop_mm": [
+      0.0,
+      -1.8216034557658907,
+      1.6
+    ],
+    "deembedding": "none",
+    "scope": "ideal probe replaces connector; no coax launch or finite via barrel"
+  },
+  "boundaries": {
+    "all_six": "PML_8",
+    "domain_mm": [
+      [
+        -35,
+        -35,
+        -25
+      ],
+      [
+        35,
+        35,
+        35
+      ]
+    ]
+  },
+  "mesh": {
+    "type": "explicit nonuniform rectilinear",
+    "max_xy_step_mm": 0.5,
+    "max_air_z_step_mm": 0.8,
+    "substrate_z_cells": 8,
+    "metal_edge_alignment": "edges on grid; thirds-rule refinement not implemented",
+    "cells_xyz": [
+      142,
+      141,
+      82
+    ],
+    "total_cells": 1641804
+  },
+  "convergence": {
+    "energy_end_criterion": 1e-05,
+    "maximum_timesteps": 30000,
+    "must_verify_actual_energy_decay": true,
+    "mesh_convergence": "NOT_ESTABLISHED; only one initial solve permitted in first task",
+    "acceptance": "no EM_SIMULATED claim without actual solver completion and logs; one mesh cannot establish mesh independence"
+  },
+  "resource_estimate": {
+    "maximum_threads": 2,
+    "conservative_bytes_per_cell": 2048,
+    "estimated_peak_RAM_bytes": 3362414592,
+    "courant_upper_bound_s": 5.71496511976234e-13,
+    "max_time_window_s": 1.714489535928702e-08,
+    "runtime": "unbenchmarked; potentially minutes to tens of minutes on two CPUs",
+    "execution_gate": "do not run until APIs/mesh/PML reviewed, resource estimate accepted and bounded wall time set"
+  },
+  "required_outputs": [
+    "actual solver XML",
+    "solver versions",
+    "stdout/stderr and energy decay",
+    "complex S11 CSV and incident/reflected complex port fields",
+    "complex Zin CSV",
+    "CPU time/peak RAM",
+    "coverage over entire exact channel band"
+  ],
+  "far_field": "not configured; complex near-to-far-field monitor and multi-frequency angular samples still required",
+  "reference": "https://docs.openems.de/en/latest/python/openEMS/Tutorials/Simple_Patch_Antenna.html"
+}

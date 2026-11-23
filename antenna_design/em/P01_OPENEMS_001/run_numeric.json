@@ -1,0 +1,23 @@
+{
+  "id": "P01_OPENEMS_001",
+  "numeric_outputs_finite": true,
+  "samples": 1003,
+  "channel_samples": 501,
+  "reference_ohm": 50,
+  "channel_worst_s11_db": -1.941491268577658,
+  "channel_best_s11_db": -7.628416221729603,
+  "channel_meets_minus6db_on_sampled_grid": false,
+  "channel_meets_minus10db_on_sampled_grid": false,
+  "wall_seconds": 142.60311480100017,
+  "cpu_seconds": 246.85326099999997,
+  "peak_rss_kib": 333300,
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "frequency_evaluation_step_hz": 1000000.0,
+  "frequency_grid_caveat": "DTFT evaluation spacing is not physical resolution; finite-record decay/truncation governs accuracy",
+  "coverage_caveat": "sampled frequencies including exact endpoints; no mathematical guarantee between samples",
+  "native_xml_sha256": "f829132846f178cc041d92afa5e2a45b3bd4030890872bdf57b1440e94036959",
+  "far_field": "NOT_RECORDED"
+}

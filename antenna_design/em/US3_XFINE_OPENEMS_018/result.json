@@ -1,0 +1,69 @@
+{
+  "id": "US3",
+  "numeric_outputs_finite": true,
+  "port_validity": "OK",
+  "port_validity_detail": {
+    "port_validity": "OK",
+    "s11_abs_limit": 1.02,
+    "max_abs_s11_by_plane": {
+      "port": 0.9730961480721075
+    },
+    "min_p_acc_W": 3.0565473039341397e-31,
+    "reasons": [],
+    "rule": "PORT_INVALID if max|S11| > 1.02 on any plane or P_acc < 0 at any evaluated frequency (channel grid + wideband rows inside the valid excitation range)"
+  },
+  "samples": 1003,
+  "reference_ohm": 50,
+  "channel_samples": 501,
+  "channel_worst_s11_db": -5.7762798086588205,
+  "channel_worst_frequency_hz": 8236800000.0,
+  "channel_best_s11_db": -11.818555044569287,
+  "channel_best_frequency_hz": 7957000000.0,
+  "channel_meets_minus6db_on_sampled_grid": false,
+  "channel_meets_minus10db_on_sampled_grid": false,
+  "wideband": {
+    "grid_hz": [
+      5460000000.0,
+      10520000000.0,
+      5000000.0
+    ],
+    "samples": 1013,
+    "valid_rule": "u_inc within 20 dB of its peak (as reanalyze_port_dft.py)",
+    "valid_range_hz": [
+      5460000000.0,
+      10515000000.0
+    ],
+    "valid_samples": 1012,
+    "re_zin_peak_ohm": 152.6565861367177,
+    "re_zin_peak_hz": 7585000000.0,
+    "im_zin_at_re_peak_ohm": 90.30989147034383,
+    "min_s11_db": -11.817300607741789,
+    "min_s11_hz": 7955000000.0
+  },
+  "s11_metrics_plane": "port",
+  "wall_seconds": 1914.662424202,
+  "cpu_seconds": 3458.748113,
+  "peak_rss_kib": 1972656,
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "frequency_evaluation_step_hz": 1000000.0,
+  "frequency_grid_caveat": "DTFT evaluation spacing is not physical resolution; finite-record decay/truncation governs accuracy",
+  "coverage_caveat": "sampled frequencies including exact endpoints; no mathematical guarantee between samples",
+  "native_xml_sha256": "faa1fe15fc1351fdd8e5e84f529023a6300e50305b27551e7be2ff7e831fbc1e",
+  "variant_sha256": "1e39cd151dea8e1f943f7fc318cb045597a957acb364ade9e0339c64241918a6",
+  "far_field": "NOT_RECORDED",
+  "energy_end_criterion_met": true,
+  "maximum_timesteps_warning": false,
+  "solver_nodal_positions": 14039844,
+  "actual_timestep_s": 2.614251931141186e-13,
+  "actual_record_time_s": 2.599873545519909e-09,
+  "engine_wall_seconds": 1848.065519,
+  "engine_cells_per_second": 75552650.67417775,
+  "inverse_record_time_hz": 384634091.80927116,
+  "mesh_convergence": "NOT_ESTABLISHED",
+  "evidence": "EM_SIMULATED",
+  "actual_timesteps": 9945,
+  "final_energy_decay_db": -50.85
+}

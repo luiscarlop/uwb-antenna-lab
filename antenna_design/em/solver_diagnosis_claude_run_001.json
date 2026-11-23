@@ -1,0 +1,138 @@
+{
+  "run_id": "CLAUDE-RUN-001",
+  "date_utc": "2026-11-03T11:22Z",
+  "em_status": "EM_NOT_RUN",
+  "solver_operational": false,
+  "solves_started": 0,
+  "interpreters": {
+    "/usr/local/bin/python3": {
+      "timestamp_utc": "2026-11-03T11:22:42.034777+00:00",
+      "python": "3.13.18 (main, Oct 26 2026, 14:08:19) [Clang 23.1.3 ]",
+      "platform": "Linux-6.18.44-fc-v230-x86_64-with-glibc2.39",
+      "modules": {
+        "openEMS": {
+          "available": false,
+          "error": "ModuleNotFoundError: No module named 'openEMS'"
+        },
+        "CSXCAD": {
+          "available": false,
+          "error": "ModuleNotFoundError: No module named 'CSXCAD'"
+        }
+      },
+      "executables": {
+        "openEMS": null,
+        "openems": null,
+        "AppCSXCAD": null,
+        "octave": null,
+        "conda": null,
+        "mamba": null,
+        "micromamba": null
+      },
+      "resources": {
+        "memory.max": "UNKNOWN",
+        "cpu.max": "UNKNOWN",
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "network_probes": [],
+      "em_status": "EM_NOT_RUN",
+      "solves_started": 0,
+      "python_bindings_importable": false,
+      "solver_operational": false,
+      "operational_verification": "NOT_RUN; imports alone cannot verify solver execution"
+    },
+    "/usr/bin/python3": {
+      "timestamp_utc": "2026-11-03T11:22:42.180362+00:00",
+      "python": "3.13.18 (main, Oct 26 2026, 15:28:15) [GCC 13.3.0]",
+      "platform": "Linux-6.18.44-fc-v230-x86_64-with-glibc2.39",
+      "modules": {
+        "openEMS": {
+          "available": false,
+          "error": "ModuleNotFoundError: No module named 'openEMS'"
+        },
+        "CSXCAD": {
+          "available": false,
+          "error": "ModuleNotFoundError: No module named 'CSXCAD'"
+        }
+      },
+      "executables": {
+        "openEMS": null,
+        "openems": null,
+        "AppCSXCAD": null,
+        "octave": null,
+        "conda": null,
+        "mamba": null,
+        "micromamba": null
+      },
+      "resources": {
+        "memory.max": "UNKNOWN",
+        "cpu.max": "UNKNOWN",
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "network_probes": [],
+      "em_status": "EM_NOT_RUN",
+      "solves_started": 0,
+      "python_bindings_importable": false,
+      "solver_operational": false,
+      "operational_verification": "NOT_RUN; imports alone cannot verify solver execution"
+    }
+  },
+  "host": {
+    "os": "Ubuntu 24.04.5 LTS (noble)",
+    "nproc": 4,
+    "mem_total_gib_approx": 15,
+    "docker_daemon": "not running (client 29.9.2 only, no /var/run/docker.sock)"
+  },
+  "apt": {
+    "command": "apt-get update; apt-cache policy openems python3-openems python3-csxcad",
+    "sources_components": "main universe restricted multiverse (noble, noble-updates, noble-backports, noble-security)",
+    "openems_candidate": null,
+    "python3-openems": "no such package in archive",
+    "python3-csxcad": "no such package in archive"
+  },
+  "launchpad_ubuntu_primary": {
+    "query": "getPublishedSources source_name=openems; getPublishedBinaries openems/csxcad (amd64)",
+    "openems_source_published_in": [
+      "focal",
+      "jammy",
+      "lunar",
+      "mantic"
+    ],
+    "openems_source_version": "0.0.35+git20190103.6a75e98+dfsg.1",
+    "binaries_seen": [
+      "libopenems0",
+      "libopenems-dev",
+      "octave-openems",
+      "libcsxcad0",
+      "libqcsxcad0"
+    ],
+    "python_bindings_packaged": false,
+    "note": "No Ubuntu release ships Python bindings; noble and later ship no openems at all. claude_cloud_setup.sh's apt line can never provide openEMS/CSXCAD Python modules here."
+  },
+  "pypi": {
+    "openEMS": "No matching distribution (pip download)"
+  },
+  "conda_forge": {
+    "openems": "not found",
+    "csxcad": "not found",
+    "python-openems": "not found",
+    "source": "api.anaconda.org/package/conda-forge/<name>"
+  },
+  "official_route": {
+    "source": "https://docs.openems.de/en/latest/install/clone-build-install.html (docs openEMS 0.37.0, read 2026-11-03)",
+    "deps_ubuntu": "build-essential cmake git libhdf5-dev libboost-all-dev libtinyxml-dev zlib1g-dev python3-pip python3-venv",
+    "build": "git clone --recursive https://github.com/thliebig/openEMS-Project.git && cd openEMS-Project && ./update_openEMS.sh ~/opt/openEMS --python",
+    "executed": false,
+    "reason_not_executed": "Source compilation; CLAUDE.md/cycle forbid long compilations without owner consent. Build time not measured."
+  },
+  "decision_required": "Owner: authorize building openEMS from source (setup script, cached with the environment) or provide another environment with openEMS+CSXCAD Python bindings."
+}

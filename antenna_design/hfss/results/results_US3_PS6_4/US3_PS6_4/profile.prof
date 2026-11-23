@@ -1,0 +1,470 @@
+HFSS Profile
+ Project: TFG_UWB-MIMO-Array
+ Design: US3_PS6_4
+ Solution setup: Setup_ch9
+ Design variation: board_x='26mm' board_y='26mm' cu_t='0.035000000000000003mm' line_w='3.9199999999999999mm' pad_xy='22mm' pad_zn='25mm' pad_zp='33mm' par_L='7.0499999999999998mm' par_W='13.58mm' par_yc='0.61499999999999999mm' par_z='1.0349999999999999mm' patch_L='6.29mm' patch_W='14mm' sub_h='2.0699999999999998mm' tr_l='7.25mm' tr_w='1mm' u_Lu='2.6499999999999999mm' u_t='0.80000000000000004mm' u_Wu='4.4000000000000004mm' u_y0='-0.69999999999999996mm'
+
+  Task                      Real Time  CPU Time  Memory  Information
+  ----                      ---------  --------  ------  -----------
+
+  Solution Process                                       Start Time: 11/20/2026 14:08:13, Host: Z2-02, Processor: 32, OS: NT 10.0, Product: HFSS Version 2025.1.0
+                                                         Executing From: C:\Program Files\ANSYS Inc\v251\AnsysEM\HFSSCOMENGINE.exe
+                                                         
+  HPC                                                    Type: Auto, MPI Vendor: Intel, MPI Version: 2021
+  Machine                                                Name: Z2-02.geat.lab, Memory: 63.7 GB, RAM Limit: 90.000000%, Cores: 4, Free Disk Space: 30.8 GB
+                                                         
+                                                         Allow off core: True
+                                                         Solution Basis Order: 1
+  Design Validation                                      Elapsed time : 00:00:00 , HFSS ComEngine Memory : 66.7 M
+                                                         Perform full validations with standard port validations
+                                                         
+  Initial Meshing                                        Time: 11/20/2026 14:08:13
+  Mesh                      00:00:00   00:00:00  27.6 M  Type: Phi, Tetrahedra: 243
+  Post                      00:00:00   00:00:00  29.2 M  Tetrahedra: 243, Cores: 1
+  Lambda Refine             00:00:00   00:00:00  21.9 M  Tetrahedra: 1823, Cores: 1
+  Simulation Setup          00:00:00   00:00:00  168 M   Disk: 0 Bytes
+  Port Adapt                00:00:00   00:00:00  176 M   Tetrahedra: 1823, Disk: 33.5 KB
+  Port Refine               00:00:00   00:00:00  19.2 M  Tetrahedra: 1901, Cores: 1
+  Initial Meshing                                        Elapsed Time: 00:00:01
+                                                         
+  Adaptive Meshing                                       Time: 11/20/2026 14:08:15
+                                                         
+  Adaptive Pass 1                                        Multi-Frequency Adaptive Meshing
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  196 M   Tetrahedra: 1901, Disk: 3.62 KB
+  Matrix Assembly           00:00:00   00:00:00  211 M   Tetrahedra: 1901, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  264 M   Type: DCS, Cores: 2, Matrix size: 12721, Matrix bandwidth:  21.1, Disk: 52.1 KB
+  Field Recovery            00:00:00   00:00:00  264 M   Excitations: 1, Disk: 806 KB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  196 M   Tetrahedra: 1901, Disk: 3.62 KB
+  Matrix Assembly           00:00:00   00:00:00  206 M   Tetrahedra: 1901, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  266 M   Type: DCS, Cores: 1, Matrix size: 12721, Matrix bandwidth:  21.1, Disk: 52.1 KB
+  Field Recovery            00:00:00   00:00:00  266 M   Excitations: 1, Disk: 806 KB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  196 M   Tetrahedra: 1901, Disk: 3.62 KB
+  Matrix Assembly           00:00:00   00:00:00  206 M   Tetrahedra: 1901, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  266 M   Type: DCS, Cores: 1, Matrix size: 12721, Matrix bandwidth:  21.1, Disk: 52.1 KB
+  Field Recovery            00:00:00   00:00:00  266 M   Excitations: 1, Disk: 806 KB
+                                                         
+  Data Transfer             00:00:00   00:00:00  69.4 M  Adaptive Pass 1
+                                                         
+  Adaptive Pass 2                                        Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  20.7 M  Tetrahedra: 2474, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  197 M   Tetrahedra: 2474, Disk: 3.62 KB
+  Matrix Assembly           00:00:00   00:00:00  216 M   Tetrahedra: 2474, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  293 M   Type: DCS, Cores: 2, Matrix size: 16351, Matrix bandwidth:  21.4, Disk: 64.3 KB
+  Field Recovery            00:00:00   00:00:00  293 M   Excitations: 1, Disk: 818 KB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  198 M   Tetrahedra: 2474, Disk: 3.62 KB
+  Matrix Assembly           00:00:00   00:00:00  210 M   Tetrahedra: 2474, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  291 M   Type: DCS, Cores: 1, Matrix size: 16351, Matrix bandwidth:  21.4, Disk: 64.3 KB
+  Field Recovery            00:00:00   00:00:00  291 M   Excitations: 1, Disk: 818 KB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  197 M   Tetrahedra: 2474, Disk: 3.62 KB
+  Matrix Assembly           00:00:00   00:00:00  209 M   Tetrahedra: 2474, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  290 M   Type: DCS, Cores: 1, Matrix size: 16351, Matrix bandwidth:  21.4, Disk: 64.3 KB
+  Field Recovery            00:00:00   00:00:00  290 M   Excitations: 1, Disk: 818 KB
+                                                         
+  Data Transfer             00:00:00   00:00:00  69.6 M  Adaptive Pass 2
+                                                         
+                                                         Max Mag. Delta S: 0.57226
+                                                         
+  Adaptive Pass 3                                        Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  21.7 M  Tetrahedra: 3221, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  199 M   Tetrahedra: 3221, Disk: 3.62 KB
+  Matrix Assembly           00:00:00   00:00:00  220 M   Tetrahedra: 3221, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  327 M   Type: DCS, Cores: 2, Matrix size: 21095, Matrix bandwidth:  21.6, Disk: 82.9 KB
+  Field Recovery            00:00:00   00:00:00  327 M   Excitations: 1, Disk: 1.01 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  200 M   Tetrahedra: 3221, Disk: 3.62 KB
+  Matrix Assembly           00:00:00   00:00:00  214 M   Tetrahedra: 3221, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  329 M   Type: DCS, Cores: 1, Matrix size: 21095, Matrix bandwidth:  21.6, Disk: 82.9 KB
+  Field Recovery            00:00:00   00:00:00  329 M   Excitations: 1, Disk: 1.01 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  199 M   Tetrahedra: 3221, Disk: 3.62 KB
+  Matrix Assembly           00:00:00   00:00:00  213 M   Tetrahedra: 3221, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  328 M   Type: DCS, Cores: 1, Matrix size: 21095, Matrix bandwidth:  21.6, Disk: 82.9 KB
+  Field Recovery            00:00:00   00:00:00  328 M   Excitations: 1, Disk: 1.01 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  70.6 M  Adaptive Pass 3
+                                                         
+                                                         Max Mag. Delta S: 0.27257
+                                                         
+  Adaptive Pass 4                                        Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  22.5 M  Tetrahedra: 4190, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  201 M   Tetrahedra: 4190, Disk: 3.2 KB
+  Matrix Assembly           00:00:00   00:00:00  227 M   Tetrahedra: 4190, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  368 M   Type: DCS, Cores: 2, Matrix size: 27247, Matrix bandwidth:  21.7, Disk: 107 KB
+  Field Recovery            00:00:00   00:00:00  368 M   Excitations: 1, Disk: 1.28 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  201 M   Tetrahedra: 4190, Disk: 3.2 KB
+  Matrix Assembly           00:00:00   00:00:00  218 M   Tetrahedra: 4190, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  376 M   Type: DCS, Cores: 1, Matrix size: 27247, Matrix bandwidth:  21.7, Disk: 107 KB
+  Field Recovery            00:00:00   00:00:00  376 M   Excitations: 1, Disk: 1.28 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  202 M   Tetrahedra: 4190, Disk: 3.2 KB
+  Matrix Assembly           00:00:00   00:00:00  218 M   Tetrahedra: 4190, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  377 M   Type: DCS, Cores: 1, Matrix size: 27247, Matrix bandwidth:  21.7, Disk: 107 KB
+  Field Recovery            00:00:00   00:00:00  377 M   Excitations: 1, Disk: 1.28 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  70.8 M  Adaptive Pass 4
+                                                         
+                                                         Max Mag. Delta S: 0.11643
+                                                         
+  Adaptive Pass 5                                        Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  24.2 M  Tetrahedra: 5450, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  204 M   Tetrahedra: 5450, Disk: 2.82 KB
+  Matrix Assembly           00:00:00   00:00:00  236 M   Tetrahedra: 5450, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  433 M   Type: DCS, Cores: 2, Matrix size: 35243, Matrix bandwidth:  21.9, Disk: 138 KB
+  Field Recovery            00:00:00   00:00:00  433 M   Excitations: 1, Disk: 1.64 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  204 M   Tetrahedra: 5450, Disk: 2.82 KB
+  Matrix Assembly           00:00:00   00:00:00  224 M   Tetrahedra: 5450, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  445 M   Type: DCS, Cores: 1, Matrix size: 35243, Matrix bandwidth:  21.9, Disk: 138 KB
+  Field Recovery            00:00:00   00:00:00  445 M   Excitations: 1, Disk: 1.64 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  205 M   Tetrahedra: 5450, Disk: 2.82 KB
+  Matrix Assembly           00:00:00   00:00:00  224 M   Tetrahedra: 5450, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  446 M   Type: DCS, Cores: 1, Matrix size: 35243, Matrix bandwidth:  21.9, Disk: 138 KB
+  Field Recovery            00:00:00   00:00:00  446 M   Excitations: 1, Disk: 1.64 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  70.6 M  Adaptive Pass 5
+                                                         
+                                                         Max Mag. Delta S: 0.10737
+                                                         
+  Adaptive Pass 6                                        Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  25.7 M  Tetrahedra: 7088, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  208 M   Tetrahedra: 7088, Disk: 3.58 KB
+  Matrix Assembly           00:00:00   00:00:00  248 M   Tetrahedra: 7088, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:00  489 M   Type: DCS, Cores: 2, Matrix size: 45651, Matrix bandwidth:  21.9, Disk: 179 KB
+  Field Recovery            00:00:00   00:00:00  489 M   Excitations: 1, Disk: 2.11 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  208 M   Tetrahedra: 7088, Disk: 3.58 KB
+  Matrix Assembly           00:00:00   00:00:00  232 M   Tetrahedra: 7088, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:01   00:00:00  493 M   Type: DCS, Cores: 1, Matrix size: 45651, Matrix bandwidth:  21.9, Disk: 179 KB
+  Field Recovery            00:00:00   00:00:00  493 M   Excitations: 1, Disk: 2.11 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  207 M   Tetrahedra: 7088, Disk: 3.58 KB
+  Matrix Assembly           00:00:00   00:00:00  231 M   Tetrahedra: 7088, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:01   00:00:00  492 M   Type: DCS, Cores: 1, Matrix size: 45651, Matrix bandwidth:  21.9, Disk: 179 KB
+  Field Recovery            00:00:00   00:00:00  492 M   Excitations: 1, Disk: 2.11 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  70.8 M  Adaptive Pass 6
+                                                         
+                                                         Max Mag. Delta S: 0.06597
+                                                         
+  Adaptive Pass 7                                        Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  27.9 M  Tetrahedra: 9218, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  212 M   Tetrahedra: 9218, Disk: 2.44 KB
+  Matrix Assembly           00:00:00   00:00:00  262 M   Tetrahedra: 9218, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:00   00:00:01  584 M   Type: DCS, Cores: 2, Matrix size: 59177, Matrix bandwidth:  22.0, Disk: 232 KB
+  Field Recovery            00:00:00   00:00:00  584 M   Excitations: 1, Disk: 2.71 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  212 M   Tetrahedra: 9218, Disk: 2.44 KB
+  Matrix Assembly           00:00:00   00:00:00  242 M   Tetrahedra: 9218, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:01   00:00:00  594 M   Type: DCS, Cores: 1, Matrix size: 59177, Matrix bandwidth:  22.0, Disk: 232 KB
+  Field Recovery            00:00:00   00:00:00  594 M   Excitations: 1, Disk: 2.71 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  212 M   Tetrahedra: 9218, Disk: 2.44 KB
+  Matrix Assembly           00:00:00   00:00:00  243 M   Tetrahedra: 9218, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:01   00:00:00  594 M   Type: DCS, Cores: 1, Matrix size: 59177, Matrix bandwidth:  22.0, Disk: 232 KB
+  Field Recovery            00:00:00   00:00:00  594 M   Excitations: 1, Disk: 2.71 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  70.7 M  Adaptive Pass 7
+                                                         
+                                                         Max Mag. Delta S: 0.04289
+                                                         
+  Adaptive Pass 8                                        Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  29.1 M  Tetrahedra: 11212, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  217 M   Tetrahedra: 11212, Disk: 2.44 KB
+  Matrix Assembly           00:00:00   00:00:00  278 M   Tetrahedra: 11212, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:01   00:00:01  681 M   Type: DCS, Cores: 2, Matrix size: 71841, Matrix bandwidth:  22.1, Disk: 281 KB
+  Field Recovery            00:00:00   00:00:00  681 M   Excitations: 1, Disk: 3.21 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  218 M   Tetrahedra: 11212, Disk: 2.44 KB
+  Matrix Assembly           00:00:00   00:00:00  253 M   Tetrahedra: 11212, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:01   00:00:01  696 M   Type: DCS, Cores: 1, Matrix size: 71841, Matrix bandwidth:  22.1, Disk: 281 KB
+  Field Recovery            00:00:00   00:00:00  696 M   Excitations: 1, Disk: 3.21 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  217 M   Tetrahedra: 11212, Disk: 2.44 KB
+  Matrix Assembly           00:00:00   00:00:00  252 M   Tetrahedra: 11212, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:01   00:00:01  695 M   Type: DCS, Cores: 1, Matrix size: 71841, Matrix bandwidth:  22.1, Disk: 281 KB
+  Field Recovery            00:00:00   00:00:00  695 M   Excitations: 1, Disk: 3.21 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  71 M    Adaptive Pass 8
+                                                         
+                                                         Max Mag. Delta S: 0.03255
+                                                         
+  Adaptive Pass 9                                        Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  33.4 M  Tetrahedra: 14578, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  225 M   Tetrahedra: 14578, Disk: 3.21 KB
+  Matrix Assembly           00:00:00   00:00:00  303 M   Tetrahedra: 14578, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:01   00:00:02  832 M   Type: DCS, Cores: 2, Matrix size: 93223, Matrix bandwidth:  22.1, Disk: 365 KB
+  Field Recovery            00:00:00   00:00:00  832 M   Excitations: 1, Disk: 4.24 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  226 M   Tetrahedra: 14578, Disk: 3.21 KB
+  Matrix Assembly           00:00:00   00:00:00  271 M   Tetrahedra: 14578, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:02   00:00:01  854 M   Type: DCS, Cores: 1, Matrix size: 93223, Matrix bandwidth:  22.1, Disk: 365 KB
+  Field Recovery            00:00:00   00:00:00  854 M   Excitations: 1, Disk: 4.24 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  225 M   Tetrahedra: 14578, Disk: 3.21 KB
+  Matrix Assembly           00:00:00   00:00:00  270 M   Tetrahedra: 14578, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:02   00:00:01  852 M   Type: DCS, Cores: 1, Matrix size: 93223, Matrix bandwidth:  22.1, Disk: 365 KB
+  Field Recovery            00:00:00   00:00:00  852 M   Excitations: 1, Disk: 4.24 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  71 M    Adaptive Pass 9
+                                                         
+                                                         Max Mag. Delta S: 0.02614
+                                                         
+  Adaptive Pass 10                                       Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  39.1 M  Tetrahedra: 18953, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  234 M   Tetrahedra: 18953, Disk: 4.98 KB
+  Matrix Assembly           00:00:00   00:00:00  334 M   Tetrahedra: 18953, Lumped ports: 1, Disk: 690 Bytes
+  Matrix Solve              00:00:02   00:00:03  1.02 G  Type: DCS, Cores: 2, Matrix size: 121007, Matrix bandwidth:  22.1, Disk: 473 KB
+  Field Recovery            00:00:00   00:00:00  1.02 G  Excitations: 1, Disk: 5.49 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  235 M   Tetrahedra: 18953, Disk: 4.98 KB
+  Matrix Assembly           00:00:00   00:00:00  293 M   Tetrahedra: 18953, Lumped ports: 1, Disk: 690 Bytes
+  Matrix Solve              00:00:03   00:00:02  1.06 G  Type: DCS, Cores: 1, Matrix size: 121007, Matrix bandwidth:  22.1, Disk: 473 KB
+  Field Recovery            00:00:00   00:00:00  1.06 G  Excitations: 1, Disk: 5.49 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  234 M   Tetrahedra: 18953, Disk: 4.98 KB
+  Matrix Assembly           00:00:01   00:00:00  291 M   Tetrahedra: 18953, Lumped ports: 1, Disk: 690 Bytes
+  Matrix Solve              00:00:03   00:00:02  1.05 G  Type: DCS, Cores: 1, Matrix size: 121007, Matrix bandwidth:  22.1, Disk: 473 KB
+  Field Recovery            00:00:00   00:00:00  1.05 G  Excitations: 1, Disk: 5.49 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  70.8 M  Adaptive Pass 10
+                                                         
+                                                         Max Mag. Delta S: 0.01825
+                                                         
+  Adaptive Pass 11                                       Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  37.6 M  Tetrahedra: 21579, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  240 M   Tetrahedra: 21579, Disk: 4.59 KB
+  Matrix Assembly           00:00:00   00:00:00  353 M   Tetrahedra: 21579, Lumped ports: 1, Disk: 540 Bytes
+  Matrix Solve              00:00:02   00:00:03  1.13 G  Type: DCS, Cores: 2, Matrix size: 137689, Matrix bandwidth:  22.2, Disk: 538 KB
+  Field Recovery            00:00:00   00:00:00  1.13 G  Excitations: 1, Disk: 5.99 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  240 M   Tetrahedra: 21579, Disk: 4.59 KB
+  Matrix Assembly           00:00:01   00:00:00  305 M   Tetrahedra: 21579, Lumped ports: 1, Disk: 540 Bytes
+  Matrix Solve              00:00:04   00:00:02  1.17 G  Type: DCS, Cores: 1, Matrix size: 137689, Matrix bandwidth:  22.2, Disk: 538 KB
+  Field Recovery            00:00:00   00:00:00  1.17 G  Excitations: 1, Disk: 5.99 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  238 M   Tetrahedra: 21579, Disk: 4.59 KB
+  Matrix Assembly           00:00:01   00:00:00  303 M   Tetrahedra: 21579, Lumped ports: 1, Disk: 540 Bytes
+  Matrix Solve              00:00:04   00:00:02  1.17 G  Type: DCS, Cores: 1, Matrix size: 137689, Matrix bandwidth:  22.2, Disk: 538 KB
+  Field Recovery            00:00:00   00:00:00  1.17 G  Excitations: 1, Disk: 5.99 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  71.1 M  Adaptive Pass 11
+                                                         
+                                                         Max Mag. Delta S: 0.00947
+                                                         
+  Adaptive Pass 12                                       Multi-Frequency Adaptive Meshing
+  Adaptive Refine           00:00:00   00:00:00  43.8 M  Tetrahedra: 25959, Cores: 1
+                                                         Solving Distributed - up to 3 frequencies in parallel
+                                                         
+  Frequency - 8.2368GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  248 M   Tetrahedra: 25959, Disk: 10 KB
+  Matrix Assembly           00:00:00   00:00:00  381 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.39 KB
+  Matrix Solve              00:00:03   00:00:04  1.37 G  Type: DCS, Cores: 2, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 647 KB
+  Field Recovery            00:00:00   00:00:00  1.37 G  Excitations: 1, Disk: 7.32 MB
+                                                         
+  Frequency - 7.9872GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  249 M   Tetrahedra: 25959, Disk: 10 KB
+  Matrix Assembly           00:00:01   00:00:00  324 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.39 KB
+  Matrix Solve              00:00:05   00:00:03  1.4 G   Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 647 KB
+  Field Recovery            00:00:00   00:00:00  1.4 G   Excitations: 1, Disk: 7.32 MB
+                                                         
+  Frequency - 7.7376GHz                                  Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  248 M   Tetrahedra: 25959, Disk: 10 KB
+  Matrix Assembly           00:00:01   00:00:00  323 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.39 KB
+  Matrix Solve              00:00:05   00:00:03  1.4 G   Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 647 KB
+  Field Recovery            00:00:00   00:00:00  1.4 G   Excitations: 1, Disk: 7.32 MB
+                                                         
+  Data Transfer             00:00:00   00:00:00  71 M    Adaptive Pass 12
+                                                         
+                                                         Max Mag. Delta S: 0.00988
+                                                         
+  Adaptive Meshing                                       Elapsed Time: 00:01:35
+                                                         Adaptive Passes converged
+                                                         
+  Frequency Sweep                                        Time: 11/20/2026 14:09:51
+                                                         HPC: Enabled
+                                                         
+  Solution - Edges_and_f0                                Discrete HFSS Frequency Sweep, Solving Distributed - up to 4 frequencies in parallel, Time: 11/20/2026 14:09:51
+                                                         From 7.7376GHz to 8.2368GHz, 11 Frequencies
+                                                         Frequency: 7.7376GHz has already been solved
+                                                         Frequency: 7.9872GHz has already been solved
+                                                         Frequency: 8.2368GHz has already been solved
+                                                         
+  Frequency - 8.18688GHz                                 Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  216 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:01   00:00:00  296 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.02 KB
+  Matrix Solve              00:00:04   00:00:03  1.37 G  Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 487 Bytes
+  Field Recovery            00:00:00   00:00:00  1.37 G  Excitations: 1, Disk: 114 KB
+                                                         
+  Frequency - 8.13696GHz                                 Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  220 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:01   00:00:00  296 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.02 KB
+  Matrix Solve              00:00:04   00:00:03  1.37 G  Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 487 Bytes
+  Field Recovery            00:00:00   00:00:00  1.37 G  Excitations: 1, Disk: 114 KB
+                                                         
+  Frequency - 8.08704GHz                                 Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  220 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:01   00:00:00  297 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.02 KB
+  Matrix Solve              00:00:04   00:00:03  1.37 G  Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 487 Bytes
+  Field Recovery            00:00:00   00:00:00  1.37 G  Excitations: 1, Disk: 114 KB
+                                                         
+  Frequency - 8.03712GHz                                 Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  220 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:01   00:00:00  296 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.02 KB
+  Matrix Solve              00:00:04   00:00:03  1.37 G  Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 487 Bytes
+  Field Recovery            00:00:00   00:00:00  1.37 G  Excitations: 1, Disk: 114 KB
+                                                         
+  Frequency - 7.93728GHz                                 Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  216 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:03   00:00:00  295 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:05   00:00:03  1.37 G  Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 1.61 KB
+  Field Recovery            00:00:00   00:00:00  1.37 G  Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 7.88736GHz                                 Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  217 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:02   00:00:00  296 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:05   00:00:03  1.37 G  Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 1.61 KB
+  Field Recovery            00:00:00   00:00:00  1.37 G  Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 7.83744GHz                                 Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  217 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:02   00:00:01  296 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:05   00:00:03  1.37 G  Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 1.61 KB
+  Field Recovery            00:00:00   00:00:00  1.37 G  Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 7.78752GHz                                 Z2-02.geat.lab
+  Simulation Setup          00:00:00   00:00:00  217 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:01   00:00:00  295 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 0 Bytes
+  Matrix Solve              00:00:05   00:00:03  1.37 G  Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, Disk: 1.61 KB
+  Field Recovery            00:00:00   00:00:00  1.37 G  Excitations: 1, Disk: 2.81 KB
+                                                         
+  Data Transfer             00:00:00   00:00:00  71.2 M  Discrete frequency sweep
+                                                         
+  Solution - Edges_and_f0                                Elapsed Time: 00:00:22
+                                                         HFSS: Distributed Discrete sweep
+                                                         
+  Solution - Sweep_7p5_8p5                               Interpolating HFSS Frequency Sweep, Solving Distributed - up to 4 frequencies in parallel, Time: 11/20/2026 14:10:16
+                                                         From 7.5GHz to 8.5GHz, 1001 Frequencies
+                                                         
+  Frequency - 8.5GHz                                     Z2-02.geat.lab
+                                                         Distributed Solve Group #1
+  Simulation Setup          00:00:00   00:00:00  245 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:01   00:00:00  325 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.02 KB
+  Matrix Solve              00:00:06   00:00:04  647 M   Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, s-matrix only solve, Disk: 647 KB
+  Field Recovery            00:00:00   00:00:00  647 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 7.5GHz                                     Z2-02.geat.lab
+                                                         Distributed Solve Group #1
+  Simulation Setup          00:00:00   00:00:00  246 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:01   00:00:00  325 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.02 KB
+  Matrix Solve              00:00:06   00:00:04  647 M   Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, s-matrix only solve, Disk: 647 KB
+  Field Recovery            00:00:00   00:00:00  647 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 8GHz                                       Z2-02.geat.lab
+                                                         Distributed Solve Group #1
+  Simulation Setup          00:00:00   00:00:00  244 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:01   00:00:00  324 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.02 KB
+  Matrix Solve              00:00:06   00:00:05  646 M   Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, s-matrix only solve, Disk: 647 KB
+  Field Recovery            00:00:00   00:00:00  646 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+  Frequency - 7.75GHz                                    Z2-02.geat.lab
+                                                         Distributed Solve Group #1
+  Simulation Setup          00:00:00   00:00:00  245 M   Tetrahedra: 25959, Disk: 0 Bytes
+  Matrix Assembly           00:00:01   00:00:00  324 M   Tetrahedra: 25959, Lumped ports: 1, Disk: 2.02 KB
+  Matrix Solve              00:00:06   00:00:04  643 M   Type: DCS, Cores: 1, Matrix size: 165481, Matrix bandwidth:  22.2, s-matrix only solve, Disk: 647 KB
+  Field Recovery            00:00:00   00:00:00  643 M   Excitations: 1, Disk: 2.81 KB
+                                                         
+                                                         Basis Element # 1, Frequency: 8.5GHz; Additional basis points are needed before the interpolation error can be computed.
+                                                         Basis Element # 2, Frequency: 7.5GHz; Additional basis points are needed before the interpolation error can be computed.
+                                                         Basis Element # 3, Frequency: 8GHz; S Matrix Error =  69.558%
+                                                         Basis Element # 4, Frequency: 7.75GHz; S Matrix Error =  18.463%
+                                                         Frequency: 8.2368GHz has already been solved
+                                                         Frequency: 7.88736GHz has already been solved
+                                                         Frequency: 8.13696GHz has already been solved
+                                                         Basis Element # 5, Frequency: 7.88736GHz; S Matrix Error =   2.068%
+                                                         Basis Element # 6, Frequency: 8.13696GHz; S Matrix Error =   0.386%; Secondary solver criterion is not converged
+                                                         Basis Element # 7, Frequency: 8.2368GHz; S Matrix Error =   1.075%
+                                                         Frequency: 8.18688GHz has already been solved
+                                                         Frequency: 8.08704GHz has already been solved
+                                                         Basis Element # 8, Frequency: 8.18688GHz; S Matrix Error =   0.899%
+                                                         Basis Element # 9, Frequency: 8.08704GHz; S Matrix Error =   0.067%; Secondary solver criterion is not converged
+                                                         Frequency: 7.83744GHz has already been solved
+                                                         Frequency: 8.03712GHz has already been solved
+                                                         Basis Element # 10, Frequency: 7.83744GHz; Scattering matrix quantities converged; Passive within tolerance
+                                                         
+  Solution - Sweep_7p5_8p5                               Elapsed Time: 00:00:13
+                                                         Interpolating sweep converged and is passive
+                                                         HFSS: Distributed Interpolating sweep
+                                                         
+  Frequency Sweep                                        Elapsed Time: 00:00:38
+                                                         
+  Simulation Summary                                     
+  Design Validation                                      Elapsed Time: 00:00:00, Total Memory: 66.7 MB
+  Initial Meshing                                        Elapsed Time: 00:00:01, Total Memory: 205 MB
+  Adaptive Meshing                                       Elapsed Time: 00:01:35, Average memory/process: 1.39 GB, Max memory/process: 1.4 GB, Max number of processes/frequency: 1, Total number of cores: 4
+  Frequency Sweep                                        Elapsed Time: 00:00:38, Average memory/process: 1 GB, Max memory/process: 1.37 GB, Max number of processes/frequency: 1, Total number of cores: 4
+                                                         Max solved tets: 25959, Max matrix size: 165481, Matrix bandwidth: 22.2
+                                                         
+  Solution Process                                       Elapsed Time: 00:02:16, ComEngine Memory: 84.5 M
+                                                         Stop Time: 11/20/2026 14:10:30, Status: Normal Completion
+                                                         

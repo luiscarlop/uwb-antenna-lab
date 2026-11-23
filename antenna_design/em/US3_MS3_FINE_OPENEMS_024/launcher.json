@@ -1,0 +1,42 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "3960s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US3_MS3.json",
+    "--out",
+    "em/US3_MS3_FINE_OPENEMS_024",
+    "--mesh",
+    "fine",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9",
+    "--owner-long-convergence"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude routine round 24)",
+  "started_utc": "2026-11-05T17:20:14.254980+00:00",
+  "pre_run_estimate": {
+    "total_cells": 5367120,
+    "steps_est": "~12400 (base 023 physical record 2.54 ns / fine dt 0.205 ps); script estimate 19151",
+    "wall_s_est": "1250-2300 (53 MC/s; host 47-125 MC/s observed) + NF2FF DFT overhead",
+    "worst_case_30000_steps_s": 3093,
+    "peak_rss_mib_est": "~900 (016: 0.89 GB at 5.0 M cells)",
+    "vcpu": 2,
+    "time_limit_s": 4000,
+    "timeout_s": 3960,
+    "timeout_note": ">= external_wall_limit_required_s 3911 (prepared.json) and <= owner convergence limit 4000 s"
+  }
+}

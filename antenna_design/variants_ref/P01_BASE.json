@@ -1,0 +1,51 @@
+{
+  "id": "P01_BASE",
+  "base_design": "P01_rectangular_patch",
+  "evidence": "GEOMETRY_ONLY",
+  "substrate": {
+    "name": "generic_FR4_PROVISIONAL",
+    "eps_r": 4.4,
+    "tan_delta": 0.017,
+    "h_mm": 1.6,
+    "size_mm": [
+      26.0,
+      26.0
+    ]
+  },
+  "metal": {
+    "conductivity_S_m": 58000000.0,
+    "thickness_m": 3.5e-05
+  },
+  "patch_polygon_mm": [
+    [
+      -5.710633256840115,
+      -4.140007854013388
+    ],
+    [
+      5.710633256840115,
+      -4.140007854013388
+    ],
+    [
+      5.710633256840115,
+      4.140007854013388
+    ],
+    [
+      -5.710633256840115,
+      4.140007854013388
+    ]
+  ],
+  "slots_polygon_mm": [],
+  "feed": {
+    "type": "probe_lumped_vertical",
+    "x_mm": 0.0,
+    "y_mm": -1.8216034557658907,
+    "z0_ohm": 50
+  },
+  "changed_vs_base": {},
+  "rationale": "Reference replica of designs.candidates()['P01_rectangular_patch'] (W=11.4212..., L=8.28, feed (0,-0.22 L)) used only to verify patch_openems.py reproduces P01_OPENEMS_001 (same XML SHA). Not a new design.",
+  "computation": {
+    "source": "designs.candidates() at designs.py (values copied with repr round-trip, exact floats)",
+    "W_mm": 11.42126651368023,
+    "L_mm": 8.280015708026776
+  }
+}

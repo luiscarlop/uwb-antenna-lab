@@ -1,0 +1,114 @@
+{
+  "id": "P01_R1",
+  "base_design": "P01_rectangular_patch",
+  "status": "PREPARED_NOT_RUN",
+  "variant_evidence_at_input": "GEOMETRY_ONLY",
+  "variant_file": "/home/user/TFG_Beamforming_FBD/antenna_design/variants/P01_R1.json",
+  "variant_sha256": "bd5d57c4f12525b1d61133eb17065eab01f2eecbf4363f79ef0ae6108ab34e9a",
+  "openEMS_version": "0.37.0.post1.dev40+g5fecbb58d",
+  "CSXCAD_version": "0.7.0.post1.dev8+g626b99f2f",
+  "script_sha256": "7aee07c5f185e6047bfd472064b665e80560dd470102f08eff7f42a0bcf84cc9",
+  "native_xml_sha256": "cbb06b70e22617366650bb849a154aab2eadb85b36f98e18cb28cf53b56c92dc",
+  "center_hz": 7987200000.0,
+  "channel_band_hz": [
+    7737600000,
+    8236800000
+  ],
+  "materials": {
+    "substrate": "generic_FR4_PROVISIONAL",
+    "eps_r": 4.4,
+    "tan_delta_at_f0": 0.017,
+    "h_mm": 1.6,
+    "size_mm": [
+      26.0,
+      26.0
+    ],
+    "dielectric_conductivity_S_m": 0.03323722487554589,
+    "dielectric_loss_model": "constant conductivity; tan_delta(f)=tan_delta(f0)*f0/f",
+    "metal_model": "2D finite conducting sheet",
+    "conductivity_S_m": 58000000.0,
+    "sheet_thickness_m": 3.5e-05,
+    "sheet_API_roundtrip_verified": true,
+    "roughness": "not modeled"
+  },
+  "geometry": {
+    "patch_primitive": "AddBox",
+    "patch_vertices": 4,
+    "slots": 0,
+    "slot_model": null,
+    "polygon_meshing": null
+  },
+  "port": {
+    "reference_ohm": 50,
+    "start_mm": [
+      0.0,
+      -1.683,
+      0
+    ],
+    "stop_mm": [
+      0.0,
+      -1.683,
+      1.6
+    ],
+    "type": "ideal vertical lumped line; no pin/coax connector/aperture/deembedding",
+    "priority": 5
+  },
+  "mesh": {
+    "x": {
+      "cells": 144,
+      "min_step_mm": 0.25,
+      "max_step_mm": 0.5,
+      "max_neighbor_ratio": 1.2599210498948739,
+      "pml_inner_low_mm": -31.0,
+      "pml_inner_high_mm": 31.0
+    },
+    "y": {
+      "cells": 145,
+      "min_step_mm": 0.25,
+      "max_step_mm": 0.5,
+      "max_neighbor_ratio": 1.259921049894876,
+      "pml_inner_low_mm": -31.0,
+      "pml_inner_high_mm": 31.0
+    },
+    "z": {
+      "cells": 86,
+      "min_step_mm": 0.19999999999999996,
+      "max_step_mm": 0.7933989262527774,
+      "max_neighbor_ratio": 1.3195079107728949,
+      "pml_inner_low_mm": -18.768957891113168,
+      "pml_inner_high_mm": 28.652808589977845
+    }
+  },
+  "total_cells": 1795680,
+  "box_half_mm": 35.0,
+  "mesh_grading_limit_used": 1.4,
+  "budget_before_solve": {
+    "maximum_CPUs_threads": 2,
+    "nodal_cells": 1841790,
+    "estimated_RAM_bytes_measured_basis": 295349872,
+    "estimated_RAM_bytes_measured_basis_x2_margin": 590699745,
+    "RAM_basis": "P01_OPENEMS_002 RSS 758256 KiB / 4841937 nodal cells = 0.156602 KiB/cell, x2.0 margin",
+    "estimated_RAM_bytes_conservative_reference_only": 3771985920,
+    "conservative_basis": "2048 B/cell, unmeasured; reference only, not used in the abort rule",
+    "yee_min_cell_reference_step_s": 4.418164372450769e-13,
+    "estimated_actual_timestep_s": 5.129378506969277e-13,
+    "estimated_timesteps": 7662,
+    "estimated_engine_seconds": 266.26028264150943,
+    "worst_case_engine_seconds_30000_steps": 1042.522641509434,
+    "time_basis": "nodal cells * steps / 53 Mcell/s (measured in P01_OPENEMS_002); steps scale with 1/timestep from P01_OPENEMS_002 (10368 steps, record 3.930e-09 s); assumes the same physical record (resonator Q may lengthen it); capped by NrTS",
+    "maximum_timesteps": 30000,
+    "external_wall_limit_required_s": 900,
+    "abort_rule": "do not launch if RAM (measured basis x2) > 8 GiB or estimated time > 1800 s",
+    "launch_allowed_by_budget": true,
+    "abort_reasons": []
+  },
+  "boundaries": "PML_8 all six; coordinates mm",
+  "excitation": {
+    "type": "Gaussian",
+    "center_hz": 7987200000.0,
+    "corner_offset_hz": 1000000000.0
+  },
+  "energy_end_criterion": 1e-05,
+  "mesh_convergence": "NOT_ESTABLISHED: single mesh",
+  "far_field": "not recorded; gain/efficiency/radiated group delay unavailable"
+}

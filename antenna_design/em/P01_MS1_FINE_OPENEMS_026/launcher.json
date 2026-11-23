@@ -1,0 +1,43 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "3800s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/P01_MS1.json",
+    "--out",
+    "em/P01_MS1_FINE_OPENEMS_026",
+    "--mesh",
+    "fine",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9",
+    "--owner-long-convergence"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude routine round 26)",
+  "started_utc": "2026-11-05T19:20:24.626834+00:00",
+  "pre_run_estimate": {
+    "total_cells": 5202340,
+    "steps_est": "~14000 (base 025 physical record 2.28 ns / fine dt ~0.16 ps as observed in 024); script estimate 18983",
+    "wall_s_est": "800-1500 (024: 5.37 M cells, 910 s at 84-98 MC/s); script engine estimate 2508 s",
+    "worst_case_30000_steps_s": 3964,
+    "peak_rss_mib_est": "~930 (prepared.json measured basis; 024: 0.94 GB)",
+    "vcpu": 2,
+    "time_limit_s": 4000,
+    "timeout_s": 3800,
+    "timeout_note": ">= external_wall_limit_required_s 3763 and <= owner convergence limit 4000 s"
+  },
+  "pre_registered_rule": "reports/claude_run_016.md two-mesh rule vs em/P01_MS1_OPENEMS_025; item-2 edges = contiguous -6 dB region containing f0 (em/mesh_compare.py, round 26, committed before the run)"
+}

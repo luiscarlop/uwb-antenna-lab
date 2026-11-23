@@ -1,0 +1,24 @@
+{
+  "timestamp_utc": "2026-11-03T10:25:04.145855+00:00",
+  "source_root": "fc5a90b906af01c4d35797fc95751386c8e2ede5",
+  "submodules": [
+    " bcbc0ad017c0995ace1f55e83b7b32e23b2ac21b AppCSXCAD (heads/master)",
+    " 626b99f2f4d681cb012516b6522b7bc7068ce39c CSXCAD (heads/master)",
+    " 5ac29367ebb7e30e78dd3db13a21464756855599 CTB (heads/master)",
+    " 6a22e41e41b36bd0321d2b720144e757ab2eb7c2 QCSXCAD (heads/master)",
+    " 4b9c845b449b520c4b8c5f23c74cd04820084f81 fparser (heads/master)",
+    " b15f749849610066e6c09da5b5e3f97e3317ba8a hyp2mat (heads/master)",
+    " 5fecbb58d8996a3e6545e7b40584f90b9362e012 openEMS (heads/master)"
+  ],
+  "installation_prefix": "/workspace/openems-install",
+  "dependency_prefix": "/workspace/openems-deps",
+  "budget_before_build": {
+    "cpu_max": 2,
+    "wall_time_seconds": 1200,
+    "estimated_peak_ram_gib_upper": 8,
+    "estimated_disk_gib_upper": 2,
+    "basis": "small headless C++ project plus Cython bindings; no VTK/Qt; estimate, not benchmark"
+  },
+  "official_docs": "openEMS-Project/doc-src/install/clone-build-install.rst",
+  "official_docs_http_error": "docs.openems.de denied by configured proxy (403); official cloned source read instead"
+}

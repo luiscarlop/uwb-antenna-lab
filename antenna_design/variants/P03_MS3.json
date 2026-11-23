@@ -1,0 +1,150 @@
+{
+ "id": "P03_MS3",
+ "base_design": "P03_hex_slot_patch",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "generic_FR4_PROVISIONAL",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 1.6,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_center_mm": [
+  0.0,
+  3.438564
+ ],
+ "patch_polygon_mm": [
+  [
+   4.96,
+   3.438564
+  ],
+  [
+   2.48,
+   7.73405
+  ],
+  [
+   -2.48,
+   7.73405
+  ],
+  [
+   -4.96,
+   3.438564
+  ],
+  [
+   -2.48,
+   -0.856922
+  ],
+  [
+   2.48,
+   -0.856922
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    1.1,
+    3.438564
+   ],
+   [
+    0.55,
+    4.391192
+   ],
+   [
+    -0.55,
+    4.391192
+   ],
+   [
+    -1.1,
+    3.438564
+   ],
+   [
+    -0.55,
+    2.485936
+   ],
+   [
+    0.55,
+    2.485936
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "microstrip_edge_qw",
+  "z0_ohm": 50,
+  "line_width_mm": 3.02,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -6.076922,
+  "transformer_width_mm": 0.72,
+  "transformer_length_mm": 5.22,
+  "transformer_start_y_mm": -6.076922,
+  "patch_edge_y_mm": -0.856922,
+  "connector": {
+   "type": "SMA_edge_launch",
+   "modeled": "50 ohm port at board edge y=-13 (reference plane); connector body not modeled"
+  },
+  "feed_polygons_mm": [
+   [
+    [
+     -1.51,
+     -13.0
+    ],
+    [
+     1.51,
+     -13.0
+    ],
+    [
+     1.51,
+     -6.076922
+    ],
+    [
+     -1.51,
+     -6.076922
+    ]
+   ],
+   [
+    [
+     -0.36,
+     -6.076922
+    ],
+    [
+     0.36,
+     -6.076922
+    ],
+    [
+     0.36,
+     -0.856922
+    ],
+    [
+     -0.36,
+     -0.856922
+    ]
+   ]
+  ]
+ },
+ "changed_vs_base": {
+  "hexagon_circumradius_mm": [
+   4.8,
+   4.96
+  ]
+ },
+ "changed_vs_previous": {
+  "from": "P03_MS2 (EM_SIMULATED, run 007)",
+  "hexagon_circumradius_mm": [
+   4.8,
+   4.96
+  ],
+  "patch_centre_y_mm": [
+   3.3,
+   3.438564
+  ],
+  "reason": "Single-variable scaling (+3.3 %) so that the |S11| minimum (8.25 GHz in 007, f ~ 1/r) moves to f0; patch centre shifted so the bottom flat side stays at y=-0.856922 and the feed (line, transformer, port geometry, mesh planes) is bit-identical. Slot r, material, substrate, feed unchanged."
+ },
+ "rationale": "P03_MS3: unica variable = radio del hexagono 4.8->4.96 mm; alimentacion, ranura, material y placa identicos a P03_MS2. Hipotesis (no resultado): el minimo de |S11| (8.25 GHz en 007) baja ~3 % hacia f0. GEOMETRY_ONLY hasta simular."
+}

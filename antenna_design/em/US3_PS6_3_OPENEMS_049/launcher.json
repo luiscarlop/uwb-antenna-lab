@@ -1,0 +1,36 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "2400s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US3_PS6_3.json",
+    "--out",
+    "em/US3_PS6_3_OPENEMS_049",
+    "--mesh",
+    "base",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9",
+    "--max-timesteps",
+    "60000"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude round 49: owner request: widen US3_PS6, Lp 7.25; prepare run just before in the same folder)",
+  "started_utc": "2026-11-19T15:41:30.288700+00:00",
+  "pre_run_estimate": {
+    "basis": "rf-designer prepare: ~2.3e6 nodal cells, 0.8 GiB with x2 margin, ~830 s",
+    "vcpu": 2
+  }
+}

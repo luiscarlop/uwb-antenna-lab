@@ -1,0 +1,270 @@
+{
+  "id": "US3_PS6_1",
+  "family": "USLOT_MSL_H207_PARASITIC",
+  "base_design": "US3_PS6",
+  "evidence": "GEOMETRY_ONLY",
+  "substrate": {
+    "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ]
+  },
+  "metal": {
+    "conductivity_S_m": 58000000.0,
+    "thickness_m": 3.5e-05
+  },
+  "patch_polygon_mm": [
+    [
+      -5.710633,
+      -3.16
+    ],
+    [
+      5.710633,
+      -3.16
+    ],
+    [
+      5.710633,
+      3.16
+    ],
+    [
+      -5.710633,
+      3.16
+    ]
+  ],
+  "slots_polygon_mm": [
+    [
+      [
+        -2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        1.95
+      ],
+      [
+        1.4,
+        1.95
+      ],
+      [
+        1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        1.95
+      ],
+      [
+        -2.2,
+        1.95
+      ]
+    ]
+  ],
+  "feed": {
+    "type": "microstrip_edge_qw",
+    "z0_ohm": 50,
+    "line_width_mm": 3.92,
+    "line_x_mm": 0.0,
+    "line_start_y_mm": -13.0,
+    "line_end_y_mm": -9.76,
+    "connector": {
+      "type": "none",
+      "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed: 50 ohm line (w 3.92 mm, y -13 -> -9.76, length 3.24 mm) + lambda/4 transformer (w 0.80 mm, l 6.60 mm, y -9.76 -> -3.16) touching the radiating edge y=-3.16 (no inset, no notch)."
+    },
+    "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+    "transformer_width_mm": 0.8,
+    "transformer_length_mm": 6.6,
+    "transformer_start_y_mm": -9.76,
+    "patch_edge_y_mm": -3.16,
+    "feed_polygons_mm": [
+      [
+        [
+          -1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -9.76
+        ],
+        [
+          -1.96,
+          -9.76
+        ]
+      ],
+      [
+        [
+          -0.4,
+          -9.76
+        ],
+        [
+          0.4,
+          -9.76
+        ],
+        [
+          0.4,
+          -3.16
+        ],
+        [
+          -0.4,
+          -3.16
+        ]
+      ]
+    ],
+    "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 0.80 mm -> Zt 102.5 ohm; Kirschning-Jansen eps_eff(f0) 3.197 (GUIDE_MODEL)"
+  },
+  "uslot_params": {
+    "L_mm": 6.32,
+    "W_mm": 11.421266,
+    "s_over_L": 0.34,
+    "Wu_mm": 4.4,
+    "Lu_mm": 2.65,
+    "t_mm": 0.8,
+    "y0_mm": -0.7,
+    "open_toward": "+y"
+  },
+  "parasitic_patches": [
+    {
+      "name": "par1",
+      "z_mm": 1.035,
+      "polygon_mm": [
+        [
+          -5.5,
+          -2.91
+        ],
+        [
+          5.5,
+          -2.91
+        ],
+        [
+          5.5,
+          4.14
+        ],
+        [
+          -5.5,
+          4.14
+        ]
+      ]
+    }
+  ],
+  "parasitic_params": {
+    "Wp_mm": 11.0,
+    "Lp_mm": 7.05,
+    "x_centre_mm": 0.0,
+    "y_min_mm": -2.91,
+    "y_max_mm": 4.14,
+    "y_centre_mm": 0.615,
+    "z_mm": 1.035,
+    "h1_ground_to_parasitic_mm": 1.035,
+    "h2_parasitic_to_patch_mm": 1.035,
+    "overhang_beyond_patch_plus_y_mm": 0.98,
+    "inset_from_patch_edge_minus_y_mm": 0.25,
+    "inset_from_patch_edge_x_mm": 0.211,
+    "clearance_to_transformer_mm": 0.25,
+    "note": "Floating sheet (no via, no probe), same metal as the patch, unchanged with respect to US3_PS6 (Wp 11.0, Lp 7.05 mm, y -2.91...4.14, centre 0.615 mm, z 1.035). The patch edge is y = -3.16 (patch_L/2); the transformer ends there on z = h and the sheet (z = 1.035) starts 0.25 mm above it in y. The edge -2.91 must not be moved (prepare grading check)."
+  },
+  "geometry_checks": {
+    "patch_mm": [
+      11.421266,
+      6.32
+    ],
+    "parasitic_mm": [
+      11.0,
+      7.05
+    ],
+    "parasitic_y_range_mm": [
+      -2.91,
+      4.14
+    ],
+    "par_clearance_to_transformer_plan_mm": 0.25,
+    "slot_copper_to_patch_edge_mm": {
+      "plus_y": 1.21,
+      "minus_y": 2.46
+    },
+    "overhang_plus_y_mm": 0.98,
+    "feed_mm": {
+      "line_50ohm_length": 3.24,
+      "transformer": [
+        0.8,
+        6.6
+      ],
+      "line_width": 3.92
+    },
+    "u_slot_unchanged_absolute_mm": {
+      "Wu": 4.4,
+      "Lu": 2.65,
+      "t": 0.8,
+      "y0": -0.7
+    },
+    "board_margin_mm": "as US3_PS6 / US3_PS1 (26 x 26 mm board)"
+  },
+  "rationale": "Owner request 2026-11-16: PS6 with a slightly longer patch_L to lower the resonance by a few MHz. Reference US3_PS6 (rounds 038 base / 039 fine): single S11 minimum at 8.005 GHz, worst S11 -8.16 dB (base) / -8.14 dB (fine) at 7.7376 GHz, upper edge -10.40 dB (base). GUIDE_MODEL, not an EM result: observed PS5 -> PS6 slope about -5.5 MHz per +0.01 mm (confounded by mesh changes), patch guide -7 MHz per +0.01 mm; +0.03 mm -> about -15 ... -21 MHz, i.e. minimum near 7.984-7.990 GHz (uncertainty at least +-8 MHz). Expected trade-off: the lower edge improves (the minimum approaches f0 = 7.9872 GHz from above) while the upper edge loses margin. GEOMETRY_ONLY; no S11, efficiency or gain is claimed.",
+  "purpose": "Lower the single-minimum resonance of US3_PS6 by about 15-21 MHz by lengthening the driven patch only (patch_L 6.29 -> 6.32 mm); openEMS base + fine mesh.",
+  "changed_vs_previous": {
+    "US3_PS6": {
+      "patch_L_mm": [
+        6.29,
+        6.32
+      ],
+      "derived": {
+        "patch_edge_y_mm": [
+          -3.145,
+          -3.16
+        ],
+        "transformer_start_y_mm": [
+          -9.745,
+          -9.76
+        ],
+        "line_50ohm_length_mm": [
+          3.255,
+          3.24
+        ],
+        "par_clearance_to_transformer_mm": [
+          0.235,
+          0.25
+        ],
+        "overhang_plus_y_mm": [
+          0.995,
+          0.98
+        ]
+      },
+      "note": "single design change: driven patch length +0.03 mm. Parasitic (11.0 x 7.05 mm, y -2.91..4.14, z 1.035), U-slot (absolute), transformer 0.80 x 6.60, material, board and port unchanged. All derived metadata recomputed from the polygons; the stale PS5-inherited metadata of US3_PS6.json (see US3_PS6.errata.json) was NOT copied."
+    }
+  },
+  "pre_registered_hypothesis": {
+    "H0": "Single S11 minimum in 7.980-7.995 GHz (guide: 8.005 - 15...21 MHz = 7.984-7.990 GHz); no second minimum in the channel.",
+    "H1": "Worst S11 in the channel (1 MHz grid, 501 samples) <= -10 dB (038/039: -8.16 / -8.14 dB at 7.7376 GHz). WARNING: the upper channel edge will lose margin (038 upper edge -10.40 dB base) as the minimum moves down; H1 may fail at the upper edge even if the lower edge improves. Not claimed.",
+    "H2": "eta >= 0.55 and realized broadside gain >= 2 dBi at the 11 NF2FF points (PS5 037: eta 0.64-0.69, gain 3.0-4.25 dBi; no efficiency valley expected).",
+    "decision_rule": "H1 and H2 true -> candidate refinement of US3_PS6 (fine mesh and HFSS are owner decisions). Lower edge improves but the upper edge falls below -8 dB -> report the trade-off; the worst edge decides, do not continue patch_L without the owner. Minimum moves by more than 15 MHz away from the guide -> recalibrate the slope with 038/039 and this round before any further change."
+  },
+  "manufacturability": {
+    "layers": "3 copper layers (L1 patch + feed + U-slot at z=h, L2 floating parasitic at z=1.035 mm, L3 ground at z=0) and 2 dielectric layers of ~1.035 mm each: a standard 3-copper-layer FR4 multilayer (core + prepreg/core).",
+    "vias": "none: the parasitic is floating (no probe, no plated through hole in the antenna region); the feed is a planar microstrip.",
+    "min_feature_mm": "U-slot arms 0.8 mm and gaps unchanged; parasitic is a solid rectangle 11.0 x 7.05 mm; smallest planar gap: 0.25 mm in y between the transformer end and the sheet edge (different layers, z offset 1.035 mm); no copper feature < 0.8 mm.",
+    "stackup_note": "Dielectric thickness and the exact z of the buried copper depend on the fabricator's core/prepreg library; typical core thicknesses of ~1.0-1.2 mm and prepreg of 0.1-0.2 mm are only an orientation (NOT verified against a datasheet). The model assumes ONE homogeneous eps_r=4.4 over 2.07 mm, so the fabricator must give the real stackup (the prepreg/core eps_r can differ from the core and sets z_par and k).",
+    "tolerances_to_specify": "layer-to-layer registration and dielectric thickness (+-z_par moves k and f2); etching of patch_L (guide ~7-10 MHz per 0.01 mm; the intended +0.03 mm change corresponds to ~20 MHz). Same rough FR4 + copper-roughness caveat as the rest of the campaign.",
+    "risks": "z_par and registration are not controlled by the TFG; homogeneous provisional FR4 model; a floating inner sheet cannot be inspected or tuned after lamination. The change (+0.03 mm) is small versus etching tolerance (guide ~7-10 MHz per 0.01 mm: an error of +-0.02 mm is about +-15-20 MHz, as large as the intended shift), and the 0.25 mm y offset of the sheet edge from the patch edge is of the order of the layer registration tolerance."
+  },
+  "mesh_hint_lines_mm": {
+    "y": [
+      -0.215,
+      -3.078
+    ]
+  },
+  "mesh_hint_note": "MESH ONLY, no geometry effect. y -0.215 inherited (inside the U base). Hint y changed from -3.06 (US3_PS6, patch edge -3.145) to -3.078 (patch edge now -3.16, parasitic edge -2.91): with -3.06 the fine mesh fails the 1.5 grading limit (ratio 1.714). Prepare-only search 2026-11-16: base and fine both pass only for y in about -3.080...-3.075 (-3.085/-3.082 fail base, -3.07 and above fail fine, -3.09 and below fail), so -3.078 is the middle of a narrow window; any later edit of the geometry needs a new prepare check. A mesh difference from 038/039 (one line moved by 0.018 mm) may be confounded with the patch_L effect.",
+  "owner_request_2026_11_16": "Owner: try PS6 with a slightly larger patch_L (US3_PS6_1) and Wp 10 mm with a slightly smaller patch_L (US3_PS4_2_1), to lower the resonance by a few MHz; name them with their respective versions."
+}

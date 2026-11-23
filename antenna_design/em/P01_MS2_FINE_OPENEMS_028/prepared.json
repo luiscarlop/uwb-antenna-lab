@@ -1,0 +1,365 @@
+{
+  "id": "P01_MS2",
+  "base_design": "P01_MS1",
+  "status": "PREPARED_NOT_RUN",
+  "mesh_profile": "fine",
+  "mesh_profile_rules": {
+    "SUBSTRATE_LINES": 11,
+    "METAL_EDGE_RES_MM": 0.175,
+    "XY_MAX_STEP_MM": 0.35,
+    "Z_MAX_STEP_MM": 0.6
+  },
+  "variant_evidence_at_input": "GEOMETRY_ONLY",
+  "variant_file": "/home/user/TFG_Beamforming_FBD/antenna_design/variants/P01_MS2.json",
+  "variant_sha256": "ec3f559cb1b462b10eaaef79c88feac7946449f46c8f82862ec74c15b8e82854",
+  "openEMS_version": "0.37.0.post1.dev40+g5fecbb58d",
+  "CSXCAD_version": "0.7.0.post1.dev8+g626b99f2f",
+  "script_sha256": "0f8a546f3032461b9f8f81ad78ecdbef686e20f7dc26e6761348384ccdb38367",
+  "native_xml_sha256": "dab07e0bf6b101722b212c139149eef74718ade139ac5aca1310c99b0baef53b",
+  "options": {
+    "edge_port": "lumped",
+    "nf2ff": true,
+    "nf2ff_points": 11
+  },
+  "center_hz": 7987200000.0,
+  "channel_band_hz": [
+    7737600000,
+    8236800000
+  ],
+  "materials": {
+    "substrate": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta_at_f0": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ],
+    "dielectric_conductivity_S_m": 0.03323722487554589,
+    "dielectric_loss_model": "constant conductivity; tan_delta(f)=tan_delta(f0)*f0/f",
+    "metal_model": "2D finite conducting sheet",
+    "conductivity_S_m": 58000000.0,
+    "sheet_thickness_m": 3.5e-05,
+    "sheet_API_roundtrip_verified": true,
+    "roughness": "not modeled"
+  },
+  "geometry": {
+    "patch_primitive": "AddPolygon",
+    "patch_vertices": 4,
+    "slots": 0,
+    "slot_model": null,
+    "microstrip_line_box_mm": [
+      [
+        -1.96,
+        -13.0
+      ],
+      [
+        1.96,
+        -10.761
+      ]
+    ],
+    "feed_boxes_mm": [
+      [
+        [
+          -1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -10.761
+        ]
+      ],
+      [
+        [
+          -0.4,
+          -10.761
+        ],
+        [
+          0.4,
+          -3.661
+        ]
+      ]
+    ],
+    "polygon_meshing": "round 6 rules (fixed_mesh_lines): 1/3-2/3 metal_edge_res rule on every axis-aligned metal/no-metal edge of patch, slots and line (board-edge coincident edges skipped), bounding-box extremes, plain vertex lines (dropped if < 0.1 mm from a rule/user line), merge of lines < 0.05 mm, merge of facing 'outside' lines < 0.7 * res, optional mesh_hint_lines_mm, bounded relaxation of fixed lines (<= 0.04 mm shift, target ratio 1.3 among fixed cells), then SmoothMeshLines with the ratio parameter lowered until the result is <= 1.4 (SMOOTH_RATIO_SEARCH); target 1.4, hard limit 1.5 (recorded in mesh_ratio_above_1p4_by_axis); staircase on oblique edges",
+    "polygon_mesh_report": {
+      "rule_edges": {
+        "x": 6,
+        "y": 3
+      },
+      "dropped_plain": {
+        "x": 12,
+        "y": 10
+      },
+      "merged_close": {
+        "x": 12,
+        "y": 6
+      },
+      "merged_outside_pairs": {
+        "x": 0,
+        "y": 0
+      },
+      "user_lines": {
+        "x": 1,
+        "y": 2
+      },
+      "relaxed_lines": {
+        "x": 2,
+        "y": 0
+      },
+      "max_shift_mm": {
+        "x": 0.03999999999999998,
+        "y": 0.0
+      },
+      "qw_extra_lines_mm": {
+        "hard": {
+          "x": [
+            0.0
+          ],
+          "y": [
+            -10.761,
+            -3.661
+          ]
+        },
+        "plain": {
+          "x": [],
+          "y": []
+        }
+      }
+    },
+    "slot_mesh_check": null,
+    "smoothing_ratio_parameter_used": {
+      "x": 1.25,
+      "y": 1.4
+    },
+    "smoothing_infill_lines_mm": null
+  },
+  "port": {
+    "model": "lumped",
+    "launch_plane_y_mm": -13.0,
+    "reference_ohm": 50.0,
+    "line_width_mm": 3.92,
+    "line_x_mm": 0.0,
+    "connector_declared_in_variant": {
+      "type": "none",
+      "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed identical to US3_MS3: 50 ohm line (w 3.92 mm, y -13 -> -10.761) + lambda/4 transformer (w 0.80 mm, l 7.10 mm) touching the radiating edge y=-3.661 (no inset, no notch)."
+    },
+    "connector_body_modelled": false,
+    "description": "Launch plane = board edge y = -sy/2 (owner decision: SMA at the board edge, connector body not modelled). Default 'msl': openEMS MSLPort (ports.py MSLPort.__init__ lines 321-417 of the installed source: signature (CSX, port_nr, metal_prop, start, stop, prop_dir, exc_dir, excite, FeedShift, MeasPlaneShift, Feed_R); start=[x-w/2, y_launch, h] stop=[x+w/2, y_meas+1 mm, 0], prop_dir 'y' (+y, direction=sign(stop_y-start_y)), exc_dir 'z'; the metal sheet box is added to the same conducting-sheet property as the patch; E_z soft excitation at the mesh line nearest start+FeedShift; Feed_R=50 ohm lumped resistor across the line at the launch plane absorbs the backward wave; voltage probes at 3 y lines around the measurement plane, current probes between them; MSLPort.ReadUIData lines 419-447 extracts beta=sqrt(-dE dH/(E H)) and Z_line=sqrt(E dE/(H dH)) from them). Post-processing (round 7, em/port_postprocess.py POSTPROCESS_MODEL; replaces CalcPort(ref_plane_shift) which re-used the ill-conditioned openEMS beta and gave |S11| up to 1.26 in P02_MS1_OPENEMS_006): U = U_B, I = mean(I_A, I_B)/cos(beta D/2); beta from cos(beta D) = (U_A + U_C)/(2 U_B) with analytic Hammerstad-Jensen + Getsinger fallback; fixed 50 ohm reference (a = (U + 50 I)/2, S11 = (U - a)/a, Zin = U/I) at the measurement plane (primary) and, over an ideal lossless 50 ohm line with that beta, at the launch plane. Line loss between the planes is neglected and a numerical Z_line different from 50 ohm is not calibrated. Fallback 'lumped': vertical 50 ohm LumpedPort on the line end at y = -sy/2, x in [x-w/2, x+w/2], z in [0, h] (same as the openEMS RadarUWBTutorial.py edge-fed monopole, which places its lumped port at the board edge); its U/I are measured directly at the launch plane and include the port's own step discontinuity.",
+    "type": "vertical lumped port on the end of the line at the board edge; no edges2grid (grid lines come from the microstrip rules); no pin/coax/aperture/de-embedding",
+    "start_mm": [
+      -1.96,
+      -13.0,
+      0
+    ],
+    "stop_mm": [
+      1.96,
+      -13.0,
+      2.07
+    ],
+    "priority": 5,
+    "reference_plane_y_mm": -13.0,
+    "reference_plane": "board edge (U and I measured at the port itself)"
+  },
+  "mesh": {
+    "x": {
+      "cells": 214,
+      "min_step_mm": 0.17499999999999982,
+      "max_step_mm": 0.34920634920635507,
+      "max_neighbor_ratio": 1.4031007751937985,
+      "pml_inner_low_mm": -32.20634920634921,
+      "pml_inner_high_mm": 32.20634920634921
+    },
+    "y": {
+      "cells": 221,
+      "min_step_mm": 0.058333333333333126,
+      "max_step_mm": 0.34920634920635507,
+      "max_neighbor_ratio": 1.3480061545972948,
+      "pml_inner_low_mm": -32.20634920634921,
+      "pml_inner_high_mm": 32.2063492063492
+    },
+    "z": {
+      "cells": 110,
+      "min_step_mm": 0.20699999999999985,
+      "max_step_mm": 0.5980299974773793,
+      "max_neighbor_ratio": 1.3048038402447701,
+      "pml_inner_low_mm": -20.215760020181005,
+      "pml_inner_high_mm": 30.279184946666636
+    }
+  },
+  "mesh_ratio_above_1p4_by_axis": {
+    "x": 1.4031007751937985
+  },
+  "total_cells": 5202340,
+  "box_half_mm": 35.0,
+  "mesh_grading_limit_used": 1.5,
+  "budget_before_solve": {
+    "maximum_CPUs_threads": 2,
+    "nodal_cells": 5298030,
+    "estimated_RAM_bytes_measured_basis": 931413259,
+    "estimated_RAM_bytes_measured_basis_x2_margin": 1862826519,
+    "RAM_basis": "P01_OPENEMS_002 RSS 758256 KiB / 4841937 nodal cells = 0.156602 KiB/cell, x2.0 margin",
+    "estimated_RAM_bytes_conservative_reference_only": 10850365440,
+    "conservative_basis": "2048 B/cell, unmeasured; reference only, not used in the abort rule",
+    "yee_min_cell_reference_step_s": 1.78331043227088e-13,
+    "estimated_actual_timestep_s": 2.070378879423701e-13,
+    "estimated_timesteps": 18983,
+    "estimated_engine_seconds": 2508.1242187924527,
+    "worst_case_engine_seconds_30000_steps": 3963.742641509434,
+    "time_basis": "nodal cells * steps / 53 Mcell/s (measured in P01_OPENEMS_002); steps scale with 1/timestep from P01_OPENEMS_002 (10368 steps, record 3.930e-09 s); assumes the same physical record (resonator Q may lengthen it); capped by NrTS",
+    "maximum_timesteps": 30000,
+    "external_wall_limit_required_s": 3763,
+    "abort_rule": "do not launch if RAM (measured basis x2) > 8 GiB or estimated time > 4000 s",
+    "time_limit_s": 4000.0,
+    "time_limit_basis": "owner decision 2026-11-05: up to 4000 s for convergence runs",
+    "launch_allowed_by_budget": true,
+    "abort_reasons": [],
+    "nf2ff_overhead": {
+      "added_cell_equivalents_per_step": 1704582.0,
+      "added_dump_RAM_bytes": 81819936,
+      "basis": "UNMEASURED assumption: each DFT accumulation (1 field component, 1 frequency, 1 face node) costs 0.167 of a full Yee cell update; face nodes x 6 components x 11 frequencies; dump RAM = complex<float> x face nodes x 6 x n_freq (the x2 margin applies); NF2FF post-processing (CalcNF2FF, 4 phi x 37 theta x n_freq) is separate and not part of the engine time",
+      "time_without_nf2ff_s": 1897.594405471698
+    }
+  },
+  "boundaries": "PML_8 all six; coordinates mm",
+  "excitation": {
+    "type": "Gaussian",
+    "center_hz": 7987200000.0,
+    "corner_offset_hz": 2500000000.0,
+    "option": "--excitation-fc-hz (default 1e9 = XML of 001/004/005/006)",
+    "nominal_minus20dB_range_hz": [
+      5458154784.358089,
+      10516245215.64191
+    ],
+    "nominal_range_rule": "spectrum exp(-2.25 (f - f0)^2 / fc^2) (openEMS excitation.cpp CalcGaussianPulse/MaxFreq): -20 dB at f0 +- 1.0116 fc",
+    "wideband_grid_hz": [
+      5460000000.0,
+      10520000000.0,
+      5000000.0
+    ],
+    "pulse_length_s": 1.1459155902616464e-09,
+    "pulse_length_rule": "openEMS CalcGaussianPulsExcitation: 2 * 9 / (2 pi fc)",
+    "NrTS": 30000,
+    "EndCriteria": 1e-05,
+    "NrTS_EndCriteria_note": "pulse length scales as 1/fc (fc 1 GHz: 2.87 ns; 2.5 GHz: 1.15 ns) and is far below the 30000-step cap; the energy criterion is relative to the peak energy, so it is unchanged; the step estimate in budget_before_solve keeps the 006 record length (conservative: a shorter pulse cannot lengthen the ring-down). Higher f_max only raises the probe sampling rate. Cells: xy <= 0.5 mm (lambda_FR4/27 at 10.5 GHz), air z <= 0.8 mm (lambda0/36). PML_8 and the NF2FF box (17.5 mm) are less effective at 5.5 GHz (box 0.32 lambda): outside-band content is for the port only; NF2FF frequencies stay in the channel."
+  },
+  "energy_end_criterion": 1e-05,
+  "mesh_convergence": "NOT_ESTABLISHED: single mesh",
+  "far_field": {
+    "enabled": true,
+    "name": "nf2ff",
+    "model": "openEMS.CreateNF2FFBox(frequency=[...]) (openEMS.pyx lines 464-521; frequency kw selects frequency-domain E/H dumps, nf2ff.py lines 65-80, dump_type 10/11, single-sided DFT weights Common/processfields_fd.cpp lines 103-106, the same single-sided convention as the port probes DFT_time2freq utilities.py lines 27-41, so Prad and port powers are directly comparable as in Tutorials/Helical_Antenna.py line 179 and RadarUWBTutorial.py line 182). Box = the default derived from the PML_8 boundaries: faces on mesh line index 9 / -10 (one cell inside the PML region, in air, outside the board and the substrate; no conductor crosses the box because the SMA/port is inside the board). CalcNF2FF(sim_path, freq, theta, phi, radius=1 m, center in METRES, read_cached=False): E_theta/E_phi include the factor exp(-jkr)/r at r = 1 m (nf2ff_calc.cpp lines 503-513), P_rad = |E|^2/(2 Z0) in W/m^2, Prad = net Poynting flux through the box (nf2ff_calc.cpp line 414, independent of the sampled angles), Dmax = max over the SAMPLED directions only (line 525). Quantities derived here: D = 4 pi r^2 P_rad / Prad; gain (IEEE, excludes mismatch) = 4 pi r^2 P_rad / P_acc; realised gain = 4 pi r^2 P_rad / P_inc (the formula of RadarUWBTutorial.py line 182, Dmax*Prad/P_inc); radiation efficiency = Prad / P_acc with P_acc = 0.5 Re(U I*) at the port reference plane (Helical_Antenna.py line 179; MSL edge ports since round 7: measurement plane, fixed 50 ohm, so the ~4.9 mm of feed line before it is outside the efficiency); total efficiency = Prad / P_inc. Prad contains radiation only; conductor, dielectric and any feed-stub loss are in P_acc - Prad. Vertical lumped ports (probe feed, round 12): P_inc and P_acc come from openEMS Port.CalcPort at the port (reference = the 50 ohm port resistance, no plane shift), so the probe is part of the antenna; same NF2FF box, same single-sided DFT convention.",
+    "frequencies_hz": [
+      7737600000.0,
+      7787520000.0,
+      7837440000.0,
+      7887360000.0,
+      7937280000.0,
+      7987200000.0,
+      8037120000.0,
+      8087040000.0,
+      8136960000.0,
+      8186880000.0,
+      8236800000.0
+    ],
+    "frequency_points": 11,
+    "domain": "frequency (E/H FD dumps, dump_type 10/11)",
+    "box_start_mm": [
+      -31.857142857142858,
+      -31.857142857142858,
+      -19.61773002270363
+    ],
+    "box_stop_mm": [
+      31.857142857142858,
+      31.857142857142858,
+      29.689083064999966
+    ],
+    "box_directions": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "box_mirror": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "box_face_nodes": 154962,
+    "box_distance_to_board_edge_mm": [
+      18.857142857142858,
+      18.857142857142858,
+      19.61773002270363
+    ],
+    "box_distance_in_lambda0": 0.5024001351914311,
+    "box_distance_to_board_edge_in_lambda_at_5p5GHz_xy_z": [
+      0.3459536187340834,
+      0.3459536187340834,
+      0.35990737006756174
+    ],
+    "box_distance_to_board_edge_in_lambda_at_5p46GHz_note": "lambda at 5.5 GHz = 54.5 mm; the box is in the near field of the board below ~5.5 GHz",
+    "theta_deg": [
+      0.0,
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      35.0,
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0,
+      85.0,
+      90.0,
+      95.0,
+      100.0,
+      105.0,
+      110.0,
+      115.0,
+      120.0,
+      125.0,
+      130.0,
+      135.0,
+      140.0,
+      145.0,
+      150.0,
+      155.0,
+      160.0,
+      165.0,
+      170.0,
+      175.0,
+      180.0
+    ],
+    "phi_deg": [
+      0.0,
+      90.0,
+      180.0,
+      270.0
+    ],
+    "radius_m": 1.0,
+    "phase_center_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "cuts": "phi=0/180 (xz plane) and phi=90/270 (yz plane), theta 0..180 every 5 deg",
+    "dmax_caveat": "Dmax from openEMS is the maximum over the sampled directions only; D(theta,phi) here uses Prad",
+    "radiated_group_delay": "ENABLED_DIAGNOSTIC (11 points): Radiated group delay (only with 11 points): H(f) = E_far(theta=0, phi=0, f) exp(+j k r) / a_inc(f), with a_inc the incident-wave voltage at the reference plane of the port (same plane as S11: launch plane for MSL edge ports, the lumped port itself for the vertical probe port: no plane shift, no beta), r = 1 m, k = 2 pi f / c0. E_theta and E_phi of the phi=0 cut are the x and y components at broadside (theta_hat = x_hat, phi_hat = y_hat at phi = 0). tau_g = -d arg(H)/d omega from the unwrapped phase with central differences (one-sided at the ends). The excitation spectrum and its phase cancel; the NF2FF phase centre only adds a constant (z of the centre / c0 at broadside). The absolute value contains the constant electrical length of the line and of the stub; only the variation over the band (ripple) is meaningful. DIAGNOSTIC: not validated against a reference; 49.92 MHz spacing is below the DTFT resolution 1/T_record of the run, so adjacent samples are not independent.",
+    "cpu_note": "CalcNF2FF uses numThreads=0 (all hardware threads) but the process runs under taskset <= 2 CPUs",
+    "assumptions": [
+      "PML_8 thin absorber 4 mm (0.1 lambda0) next to the box (box 1 cell inside it, default derived by openEMS); box-to-board distance 17.5 mm = 0.47 lambda0 at f0",
+      "near-field box includes the finite 26x26 mm ground and substrate edge fields; no substrate/ground crosses the box faces"
+    ]
+  }
+}

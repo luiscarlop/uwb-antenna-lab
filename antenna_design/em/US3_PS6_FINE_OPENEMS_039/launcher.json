@@ -1,0 +1,41 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "3960s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US3_PS6.json",
+    "--out",
+    "em/US3_PS6_FINE_OPENEMS_039",
+    "--mesh",
+    "fine",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9",
+    "--max-timesteps",
+    "60000",
+    "--owner-long-convergence"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude round 39: fine mesh of US3_PS6, two-mesh check with 038)",
+  "started_utc": "2026-11-16T07:25:28.929498+00:00",
+  "pre_run_estimate": {
+    "cells": 5316960,
+    "ram_gb": "<=1.9",
+    "steps": "~44000 (038: 31861 steps at dt 2.85e-13 -> same physical record at dt 2.05e-13)",
+    "wall_s": "2400-3200",
+    "vcpu": 2,
+    "owner_long_convergence": "owner decision 2026-11-05/13: up to 4000 s for fine/xfine convergence runs"
+  }
+}

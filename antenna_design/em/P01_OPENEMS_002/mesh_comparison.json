@@ -1,0 +1,32 @@
+{
+  "mesh_001": {
+    "channel_worst_s11_db": -1.941491268577658,
+    "channel_worst_frequency_hz": 8236800000.0,
+    "channel_best_s11_db": -7.628416221729603,
+    "min_abs_s11_db_7p5_8p5GHz": -8.929399148470466,
+    "min_abs_s11_frequency_hz": 7627000000.0,
+    "meets_minus6db_all_channel_samples": false,
+    "meets_minus10db_all_channel_samples": false,
+    "channel_samples_above_minus6db": 417
+  },
+  "mesh_002": {
+    "channel_worst_s11_db": -1.7522102840178855,
+    "channel_worst_frequency_hz": 8236800000.0,
+    "channel_best_s11_db": -6.8530938516753315,
+    "min_abs_s11_db_7p5_8p5GHz": -7.977145423633595,
+    "min_abs_s11_frequency_hz": 7626000000.0,
+    "meets_minus6db_all_channel_samples": false,
+    "meets_minus10db_all_channel_samples": false,
+    "channel_samples_above_minus6db": 450
+  },
+  "samples": 1003,
+  "channel_samples": 501,
+  "max_abs_delta_s11_complex_channel": 0.09535214588867244,
+  "max_abs_delta_s11_complex_all": 0.09541289804015225,
+  "max_abs_delta_s11_db_channel": 0.7753223700542717,
+  "mean_abs_delta_s11_db_channel": 0.3832473152225369,
+  "max_abs_delta_s11_db_all": 0.9532893679838796,
+  "delta_min_frequency_hz": -1000000.0,
+  "interpretation": "Sensitivity of S11 to two meshes only; mesh convergence NOT_ESTABLISHED. No far field: gain/efficiency/radiated group delay unavailable.",
+  "mesh_convergence": "NOT_ESTABLISHED"
+}

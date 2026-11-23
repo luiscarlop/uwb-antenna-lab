@@ -1,0 +1,7 @@
+{
+  "exit_code": 1,
+  "wall_seconds": 101.99407926000003,
+  "user_cpu_seconds": 174.622735,
+  "system_cpu_seconds": 16.269669,
+  "maximum_child_RSS_kib": 431460
+}

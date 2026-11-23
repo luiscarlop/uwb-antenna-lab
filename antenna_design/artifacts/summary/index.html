@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antena IR-UWB canal 9 · resumen visual</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="summary_data.js"></script>
+<script src="lines_data.js"></script>
+<style>
+
+/* Layout: header + verdict strip; 2-column grid of chart cards (S11, Smith, efficiency, gain, pattern); notes. One column on phones. */
+:root{--bg:#f5f6f4;--surface:#fcfcfb;--ink:#15191a;--ink-2:#4a5256;--ink-3:#7b8488;--rule:#dde2e0;--band:rgba(42,120,214,.08);
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--s6:#008300;--w1:#7b3fbf;--warn:#8a5a00;--warn-bg:#f8eed8;
+--f-display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;--f-body:"IBM Plex Sans",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111415;--surface:#1a1a19;--ink:#eef0ef;--ink-2:#b9c0c2;--ink-3:#8a9396;--rule:#2e3436;--band:rgba(57,135,229,.12);
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#0ca30c;--w1:#a77de0;--warn:#f0b35a;--warn-bg:#3a2a10;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111415;--surface:#1a1a19;--ink:#eef0ef;--ink-2:#b9c0c2;--ink-3:#8a9396;--rule:#2e3436;--band:rgba(57,135,229,.12);
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#0ca30c;--w1:#a77de0;--warn:#f0b35a;--warn-bg:#3a2a10;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 56px;display:grid;gap:18px}
+h1{font-family:var(--f-display);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.2rem);line-height:1.15;margin:0}
+h2{font-family:var(--f-display);font-weight:600;font-size:1.05rem;margin:0 0 2px}
+p{margin:0;max-width:80ch}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.lead{color:var(--ink-2)}
+.warn{background:var(--warn-bg);border-left:3px solid var(--warn);padding:10px 14px;border-radius:6px;font-size:.9rem;max-width:none}
+.warn b{color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 12px 8px;min-width:0}
+.plot{height:400px}
+.cap{font-size:.8rem;color:var(--ink-3);margin-top:4px}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden;flex-wrap:wrap}
+.seg button{all:unset;cursor:pointer;padding:4px 9px;font-size:.8rem;color:var(--ink-2);font-family:var(--f-mono)}
+.seg button[aria-pressed="true"]{background:var(--band);color:var(--s1);font-weight:600}
+.seg button:focus-visible{outline:2px solid var(--s1);outline-offset:-2px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:4px 0}
+.note{font-size:.84rem;color:var(--ink-3);max-width:95ch}
+.note li{margin:3px 0}
+
+
+.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--bg);z-index:5;padding-top:6px}
+.tabs button{all:unset;cursor:pointer;padding:9px 14px;font-family:var(--f-display);font-weight:600;font-size:.95rem;color:var(--ink-3);border-bottom:3px solid transparent}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--s1)}
+.tabs button:focus-visible{outline:2px solid var(--s1);outline-offset:-2px}
+.tab{display:none;gap:16px}.tab.on{display:grid}
+.cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px}
+.geo{height:260px}
+table.m{border-collapse:collapse;width:100%;font-size:.84rem}
+table.m th,table.m td{border-bottom:1px solid var(--rule);padding:5px 8px;text-align:right;white-space:nowrap}
+table.m th:first-child,table.m td:first-child{text-align:left}
+table.m th{font-family:var(--f-mono);font-weight:500;color:var(--ink-3);font-size:.74rem}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:.7rem;padding:1px 6px;border-radius:4px;border:1px solid var(--rule);color:var(--ink-2);margin-left:6px}
+.kv{font-family:var(--f-mono);font-size:.78rem;color:var(--ink-2)}
+#orq svg{width:100%;height:auto;display:block}
+.orq-node rect{fill:var(--surface);stroke:var(--rule);stroke-width:1.2}
+.orq-node.g-b rect{stroke:var(--s1)}.orq-node.g-p rect{stroke:var(--w1)}.orq-node.g-g rect{stroke:var(--s3)}
+.orq-node.main rect{stroke:var(--s1);stroke-width:2.2}
+.orq-node text{fill:var(--ink);font-family:var(--f-body);font-size:13.5px;font-weight:600}
+.orq-node .sub{fill:var(--ink-3);font-size:11.5px;font-weight:400;font-family:var(--f-mono)}
+.orq-lbl{fill:var(--ink-2);font:600 12px var(--f-mono)}
+.flow{fill:none;stroke:var(--ink-3);stroke-width:1.5;stroke-linecap:round}
+.flow.b{stroke:var(--s1)}.flow.p{stroke:var(--w1)}.flow.g{stroke:var(--s3)}
+.mk-n{fill:var(--ink-3)}.mk-b{fill:var(--s1)}.mk-p{fill:var(--w1)}.mk-g{fill:var(--s3)}
+.dot.n{fill:var(--ink-3)}.dot.b{fill:var(--s1)}.dot.p{fill:var(--w1)}.dot.g{fill:var(--s3)}
+@media (prefers-reduced-motion:reduce){.dot{display:none}}
+svg.rg{display:block;width:100%;height:auto}
+svg.rg text{font-family:var(--f-body);font-size:11.5px;fill:var(--ink-2)}
+svg.rg .hd{font-family:var(--f-mono);font-size:11px;fill:var(--ink-3);letter-spacing:.06em}
+svg.rg .nd{fill:var(--ink);font-size:13.5px;font-weight:600}
+svg.rg .nt{fill:var(--ink-3);font-size:11px;font-family:var(--f-mono)}
+svg.rg .act{fill:var(--ink)}
+.orq-leg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.8rem;color:var(--ink-2);margin:6px 0 2px}
+.orq-leg i{display:inline-block;width:22px;height:0;border-top:3px dashed;vertical-align:middle;margin-right:6px}
+.steps{font-size:.84rem;color:var(--ink-2);columns:2;column-gap:28px;max-width:none}
+@media (max-width:800px){.steps{columns:1}}
+.steps li{margin:3px 0;break-inside:avoid}
+.ag-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:8px}
+@media (max-width:760px){.ag-grid{grid-template-columns:minmax(0,1fr)}}
+.ag{min-width:0;padding:6px 4px 8px;border-top:1px solid var(--rule)}
+.ag-no{margin:2px 0 0;font-size:.78rem;color:var(--ink-3);max-width:none;line-height:1.4}.ag-no b{color:var(--warn);font-weight:500}
+.legend-dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.vlist{display:flex;flex-wrap:wrap;gap:6px 16px;margin:6px 0 2px}
+.vlist label{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--ink-2);cursor:pointer}
+.vlist input{accent-color:var(--s1);margin:0}
+.vlist svg{width:30px;height:8px;flex:none}
+.read{font-size:.92rem;color:var(--ink)}
+table.m td.l{white-space:normal;min-width:240px;max-width:380px;text-align:left;font-size:.76rem;color:var(--ink-3)}
+table.m td.nm{white-space:nowrap}
+@media (max-width:600px){#t-lin .plot{height:340px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">TFG · antena IR-UWB IEEE 802.15.4z canal 9 (7,7376–8,2368 GHz) · resumen visual</div>
+  <h1>Del elemento al array virtual MIMO: candidatos, resultados y método</h1>
+  <p class="lead">Ordena los datos de la campaña: geometría de los candidatos, diagramas del array físico y virtual (HFSS), comparativa de S11, eficiencia, ganancia, carta de Smith y retardo de grupo, y la arquitectura del sistema de agentes que los ha producido. La página de detalle «U-slot con parche parásito · openEMS» sigue siendo la referencia completa.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+
+  <section class="tab" id="t-cand" role="tabpanel">
+    <p class="warn"><b>Estado:</b> openEMS (FDTD, malla base salvo indicación) para todos; HFSS 2025.1 convergido para los elementos US3_PS4_2_1, US3_PS6, US3_PS6_4 y P01_MS2 (este último con criterio ΔS 0,02). FR4 homogéneo provisional (εr 4,4, tanδ 0,017, h 2,07 mm), puerto lumped de 50 Ω en el borde de la placa, sin conector. Las métricas de la tabla se calculan en la página a partir de los mismos datos que las gráficas.</p>
+    <div class="cands" id="cands"></div>
+    <div class="card"><h2>Métricas en el canal</h2><div style="overflow-x:auto"><table class="m" id="mtab"></table></div>
+      <p class="cap">Peor S11 y fracción ≤ −10 dB sobre la rejilla del fichero (openEMS 5 MHz salvo US3_PS6_4, en 1 MHz; HFSS 1 MHz). η = P_rad/P_aceptada y ganancia realizada broadside en las 11 frecuencias del canal. Rizado del retardo de grupo: pico a pico del τ_g broadside en el canal.</p></div>
+  </section>
+
+  <section class="tab" id="t-arr" role="tabpanel">
+    <div class="card">
+      <h2>Arrays 1×4 y 1×5 en HFSS: haz físico y array virtual MIMO (1 TX + 2 RX)</h2>
+      <p class="cap" style="margin-top:0">Campos embebidos de HFSS (1 W en cada puerto, el resto a 50 Ω). Haz físico: 5 puertos a 1 W en fase (ganancia realizada, dBi). Array virtual: suma coherente de los canales de ida y vuelta E_t·E_r copolares (Ludwig-3 y), 12 adquisiciones en el 1×4 y 30 en el 1×5, normalizado (dB). Evidencia: S, campos y parámetros de array EM_SIMULATED; haces virtuales: modelo guía. El τ_g tiene solo 3 puntos en los arrays de P01_MS2, US3_PS6 y US3_PS6_4 (una pendiente, no un rizado) y 5 puntos a 124,8 MHz en ARR1x5_US3_PS4_2_1 (orientativo). Convergencia adaptativa: US3_PS4_2_1 con ΔS ≤ 0,01 en 15 pasos (sin 20 mm); US3_PS6_4 con ΔS < 0,01 en sus 11 pasos; US3_PS6 con ΔS < 0,01 documentado solo en 13,5, 18,2 y 20,5 mm (3 de 16); P01_MS2 1×4 y 1×5 con ΔS 0,02 en todos los pasos. Estado: EM_SIMULATED (S, campos y parámetros de array); haces virtuales: modelo guía. Peor Sii de ARR1x5_US3_PS4_2_1 a 18,2 mm: −10,49 dB (≈ −10 dB a 0°, ±0,4 dB de malla).</p>
+      <div class="row"><span class="cap" style="margin:0">Array:</span><span class="seg" id="a-arr"></span><span class="cap" style="margin:0 0 0 10px">arr_d (mm):</span><span class="seg" id="a-pitch"></span></div>
+      <div class="row"><span class="cap" style="margin:0">Frecuencia:</span><span class="seg" id="a-f"></span><span class="cap" style="margin:0 0 0 10px">3D:</span><span class="seg" id="a-mode"></span><span class="cap" style="margin:0 0 0 10px">Apuntamiento (xz):</span><span class="seg" id="a-steer"></span></div>
+      <div class="grid" style="gap:10px"><div class="plot" id="axz"></div><div class="plot" id="ayz"></div></div>
+      <div class="card" id="acmp" style="margin:10px 0"></div>
+      <div class="card" id="amono" style="margin:10px 0"></div>
+      <div class="grid" style="gap:10px"><div class="plot" id="a3d" style="height:540px"></div><div class="plot" id="agd" style="height:540px"></div></div>
+      <p class="cap">Cortes: físico (continuo, dBi, eje izquierdo) y virtual (discontinuo, dB normalizado, eje derecho); las líneas con topes marcan el ancho de haz a −3 dB. 3D: radio = nivel por encima de −30 dB respecto al máximo; el array se dibuja a escala en z = 0 (sustrato verde, cobre, ranura y parásito enterrado con rayado rosa) y, en modo virtual, los elementos virtuales en x_t + x_r con su multiplicidad. La escala diagrama/placa es solo visual. Retardo de grupo en broadside del haz físico (una vía) y del virtual (ida y vuelta, ≈ 2×); con 3–5 frecuencias es una estimación gruesa.</p>
+    </div>
+  </section>
+
+  <section class="tab" id="t-cmp" role="tabpanel">
+    <div class="row"><span class="cap" style="margin:0">Mostrar:</span><span class="seg" id="c-src"></span></div>
+    <div class="grid">
+      <div class="card"><h2>|S11| (dB)</h2><div class="plot" id="cs11"></div><p class="cap">Franja: canal 9. Referencias −6 y −10 dB. Continuo openEMS, discontinuo HFSS.</p></div>
+      <div class="card"><h2>Carta de Smith (Z/50 Ω)</h2><div class="plot" id="csmith"></div><p class="cap">7,0–9,0 GHz (HFSS y US3_PS6_4 en 7,5–8,5 GHz). El lazo cerca del centro es la segunda resonancia acoplada del parásito.</p></div>
+      <div class="card"><h2>Eficiencia de radiación</h2><div class="plot" id="ceta"></div><p class="cap">P_rad / P_aceptada en 11 frecuencias del canal; el valle de US3_PS4 / US3_PS4_2_1 es la resonancia poco radiante.</p></div>
+      <div class="card"><h2>Ganancia realizada broadside (dBi)</h2><div class="plot" id="cgr"></div><p class="cap">Incluye desadaptación y pérdidas.</p></div>
+      <div class="card" style="grid-column:1/-1"><h2>|S11| de variantes de un mismo diseño</h2>
+        <div class="row"><span class="seg" id="v-fam"></span></div><div class="plot" id="cvar" style="height:420px"></div>
+        <p class="cap">openEMS, rejilla de 5 MHz. Malla base salvo «malla fina».</p></div>
+      <div class="card" style="grid-column:1/-1"><h2>Retardo de grupo radiado τ_g (copolar, broadside, diagnóstico)</h2><div class="plot" id="cgd" style="height:420px"></div>
+        <p class="cap">τ_g = −d(arg E_co)/dω de la componente copolar del campo lejano. Incluye línea y transformador: importa el rizado en el canal, no el valor absoluto (rizado alto = el pulso IR-UWB se ensancha y deforma). El retardo negativo de US3_PS4 y US3_PS4_2_1 hacia 8,1–8,2 GHz es la firma de la resonancia poco radiante dentro del canal.</p></div>
+    </div>
+  </section>
+
+  <section class="tab" id="t-lin" role="tabpanel">
+    <div class="row"><span class="cap" style="margin:0">Línea:</span><span class="seg" id="l-sel"></span></div>
+    <div class="card"><h2 id="l-title"></h2><p class="read" id="l-read"></p>
+      <div class="vlist" id="l-vars"></div>
+      <p class="cap" id="l-miss"></p></div>
+    <div class="grid">
+      <div class="card"><h2>|S11| (dB)</h2><div class="plot" id="ls11"></div><p class="cap">Franja: canal 9. Referencias −6 y −10 dB. Continuo malla base, discontinuo malla fina, punteado HFSS.</p></div>
+      <div class="card"><h2>Carta de Smith (Z/50 Ω)</h2><div class="plot" id="lsm"></div><p class="cap">Trazo grueso: canal 9; fino: resto de 7,5–8,5 GHz.</p></div>
+      <div class="card"><h2>Eficiencia de radiación</h2><div class="plot" id="leta"></div><p class="cap">P_rad / P_aceptada en las frecuencias del canal.</p></div>
+      <div class="card"><h2>Ganancia realizada broadside (dBi)</h2><div class="plot" id="lg"></div><p class="cap">Incluye desadaptación y pérdidas.</p></div>
+      <div class="card" style="grid-column:1/-1"><h2>Retardo de grupo radiado τ_g (ps; copolar, broadside, diagnóstico)</h2><div class="plot" id="lgd" style="height:380px"></div><p class="cap">Componente copolar del campo lejano; importa el rizado en el canal, no el valor absoluto.</p></div>
+    </div>
+    <div class="card"><h2>Métricas por variante (calculadas en la página)</h2><div style="overflow-x:auto"><table class="m" id="ltab"></table></div>
+      <p class="cap">Sobre la rejilla del fichero dentro del canal 7,7376–8,2368 GHz (S11 de openEMS en rejilla de 1 MHz entre 7,5 y 8,5 GHz; HFSS, 1 MHz). Mínimos: mínimos locales de |S11| ≤ −6 dB (si no hay, el mínimo global). η y ganancia: valores en las frecuencias del canal. Región ≤ −10 dB: tramos de toda la rejilla que tocan el canal (puede salirse del canal). Rizado: pico a pico de τ_g. «—»: magnitud no disponible. La columna de cambio es la descripción de <code>campaign_state.json</code> (em_runs[].change_vs).</p></div>
+    <p class="warn"><b>Nota:</b> openEMS en malla base salvo indicación; EM_SIMULATED, sin convergencia de malla demostrada; τ_g diagnóstico, copolar, broadside, rejilla de ≈ 50 MHz. HFSS: elemento aislado, solo donde se indica.</p>
+  </section>
+
+  <section class="tab" id="t-orq" role="tabpanel">
+    <div class="card" id="orq">
+      <h2>Arquitectura del sistema de orquestación de agentes</h2>
+      <p class="cap" style="margin-top:0">Ciclo de diseño iterativo de la campaña (rondas Claude: 48 de 60 consumidas a 2026-11-17). Las flechas animadas indican el sentido de cada flujo y su color el tipo: diseño y simulación, revisión, redacción y visualización.</p>
+      <svg viewBox="0 0 1100 625" role="img" aria-label="Diagrama del sistema de agentes" id="orqsvg"></svg>
+      <div class="orq-leg"><span><i style="border-color:var(--s1)"></i>diseño y simulación</span><span><i style="border-color:var(--w1)"></i>revisión</span><span><i style="border-color:var(--s3)"></i>redacción y visualización</span><span><i style="border-color:var(--ink-3)"></i>propietario ↔ orquestador</span></div>
+      <ol class="steps">
+        <li><b>Propietario</b>: pide el objetivo o la variante y decide si un diseño se simula ya en HFSS.</li>
+        <li><b>Orquestador</b> (Claude Opus, esfuerzo medio): planifica la ronda, reparte tareas a como máximo 3 subagentes a la vez, enruta el feedback de design-reviewer y mantiene <code>campaign_state.json</code>.</li>
+        <li><b>rf-designer</b> (Sonnet, alto): geometría, material y alimentación → <code>variants/*.json</code> con hipótesis pre-registradas.</li>
+        <li><b>em-solver</b> (Sonnet, alto): modelo openEMS/CSXCAD, puerto de 50 Ω, malla y convergencia; recibe el diseño de rf-designer.</li>
+        <li><b>FDTD openEMS</b> (nube): recurso de em-solver; 1 simulación por ronda con 2 vCPU como máximo.</li>
+        <li><b>validator</b> (Sonnet, alto): audita de forma independiente cuando ya hay resultados y devuelve sus reservas al orquestador.</li>
+        <li><b>design-reviewer</b> (Fable 5.2): revisa un diseño concreto solo si el propietario confirma que se simula ya en HFSS; el orquestador reparte sus correcciones a rf-designer y em-solver.</li>
+        <li><b>code-auditor</b> (Sonnet, alto): revisa el código pendiente (estilo <code>/code-review</code>) antes de cada commit.</li>
+        <li><b>artifact-builder</b> (Sonnet, medio): prepara datos y gráficas de los artifacts; el orquestador los publica.</li>
+        <li><b>tfg-writer</b> y <b>tfg-reviewer</b> (Haiku): redacción y revisión de la memoria en la rama <code>docs/memoria-tfg</code>, con las cifras contrastadas con los datos.</li>
+      </ol>
+      <p class="cap">HFSS lo ejecuta el propietario en su equipo. El orquestador hace los commits porque Codex no se puede invocar desde Claude Code. Estados de evidencia GEOMETRY_ONLY / EM_SIMULATED / HFSS_VALIDATED / MEASURED según la procedencia real; nada de resultados inventados.</p>
+      <h2 style="margin-top:14px">Funciones de cada agente</h2>
+      <p class="cap" style="margin-top:0">Cada agente con sus entradas a la izquierda, sus acciones bajo el nodo y sus salidas a la derecha (modelo · esfuerzo en el nodo), y lo que no hace. Azul: diseño y simulación; morado: revisión; verde: redacción y visualización.</p>
+      <div class="ag-grid" id="agsvg"></div>
+    </div>
+  </section>
+</div>
+<script>
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const FCH = [7.7376, 8.2368];
+const cfg = {displaylogo: false, responsive: true};
+const CST = [[0, "#1a00c8"], [0.12, "#0040ff"], [0.26, "#00a8ff"], [0.38, "#00e0e0"], [0.5, "#20e040"], [0.62, "#b8e800"], [0.74, "#ffe800"], [0.86, "#ff9000"], [1, "#e80000"]];
+const fmt = (v, d = 1) => v.toFixed(d).replace(".", ",").replace("-", "−");
+function base(xt, yt, extra = {}) {
+  const ink = css("--ink-2"), rule = css("--rule"), bg = css("--surface");
+  return Object.assign({paper_bgcolor: bg, plot_bgcolor: bg, margin: {l: 52, r: 12, t: 74, b: 40}, font: {family: "IBM Plex Sans", color: ink, size: 11},
+    xaxis: {title: xt, gridcolor: rule, zerolinecolor: rule, linecolor: rule}, yaxis: {title: yt, gridcolor: rule, zerolinecolor: rule, linecolor: rule},
+    legend: {orientation: "h", yanchor: "bottom", y: 1.02, x: 0}, hovermode: "x unified",
+    shapes: [{type: "rect", xref: "x", yref: "paper", x0: FCH[0], x1: FCH[1], y0: 0, y1: 1, fillcolor: css("--band"), line: {width: 0}, layer: "below"}]}, extra);
+}
+function seg(id, opts, cur, set) {
+  const s = document.getElementById(id); s.innerHTML = "";
+  for (const [v, l] of opts) { const b = document.createElement("button"); b.textContent = l; b.setAttribute("aria-pressed", v === cur); b.onclick = () => set(v); s.appendChild(b); }
+}
+// ---------- geometry drawing (mm, z up)
+const GOLD = "#c8783a", SUB = "#1f5c3e", SLOT = "#0f2e1f", GND = "#b8692f", PAR = "#e0559a";
+// hatch of an axis-aligned rectangle with lines at 45 deg (pink "cebreado" of the buried parasitic)
+function hatch(poly, z, dx, s, col, step) {
+  const xs = poly.map(p => p[0]), ys = poly.map(p => p[1]), x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const X = [], Y = [], Z = [];
+  for (let c = y0 - x1; c <= y1 - x0; c += step) {           // line y = x + c
+    const pts = [];
+    for (const x of [x0, x1]) { const y = x + c; if (y >= y0 - 1e-9 && y <= y1 + 1e-9) pts.push([x, y]); }
+    for (const y of [y0, y1]) { const x = y - c; if (x > x0 + 1e-9 && x < x1 - 1e-9) pts.push([x, y]); }
+    if (pts.length >= 2) { pts.sort((a, b) => a[0] - b[0]); X.push((pts[0][0] + dx) * s, (pts[pts.length - 1][0] + dx) * s, null); Y.push(pts[0][1] * s, pts[pts.length - 1][1] * s, null); Z.push(z * s, z * s, null); }
+  }
+  return {type: "scatter3d", mode: "lines", x: X, y: Y, z: Z, line: {color: col, width: 2}, hoverinfo: "skip", showlegend: false, connectgaps: false};
+}
+function polyMesh(pts, z, col, op, dx = 0, s = 1) {
+  // fan triangulation (convex polygons: patch, lines, parasitic)
+  const n = pts.length, I = [], J = [], K = [];
+  for (let k = 1; k < n - 1; k++) { I.push(0); J.push(k); K.push(k + 1); }
+  return {type: "mesh3d", x: pts.map(p => (p[0] + dx) * s), y: pts.map(p => p[1] * s), z: pts.map(() => z * s), i: I, j: J, k: K, color: col, opacity: op, flatshading: true, hoverinfo: "skip", showlegend: false, showscale: false};
+}
+function earcut2(pts) {
+  // simple ear clipping for small simple polygons (the U-slot is non-convex)
+  const idx = pts.map((_, i) => i), tris = [];
+  const area = pts.reduce((s, p, i) => { const q = pts[(i + 1) % pts.length]; return s + p[0] * q[1] - q[0] * p[1]; }, 0);
+  const ccw = area > 0, cross = (a, b, c) => (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]);
+  const inside = (p, a, b, c) => { const d1 = cross(a, b, p), d2 = cross(b, c, p), d3 = cross(c, a, p); return (d1 >= 0 && d2 >= 0 && d3 >= 0) || (d1 <= 0 && d2 <= 0 && d3 <= 0); };
+  let guard = 0;
+  while (idx.length > 3 && guard++ < 500) {
+    for (let k = 0; k < idx.length; k++) {
+      const i0 = idx[(k + idx.length - 1) % idx.length], i1 = idx[k], i2 = idx[(k + 1) % idx.length];
+      const c = cross(pts[i0], pts[i1], pts[i2]);
+      if (ccw ? c <= 0 : c >= 0) continue;
+      if (idx.some(j => j !== i0 && j !== i1 && j !== i2 && inside(pts[j], pts[i0], pts[i1], pts[i2]))) continue;
+      tris.push([i0, i1, i2]); idx.splice(k, 1); break;
+    }
+  }
+  if (idx.length === 3) tris.push(idx.slice());
+  return tris;
+}
+function polyFill(pts, z, col, op, dx = 0, s = 1) {
+  const tr = earcut2(pts);
+  return {type: "mesh3d", x: pts.map(p => (p[0] + dx) * s), y: pts.map(p => p[1] * s), z: pts.map(() => z * s), i: tr.map(t => t[0]), j: tr.map(t => t[1]), k: tr.map(t => t[2]),
+    color: col, opacity: op, flatshading: true, hoverinfo: "skip", showlegend: false, showscale: false};
+}
+function polyLine(pts, z, col, dash, dx = 0, s = 1, w = 3) {
+  const q = [...pts, pts[0]];
+  return {type: "scatter3d", mode: "lines", x: q.map(p => (p[0] + dx) * s), y: q.map(p => p[1] * s), z: q.map(() => z * s), line: {color: col, width: w, dash: dash}, hoverinfo: "skip", showlegend: false};
+}
+function boxMesh(x0, x1, y0, y1, z0, z1, col, op, s = 1) {
+  const X = [x0, x1, x1, x0, x0, x1, x1, x0].map(v => v * s), Y = [y0, y0, y1, y1, y0, y0, y1, y1].map(v => v * s), Z = [z0, z0, z0, z0, z1, z1, z1, z1].map(v => v * s);
+  return {type: "mesh3d", x: X, y: Y, z: Z, i: [0, 0, 4, 4, 0, 0, 1, 1, 2, 2, 3, 3], j: [1, 2, 5, 6, 1, 5, 2, 6, 3, 7, 0, 4], k: [2, 3, 6, 7, 5, 4, 6, 5, 7, 6, 4, 7],
+    color: col, opacity: op, flatshading: true, hoverinfo: "skip", showlegend: false, showscale: false};
+}
+function elementTraces(g, dx, s, zTop, full) {
+  // full: 3D view of one element (substrate box + ground); otherwise only the metal on the plane z = zTop
+  const T = [];
+  for (const p of g.feed) T.push(polyMesh(p, zTop, GOLD, 1, dx, s));
+  T.push(polyMesh(g.patch, zTop, GOLD, full && g.par.length ? 0.72 : 1, dx, s));
+  // U-slot = no copper: filled with the substrate colour on top of the patch, plus its outline
+  for (const sl of g.slots) { T.push(polyFill(sl, zTop + 0.015, SUB, 1, dx, s)); T.push(polyLine(sl, zTop + 0.02, SLOT, "solid", dx, s, full ? 2 : 1.5)); }
+  for (const p of g.par) { const zp = full ? p.z : zTop - 0.05;
+    T.push(polyMesh(p.poly, zp, PAR, full ? 0.3 : 0.25, dx, s)); T.push(polyLine(p.poly, zp, PAR, "solid", dx, s, full ? 4 : 3)); T.push(hatch(p.poly, zp + 0.01, dx, s, "#b0206a", full ? 0.8 : 1.6)); }
+  return T;
+}
+// ---------- tab 1: candidates
+function chWorst(d) { let w = -99, n = 0, ok = 0; d.f.forEach((f, i) => { if (f >= 7.7376 - 1e-6 && f <= 8.2368 + 1e-6) { n++; w = Math.max(w, d.db[i]); if (d.db[i] <= -10) ok++; } }); return [w, ok / n]; }
+function gdRipple(d) { const v = d.gd.filter((t, i) => d.gd_f[i] >= 7.7375 && d.gd_f[i] <= 8.2369); return Math.max(...v) - Math.min(...v); }
+function drawCands() {
+  const host = document.getElementById("cands"); host.innerHTML = "";
+  const notes = {P01_MS2: "Mejor candidato de una sola capa: −10,4 dB de peor S11 (openEMS), η 0,73–0,76, 4,3–4,8 dBi. HFSS (curva discontinua): peor −9,8 dB en el borde superior (98 % del canal ≤ −10 dB), η 0,81–0,85, 4,7–5,2 dBi, τ_g con solo 3 puntos (pendiente, no rizado). S11 EM_SIMULATED (puerto lumped, criterio ΔS 0,02: ±0,4 dB de incertidumbre); HFSS desplaza la resonancia −54 MHz.", US3_MS3: "Referencia U-slot sin parásito: banda de −10 dB de ~355 MHz, no cubre el canal.",
+    US3_PS4: "Parásito enterrado: dos mínimos y canal a −10 dB, pero valle de η 0,24 hacia 8,14 GHz.", US3_PS4_2_1: "Wp 10 mm y patch_L 6,222: canal a −10 dB en openEMS y HFSS (justo), pero η 0,32 y τ_g con ~660 ps de rizado.",
+    US3_PS6: "Un solo mínimo recentrado: −8,7 dB (HFSS), pero η plana 0,69–0,74 y τ_g con ~20 ps de rizado.",
+    US3_PS6_4: "Candidato: parche ancho W 14 mm y parásito 13,58 mm. Canal a −10 dB en malla base (050) y fina (051), η 0,66–0,71, G realizada broadside 4,0–4,7 dBi, τ_g (copolar, broadside, diagnóstico) con 15–32 ps de rizado (openEMS). HFSS: peor −9,82 dB (96 % del canal ≤ −10 dB), η 0,74–0,78, 4,4–5,0 dBi broadside, τ_g 18 ps; S11 EM_SIMULATED (puerto lumped, −10 dB dentro de la incertidumbre de convergencia); radiación validada en HFSS."};
+  for (const [k, g] of Object.entries(GEOM)) {
+    const card = document.createElement("div"); card.className = "card";
+    card.innerHTML = `<h2>${k}</h2><div class="kv">${g.label} · placa ${g.board[0]}×${g.board[1]} mm, h ${fmt(g.h, 2)} mm, εr ${fmt(g.eps, 1)}, tanδ ${fmt(g.tand, 3)}${g.par.length ? " · parásito a z = " + fmt(g.par[0].z, 3) + " mm" : ""}</div><div class="geo" id="geo-${k}"></div><p class="cap">${notes[k] || ""}</p>`;
+    host.appendChild(card);
+    const bx = g.board[0] / 2, by = g.board[1] / 2;
+    const T = [boxMesh(-bx, bx, -by, by, 0, g.h, SUB, g.par.length ? 0.5 : 0.85), boxMesh(-bx, bx, -by, by, -0.035, 0, GND, g.par.length ? 0.1 : 1), ...elementTraces(g, 0, 1, g.h + 0.02, true)];
+    const ax = {visible: false};
+    Plotly.newPlot("geo-" + k, T, {paper_bgcolor: css("--surface"), margin: {l: 0, r: 0, t: 0, b: 0},
+      scene: {xaxis: ax, yaxis: ax, zaxis: ax, dragmode: false, aspectmode: "data", camera: {eye: {x: 1.5, y: -2.2, z: 1.7}, center: {x: 0, y: 0, z: -0.1}}}},
+      {displayModeBar: false, scrollZoom: false, responsive: true});
+  }
+  const rows = Object.entries(CAND).map(([k, v]) => { const [w, fr] = chWorst(v.d); return `<tr><td>${k}</td><td>${fmt(w, 2)} dB</td><td>${Math.round(fr * 100)} %</td><td>${fmt(Math.min(...v.d.eta), 2)}–${fmt(Math.max(...v.d.eta), 2)}</td><td>${fmt(Math.min(...v.d.grb), 1)}–${fmt(Math.max(...v.d.grb), 1)} dBi</td><td>${Math.round(gdRipple(v.d))} ps${v.d.gd_f.length <= 3 ? " (3 puntos: pendiente)" : ""}</td></tr>`; });
+  document.getElementById("mtab").innerHTML = "<tr><th>Candidato</th><th>Peor S11</th><th>Canal ≤ −10 dB</th><th>η</th><th>Ganancia realizada</th><th>Rizado τ_g</th></tr>" + rows.join("");
+}
+// ---------- tab 3: comparisons
+let CSRC = "all", VFAM = Object.keys(VAR)[0];
+function drawCmp() {
+  seg("c-src", [["all", "openEMS + HFSS"], ["oe", "solo openEMS"], ["hf", "solo HFSS"]], CSRC, v => { CSRC = v; drawCmp(); });
+  const keys = Object.keys(CAND).filter(k => CSRC === "all" || (CSRC === "oe" ? k.includes("openEMS") : k.includes("HFSS")));
+  const tr = (y, x, mode) => keys.map(k => ({x: CAND[k].d[x], y: CAND[k].d[y], name: k, mode: mode || "lines", line: {color: css(CAND[k].c), width: 2, dash: CAND[k].dash}, marker: {size: 7, color: css(CAND[k].c)}}));
+  const s = base("Frecuencia (GHz)", "|S11| (dB)"); s.yaxis.range = [-40, 0];
+  s.shapes.push(...[-6, -10].map(v => ({type: "line", xref: "paper", x0: 0, x1: 1, y0: v, y1: v, line: {color: css("--ink-3"), width: 1, dash: "dot"}})));
+  Plotly.react("cs11", tr("db", "f").map(t => ({...t, hovertemplate: "%{y:.2f} dB"})), s, cfg);
+  const e = base("Frecuencia (GHz)", "η"); e.yaxis.range = [0, 1];
+  Plotly.react("ceta", tr("eta", "ff_f", "lines+markers").map(t => ({...t, hovertemplate: "η %{y:.2f}"})), e, cfg);
+  Plotly.react("cgr", tr("grb", "ff_f", "lines+markers").map(t => ({...t, hovertemplate: "%{y:.2f} dBi"})), base("Frecuencia (GHz)", "dBi"), cfg);
+  const g = base("Frecuencia (GHz)", "τ_g (ps)"); g.yaxis.range = [-350, 600];
+  Plotly.react("cgd", tr("gd", "gd_f", "lines+markers").map(t => ({...t, hovertemplate: "%{y:.0f} ps"})), g, cfg);
+  const ink = css("--ink-2"), rule = css("--rule");
+  Plotly.react("csmith", keys.map(k => ({type: "scattersmith", real: CAND[k].d.zr.map(v => v / 50), imag: CAND[k].d.zi.map(v => v / 50), name: k, mode: "lines",
+      line: {color: css(CAND[k].c), width: 2, dash: CAND[k].dash}, text: CAND[k].d.f.map(v => v.toFixed(3) + " GHz"), hovertemplate: "%{text}<br>Z/50 = %{real:.2f} %{imag:+.2f}j<extra>" + k + "</extra>"})),
+    {paper_bgcolor: css("--surface"), margin: {l: 20, r: 20, t: 90, b: 20}, font: {family: "IBM Plex Sans", color: ink, size: 11}, legend: {orientation: "h", yanchor: "bottom", y: 1.02},
+     smith: {bgcolor: css("--surface"), realaxis: {gridcolor: rule, linecolor: rule, tickfont: {size: 9}}, imaginaryaxis: {gridcolor: rule, linecolor: rule, tickfont: {size: 9}}}}, cfg);
+  seg("v-fam", Object.keys(VAR).map(k => [k, k]), VFAM, v => { VFAM = v; drawCmp(); });
+  const pal = ["--s4", "--s5", "--w1", "--s1", "--s3", "--s2", "--ink-3"];
+  const vs = base("Frecuencia (GHz)", "|S11| (dB)"); vs.yaxis.range = [-35, 0];
+  vs.shapes.push(...[-6, -10].map(v => ({type: "line", xref: "paper", x0: 0, x1: 1, y0: v, y1: v, line: {color: css("--ink-3"), width: 1, dash: "dot"}})));
+  Plotly.react("cvar", VAR[VFAM].map(([n, f, d], i) => ({x: f, y: d, name: n, mode: "lines", line: {color: css(pal[i % pal.length]), width: 2, dash: n.includes("fina") ? "dash" : "solid"}, hovertemplate: "%{y:.2f} dB"})), vs, cfg);
+}
+// ---------- tab 2: arrays
+let AARR = "ARR1x5_US3_PS4_2_1_dparam", APS = "18,2", AF = "7.9872", AM = "virtual", AS = "0";
+const pnum = k => parseFloat(k.replace(",", "."));
+function hpbw(th, v) {
+  const idx = th.map((t, i) => i).filter(i => Math.abs(th[i]) <= 90);
+  let k = idx[0]; for (const i of idx) if (v[i] > v[k]) k = i;
+  const lvl = v[k] - 3; let i = k, j = k;
+  while (i > idx[0] && v[i] > lvl) i--; while (j < idx[idx.length - 1] && v[j] > lvl) j++;
+  if (v[i] > lvl || v[j] > lvl) return null;
+  return {lo: th[i] + (th[i + 1] - th[i]) * (lvl - v[i]) / (v[i + 1] - v[i]), hi: th[j - 1] + (th[j] - th[j - 1]) * (v[j - 1] - lvl) / (v[j - 1] - v[j]), lvl,
+          get w() { return this.hi - this.lo; }};
+}
+function drawArr() {
+  const R = ARR[AARR];
+  if (!R.pitches[APS]) APS = Object.keys(R.pitches).includes("18,2") ? "18,2" : Object.keys(R.pitches).sort((a, b) => pnum(a) - pnum(b)).slice(-1)[0];
+  const A = R.pitches[APS]; if (!A.pf[AF]) AF = Object.keys(A.pf).includes("7.9872") ? "7.9872" : Object.keys(A.pf)[0];
+  const P = A.pf[AF], cP = css("--s1"), cV = css("--s2"), cB = css("--s3"), mono = A.mono && A.mono.pf[AF] ? {th: A.mono.th, ...A.mono.pf[AF]} : null;
+  seg("a-arr", Object.keys(ARR).map(k => [k, k.replace("_dparam", "")]), AARR, v => { AARR = v; drawArr(); });
+  seg("a-pitch", Object.keys(R.pitches).sort((a, b) => pnum(a) - pnum(b)).map(k => [k, k]), APS, v => { APS = v; drawArr(); });
+  seg("a-f", Object.keys(A.pf).map(f => [f, (+f).toFixed(4).replace(".", ",")]), AF, v => { AF = v; drawArr(); });
+  seg("a-mode", [["virtual", "virtual"], ["physical", "físico"]], AM, v => { AM = v; drawArr(); });
+  seg("a-steer", [["0", "0°"], ["15", "15°"], ["30", "30°"]], AS, v => { AS = v; drawArr(); });
+  for (const [id, pl, lbl] of [["axz", "xz", "θ en xz (°), plano del array"], ["ayz", "yz", "θ en yz (°)"]]) {
+    const lay = base(lbl, "Físico (dBi)", {hovermode: "x unified"}); lay.shapes = []; lay.xaxis.range = [-180, 180]; lay.yaxis.range = [-25, 13]; lay.margin.r = 52;
+    lay.yaxis2 = {title: "Virtual (dB norm.)", overlaying: "y", side: "right", range: [-38, 0], showgrid: false, linecolor: css("--rule")};
+    const xzp = pl === "xz", MB = xzp ? mono : null, st = xzp ? AS : "0";
+    // (a): corte xz del JSON virtual_mono (bistatic_current) si existe; a 0° sin mono, el virtual de virtual_3d. Físico solo en broadside.
+    const ya = MB ? MB.a.s[st].c : (st === "0" ? P[pl][2] : null), xa = MB ? mono.th : P[pl][0], yb = MB ? MB.b.s[st].c : null;
+    const hp = st === "0" ? hpbw(P[pl][0], P[pl][1]) : null, hv = ya ? hpbw(xa, ya) : null, hb = yb ? hpbw(mono.th, yb) : null;
+    const mark = (h, col, yref) => h ? [{type: "line", xref: "x", yref, x0: h.lo, x1: h.hi, y0: h.lvl, y1: h.lvl, line: {color: col, width: 1.5, dash: "dot"}},
+      {type: "line", xref: "x", yref, x0: h.lo, x1: h.lo, y0: h.lvl - 1.5, y1: h.lvl + 1.5, line: {color: col, width: 1.5}},
+      {type: "line", xref: "x", yref, x0: h.hi, x1: h.hi, y0: h.lvl - 1.5, y1: h.lvl + 1.5, line: {color: col, width: 1.5}}] : [];
+    lay.shapes = [...mark(hp, cP, "y"), ...mark(hv, cV, "y2"), ...mark(hb, cB, "y2")];
+    const an = (h, t, col, y) => h && {x: 0.01, y, xref: "paper", yref: "paper", text: t + " " + fmt(h.w) + "°", showarrow: false, xanchor: "left", yanchor: "top", font: {color: col, size: 11}, bgcolor: css("--surface")};
+    lay.annotations = [an(hp, "HPBW físico", cP, 0.99), an(hv, "HPBW virtual (a)", cV, 0.92), an(hb, "HPBW virtual (b)", cB, 0.85)].filter(Boolean);
+    if (xzp && st !== "0") lay.annotations.push({x: 0.99, y: 0.01, xref: "paper", yref: "paper", text: "apuntado a " + st + "°: el físico (en fase) solo se dibuja en broadside", showarrow: false, xanchor: "right", yanchor: "bottom", font: {size: 10, color: css("--ink-3")}});
+    const tr = [];
+    if (st === "0") tr.push({x: P[pl][0], y: P[pl][1], name: "físico", mode: "lines", line: {color: cP, width: 2}, hovertemplate: "%{y:.1f} dBi"});
+    if (ya) tr.push({x: xa, y: ya.map(v => Math.max(v, -40)), name: "virtual (a)", yaxis: "y2", mode: "lines", line: {color: cV, width: 2, dash: "dash"}, hovertemplate: "%{y:.1f} dB"});
+    if (yb) tr.push({x: mono.th, y: yb.map(v => Math.max(v, -40)), name: "virtual (b) con monostáticos", yaxis: "y2", mode: "lines", line: {color: cB, width: 2, dash: "dashdot"}, hovertemplate: "%{y:.1f} dB"});
+    Plotly.react(id, tr, lay, cfg);
+  }
+  const G = AM === "virtual" ? P.V : P.P, ref = AM === "virtual" ? 0 : P.pk, fl = -30;
+  const X = [], Y = [], Z = [], C = [];
+  P.th.forEach((t, i) => { const rx = [], ry = [], rz = [], rc = []; P.ph.forEach((p, j) => {
+    const r = Math.max(G[i][j] - ref - fl, 0), tt = t * Math.PI / 180, pp = p * Math.PI / 180;
+    rx.push(r * Math.sin(tt) * Math.cos(pp)); ry.push(r * Math.sin(tt) * Math.sin(pp)); rz.push(r * Math.cos(tt)); rc.push(G[i][j]); });
+    X.push(rx); Y.push(ry); Z.push(rz); C.push(rc); });
+  const g = GEOM[R.geo], d = parseFloat(APS.replace(",", ".")), n = R.n, xs = [...Array(n).keys()].map(i => (i - (n - 1) / 2) * d);
+  const bx = (n - 1) * d + g.board[0], by = g.board[1], s = 70 / bx;
+  const board = [polyMesh([[-bx / 2, -by / 2], [bx / 2, -by / 2], [bx / 2, by / 2], [-bx / 2, by / 2]], 0, SUB, g.par.length ? 0.55 : 0.8, 0, s)];
+  xs.forEach(x0 => board.push(...elementTraces(g, x0, s, 0.15 / s, false)));
+  if (AM === "virtual") {
+    const vm = {};
+    for (let t = 0; t < n; t++) { const o = [...Array(n).keys()].filter(r => r !== t);
+      for (let a = 0; a < o.length; a++) for (let b = a + 1; b < o.length; b++) for (const r of [o[a], o[b]]) { const k = (xs[t] + xs[r]).toFixed(2); vm[k] = (vm[k] || 0) + 1; } }
+    const vx = Object.keys(vm).map(Number).sort((a, b) => a - b), yv = by / 2 + 9;
+    board.push({type: "scatter3d", mode: "markers+text", x: vx.map(v => v * s), y: vx.map(() => yv * s), z: vx.map(() => 0.3), text: vx.map(v => "×" + vm[v.toFixed(2)]), textposition: "top center",
+      marker: {symbol: "diamond", size: vx.map(v => 4 + vm[v.toFixed(2)] / 2), color: cV}, name: "elementos virtuales x_t + x_r", customdata: vx.map(v => v.toFixed(1)),
+      hovertemplate: "virtual x = %{customdata} mm<extra></extra>", textfont: {size: 9, color: css("--ink-3")}});
+  }
+  const ax = {showgrid: false, zeroline: false, showticklabels: false};
+  Plotly.react("a3d", [{type: "surface", x: X, y: Y, z: Z, surfacecolor: C, cmin: ref + fl, cmax: ref, colorscale: CST, showlegend: false,
+    colorbar: {title: AM === "virtual" ? "dB" : "dBi", thickness: 12}, hovertemplate: "%{surfacecolor:.1f}<extra></extra>"}, ...board],
+    {paper_bgcolor: css("--surface"), margin: {l: 0, r: 0, t: 30, b: 0}, font: {family: "IBM Plex Sans", color: css("--ink-2"), size: 11}, legend: {orientation: "h", x: 0, y: -0.02, yanchor: "top", font: {size: 10}},
+     title: {text: (AM === "virtual" ? "Array virtual" : "Haz físico (pico " + fmt(P.pk) + " dBi)") + " · " + AARR.replace("_dparam", "") + " · d = " + APS + " mm · " + (+AF).toFixed(4).replace(".", ",") + " GHz", font: {size: 12}},
+     scene: {xaxis: {...ax, title: "x (array)"}, yaxis: {...ax, title: "y"}, zaxis: {...ax, title: "z"}, aspectmode: "data", camera: {eye: {x: 0.9, y: -1.6, z: 0.95}}}}, cfg);
+  // comparación 1×4 / 1×5 del mismo elemento al mismo paso y frecuencia (corte xz)
+  const ac = document.getElementById("acmp"), pair = Object.entries(ARR).filter(([k, r]) => r.geo === R.geo && k !== AARR && r.pitches[APS] && r.pitches[APS].pf[AF]);
+  if (pair.length) {
+    const L = [[AARR, R], ...pair].sort((a, b) => a[1].n - b[1].n), mh = (r, k) => { const m = r.pitches[APS].mono; if (!m || !m.pf[AF]) return null; const h = hpbw(m.th, m.pf[AF][k].s[AS].c); return h ? h.w : null; },
+      hw = (r, i) => { if (i === 3) return mh(r, "b"); if (i === 2 && AS !== "0") return mh(r, "a"); if (i === 1 && AS !== "0") return null; const q = r.pitches[APS].pf[AF], h = hpbw(q.xz[0], q.xz[i]); return h ? h.w : null; };
+    const row = (nm, i) => `<tr><td>${nm}</td>${L.map(([k, r]) => `<td>${hw(r, i) === null ? "—" : fmt(hw(r, i)) + "°"}</td>`).join("")}<td>${L.length === 2 && hw(L[0][1], i) && hw(L[1][1], i) ? fmt(hw(L[1][1], i) / hw(L[0][1], i), 2) : "—"}</td></tr>`;
+    ac.innerHTML = `<h2 style="font-size:14px">Comparación a igual paso · ${R.geo}, d = ${APS} mm, ${(+AF).toFixed(4).replace(".", ",")} GHz</h2><div style="overflow-x:auto"><table class="m"><tr><th>HPBW en el plano xz</th>${L.map(([k, r]) => `<th>1×${r.n}</th>`).join("")}<th>Razón 1×5 / 1×4</th></tr>${row("Físico", 1)}${row("Virtual (a), 1 TX + 2 RX", 2)}${row("Virtual (b), con monostáticos", 3)}</table></div><p class="cap">Mismo elemento, sustrato, alimentación y criterio de convergencia de cada array (ΔS 0,02 en P01_MS2): el quinto elemento estrecha el haz en la razón de la última columna (a 18,2 mm y f0, un 27 % el virtual (a)). La fila (b), con monostáticos, es un modelo guía (sin fuga TX→RX ni S_tt), no una ganancia real de resolución; «—» = sin JSON virtual_mono para ese array y paso. Apuntamiento actual: ${AS}° (el físico solo existe en broadside).</p>`;
+  } else ac.innerHTML = "";
+  ac.style.display = ac.innerHTML ? "" : "none";
+  const am = document.getElementById("amono");
+  if (!mono) am.innerHTML = `<h2 style="font-size:14px">Monostáticos (b)</h2><p class="cap">No hay JSON virtual_mono para ${AARR.replace("_dparam", "")} a d = ${APS} mm: la curva (b) no se dibuja.</p>`;
+  else {
+    const pos = o => Object.entries(o).sort((a, b) => a[0] - b[0]).map(([x, m]) => `<span style="white-space:nowrap">${fmt(+x)}<sub>×${m}</sub></span>`).join(" · ");
+    const sd = k => mono[k].s[AS], q = sd("b").qg || [];
+    const qs = q.length ? q.map(g => `cuasi-lóbulo de rejilla 2d (m = ${g.m}) en ${fmt(g.theta_deg)}°, ${fmt(g.level_db)} dB: <b>${g.present ? "PRESENTE" : "no presente"}</b>`).join("; ") : "sin cuasi-lóbulos de rejilla 2d en el subconjunto evaluado";
+    const sl = k => { const v = sd(k).sl; return v === null ? "—" : fmt(v) + " dB"; };
+    am.innerHTML = `<h2 style="font-size:14px">Posiciones virtuales y adquisiciones · ${AARR.replace("_dparam", "")}, d = ${APS} mm, apuntamiento ${AS}°</h2><div style="overflow-x:auto"><table class="m"><tr><th></th><th>Adquisiciones</th><th>HPBW xz (JSON)</th><th>Lóbulo secundario máx.</th><th>Posiciones virtuales x (mm), ×multiplicidad</th></tr>
+      <tr><td>(a) 1 TX + 2 RX</td><td>${mono.a.acq}</td><td>${fmt(sd("a").hp)}°</td><td>${sl("a")}</td><td style="font-size:.8rem">${pos(mono.a.pos)}</td></tr>
+      <tr><td>(b) con monostáticos</td><td>${mono.b.acq}</td><td>${fmt(sd("b").hp)}°</td><td>${sl("b")}</td><td style="font-size:.8rem">${pos(mono.b.pos)}</td></tr></table></div>
+      <p class="cap" id="amono-q">(b): ${qs}. La multiplicidad cuenta canales (2 por adquisición: ida y vuelta). Evidencia: ${A.mono.ev}. El canal monostático (b) es un modelo guía: no incluye la fuga TX→RX ni el coeficiente de reflexión S_tt del puerto TX/RX, y supone el mismo retardo ida y vuelta; no es una medida ni un resultado de resolución real. (a) es bistatic_current; (b) es bistatic_plus_monostatic. Curvas xz a 5° de paso angular, normalizadas.</p>`;
+  }
+  const gg = base("Frecuencia (GHz)", "τ_g (ps)");
+  Plotly.react("agd", [{x: A.freqs, y: A.gd.physical_one_way, name: "físico, una vía", mode: "lines+markers", line: {color: cP, width: 2}},
+                       {x: A.freqs, y: A.gd.virtual_two_way, name: "virtual, ida y vuelta", mode: "lines+markers", line: {color: cV, width: 2, dash: "dash"}}].map(t => ({...t, hovertemplate: "%{y:.0f} ps"})), gg, cfg);
+}
+// ---------- tab 4: orchestration diagram (SVG, curved flows, one dot per flow)
+const ORQ_MQ = window.matchMedia("(max-width:700px)");
+const SVGNS = "http://www.w3.org/2000/svg", XLNS = "http://www.w3.org/1999/xlink";
+const sv = (t, a, p) => { const e = document.createElementNS(SVGNS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+function addMarkers(defs, pre) {
+  for (const c of "nbpg") { const mk = sv("marker", {id: pre + c, viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 6, markerHeight: 6, orient: "auto-start-reverse"}, defs); sv("path", {d: "M1,1 L9,5 L1,9 z", class: "mk-" + c}, mk); }
+}
+// one flow: curve + one dot (back and forth if bi)
+function flow(svg, pre, i, d, c, bi, t0) {
+  const id = pre + i, p = sv("path", {d, id, class: "flow " + c, "marker-end": `url(#${pre}${c})`}, svg);
+  if (bi) p.setAttribute("marker-start", `url(#${pre}${c})`);
+  const dot = sv("circle", {r: 3.2, class: "dot " + c}, svg);
+  const dur = bi ? 6 : 3.4;
+  const am = sv("animateMotion", {dur: dur + "s", repeatCount: "indefinite", begin: (t0 || 0) + "s"}, dot);
+  if (bi) { am.setAttribute("keyPoints", "0;1;0"); am.setAttribute("keyTimes", "0;0.5;1"); am.setAttribute("calcMode", "linear"); }
+  const mp = sv("mpath", {}, am); mp.setAttribute("href", "#" + id); mp.setAttributeNS(XLNS, "href", "#" + id);
+}
+function drawOrq() {
+  const svg = document.getElementById("orqsvg"), mob = ORQ_MQ.matches;
+  svg.innerHTML = "";
+  const T = {
+    own: ["Propietario", "decide · simula HFSS", "n"], orc: ["Orquestador · Claude Opus", "plan · reparto · feedback", "main"],
+    rf: ["rf-designer", "Sonnet · geometría", "b"], em: ["em-solver", "Sonnet · malla/puerto", "b"], fd: ["FDTD openEMS (nube)", "recurso de em-solver", "b"], va: ["validator", "Sonnet · auditoría", "b"],
+    fb: ["design-reviewer", "Fable 5.2 · pre-HFSS", "p"], ca: ["code-auditor", "Sonnet · revisa código", "p"],
+    ab: ["artifact-builder", "Sonnet · gráficas", "g"], tw: ["tfg-writer", "Haiku · memoria", "g"], tr: ["tfg-reviewer", "Haiku · revisa memoria", "g"]};
+  if (mob) { T.own[1] = "decide · HFSS"; T.orc[1] = "plan · reparto · feedback"; T.rf[1] = "Sonnet · geometría"; T.em[1] = "Sonnet · puerto"; T.fd[0] = "FDTD openEMS"; T.fd[1] = "recurso em-solver"; T.fb[1] = "Fable 5.2"; T.ca[1] = "Sonnet · código"; T.tw[1] = "Haiku · memoria"; T.tr[1] = "Haiku · revisión"; T.ab[1] = "Sonnet · gráficas"; }
+  const H = 52;
+  const G = mob ? {
+    vb: "0 0 440 640", own: [140, 8, 160], orc: [70, 100, 300], rf: [8, 215, 150], em: [8, 305, 150], fd: [8, 395, 150], va: [8, 485, 150],
+    fb: [282, 215, 150], ca: [282, 305, 150], ab: [282, 395, 150], tw: [282, 485, 150], tr: [282, 575, 150]} : {
+    vb: "0 0 1100 625", own: [450, 140, 200], orc: [410, 275, 280], rf: [30, 40, 210], em: [30, 195, 210], fd: [30, 350, 210], va: [30, 505, 210],
+    fb: [860, 40, 210], ca: [860, 160, 210], ab: [860, 330, 210], tw: [860, 440, 210], tr: [860, 550, 210]};
+  svg.setAttribute("viewBox", G.vb);
+  const hh = k => (k === "orc" ? 60 : H);
+  const B = k => { const [x, y, w] = G[k]; return {x, y, w, h: hh(k), cx: x + w / 2, cy: y + hh(k) / 2, b: y + hh(k), r: x + w}; };
+  const defs = sv("defs", {}, svg); addMarkers(defs, "ar");
+  const o = B("orc"), ow = B("own"), rf = B("rf"), em = B("em"), fd = B("fd"), va = B("va"), fb = B("fb"), ca = B("ca"), ab = B("ab"), tw = B("tw"), tr = B("tr");
+  const vv = (a, b, k) => `M${a.cx},${a.b} Q${a.cx + k},${(a.b + b.y) / 2} ${b.cx},${b.y}`;   // curva suave vertical entre nodos apilados
+  const F = [];
+  if (!mob) {
+    const ys = [290, 306, 322], ye = [rf.cy, em.cy, va.cy];
+    F.push([`M${ow.cx},${ow.b} C${ow.cx + 22},${ow.b + 30} ${ow.cx - 22},${o.y - 30} ${o.cx},${o.y}`, "n", 1]);
+    F.push([`M${o.x},${ys[0]} C330,${ys[0]} 330,${ye[0]} ${rf.r},${ye[0]}`, "b"]);
+    F.push([`M${o.x},${ys[1]} C330,${ys[1]} 330,${ye[1]} ${em.r},${ye[1]}`, "b"]);
+    F.push([`M${rf.cx},${rf.b} Q${rf.cx + 24},${(rf.b + em.y) / 2} ${em.cx},${em.y}`, "b"]);
+    F.push([vv(em, fd, 24), "b"], [vv(fd, va, 24), "b"]);
+    F.push([`M${va.r},${ye[2]} C330,${ye[2]} 330,${ys[2]} ${o.x},${ys[2]}`, "b"]);
+    const rs = [284, 297, 315, 328], re = [fb.cy, ca.cy, ab.cy, tw.cy];
+    [fb, ca, ab, tw].forEach((n, k) => F.push([`M${o.r},${rs[k]} C775,${rs[k]} 775,${re[k]} ${n.x},${re[k]}`, k < 2 ? "p" : "g", 1]));
+    F.push([vv(tw, tr, 24), "g", 1]);
+  } else {
+    const ls = [168, 182, 196], rs = [272, 258, 244, 230];
+    F.push([`M${ow.cx},${ow.b} C${ow.cx + 14},${ow.b + 14} ${ow.cx - 14},${o.y - 14} ${o.cx},${o.y}`, "n", 1]);
+    F.push([`M${ls[0]},${o.b} Q${ls[0]},${rf.cy} ${rf.r},${rf.cy}`, "b"]);
+    F.push([`M${ls[1]},${o.b} Q${ls[1]},${em.cy} ${em.r},${em.cy}`, "b"]);
+    F.push([vv(rf, em, 22), "b"], [vv(em, fd, 22), "b"], [vv(fd, va, 22), "b"]);
+    F.push([`M${va.r},${va.cy} Q${ls[2]},${va.cy} ${ls[2]},${o.b}`, "b"]);
+    [fb, ca, ab, tw].forEach((n, k) => F.push([`M${rs[k]},${o.b} Q${rs[k]},${n.cy} ${n.x},${n.cy}`, k < 2 ? "p" : "g", 1]));
+    F.push([vv(tw, tr, 22), "g", 1]);
+  }
+  F.forEach(([d, c, bi], i) => flow(svg, "ar" + 0, i, d, c, bi, i * 0.4));
+  for (const k of Object.keys(T)) {
+    const b = B(k), [t, s, g] = T[k];
+    const gr = sv("g", {class: "orq-node " + (g === "n" ? "" : g === "main" ? "main" : "g-" + g)}, svg);
+    sv("rect", {x: b.x, y: b.y, width: b.w, height: b.h, rx: 8}, gr);
+    const dy = b.h === 60 ? 3 : 0;
+    sv("text", {x: b.cx, y: b.y + 22 + dy, "text-anchor": "middle"}, gr).textContent = t;
+    sv("text", {x: b.cx, y: b.y + 41 + dy, "text-anchor": "middle", class: "sub"}, gr).textContent = s;
+  }
+  if (!mob) sv("text", {x: 550, y: 430, "text-anchor": "middle", class: "orq-lbl"}, svg).textContent = "≤ 3 subagentes a la vez";
+  else { const l = sv("text", {x: 83, y: 592, "text-anchor": "middle", class: "orq-lbl"}, svg); l.textContent = "≤ 3 subagentes"; sv("tspan", {x: 83, dy: 15}, l).textContent = "a la vez"; }
+  drawRoles();
+}
+// ---------- funciones de cada agente: un diagrama pequeño por agente
+const ROLES = [{"g": "b", "n": "Orquestador", "t": "Opus · medio", "i": ["petición del propietario", "campaign_state.json y automation_policy.json", "informes de los subagentes"], "a": ["planifica y reparte (≤ 3 a la vez)", "enruta el feedback de design-reviewer", "hace los commits"], "o": ["encargos con ficheros asignados", "estado y contador de rondas", "commits en codex/uwb-ch9-antenna-design"], "no": "No simula, no crea routines ni automatizaciones, no hace PR ni merges a master, no pasa model/effort a los subagentes."}, {"g": "b", "n": "rf-designer", "t": "Sonnet · alto", "i": ["encargo con sus ficheros", "banda 7,7376–8,2368 GHz, 50 Ω", "CLAUDE.md y AGENTS.md"], "a": ["geometrías P01/P02/P03, ranuras, alimentación", "sustrato y material", "fabricabilidad y tests"], "o": ["variants/*.json (GEOMETRY_ONLY)", "informe breve", "qué necesita em-solver"], "no": "No ejecuta simulaciones EM, no da S11 ni ganancia sin solver, no toca ficheros de em-solver ni hace commits."}, {"g": "b", "n": "em-solver", "t": "Sonnet · alto", "i": ["variants/*.json", "autorización expresa para una FDTD", "estimación de RAM y celdas"], "a": ["comprueba openEMS/CSXCAD", "puerto 50 Ω, malla, PML, convergencia", "1 FDTD con ≤ 2 vCPU"], "o": ["S11 en CSV y run_numeric.json", "versión, tiempo y RAM", "EM_NOT_RUN si falta el solver"], "no": "No lanza FDTD sin autorización, ni más de una por ejecución, ni barridos grandes; no inventa resultados ni hace commits."}, {"g": "b", "n": "validator", "t": "Sonnet · alto", "i": ["resultados y ficheros del solver", "tests del repositorio"], "a": ["ejecuta los tests", "busca lo que falsaría cada resultado", "revisa banda, unidades, puerto, estados"], "o": ["hallazgos con gravedad y evidencia", "veredicto OK / OK con observaciones / BLOQUEAR"], "no": "No modifica ficheros (sin Edit ni Write), no hace commit ni push y solo actúa después de tener resultados."}, {"g": "p", "n": "design-reviewer", "t": "Fable 5.2 · alto", "i": ["un diseño concreto confirmado para HFSS", "variants/<ID>.json y su script"], "a": ["recalcula geometría, puertos y contornos", "revisa setup y fabricabilidad", "ensayo en seco y tests"], "o": ["LISTO / CORRECCIONES MENORES / NO SIMULAR", "correcciones para rf-designer y em-solver"], "no": "No modifica ficheros, no propone diseños nuevos ni revisa campañas enteras, y solo se lanza si el propietario confirma que se simula ya en HFSS."}, {"g": "p", "n": "code-auditor", "t": "Sonnet · alto", "i": ["git diff o commit indicado", "scripts de análisis y generadores PyAEDT"], "a": ["busca errores de unidades, signos y convenciones", "revisa llamadas PyAEDT dudosas y regresiones", "ejecuta los tests"], "o": ["veredicto LISTO / CAMBIOS", "hallazgos con fichero:línea y corrección"], "no": "No modifica ficheros, no hace commit, push ni checkout y no escribe hallazgos especulativos."}, {"g": "g", "n": "artifact-builder", "t": "Sonnet · medio", "i": ["resultados en antenna_design (em/, hfss/results, variants, reports)", "página del scratchpad"], "a": ["genera los datos JSON/JS con un script", "construye las gráficas Plotly", "comprueba con Playwright"], "o": ["ficheros de datos y HTML", "capturas de pantalla", "datos no encontrados"], "no": "No publica, no hace commit ni push, no inventa ni suaviza curvas y no toca src/, matlab/, latex_memoir/ ni .codex/."}, {"g": "g", "n": "tfg-writer", "t": "Haiku", "i": ["memoria en docs/memoria-tfg", "reports/ y datos de la campaña (solo lectura)"], "a": ["detecta huecos y contradicciones", "redacta secciones LaTeX solo por encargo"], "o": ["secciones .tex", "rutas de las fuentes y dudas", "[PENDIENTE: dato] si no hay fuente"], "no": "No edita fuera de docs/memoria-tfg, no inventa cifras, no cambia el preámbulo y no hace commit ni push."}, {"g": "g", "n": "tfg-reviewer", "t": "Haiku", "i": ["TFG-memoir.tex y CONTEXTO_TFG.md", "datos y reports de la campaña"], "a": ["contrasta cada cifra con los datos", "revisa coherencia, estilo, \\ref y \\label"], "o": ["hallazgos con gravedad y línea del .tex", "correcciones para tfg-writer", "dudas del propietario"], "no": "No modifica ficheros, no hace commit, push ni checkout y no inventa datos."}];
+const _cv = document.createElement("canvas").getContext("2d");
+function wrapTxt(txt, w, font) {
+  _cv.font = font; const out = []; let cur = "";
+  const brk = wd => { while (_cv.measureText(wd).width > w && wd.length > 3) { let k = wd.length - 1; while (k > 1 && _cv.measureText(wd.slice(0, k)).width > w) k--; const cut = Math.max(wd.lastIndexOf("/", k - 1) + 1, 0) > 4 ? wd.lastIndexOf("/", k - 1) + 1 : k; out.push(wd.slice(0, cut)); wd = wd.slice(cut); } return wd; };
+  for (let wd of txt.split(" ")) { wd = brk(wd); const t = cur ? cur + " " + wd : wd; if (_cv.measureText(t).width > w && cur) { out.push(cur); cur = wd; } else cur = t; }
+  if (cur) out.push(cur); return out;
+}
+const RFONT = '11.5px "IBM Plex Sans", system-ui, sans-serif', LH = 14.5;
+function roleSvg(R, ri, W) {
+  const wide = W >= 470, pre = "rg" + ri + "m", g = R.g;
+  const svg = sv("svg", {class: "rg", role: "img", "aria-label": "Diagrama de " + R.n}), defs = sv("defs", {}, svg); addMarkers(defs, pre);
+  const nw = wide ? 160 : 124, nh = 46, nx = wide ? (W - nw) / 2 : 4;
+  const side = wide ? (W - nw) / 2 - 36 : 0, gap = 36;
+  // bloques de texto: [{lines, h}]
+  const blk = (arr, tw) => arr.map(t => { const lines = wrapTxt(t, tw, RFONT); return {lines, h: lines.length * LH + 6}; });
+  const stack = bl => bl.reduce((s, b) => s + b.h, 0) + (bl.length - 1) * 5;
+  const Fl = [], texts = [];
+  let H, C;
+  const nodeG = (cy) => {
+    const gr = sv("g", {class: "orq-node " + (R.n === "Orquestador" ? "main" : "g-" + g)}, svg);
+    sv("rect", {x: nx, y: cy - nh / 2, width: nw, height: nh, rx: 8}, gr);
+    sv("text", {x: nx + nw / 2, y: cy - 4, "text-anchor": "middle", class: "nd"}, gr).textContent = R.n;
+    sv("text", {x: nx + nw / 2, y: cy + 13, "text-anchor": "middle", class: "nt"}, gr).textContent = R.t;
+  };
+  const put = (b, x, top, anchor) => { b.lines.forEach((l, k) => sv("text", {x, y: top + 3 + 11 + k * LH, "text-anchor": anchor}, svg).textContent = l); };
+  const ends = (n, cy) => n === 1 ? [cy] : [...Array(n).keys()].map(k => cy - 13 + k * 26 / (n - 1));
+  if (wide) {
+    const tw = side - 12, bi = blk(R.i, tw), bo = blk(R.o, tw), ba = blk(R.a, nw + 20);
+    const HL = stack(bi), HR = stack(bo), HA = stack(ba);
+    C = Math.max(26 + HL / 2, 26 + HR / 2, 26 + nh / 2); H = Math.max(C + HL / 2, C + HR / 2, C + nh / 2 + 22 + HA) + 4;
+    sv("text", {x: side - 8, y: 12, "text-anchor": "end", class: "hd"}, svg).textContent = "ENTRADAS";
+    sv("text", {x: W - side + 8, y: 12, class: "hd"}, svg).textContent = "SALIDAS";
+    sv("text", {x: W / 2, y: C + nh / 2 + 16, "text-anchor": "middle", class: "hd"}, svg).textContent = "ACCIONES";
+    nodeG(C);
+    let y = C - HL / 2; const ye = ends(bi.length, C);
+    bi.forEach((b, k) => { const cy = y + b.h / 2; put(b, side - 8, y, "end"); Fl.push([`M${side},${cy} C${side + 18},${cy} ${nx - 18},${ye[k]} ${nx},${ye[k]}`]); y += b.h + 5; });
+    y = C - HR / 2; const yo = ends(bo.length, C);
+    bo.forEach((b, k) => { const cy = y + b.h / 2, x1 = W - side; put(b, x1 + 8, y, "start"); Fl.push([`M${nx + nw},${yo[k]} C${nx + nw + 18},${yo[k]} ${x1 - 18},${cy} ${x1},${cy}`]); y += b.h + 5; });
+    y = C + nh / 2 + 22;
+    ba.forEach(b => { put(b, W / 2, y, "middle"); y += b.h + 5; });
+    svg.querySelectorAll("text").forEach(t => { if (!t.getAttribute("class") && t.parentNode === svg && +t.getAttribute("y") > C + nh / 2 + 20) t.setAttribute("class", "act"); });
+  } else {
+    const xd = nx + nw + gap, tw = W - xd - 12;
+    const bi = blk(R.i, tw), bo = blk(R.o, tw), ba = blk(R.a, tw);
+    const HL = stack(bi), HA = stack(ba), HR = stack(bo);
+    let y = 20;
+    sv("text", {x: xd + 8, y: 12, class: "hd"}, svg).textContent = "ENTRADAS";
+    const posI = bi.map(b => { const t = y; y += b.h + 5; return t; });
+    y += 4; const hA = y; sv("text", {x: xd + 8, y: y + 8, class: "hd"}, svg).textContent = "ACCIONES"; y += 20;
+    const posA = ba.map(b => { const t = y; y += b.h + 5; return t; });
+    y += 4; sv("text", {x: xd + 8, y: y + 8, class: "hd"}, svg).textContent = "SALIDAS"; y += 20;
+    const posO = bo.map(b => { const t = y; y += b.h + 5; return t; });
+    H = y; C = (posA[0] + posA[posA.length - 1] + ba[ba.length - 1].h) / 2;
+    nodeG(C);
+    const ye = ends(bi.length, C), yo = ends(bo.length, C);
+    bi.forEach((b, k) => { const cy = posI[k] + b.h / 2; put(b, xd + 8, posI[k], "start"); Fl.push([`M${xd},${cy} C${xd - 18},${cy} ${nx + nw + 18},${ye[k]} ${nx + nw},${ye[k]}`]); });
+    bo.forEach((b, k) => { const cy = posO[k] + b.h / 2; put(b, xd + 8, posO[k], "start"); Fl.push([`M${nx + nw},${yo[k]} C${nx + nw + 18},${yo[k]} ${xd - 18},${cy} ${xd},${cy}`]); });
+    ba.forEach((b, k) => { put(b, xd + 8, posA[k], "start"); svg.lastChild; });
+    ba.forEach((b, k) => sv("circle", {cx: xd + 3, cy: posA[k] + 10, r: 2, fill: "none", stroke: "var(--ink-3)", "stroke-width": 1}, svg));
+  }
+  Fl.forEach(([d], k) => flow(svg, pre, k, d, g, 0, ri * 0.3 + k * 0.45));
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("height", H);
+  return svg;
+}
+function drawRoles() {
+  const grid = document.getElementById("agsvg"); if (!grid || !grid.offsetWidth) return;
+  grid.innerHTML = "";
+  ROLES.forEach((R, ri) => {
+    const d = document.createElement("div"); d.className = "ag"; grid.appendChild(d);
+    const W = Math.floor(d.clientWidth - 8);
+    d.appendChild(roleSvg(R, ri, W));
+    const p = document.createElement("p"); p.className = "ag-no"; p.innerHTML = "<b>No hace:</b> " + R.no.replace(/^No hace:\s*/, "").replace(/</g, "&lt;"); d.appendChild(p);
+  });
+  grid.dataset.w = grid.offsetWidth;
+}
+let _rt; window.addEventListener("resize", () => { clearTimeout(_rt); _rt = setTimeout(() => { const g = document.getElementById("agsvg"); if (g && g.childElementCount && g.dataset.w != g.offsetWidth) drawRoles(); }, 150); });
+ORQ_MQ.addEventListener("change", () => { if (document.getElementById("orqsvg").childElementCount) drawOrq(); });
+// ---------- líneas de desarrollo
+const L_READ = {
+  p01: "Parche simple con línea microstrip y transformador λ/4 (MS1, MS2) frente a alimentación inset (IN1, resultado negativo). Sirve de referencia del elemento sin ranura.",
+  us3: "Parche con ranura en U sin parásito; MS1 → MS4 cambian la alimentación y el ancho de la ranura. Punto de partida de las ramas con parásito.",
+  ps4: "Rama PS4: parásito enterrado con barrido de su ancho Wp y ajuste fino de patch_L (PS4_2_1), con malla fina y HFSS del mismo diseño.",
+  ps6: "Ensanchamiento de US3_PS6; US3_PS6_4 es la única que cubre el canal a −10 dB con η plana en openEMS; la malla fina (051) lo confirma y HFSS da −9,82 dB de peor S11 (−10 dB dentro de la incertidumbre).",
+  ini: "Exploración inicial: P02 (U-slot) y P03 (hexagonal ranurado) con alimentación microstrip, anterior a la línea US3."
+};
+const L_PAL = ["--s1", "--s2", "--s3", "--s4", "--s5", "--s6", "--w1", "--ink-2"];
+const L_DASH = {base: "solid", fine: "dash", hfss: "dot"};
+let L_CUR = LINES.order[0]; const L_OFF = {};
+function lcolors(line) { const g = []; line.v.forEach(v => { if (!g.includes(v.grp)) g.push(v.grp); }); return Object.fromEntries(g.map((k, i) => [k, css(L_PAL[i % L_PAL.length])])); }
+function lname(v) { return v.lab + (v.kind === "fine" ? " · malla fina" : v.kind === "hfss" && !/HFSS/.test(v.lab) ? " · HFSS" : ""); }
+const inCh = f => f >= FCH[0] - 1e-6 && f <= FCH[1] + 1e-6;
+function lmetrics(v) {
+  const m = {};
+  if (v.f) {
+    const idx = v.f.map((f, i) => i).filter(i => inCh(v.f[i])), F = idx.map(i => v.f[i]), D = idx.map(i => v.db[i]);
+    m.worst = Math.max(...D);
+    const mins = []; D.forEach((d, i) => { if (d <= -6 && (i === 0 || d < D[i - 1]) && (i === D.length - 1 || d <= D[i + 1])) mins.push([F[i], d]); });
+    for (let i = mins.length - 2; i >= 0; i--) if (mins[i + 1][0] - mins[i][0] < 0.02) { if (mins[i + 1][1] < mins[i][1]) mins[i] = mins[i + 1]; mins.splice(i + 1, 1); }
+    if (!mins.length) { const k = D.indexOf(Math.min(...D)); mins.push([F[k], D[k]]); m.nomin6 = true; }
+    m.mins = mins; m.pct = 100 * D.filter(d => d <= -10).length / D.length;
+    const reg = []; let a = null;
+    const FA = v.f, DA = v.db;
+    DA.forEach((d, i) => { if (d <= -10) { if (a === null) a = i; if (i === DA.length - 1) reg.push([FA[a], FA[i]]); } else if (a !== null) { reg.push([FA[a], FA[i - 1]]); a = null; } });
+    m.reg = reg.filter(r => r[1] >= 7.7376 && r[0] <= 8.2368);
+  }
+  const rng = (fa, ya) => { if (!fa) return null; const y = ya.filter((_, i) => inCh(fa[i])); return y.length ? [Math.min(...y), Math.max(...y), y.length] : null; };
+  m.eta = rng(v.ff_f, v.eta); m.g = rng(v.ff_f, v.grb); m.tg = rng(v.gd_f, v.gd);
+  return m;
+}
+function drawLines() {
+  seg("l-sel", LINES.order.map(k => [k, LINES.lines[k].title]), L_CUR, k => { L_CUR = k; drawLines(); });
+  const line = LINES.lines[L_CUR], col = lcolors(line), off = L_OFF[L_CUR] || (L_OFF[L_CUR] = {});
+  document.getElementById("l-title").textContent = line.title;
+  document.getElementById("l-read").textContent = L_READ[L_CUR];
+  const vl = document.getElementById("l-vars"); vl.innerHTML = "";
+  const miss = [];
+  line.v.forEach(v => {
+    const lab = document.createElement("label"), cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = !off[v.id];
+    cb.onchange = () => { off[v.id] = !cb.checked; plots(); };
+    lab.appendChild(cb);
+    lab.insertAdjacentHTML("beforeend", `<svg viewBox="0 0 30 8"><line x1="0" y1="4" x2="30" y2="4" stroke="${col[v.grp]}" stroke-width="2.5" ${v.kind === "fine" ? 'stroke-dasharray="7 4"' : v.kind === "hfss" ? 'stroke-dasharray="1.5 3.5" stroke-linecap="round"' : ""}/></svg>`);
+    lab.appendChild(document.createTextNode(lname(v))); vl.appendChild(lab);
+    const g = []; if (!v.f) g.push("S11"); if (!v.eta) g.push("η y ganancia"); if (!v.gd) g.push("τ_g");
+    if (g.length) miss.push(v.lab + ": sin " + g.join(", "));
+  });
+  document.getElementById("l-miss").textContent = miss.length ? "Datos ausentes (omitidos): " + miss.join("; ") + "." : "Todas las variantes tienen S11, η, ganancia y τ_g.";
+  function plots() {
+    const vis = line.v.filter(v => !off[v.id]);
+    const tr = (v, x, y, extra = {}) => Object.assign({type: "scatter", mode: "lines", x, y, name: lname(v), line: {color: col[v.grp], width: v.kind === "base" ? 2.2 : 2, dash: L_DASH[v.kind]}, hovertemplate: "%{y:.2f}<extra>" + lname(v) + "</extra>"}, extra);
+    const mk = (id, ya, key, fk, title, yt, extra = {}) => {
+      const T = vis.filter(v => v[key]).map(v => tr(v, v[fk], v[key], key === "db" ? {} : {mode: "lines+markers", marker: {size: 4}}));
+      Plotly.react(id, T, base("f (GHz)", yt, Object.assign({showlegend: false, hovermode: "closest", margin: {l: 52, r: 12, t: 12, b: 40}}, extra)), cfg);
+    };
+    const sh = (y) => ({type: "line", xref: "paper", x0: 0, x1: 1, yref: "y", y0: y, y1: y, line: {color: css("--ink-3"), width: 1, dash: "dot"}});
+    const ex = base("f (GHz)", "|S11| (dB)", {showlegend: false, hovermode: "closest", margin: {l: 52, r: 12, t: 12, b: 40}, xaxis: {title: "f (GHz)", range: [7.5, 8.5], gridcolor: css("--rule"), linecolor: css("--rule")}, yaxis: {title: "|S11| (dB)", range: [-30, 0], gridcolor: css("--rule"), linecolor: css("--rule")}});
+    ex.shapes.push(sh(-10), sh(-6));
+    Plotly.react("ls11", vis.filter(v => v.f).map(v => tr(v, v.f, v.db)), ex, cfg);
+    mk("leta", 0, "eta", "ff_f", "", "η = P_rad/P_acept", {yaxis: {title: "η = P_rad/P_acept", range: [0, 1], gridcolor: css("--rule"), linecolor: css("--rule")}, xaxis: {title: "f (GHz)", range: [7.70, 8.27], gridcolor: css("--rule"), linecolor: css("--rule")}});
+    mk("lg", 0, "grb", "ff_f", "", "Gr broadside (dBi)", {xaxis: {title: "f (GHz)", range: [7.70, 8.27], gridcolor: css("--rule"), linecolor: css("--rule")}});
+    mk("lgd", 0, "gd", "gd_f", "", "τ_g (ps)", {xaxis: {title: "f (GHz)", range: [7.70, 8.27], gridcolor: css("--rule"), linecolor: css("--rule")}});
+    // Smith
+    const SM = [], gr = css("--rule"), rr = [0.2, 0.5, 1, 2, 5], xx = [0.2, 0.5, 1, 2, 5];
+    const G = (r, x) => { const dn = (r + 1) ** 2 + x * x; return [(r * r + x * x - 1) / dn, 2 * x / dn]; };
+    const gl = (pts) => ({type: "scatter", mode: "lines", x: pts.map(p => p[0]), y: pts.map(p => p[1]), line: {color: gr, width: 1}, hoverinfo: "skip", showlegend: false});
+    const th = Array.from({length: 181}, (_, i) => i * 2 * Math.PI / 180); SM.push(gl(th.map(t => [Math.cos(t), Math.sin(t)])));
+    rr.forEach(r => SM.push(gl(th.map(t => { const c = r / (1 + r), R = 1 / (1 + r); return [c + R * Math.cos(t), R * Math.sin(t)]; }))));
+    xx.forEach(x => [1, -1].forEach(sg => SM.push(gl(Array.from({length: 120}, (_, i) => G(1e-3 * Math.pow(1e4, i / 119), sg * x))))));
+    SM.push(gl([[-1, 0], [1, 0]]));
+    vis.filter(v => v.f).forEach(v => {
+      const gam = v.f.map((_, i) => G(v.zr[i] / 50, v.zi[i] / 50)), ic = v.f.map((f, i) => i).filter(i => inCh(v.f[i]));
+      SM.push({type: "scatter", mode: "lines", x: gam.map(g => g[0]), y: gam.map(g => g[1]), line: {color: col[v.grp], width: 1, dash: L_DASH[v.kind]}, opacity: .4, hoverinfo: "skip", showlegend: false});
+      SM.push({type: "scatter", mode: "lines", x: ic.map(i => gam[i][0]), y: ic.map(i => gam[i][1]), name: lname(v), text: ic.map(i => v.f[i].toFixed(3) + " GHz · Z = " + v.zr[i].toFixed(1) + (v.zi[i] < 0 ? " − j" : " + j") + Math.abs(v.zi[i]).toFixed(1) + " Ω"), hovertemplate: "%{text}<extra>" + lname(v) + "</extra>", line: {color: col[v.grp], width: 3, dash: L_DASH[v.kind]}});
+    });
+    Plotly.react("lsm", SM, base("Re Γ", "Im Γ", {showlegend: false, hovermode: "closest", shapes: [], margin: {l: 40, r: 12, t: 12, b: 40},
+      xaxis: {range: [-1.05, 1.05], showgrid: false, zeroline: false, showticklabels: false, constrain: "domain", title: ""}, yaxis: {range: [-1.05, 1.05], showgrid: false, zeroline: false, showticklabels: false, scaleanchor: "x", title: ""}}), cfg);
+    // tabla
+    const e = x => String(x).replace(/</g, "&lt;");
+    const rows = line.v.map(v => {
+      const m = lmetrics(v), rg = (a, d) => a ? fmt(a[0], d) + "–" + fmt(a[1], d) : "—";
+      const reg = !m.reg ? "—" : m.reg.length ? m.reg.map(r => fmt(r[0], 3) + "–" + fmt(r[1], 3)).join("; ") : "ninguna";
+      const mn = !m.mins ? "—" : m.mins.map(x => fmt(x[0], 3)).join("; ") + (m.nomin6 ? " (mín. global)" : "");
+      const tg = m.tg ? fmt(m.tg[1] - m.tg[0], 0) + " ps" : "—";
+      return `<tr><td class="nm"><span class="legend-dot" style="background:${col[v.grp]}"></span>${e(lname(v))}</td><td>${v.mesh}</td><td>${m.worst === undefined ? "—" : fmt(m.worst, 2)}</td><td>${mn}</td><td>${m.pct === undefined ? "—" : fmt(m.pct, 0) + " %"}</td><td>${reg}</td><td>${rg(m.eta, 3)}</td><td>${rg(m.g, 2)}</td><td>${tg}</td><td class="l">${e(v.change)}</td></tr>`;
+    }).join("");
+    document.getElementById("ltab").innerHTML = "<tr><th>Variante</th><th>malla</th><th>peor S11 (dB)</th><th>f mín (GHz)</th><th>% ≤ −10 dB</th><th>región ≤ −10 dB (GHz, toda la rejilla)</th><th>η mín–máx</th><th>G mín–máx (dBi)</th><th>rizado τ_g</th><th>cambio respecto a la anterior</th></tr>" + rows;
+  }
+  plots();
+}
+// ---------- tabs
+const TABS = [["t-cand", "Candidatos", drawCands], ["t-arr", "Array físico y virtual", drawArr], ["t-cmp", "Comparativa", drawCmp], ["t-lin", "Líneas de desarrollo", drawLines], ["t-orq", "Orquestación de agentes", drawOrq]];
+const done = {};
+function show(id) {
+  for (const [t] of TABS) { document.getElementById(t).classList.toggle("on", t === id); }
+  document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.t === id));
+  const f = TABS.find(t => t[0] === id)[2];
+  if (!done[id]) { f(); done[id] = true; } else document.querySelectorAll("#" + id + " .js-plotly-plot").forEach(p => Plotly.Plots.resize(p));
+  history.replaceState(null, "", "#" + id);
+}
+const tb = document.getElementById("tabs");
+for (const [t, l] of TABS) { const b = document.createElement("button"); b.textContent = l; b.dataset.t = t; b.setAttribute("role", "tab"); b.onclick = () => show(t); tb.appendChild(b); }
+show(TABS.some(t => "#" + t[0] === location.hash) ? location.hash.slice(1) : "t-cand");
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { for (const k in done) delete done[k]; document.getElementById("orqsvg").innerHTML = ""; show(document.querySelector(".tab.on").id); });
+</script>
+</body>
+</html>

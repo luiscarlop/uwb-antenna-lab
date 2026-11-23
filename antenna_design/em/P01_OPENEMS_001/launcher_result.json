@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "wall_seconds": 142.87812127899997,
+  "user_cpu_seconds": 241.887165,
+  "system_cpu_seconds": 5.013775,
+  "maximum_child_RSS_kib": 333300,
+  "timeout": false,
+  "completed_utc": "2026-11-03T10:35:07.455239+00:00"
+}

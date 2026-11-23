@@ -1,0 +1,149 @@
+{
+ "id": "US3_MS2",
+ "family": "USLOT_MSL_H207",
+ "base_design": "US3_MS1",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 2.07,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.251
+  ],
+  [
+   5.710633,
+   -3.251
+  ],
+  [
+   5.710633,
+   3.251
+  ],
+  [
+   -5.710633,
+   3.251
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    -2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    1.95
+   ],
+   [
+    1.4,
+    1.95
+   ],
+   [
+    1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    1.95
+   ],
+   [
+    -2.2,
+    1.95
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "microstrip_inset_edge",
+  "z0_ohm": 50,
+  "line_width_mm": 3.92,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -3.251,
+  "notch_gap_mm": 0.0,
+  "inset_depth_mm": 0.0,
+  "connector": {
+   "type": "none",
+   "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Direct edge feed: the 50 ohm line touches the radiating edge y=-3.251 (no inset, no notch)."
+  },
+  "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)"
+ },
+ "uslot_params": {
+  "L_mm": 6.502,
+  "W_mm": 11.421266,
+  "s_over_L": 0.34,
+  "Wu_mm": 4.4,
+  "Lu_mm": 2.65,
+  "t_mm": 0.8,
+  "y0_mm": -0.7,
+  "open_toward": "+y"
+ },
+ "changed_vs_previous": {
+  "US3_MS1": {
+   "inset_depth_mm": [
+    2.0,
+    0.0
+   ],
+   "notch_gap_mm": [
+    0.5,
+    0.0
+   ],
+   "line_end_y_mm": [
+    -1.251,
+    -3.251
+   ],
+   "patch_polygon_mm": [
+    "rectangle with 4.92 x 2.0 mm feed notch",
+    "plain rectangle 11.421 x 6.502 mm"
+   ],
+   "note": "Single variable: the inset notch is removed (direct edge feed). L, W, U-slot, material, h, board, 50 ohm line width and port unchanged."
+  }
+ },
+ "rationale": "US3_MS2: US3_MS1 with the feed notch removed. Round 21 found Re Zin ~300 ohm and Q ~27 with the 2.0 mm inset; the notch removed ~43 % of the radiating edge. A guide estimate (US3_MS1 Q 27.5) says a single lambda/4 transformer onto the inset cannot meet -6 dB over the channel, so the edge resistance and Q of the un-notched patch are measured first. GEOMETRY_ONLY; no S11 claimed.",
+ "computation": {
+  "method": "Hammerstad-Jensen microstrip; cavity scaling of L by the EM-fitted fr; cos^2 inset law anchored on the US3 circuit fit. GEOMETRY_ONLY.",
+  "inputs": {
+   "eps_r": 4.4,
+   "h_mm": 2.07,
+   "t_mm": 0.035,
+   "fr_fit_hz_US3_fine": 7581000000.0,
+   "R_fit_ohm_US3_fine": 141.79,
+   "probe_offset_from_edge_mm": 1.096
+  },
+  "outputs": {
+   "w50_mm": 3.919,
+   "eps_eff_line": 3.308,
+   "L_mm": 6.502,
+   "R_edge_est_ohm": 185,
+   "inset_depth_chosen_mm": 0.0,
+   "uslot_base_half_width_mm": 2.2,
+   "line_length_board_edge_to_patch_edge_mm": 9.749,
+   "lambda_g_line_mm_at_f0": 20.637
+  }
+ },
+ "purpose": "EM characterisation step required before a quarter-wave transformer (round-21 next_task: edge feed without notch after an R_edge check). The 50 ohm line equals the port reference, so de-embedding the 9.749 mm line is a pure phase rotation (ideal-line assumption, step/edge parasitics stay in the result).",
+ "pre_registered_hypothesis": {
+  "H1": "Removing the notch restores the radiating edge: guide-fit loaded Q at the patch < 20 (US3_MS1: 27.5) and radiation efficiency > 0.70 (US3_MS1: 0.50-0.56), Dmax within 20 deg of broadside.",
+  "H2": "R_edge (Re Zin peak de-embedded to the patch edge) is in 150-500 ohm (guide range: cos^2 anchor 185 ohm; single-slot edge conductance ~485 ohm).",
+  "decision_rule": "If H1 holds: next round designs a lambda/4 transformer with Zt = sqrt(50*R_edge_EM). If H1 fails (Q >= 20): a single lambda/4 cannot give -6 dB over 6.25 % (VSWR-3 BW ~ 2/(Q sqrt3) < 5.8 %); report and reconsider topology.",
+  "note": "S11 at the line start is NOT expected to meet -6 dB (direct 50 ohm edge feed into a high-impedance edge)."
+ }
+}

@@ -1,0 +1,56 @@
+{
+  "run": "em/P02_MS1_OPENEMS_006",
+  "method": "Re-evaluate an MSL-port run at its measurement plane with a FIXED 50 ohm reference.",
+  "reference_ohm": 50.0,
+  "measurement_plane_y_mm": -8.11045,
+  "grid_hz": [
+    6980000000.0,
+    9000000000.0,
+    5000000.0
+  ],
+  "max_abs_s11": 0.9226891715095368,
+  "passive": true,
+  "channel_worst_s11_db": -0.6988915229933408,
+  "channel_best_s11_db": -0.7263755838658379,
+  "min_s11_db": -1.2899637160181723,
+  "min_s11_hz": 6980000000.0,
+  "zin_at_f0_meas_plane_ohm": [
+    45.607796321688895,
+    -228.4543434089166
+  ],
+  "evidence": "re-analysis of EM_SIMULATED port signals; no new solve",
+  "shifted_to_y_mm": -1.825,
+  "shift_model": "ideal lossless 50 ohm line, assumed eeff (sensitivity only, not a result)",
+  "shift_sensitivity": [
+    {
+      "eeff_assumed": 3.33,
+      "re_peak_ohm": 6.418752162933051,
+      "re_peak_hz": 6980000000.0,
+      "x_at_re_peak_ohm": -42.574111252229656,
+      "z_at_f0_ohm": [
+        2.052071213678108,
+        -7.082129165743974
+      ]
+    },
+    {
+      "eeff_assumed": 3.5,
+      "re_peak_ohm": 6.919788902453673,
+      "re_peak_hz": 6980000000.0,
+      "x_at_re_peak_ohm": -46.32190078910882,
+      "z_at_f0_ohm": [
+        2.0853841613380473,
+        -9.564823936028246
+      ]
+    },
+    {
+      "eeff_assumed": 3.65,
+      "re_peak_ohm": 7.422174728433049,
+      "re_peak_hz": 6980000000.0,
+      "x_at_re_peak_ohm": -49.79231872517922,
+      "z_at_f0_ohm": [
+        2.122786335040568,
+        -11.742476910641663
+      ]
+    }
+  ]
+}

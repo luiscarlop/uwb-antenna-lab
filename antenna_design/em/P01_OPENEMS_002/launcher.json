@@ -1,0 +1,19 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "1442s",
+    "taskset",
+    "-c",
+    "0,1",
+    "/workspace/openems-install/venv/bin/python",
+    "antenna_design/em/p01_openems_mesh.py",
+    "solve",
+    "--out",
+    "antenna_design/em/P01_OPENEMS_002"
+  ],
+  "launched_by": "orchestrator (Claude round 2)",
+  "started_utc": "2026-11-03T11:55:04.659049+00:00",
+  "authorization_note": "Conservative 2048 B/cell estimate 9.07 GiB exceeds the orchestrator's own 8 GiB brief threshold but fits 15.5 GiB available; measured-RSS scaled estimate 0.84 GiB. 2 CPUs, single FDTD, external timeout."
+}

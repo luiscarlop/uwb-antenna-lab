@@ -1,0 +1,13 @@
+{
+  "manifest_sha256": "d1109336f016998e13364c5b66328347893e92d558436eab79ad1bf2d2f698ec",
+  "source_manifest": "antenna_design/outputs/manifest.json",
+  "evidence": "GEOMETRY_ONLY",
+  "HFSS_executed": false,
+  "design_ids": [
+    "P01_rectangular_patch",
+    "P02_u_slot_patch",
+    "P03_hex_slot_patch"
+  ],
+  "instructions": "../HFSS_STEPS.md",
+  "warning": "Proposed 0.2 mm finite-width port is not identical to the openEMS line port; compare only after port sensitivity study."
+}

@@ -1,0 +1,12 @@
+{
+  "max_abs_delta_s11_complex_channel": 0.04088308380471113,
+  "max_abs_delta_db_channel": 0.6909143113601655,
+  "mean_delta_db_fine_minus_base": 0.5756171934379505,
+  "worst_base": -6.147916559008374,
+  "worst_fine": -5.704490790161181,
+  "margin_base_db": 0.1479165590083742,
+  "worst_change_db": 0.4434257688471934,
+  "acceptance_rule": "accept if |worst change| < base margin and fine still <= -6 dB on all channel samples (pre-registered, reports/claude_run_012.md)",
+  "accepted": false,
+  "mesh_convergence": "NOT_ESTABLISHED (two meshes = sensitivity)"
+}

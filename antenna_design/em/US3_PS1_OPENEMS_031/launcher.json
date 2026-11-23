@@ -1,0 +1,34 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "1500s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US3_PS1.json",
+    "--out",
+    "em/US3_PS1_OPENEMS_031",
+    "--mesh",
+    "base",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude round 31, owner request 2026-11-15: U-slot + buried parasitic)",
+  "started_utc": "2026-11-15T18:05:40.538616+00:00",
+  "pre_run_estimate": {
+    "vs_US3_MS3_023": "~1.01x cells; 023 took 494 s, 0.45 GB",
+    "vcpu": 2
+  }
+}

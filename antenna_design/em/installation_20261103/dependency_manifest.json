@@ -1,0 +1,142 @@
+[
+  {
+    "name": "libboost-atomic1.83-dev",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-atomic1.83-dev_1.83.0-4.2_amd64.deb",
+    "sha256": "d10e48cc19a8d693a87f03030854d37fc4809baab059ebb2e8b2ed4a99cb805c",
+    "bytes": 235544
+  },
+  {
+    "name": "libboost-atomic1.83.0",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-atomic1.83.0_1.83.0-4.2_amd64.deb",
+    "sha256": "2b612ebd5a7d9bfcd395af58c05b1b55e9e83f4b93db182fb269dd8478d27e54",
+    "bytes": 234080
+  },
+  {
+    "name": "libboost-chrono1.83-dev",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-chrono1.83-dev_1.83.0-4.2_amd64.deb",
+    "sha256": "4b9729862d76f52c395983d4ec29066e411bf12bca172a2cbb2e3827b2f8e82d",
+    "bytes": 245680
+  },
+  {
+    "name": "libboost-chrono1.83.0t64",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-chrono1.83.0t64_1.83.0-4.2_amd64.deb",
+    "sha256": "59ffe41ccadbaba0701ab17e77830022d7a0c9b7f5bf3f8d685c3f5dcb86bfc5",
+    "bytes": 240268
+  },
+  {
+    "name": "libboost-date-time1.83-dev",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-date-time1.83-dev_1.83.0-4.2_amd64.deb",
+    "sha256": "37a186258ebd043d33b8cc5f1f7b4e2b6107ee1b6631e9084ec37dd46bed83c8",
+    "bytes": 239308
+  },
+  {
+    "name": "libboost-date-time1.83.0",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-date-time1.83.0_1.83.0-4.2_amd64.deb",
+    "sha256": "5e13c1cf49e2f7e5fafdaf6687c6d6783ccd7e1ffb30e3171a0f0ed80083ba7e",
+    "bytes": 230316
+  },
+  {
+    "name": "libboost-program-options1.83-dev",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-program-options1.83-dev_1.83.0-4.2_amd64.deb",
+    "sha256": "d4086487f60aafffce183184d7cdf34d08537576732c56d51bd6f74d9c077195",
+    "bytes": 375444
+  },
+  {
+    "name": "libboost-program-options1.83.0",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-program-options1.83.0_1.83.0-4.2_amd64.deb",
+    "sha256": "dc5fa835e9362fd3d285ccb0aeaecada4954b9a2ccf765891af868482edeb6f4",
+    "bytes": 347316
+  },
+  {
+    "name": "libboost-serialization1.83-dev",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-serialization1.83-dev_1.83.0-4.2_amd64.deb",
+    "sha256": "c1c71dfd14710e86eab7cd49d6be4722595d1bf4b48b4934e0136742a374c964",
+    "bytes": 373056
+  },
+  {
+    "name": "libboost-serialization1.83.0",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-serialization1.83.0_1.83.0-4.2_amd64.deb",
+    "sha256": "5c0f28f2464e72c16c01440db47122e23ae0b4147e11e0e6d3b4ced86190324c",
+    "bytes": 333492
+  },
+  {
+    "name": "libboost-system1.83-dev",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-system1.83-dev_1.83.0-4.2_amd64.deb",
+    "sha256": "ac60c2e1bdee779633fad66212b638bf77ddf1e99d650d06bd65ac55577e9839",
+    "bytes": 231676
+  },
+  {
+    "name": "libboost-system1.83.0",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-system1.83.0_1.83.0-4.2_amd64.deb",
+    "sha256": "a453edc44ae53303495d6e123b3ea659431849dd52b075459518cfffc49ff179",
+    "bytes": 230532
+  },
+  {
+    "name": "libboost-thread1.83-dev",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-thread1.83-dev_1.83.0-4.2_amd64.deb",
+    "sha256": "839f2580bbe2032248736057075ac6c636964f49cbece146ad2145f3b53ba0cb",
+    "bytes": 276784
+  },
+  {
+    "name": "libboost-thread1.83.0",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-thread1.83.0_1.83.0-4.2_amd64.deb",
+    "sha256": "00d3ec4fa47bb2bab1afa3ef5cd354e1afd47eacf08bb7db6c4092218008ebbb",
+    "bytes": 269544
+  },
+  {
+    "name": "libboost1.83-dev",
+    "version": "1.83.0-4.2",
+    "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost1.83-dev_1.83.0-4.2_amd64.deb",
+    "sha256": "1f11fc6fb2ffe9378a0f0ebc8f2fd9223fb958b4a40bb9381c67a8857d947ca3",
+    "bytes": 10588968
+  },
+  {
+    "name": "libhdf5-310",
+    "version": "1.14.5+repack-3",
+    "url": "https://deb.debian.org/debian/pool/main/h/hdf5/libhdf5-310_1.14.5+repack-3_amd64.deb",
+    "sha256": "6432421c16e7ebfd4c29d8d7b5ee00196c2ebb357bd97c1de6e6d7940edc9f7e",
+    "bytes": 1344012
+  },
+  {
+    "name": "libhdf5-dev",
+    "version": "1.14.5+repack-3",
+    "url": "https://deb.debian.org/debian/pool/main/h/hdf5/libhdf5-dev_1.14.5+repack-3_amd64.deb",
+    "sha256": "87dad961959b1de5218824d4639f7326f0b71249d3d38eba22db0783e01814f9",
+    "bytes": 3164560
+  },
+  {
+    "name": "libhdf5-hl-310",
+    "version": "1.14.5+repack-3",
+    "url": "https://deb.debian.org/debian/pool/main/h/hdf5/libhdf5-hl-310_1.14.5+repack-3_amd64.deb",
+    "sha256": "c82d6bd69983bf330fab04d32429100d18209fea458552f410dee77ea5f9f7ba",
+    "bytes": 69284
+  },
+  {
+    "name": "libtinyxml-dev",
+    "version": "2.6.2-7",
+    "url": "https://deb.debian.org/debian/pool/main/t/tinyxml/libtinyxml-dev_2.6.2-7_amd64.deb",
+    "sha256": "281a2d6a748087253b551fcc4f27946e17559f16f789b4bea741bc027675d8ef",
+    "bytes": 54348
+  },
+  {
+    "name": "libtinyxml2.6.2v5",
+    "version": "2.6.2-7",
+    "url": "https://deb.debian.org/debian/pool/main/t/tinyxml/libtinyxml2.6.2v5_2.6.2-7_amd64.deb",
+    "sha256": "812ba7336d67ce425ea6efaf328e9e8761ea16c99642db0c9764aa0dbc098bea",
+    "bytes": 38232
+  }
+]

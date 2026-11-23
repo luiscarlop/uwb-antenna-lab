@@ -1,0 +1,37 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "1500s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US3_MS3.json",
+    "--out",
+    "em/US3_MS3_OPENEMS_023",
+    "--mesh",
+    "base",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude routine round 23)",
+  "started_utc": "2026-11-05T16:22:34.831375+00:00",
+  "pre_run_estimate": {
+    "total_cells": 2199120,
+    "vs_US3_MS2": "1.12x cells, min y step 0.083 vs 0.104 mm (dt x0.8)",
+    "wall_s_est": 145,
+    "peak_rss_mib_est": 460,
+    "vcpu": 2
+  }
+}

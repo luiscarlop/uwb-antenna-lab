@@ -1,0 +1,199 @@
+{
+ "id": "P01_IN1",
+ "family": "P01_MSL_H207",
+ "base_design": "P01_MS2",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 2.07,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.661
+  ],
+  [
+   -2.96,
+   -3.661
+  ],
+  [
+   -2.96,
+   -1.561
+  ],
+  [
+   2.96,
+   -1.561
+  ],
+  [
+   2.96,
+   -3.661
+  ],
+  [
+   5.710633,
+   -3.661
+  ],
+  [
+   5.710633,
+   3.661
+  ],
+  [
+   -5.710633,
+   3.661
+  ]
+ ],
+ "slots_polygon_mm": [],
+ "feed": {
+  "type": "microstrip_inset_edge",
+  "z0_ohm": 50,
+  "line_width_mm": 3.92,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -1.561,
+  "notch_gap_mm": 1.0,
+  "inset_depth_mm": 2.1,
+  "connector": {
+   "type": "none",
+   "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Direct 50 ohm line (w 3.92 mm, y -13 -> inset tip) with no lambda/4 transformer."
+  },
+  "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+  "inset_tip_y_mm": -1.561,
+  "notch_half_width_mm": 2.96
+ },
+ "patch_params": {
+  "L_mm": 7.322,
+  "W_mm": 11.421266
+ },
+ "changed_vs_previous": {
+  "P01_MS2": {
+   "feed": [
+    "microstrip_edge_qw: 50 ohm line 3.92 mm (y -13 -> -10.761) + lambda/4 transformer 0.80 x 7.10 mm to the radiating edge y=-3.661",
+    "microstrip_inset_edge: 50 ohm line 3.92 mm (y -13 -> -1.561) straight into a notch in the radiating edge; notch gap 1.0 mm per side, inset depth 2.1 mm, no transformer"
+   ],
+   "patch_polygon_mm": "the rectangle is the same (W 11.421266, L 7.322 mm); only a notch is cut from the radiating edge (4 vertices added: notch x = +-2.96 mm, tip y = -1.561 mm)",
+   "unchanged": "L, W, FR4 eps_r 4.4 / tan_delta 0.017 / h 2.07 mm, copper 35 um, board 26x26 mm, lumped 50 ohm port at the board edge y=-13 mm (S11 reference plane = line start, no de-embedding)",
+   "note": "Only the feed topology changes (transformer replaced by an inset). Patch L/W NOT retuned: the EM de-embedded patch fits of 025-028 give fr 8.02-8.035 GHz (+0.4 to +0.6 % over f0), and an inset notch is expected to lower fr slightly (unverified direction), so L is left at 7.322 mm. Also P01_MS1 (same patch, transformer 6.6 mm)."
+  }
+ },
+ "rationale": "P01_IN1: same plain rectangle as P01_MS1/MS2 fed by a direct 50 ohm microstrip into an inset notch, with no lambda/4 transformer, to compare with P01_MS2 (EM base mesh 027: worst -10.49 dB in the channel; fine 028: -10.44 dB). R_edge estimate: the 50 ohm line and the 0.8 mm transformer were removed analytically (feed_retune_guide.py de-embedding, Hammerstad-Jensen Z0 + Getsinger eeff, ideal lossless TEM lines; GUIDE_MODEL) from the EM Zin of runs 025/026 (P01_MS1, transformer 6.6 mm) and, as a cross-check, 027/028 (P01_MS2, 7.1 mm), and the resulting Zpatch(f) was fitted with Zin = R0 + jwLs + R/(1+jQ(f/fr-fr/f)) (em/fit_patch_circuit.py model): R = 137.4 / 131.2 / 129.1 / 123.7 ohm, fr 8.030 / 8.035 / 8.020 / 8.020 GHz, Q 9.5, Ls 1.45-1.76 nH. Peak Re(Zpatch) 134 / 128 / 125 / 120 ohm. R_edge ~ 130 ohm (spread 124-137 ohm; systematic error of the de-embedding NOT bounded). This is a factor ~2.3 below the Balanis transmission-line model R_edge = 300 ohm in em/circuit_fits/P01_MS1_design.json, which ignores k0h ~ 0.35 and fringing; the EM-derived value is the one used here. Inset depth: R(y0) = R_edge cos^2(pi y0 / L) = 50 ohm -> cos^2 = 50/130 = 0.385 -> y0 = 2.10 mm (L 7.322 mm; R_edge 124-137 ohm gives y0 2.05-2.13 mm). UNCERTAINTY: in round 21 (US3_MS1, notch 0.5 mm, depth 2.0 mm, U-slot) the cos^2 law with R_edge 185 ohm predicted ~60 ohm but the EM gave Re ~288 ohm at the port plane (fit; Re peak 299 ohm) and ~263-267 ohm at the inset tip after removing the 9.749 mm 50 ohm line (GUIDE_MODEL), i.e. 4.4-4.8x the prediction (5.8x relative to 50 ohm). Part of that came from the wrong R_edge (185 ohm from a probe fit; the EM edge fit of US3_MS2 gives 243-296 ohm -> cos^2 prediction 79-96 ohm -> residual factor ~2.7-3.3); the rest comes from the notch (and U-slot), which cos^2 does not model. Here the notch removes 5.92/11.42 = 52 % of the radiating edge (4.92/11.42 = 43 % in US3_MS1), so a residual factor of ~3 (R_tip ~ 150 ohm) is possible and NOT predicted by any verified law; the P01 plain rectangle has no U-slot, so it may be smaller. If R_tip comes out high, the empirical re-anchoring (deeper inset, ~2.8 mm for a factor 3) is a heuristic from one geometry, not a law. Other laws (e.g. cos^4) are mentioned in the literature but are NOT verified here and are not used. Notch gap 1.0 mm per side (US3_MS1 used 0.5 mm: 1-2 mesh cells, validator reserve 1): prepare --mesh base gives 5 cells in each 1.0 mm gap (steps 0.18-0.25 mm) and max neighbour ratio 1.39 (x), 1.40 (y); gap 0.75 mm was also prepared (3 cells, ratio 1.33/1.40) and discarded because it would resolve the notch with fewer cells. No S11, gain, efficiency, phase or group delay is claimed.",
+ "computation": {
+  "evidence_of_each_number": "GUIDE_MODEL (analytic de-embedding / circuit fit of EM_SIMULATED data) unless noted GEOMETRY_ONLY",
+  "method": "Remove 50 ohm line (w 3.92) and lambda/4 transformer (w 0.80, 6.6 or 7.1 mm) from the EM Zin at the lumped port (runs 025/026/027/028, s11_wideband.csv, 7.3-8.7 GHz, points with u_inc_rel_db <= -20 excluded) with ideal lossless TEM lines; fit R0 + jwLs + R/(1+jQ(f/fr-fr/f)); cos^2 inset law R(y0) = R_edge cos^2(pi y0/L).",
+  "inputs": {
+   "L_mm": 7.322,
+   "W_mm": 11.421266,
+   "eps_r": 4.4,
+   "h_mm": 2.07,
+   "f0_hz": 7987200000.0,
+   "runs": [
+    "em/P01_MS1_OPENEMS_025",
+    "em/P01_MS1_FINE_OPENEMS_026",
+    "em/P01_MS2_OPENEMS_027",
+    "em/P01_MS2_FINE_OPENEMS_028"
+   ]
+  },
+  "outputs": {
+   "R_edge_fit_ohm": {
+    "025": 137.4,
+    "026": 131.2,
+    "027": 129.1,
+    "028": 123.7
+   },
+   "R_edge_re_peak_ohm": {
+    "025": 133.7,
+    "026": 127.9,
+    "027": 125.0,
+    "028": 120.1
+   },
+   "fr_fit_ghz": {
+    "025": 8.03,
+    "026": 8.035,
+    "027": 8.02,
+    "028": 8.02
+   },
+   "Q_fit": 9.5,
+   "Ls_fit_nH": {
+    "025": 1.76,
+    "026": 1.73,
+    "027": 1.48,
+    "028": 1.45
+   },
+   "R_edge_adopted_ohm": 130,
+   "R_edge_spread_ohm": [
+    124,
+    137
+   ],
+   "R_edge_TL_balanis_ohm_not_used": 300.2,
+   "cos2_at_chosen_depth": 0.3854,
+   "R_tip_cos2_ohm": 50.1,
+   "inset_depth_for_50ohm_mm": 2.1,
+   "inset_depth_range_for_R_edge_spread_mm": [
+    2.05,
+    2.13
+   ],
+   "inset_depth_chosen_mm": 2.1,
+   "notch_gap_mm": 1.0,
+   "notch_half_width_mm": 2.96,
+   "notch_total_width_mm": 5.92,
+   "notch_fraction_of_W": 0.518,
+   "inset_tip_y_mm": -1.561,
+   "metal_remaining_ahead_of_tip_mm": 5.222,
+   "side_metal_beside_notch_mm": 2.7506,
+   "R_tip_if_residual_factor_2p7_to_3p3_ohm": [
+    135,
+    165
+   ],
+   "depth_if_residual_factor_3_mm": 2.8,
+   "Zin_tip_guide_at_f0": "Re ~ 50 ohm (cos^2, R_edge 130) with an unknown series reactance: the transformer-based fits give Ls 1.45-1.76 nH (+73 to +88 ohm at f0) but that Ls includes the junction step/de-embedding error (~20 ohm reactive between 025 and 027) and may not exist for an inset tip; guide circuit (Q 9.5, fr 8.02 GHz): Ls 0 -> 50+j4 ohm, worst |S11| in channel -9.8 dB; Ls 0.75 nH -> 50+j42, -4.5 dB; Ls 1.5 nH -> 50+j79, -2.4 dB. R_tip 100 ohm: -8.1 / -4.6 / -2.9 dB; R_tip 150 ohm: -5.7 / -3.9 / -2.8 dB (same Ls). These are circuit-model what-ifs, NOT S11 results.",
+   "guide_validity": "em/feed_retune_guide.py is a GUIDE_MODEL; its own validation (round 27, validator) says it failed on P01_MS2: predicted -9.18 dB worst / 7.78-8.43 GHz vs openEMS -10.42 dB / 7.724-8.306 GHz (mean in-channel error 2.9 dB, up to 5.9 dB; wrong upper-edge trend), the de-embedded Zpatch differs ~20 ohm reactive between runs 025 and 027, and it must not be used to extrapolate across a width (Z0) change. Here it is only used to read Re(Zpatch) at the radiating edge, not to predict the inset.",
+   "single_resonance_bandwidth_note": "A single parallel resonance with Q ~ 9.5 and a perfect 50 ohm match at the centre gives worst channel |S11| ~ -9.8 dB (guide circuit); the -10.4 dB of P01_MS2 uses the extra resonance of the transformer. A direct inset therefore cannot be expected to beat P01_MS2 by this model; the target is to match its band with fewer feed elements."
+  },
+  "mesh_prepare_check": {
+   "command": "python em/patch_openems.py prepare --variant variants/P01_IN1.json --out <tmp> --mesh base --edge-port lumped (prepare only, no solve)",
+   "cells_in_each_1mm_gap": 5,
+   "gap_x_steps_mm": [
+    0.25,
+    0.18,
+    0.25,
+    0.243,
+    0.243
+   ],
+   "max_neighbor_ratio": {
+    "x": 1.3875,
+    "y": 1.4,
+    "z": 1.326
+   },
+   "mesh_grading_limit_used": 1.4,
+   "estimated_RAM_GB_x2_margin": 0.62,
+   "estimated_engine_s": 302,
+   "note": "prepare only; mesh_convergence NOT_ESTABLISHED (no FDTD run). Metal-edge rule puts the notch edges 1/3 cell from the mesh lines, so the effective gap seen by the solver is ~1.17 mm (edges snap to the inner lines).",
+   "total_cells": 1889244,
+   "total_nodal_cells_budget_basis": 1937320
+  }
+ },
+ "manufacturability": {
+  "min_feature_mm": 1.0,
+  "patch_to_board_edge_mm": {
+   "x": 7.289,
+   "y": 9.339
+  },
+  "note": "Notch gap 1.0 mm per side, line 3.92 mm, no slots, no sub-mm features (P01_MS2 transformer is 0.8 mm). Inset tip at 5.2 mm from the far radiating edge and 2.75 mm of metal beside each notch side. Sensitivity to etch tolerance of the 1.0 mm gap not assessed."
+ },
+ "purpose": "Test whether a direct 50 ohm line into an inset notch (no transformer) matches the plain P01 patch over channel 9, for comparison with P01_MS2 (transformer 0.8 x 7.1 mm, EM base mesh worst -10.49 dB).",
+ "pre_registered_hypothesis": {
+  "H1": "Base mesh, lumped port, one FDTD: worst-case |S11| over 7.7376-8.2368 GHz is <= -6 dB (minimum matching reference met with the inset alone).",
+  "H2": "The inset law transfers to the plain rectangle: Re Zin at the inset tip (50 ohm line de-embedded as in GUIDE_MODEL, at the Re peak) is within 33-75 ohm (cos^2 prediction 50 ohm within a factor 1.5), i.e. the residual factor of ~3-4.8 seen in US3_MS1 does not repeat without the U-slot.",
+  "decision_rule": "H1 true and H2 true -> fine mesh (convergence) and compare with P01_MS2 (027/028: -10.49/-10.44 dB). H2 false with R_tip > 75 ohm -> refinement 1: re-anchor R_edge_eff = R_tip/cos^2(pi*2.1/7.322) and set y0 = (L/pi)*acos(sqrt(50/R_edge_eff)); stop if the new y0 would exceed 3.0 mm. H2 false with R_tip < 33 ohm -> same formula, shallower. H1 false with H2 true (match in R but reactance/Q-limited) -> stop the direct-inset path and report; do not add a transformer in this variant. Evidence stays GEOMETRY_ONLY until a real EM result exists.",
+  "pre_registered_before_simulation": true
+ },
+ "mesh_hint_lines_mm": {}
+}

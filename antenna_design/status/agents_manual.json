@@ -1,0 +1,54 @@
+{
+ "agents": [],
+ "done": [
+  {
+   "agent": "artifact-builder",
+   "model": "Sonnet · medio",
+   "task": "US3_PS6_4 en Candidatos, Comparativa y Líneas",
+   "ended": "2026-11-19T17:54:27Z",
+   "dur_s": 133
+  },
+  {
+   "agent": "validator",
+   "model": "Sonnet · alto",
+   "task": "Auditoría ronda 051 (OK con observaciones)",
+   "ended": "2026-11-19T17:52:29Z",
+   "dur_s": 172
+  },
+  {
+   "agent": "artifact-builder",
+   "model": "Sonnet · medio",
+   "task": "Pestaña «Líneas de desarrollo» del resumen",
+   "ended": "2026-11-19T16:53:00Z",
+   "dur_s": 191
+  },
+  {
+   "agent": "validator",
+   "model": "Sonnet · alto",
+   "task": "Auditoría rondas 049–050 (OK con observaciones)",
+   "ended": "2026-11-19T16:35:00Z",
+   "dur_s": 256
+  },
+  {
+   "agent": "rf-designer",
+   "model": "Sonnet · alto",
+   "task": "Diseño de US3_PS6_4 (parche más ancho)",
+   "ended": "2026-11-19T16:04:00Z",
+   "dur_s": 622
+  },
+  {
+   "agent": "artifact-builder",
+   "model": "Sonnet · medio",
+   "task": "Diagrama de orquestación (curvas, una bolita)",
+   "ended": "2026-11-19T15:56:00Z",
+   "dur_s": 276
+  },
+  {
+   "agent": "rf-designer",
+   "model": "Sonnet · alto",
+   "task": "Diseño de US3_PS6_3 (parásito más largo)",
+   "ended": "2026-11-19T15:35:00Z",
+   "dur_s": 822
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+  "coarse": "em/US3_MS3_OPENEMS_023",
+  "fine": "em/US3_MS3_FINE_OPENEMS_024",
+  "rule": "reports/claude_run_016.md (two meshes)",
+  "channel_coarse": {
+    "samples": 501,
+    "worst_db": -8.18197556473785,
+    "worst_hz": 7737600000.0,
+    "best_db": -16.38765601395598,
+    "best_hz": 7979000000.0,
+    "n_above_minus6": 0,
+    "n_le_minus10": 376,
+    "max_abs_s11": 0.38985330629139686
+  },
+  "channel_fine": {
+    "samples": 501,
+    "worst_db": -8.035056529097254,
+    "worst_hz": 7737600000.0,
+    "best_db": -18.302073390605273,
+    "best_hz": 7986000000.0,
+    "n_above_minus6": 0,
+    "n_le_minus10": 387,
+    "max_abs_s11": 0.39650363538402905
+  },
+  "worst_change_db": 0.14691903564059672,
+  "max_abs_dGamma_channel": 0.04517284697733718,
+  "max_abs_dGamma_hz": 7737600000.0,
+  "minus6_edges_coarse_hz": [
+    7637656786.2001,
+    8381122807.644699
+  ],
+  "minus6_edges_fine_hz": [
+    7647205996.222773,
+    8388976414.342147
+  ],
+  "edge_shift_hz": [
+    9549210.022672653,
+    7853606.697447777
+  ],
+  "edge_window_hz": [
+    7000000000.0,
+    9000000000.0
+  ],
+  "checks": {
+    "1_fine_worst_le_minus6": true,
+    "1_worst_change_le_0p5dB": true,
+    "2_max_dGamma_le_0p03": false,
+    "2_minus6_edges_shift_le_10MHz": true,
+    "3_port_validity_ok": true,
+    "3_abs_s11_le_1p02": true
+  },
+  "verdict": "RULE_FAILED",
+  "note": "energy criterion (item 3) is checked from the solver logs by the orchestrator"
+}

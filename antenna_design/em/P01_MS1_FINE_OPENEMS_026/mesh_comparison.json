@@ -1,0 +1,67 @@
+{
+  "coarse": "em/P01_MS1_OPENEMS_025",
+  "fine": "em/P01_MS1_FINE_OPENEMS_026",
+  "rule": "reports/claude_run_016.md (two meshes)",
+  "channel_coarse": {
+    "samples": 501,
+    "worst_db": -8.34391667562308,
+    "worst_hz": 7737600000.0,
+    "best_db": -52.072732031663385,
+    "best_hz": 8053000000.0,
+    "n_above_minus6": 0,
+    "n_le_minus10": 440,
+    "max_abs_s11": 0.3826521573877384
+  },
+  "channel_fine": {
+    "samples": 501,
+    "worst_db": -8.165619997426822,
+    "worst_hz": 7737600000.0,
+    "best_db": -34.31124170520354,
+    "best_hz": 8054000000.0,
+    "n_above_minus6": 0,
+    "n_le_minus10": 434,
+    "max_abs_s11": 0.39058809331978034
+  },
+  "worst_change_db": 0.17829667819625783,
+  "max_abs_dGamma_channel": 0.029071098684874064,
+  "max_abs_dGamma_hz": 7737600000.0,
+  "minus6_edges_coarse_hz": [
+    7615442732.290673,
+    8640717207.364847
+  ],
+  "minus6_edges_fine_hz": [
+    7625097553.0317955,
+    8634648972.28605
+  ],
+  "edge_shift_hz": [
+    9654820.741122246,
+    6068235.078796387
+  ],
+  "edge_window_hz": [
+    7000000000.0,
+    9000000000.0
+  ],
+  "minus6_contiguous_coarse_hz": [
+    7615442732.290673,
+    8640717207.364847
+  ],
+  "minus6_contiguous_fine_hz": [
+    7625097553.0317955,
+    8634648972.28605
+  ],
+  "contiguous_edge_shift_hz": [
+    9654820.741122246,
+    6068235.078796387
+  ],
+  "edge_rule": "item 2 uses contiguous -6 dB region containing f0 (round 26); window edges kept for reference",
+  "checks": {
+    "1_fine_worst_le_minus6": true,
+    "1_worst_change_le_0p5dB": true,
+    "2_max_dGamma_le_0p03": true,
+    "2_minus6_edges_shift_le_10MHz": true,
+    "3_port_validity_ok": true,
+    "3_abs_s11_le_1p02": true
+  },
+  "verdict": "BOUNDED_SENSITIVITY_PASS",
+  "note": "energy criterion (item 3) is checked from the solver logs by the orchestrator"
+}

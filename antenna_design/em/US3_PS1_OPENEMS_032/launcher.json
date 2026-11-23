@@ -1,0 +1,37 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "1700s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US3_PS1.json",
+    "--out",
+    "em/US3_PS1_OPENEMS_032",
+    "--mesh",
+    "base",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9",
+    "--max-timesteps",
+    "60000"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude round 32: diagnostic re-run of 031 with NrTS 60000, validator recommendation)",
+  "started_utc": "2026-11-15T18:22:24.767210+00:00",
+  "pre_run_estimate": {
+    "031": "30000 steps in 644 s, 0.46 GB, energy -43 dB at the cap; decay ~1.6 dB/1000 steps -> -50 dB near 35000 steps",
+    "wall_s_est": "750-1300",
+    "vcpu": 2
+  }
+}

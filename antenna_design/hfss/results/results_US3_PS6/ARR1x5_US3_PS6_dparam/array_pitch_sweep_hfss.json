@@ -1,0 +1,693 @@
+{
+  "evidence": "EM_SIMULATED (HFSS, owner Optimetrics on arr_d; Touchstone exported with HFSS 2025.1.0; solving version not confirmed); adaptive convergence.conv exported for 3 of 16 pitches, 3 of them converged; lumped port, no wave-port check, so not HFSS_VALIDATED",
+  "design": "ARR1x5_US3_PS6_dparam",
+  "channel_hz": [
+    7737600000.0,
+    8236800000.0
+  ],
+  "steer_deg": [
+    0,
+    15,
+    30,
+    45
+  ],
+  "notes": [
+    "channel grid of the 1 MHz sweep (7.738-8.236 GHz)",
+    "ECC from S assumes lossless antennas",
+    "active reflection: uniform amplitude, progressive phase, all ports 50 ohm"
+  ],
+  "rows": [
+    {
+      "pitch_mm": 13.5,
+      "file": "ARR1x5_US3_PS6_dparam_d13p5mm/ARR1x5_d13p5mm.s5p",
+      "port_match_worst_db": -8.48,
+      "port_match_worst_by_port_db": [
+        -9.08,
+        -8.48,
+        -8.98,
+        -8.49,
+        -9.06
+      ],
+      "neighbour_coupling_worst_db": -10.91,
+      "non_neighbour_coupling_worst_db": -18.3,
+      "ecc_s_param_max": 0.0852,
+      "reciprocity_max_abs": 4.818051349424187e-15,
+      "active": {
+        "0": {
+          "worst_db": -7.21,
+          "worst_port": 4,
+          "worst_ghz": 8.156,
+          "tarc_worst_db": -8.63
+        },
+        "15": {
+          "worst_db": -7.66,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -8.61
+        },
+        "30": {
+          "worst_db": -7.17,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.65
+        },
+        "45": {
+          "worst_db": -6.65,
+          "worst_port": 5,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -8.71
+        }
+      }
+    },
+    {
+      "pitch_mm": 14.0,
+      "file": "ARR1x5_US3_PS6_dparam_d14mm/ARR1x5_d14mm.s5p",
+      "port_match_worst_db": -8.46,
+      "port_match_worst_by_port_db": [
+        -8.98,
+        -8.46,
+        -8.82,
+        -8.46,
+        -8.96
+      ],
+      "neighbour_coupling_worst_db": -11.65,
+      "non_neighbour_coupling_worst_db": -19.42,
+      "ecc_s_param_max": 0.0701,
+      "reciprocity_max_abs": 4.555382526724137e-15,
+      "active": {
+        "0": {
+          "worst_db": -7.87,
+          "worst_port": 2,
+          "worst_ghz": 8.155,
+          "tarc_worst_db": -8.93
+        },
+        "15": {
+          "worst_db": -8.02,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -8.97
+        },
+        "30": {
+          "worst_db": -7.23,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.86
+        },
+        "45": {
+          "worst_db": -6.84,
+          "worst_port": 5,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -8.34
+        }
+      }
+    },
+    {
+      "pitch_mm": 14.5,
+      "file": "ARR1x5_US3_PS6_dparam_d14p5mm/ARR1x5_d14p5mm.s5p",
+      "port_match_worst_db": -8.54,
+      "port_match_worst_by_port_db": [
+        -9.21,
+        -8.57,
+        -8.82,
+        -8.54,
+        -9.09
+      ],
+      "neighbour_coupling_worst_db": -12.4,
+      "non_neighbour_coupling_worst_db": -20.43,
+      "ecc_s_param_max": 0.0594,
+      "reciprocity_max_abs": 4.386171382934435e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.66,
+          "worst_port": 2,
+          "worst_ghz": 8.143,
+          "tarc_worst_db": -9.24
+        },
+        "15": {
+          "worst_db": -8.51,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.39
+        },
+        "30": {
+          "worst_db": -7.31,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.99
+        },
+        "45": {
+          "worst_db": -7.27,
+          "worst_port": 5,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -8.24
+        }
+      }
+    },
+    {
+      "pitch_mm": 15.0,
+      "file": "ARR1x5_US3_PS6_dparam_d15mm/ARR1x5_d15mm.s5p",
+      "port_match_worst_db": -8.36,
+      "port_match_worst_by_port_db": [
+        -8.91,
+        -8.36,
+        -8.57,
+        -8.37,
+        -8.92
+      ],
+      "neighbour_coupling_worst_db": -13.11,
+      "non_neighbour_coupling_worst_db": -21.88,
+      "ecc_s_param_max": 0.0518,
+      "reciprocity_max_abs": 3.804241859076793e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.55,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.31
+        },
+        "15": {
+          "worst_db": -8.82,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.56
+        },
+        "30": {
+          "worst_db": -7.28,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.92
+        },
+        "45": {
+          "worst_db": -7.39,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.85
+        }
+      }
+    },
+    {
+      "pitch_mm": 15.5,
+      "file": "ARR1x5_US3_PS6_dparam_d15p5mm/ARR1x5_d15p5mm.s5p",
+      "port_match_worst_db": -8.26,
+      "port_match_worst_by_port_db": [
+        -8.74,
+        -8.27,
+        -8.38,
+        -8.26,
+        -8.77
+      ],
+      "neighbour_coupling_worst_db": -13.89,
+      "non_neighbour_coupling_worst_db": -23.29,
+      "ecc_s_param_max": 0.044,
+      "reciprocity_max_abs": 3.590889327682131e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.62,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.5
+        },
+        "15": {
+          "worst_db": -9.17,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.86
+        },
+        "30": {
+          "worst_db": -7.35,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.97
+        },
+        "45": {
+          "worst_db": -6.96,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.6
+        }
+      }
+    },
+    {
+      "pitch_mm": 16.0,
+      "file": "ARR1x5_US3_PS6_dparam_d16mm/ARR1x5_d16mm.s5p",
+      "port_match_worst_db": -8.45,
+      "port_match_worst_by_port_db": [
+        -9.03,
+        -8.49,
+        -8.51,
+        -8.45,
+        -9.09
+      ],
+      "neighbour_coupling_worst_db": -14.6,
+      "non_neighbour_coupling_worst_db": -24.43,
+      "ecc_s_param_max": 0.0357,
+      "reciprocity_max_abs": 3.435761627847144e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.81,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.77
+        },
+        "15": {
+          "worst_db": -9.65,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.21
+        },
+        "30": {
+          "worst_db": -7.56,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.02
+        },
+        "45": {
+          "worst_db": -6.91,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.73
+        }
+      }
+    },
+    {
+      "pitch_mm": 16.5,
+      "file": "ARR1x5_US3_PS6_dparam_d16p5mm/ARR1x5_d16p5mm.s5p",
+      "port_match_worst_db": -8.54,
+      "port_match_worst_by_port_db": [
+        -9.25,
+        -8.58,
+        -8.54,
+        -8.58,
+        -9.26
+      ],
+      "neighbour_coupling_worst_db": -15.37,
+      "non_neighbour_coupling_worst_db": -25.57,
+      "ecc_s_param_max": 0.0287,
+      "reciprocity_max_abs": 3.1157101734089234e-15,
+      "active": {
+        "0": {
+          "worst_db": -8.98,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.9
+        },
+        "15": {
+          "worst_db": -9.76,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.32
+        },
+        "30": {
+          "worst_db": -7.63,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.97
+        },
+        "45": {
+          "worst_db": -6.87,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.77
+        }
+      }
+    },
+    {
+      "pitch_mm": 17.0,
+      "file": "ARR1x5_US3_PS6_dparam_d17mm/ARR1x5_d17mm.s5p",
+      "port_match_worst_db": -8.5,
+      "port_match_worst_by_port_db": [
+        -9.1,
+        -8.54,
+        -8.5,
+        -8.52,
+        -9.07
+      ],
+      "neighbour_coupling_worst_db": -16.21,
+      "non_neighbour_coupling_worst_db": -26.14,
+      "ecc_s_param_max": 0.0232,
+      "reciprocity_max_abs": 2.732981825510588e-15,
+      "active": {
+        "0": {
+          "worst_db": -9.19,
+          "worst_port": 3,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.03
+        },
+        "15": {
+          "worst_db": -9.88,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.41
+        },
+        "30": {
+          "worst_db": -7.74,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.95
+        },
+        "45": {
+          "worst_db": -6.77,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.6
+        }
+      }
+    },
+    {
+      "pitch_mm": 17.5,
+      "file": "ARR1x5_US3_PS6_dparam_d17p5mm/ARR1x5_d17p5mm.s5p",
+      "port_match_worst_db": -8.43,
+      "port_match_worst_by_port_db": [
+        -8.93,
+        -8.47,
+        -8.44,
+        -8.43,
+        -8.96
+      ],
+      "neighbour_coupling_worst_db": -17.07,
+      "non_neighbour_coupling_worst_db": -26.66,
+      "ecc_s_param_max": 0.0187,
+      "reciprocity_max_abs": 2.4860227656919474e-15,
+      "active": {
+        "0": {
+          "worst_db": -9.35,
+          "worst_port": 1,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.15
+        },
+        "15": {
+          "worst_db": -10.02,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.47
+        },
+        "30": {
+          "worst_db": -7.93,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.8
+        },
+        "45": {
+          "worst_db": -6.62,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.38
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.0,
+      "file": "ARR1x5_US3_PS6_dparam_d18mm/ARR1x5_d18mm.s5p",
+      "port_match_worst_db": -8.64,
+      "port_match_worst_by_port_db": [
+        -9.07,
+        -8.66,
+        -8.64,
+        -8.66,
+        -9.1
+      ],
+      "neighbour_coupling_worst_db": -17.89,
+      "non_neighbour_coupling_worst_db": -26.68,
+      "ecc_s_param_max": 0.0138,
+      "reciprocity_max_abs": 2.4225386945386e-15,
+      "active": {
+        "0": {
+          "worst_db": -9.55,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.29
+        },
+        "15": {
+          "worst_db": -10.1,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.5
+        },
+        "30": {
+          "worst_db": -8.08,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.71
+        },
+        "45": {
+          "worst_db": -6.8,
+          "worst_port": 4,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.4
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.2,
+      "file": "ARR1x5_US3_PS6_dparam_d18p2mm/ARR1x5_d18p2mm.s5p",
+      "port_match_worst_db": -8.64,
+      "port_match_worst_by_port_db": [
+        -9.1,
+        -8.66,
+        -8.64,
+        -8.67,
+        -9.04
+      ],
+      "neighbour_coupling_worst_db": -18.25,
+      "non_neighbour_coupling_worst_db": -26.62,
+      "ecc_s_param_max": 0.0123,
+      "reciprocity_max_abs": 2.8221949820496308e-14,
+      "active": {
+        "0": {
+          "worst_db": -9.62,
+          "worst_port": 1,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.37
+        },
+        "15": {
+          "worst_db": -10.19,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.54
+        },
+        "30": {
+          "worst_db": -8.18,
+          "worst_port": 5,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -9.61
+        },
+        "45": {
+          "worst_db": -6.8,
+          "worst_port": 3,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.35
+        }
+      }
+    },
+    {
+      "pitch_mm": 18.5,
+      "file": "ARR1x5_US3_PS6_dparam_d18p5mm/ARR1x5_d18p5mm.s5p",
+      "port_match_worst_db": -8.49,
+      "port_match_worst_by_port_db": [
+        -8.83,
+        -8.54,
+        -8.54,
+        -8.49,
+        -8.85
+      ],
+      "neighbour_coupling_worst_db": -18.8,
+      "non_neighbour_coupling_worst_db": -26.79,
+      "ecc_s_param_max": 0.0108,
+      "reciprocity_max_abs": 4.4017031541762114e-15,
+      "active": {
+        "0": {
+          "worst_db": -9.73,
+          "worst_port": 1,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.38
+        },
+        "15": {
+          "worst_db": -9.86,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -10.48
+        },
+        "30": {
+          "worst_db": -8.12,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.26
+        },
+        "45": {
+          "worst_db": -6.61,
+          "worst_port": 2,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.13
+        }
+      }
+    },
+    {
+      "pitch_mm": 19.0,
+      "file": "ARR1x5_US3_PS6_dparam_d19mm/ARR1x5_d19mm.s5p",
+      "port_match_worst_db": -8.62,
+      "port_match_worst_by_port_db": [
+        -8.86,
+        -8.63,
+        -8.64,
+        -8.62,
+        -8.89
+      ],
+      "neighbour_coupling_worst_db": -19.64,
+      "non_neighbour_coupling_worst_db": -26.86,
+      "ecc_s_param_max": 0.0078,
+      "reciprocity_max_abs": 2.0879960764113967e-15,
+      "active": {
+        "0": {
+          "worst_db": -9.97,
+          "worst_port": 1,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.48
+        },
+        "15": {
+          "worst_db": -9.54,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -10.46
+        },
+        "30": {
+          "worst_db": -8.11,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.1
+        },
+        "45": {
+          "worst_db": -6.43,
+          "worst_port": 2,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.1
+        }
+      }
+    },
+    {
+      "pitch_mm": 19.5,
+      "file": "ARR1x5_US3_PS6_dparam_d19p5mm/ARR1x5_d19p5mm.s5p",
+      "port_match_worst_db": -8.8,
+      "port_match_worst_by_port_db": [
+        -8.99,
+        -8.8,
+        -8.83,
+        -8.82,
+        -9.0
+      ],
+      "neighbour_coupling_worst_db": -20.46,
+      "non_neighbour_coupling_worst_db": -27.01,
+      "ecc_s_param_max": 0.0053,
+      "reciprocity_max_abs": 1.693146987777612e-15,
+      "active": {
+        "0": {
+          "worst_db": -10.32,
+          "worst_port": 1,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.61
+        },
+        "15": {
+          "worst_db": -9.34,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -10.48
+        },
+        "30": {
+          "worst_db": -8.17,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.02
+        },
+        "45": {
+          "worst_db": -6.4,
+          "worst_port": 2,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.17
+        }
+      }
+    },
+    {
+      "pitch_mm": 20.0,
+      "file": "ARR1x5_US3_PS6_dparam_d20mm/ARR1x5_d20mm.s5p",
+      "port_match_worst_db": -9.14,
+      "port_match_worst_by_port_db": [
+        -9.28,
+        -9.15,
+        -9.18,
+        -9.14,
+        -9.27
+      ],
+      "neighbour_coupling_worst_db": -21.33,
+      "non_neighbour_coupling_worst_db": -27.33,
+      "ecc_s_param_max": 0.0032,
+      "reciprocity_max_abs": 1.5307182651956774e-15,
+      "active": {
+        "0": {
+          "worst_db": -10.37,
+          "worst_port": 4,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.65
+        },
+        "15": {
+          "worst_db": -9.3,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -10.41
+        },
+        "30": {
+          "worst_db": -8.36,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -9.07
+        },
+        "45": {
+          "worst_db": -6.59,
+          "worst_port": 2,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.41
+        }
+      }
+    },
+    {
+      "pitch_mm": 20.5,
+      "file": "ARR1x5_US3_PS6_dparam_d20p5mm/ARR1x5_d20p5mm.s5p",
+      "port_match_worst_db": -9.19,
+      "port_match_worst_by_port_db": [
+        -9.36,
+        -9.26,
+        -9.28,
+        -9.19,
+        -9.34
+      ],
+      "neighbour_coupling_worst_db": -22.29,
+      "non_neighbour_coupling_worst_db": -27.94,
+      "ecc_s_param_max": 0.002,
+      "reciprocity_max_abs": 2.583014323451236e-15,
+      "active": {
+        "0": {
+          "worst_db": -10.31,
+          "worst_port": 2,
+          "worst_ghz": 8.236,
+          "tarc_worst_db": -10.69
+        },
+        "15": {
+          "worst_db": -9.17,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -10.39
+        },
+        "30": {
+          "worst_db": -8.33,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -8.94
+        },
+        "45": {
+          "worst_db": -6.75,
+          "worst_port": 1,
+          "worst_ghz": 7.738,
+          "tarc_worst_db": -7.56
+        }
+      }
+    }
+  ]
+}

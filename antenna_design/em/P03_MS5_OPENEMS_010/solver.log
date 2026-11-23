@@ -1,0 +1,477 @@
+openEMS - dump simulation statistics to 'openEMS_run_stats.txt' and 'openEMS_stats.txt'
+Note: limiting the default thread count to 2 of 4 visible CPUs (CPU affinity and/or a cgroup CPU quota)
+openEMS - fixed number of threads: 2
+openEMS - verbose level 1
+ ---------------------------------------------------------------------- 
+ | openEMS 64bit -- version v0.37.0-40-g5fecbb5
+ | (C) 2010-2026 Thorsten Liebig <thorsten.liebig@gmx.de>  GPL license
+ ---------------------------------------------------------------------- 
+	Used external libraries:
+		CSXCAD -- Version: v0.7.0-8-g626b99f
+		hdf5   -- Version: 1.10.10
+		          compiled against: HDF5 library version: 1.10.10
+		tinyxml -- compiled against: 2.6.2
+		fparser
+		boost  -- compiled against: 1_83
+		zlib   -- Version: 1.3
+		          compiled against: 1.3
+
+Create FDTD operator (compressed SSE + multi-threading)
+Operator::InitDataStorage(): Storing epsR material data...
+Operator::InitDataStorage(): Storing muR material data...
+Building the operator on 2 threads.
+Compressing the FDTD operator... this may take a while...
+------- Stat: FDTD Operator -------
+Dimensions		: 153x170x87 = 2.26287e+06 Cells (2.26287 MCells)
+Size of Operator	: 108617760 Byte (103.586 MiB) 
+Size of Field-Data	: 54308880 Byte (51.793 MiB) 
+-----------------------------------
+Background materials (epsR/mueR/kappa/sigma): 1/1/0/0
+-----------------------------------
+Number of PEC edges	: 20
+in x direction		: 20
+in y direction		: 0
+in z direction		: 0
+-----------------------------------
+Timestep (s)		: 2.28856e-13
+Timestep method name	: Rennings_2
+Nyquist criteria (TS)	: 208
+Nyquist criteria (s)	: 4.7602e-11
+-----------------------------------
+SSE compression enabled	: yes
+Unique SSE operators	: 74622
+-----------------------------------
+-----------------------------------
+--- Excitation Extension ---
+Voltage excitations	: 88	 (0, 0, 88)
+Current excitations	: 0	 (0, 0, 0)
+Excitation Length (TS)	: 5008
+Excitation Length (s)	: 1.14611e-09
+--- Uniaxial PML Extension ---
+ PML range		: [0,0,0] to [8,169,86]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [144,0,0] to [152,169,86]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,0,0] to [143,8,86]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,161,0] to [143,169,86]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,9,0] to [143,160,8]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,9,78] to [143,160,86]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Conducting Sheet Extension ---
+ Max. Dispersion Order N = 2
+ N=0:	 Active cells		: 6249
+ N=0:	 Voltage ADE is 	: On
+ N=0:	 Voltage Lor-ADE is 	: Off
+ N=0:	 Current ADE is 	: Off
+ N=0:	 Current Lor-ADE is 	: Off
+ N=1:	 Active cells		: 6249
+ N=1:	 Voltage ADE is 	: On
+ N=1:	 Voltage Lor-ADE is 	: Off
+ N=1:	 Current ADE is 	: Off
+ N=1:	 Current Lor-ADE is 	: Off
+--- Series/Parallel Lumped RLC load ---
+Active cells		: 0
+-----------------------------------
+Creation time for operator: 11.9148 s
+FDTD simulation size: 153x170x87 --> 2.26287e+06 FDTD cells 
+FDTD timestep is: 2.28856e-13 s; Nyquist rate: 208 timesteps @1.05038e+10 Hz
+Excitation signal length is: 5008 timesteps (1.14611e-09s)
+Max. number of timesteps: 30000 ( --> 5.99042 * Excitation signal length)
+Create FDTD engine (compressed SSE + multi-threading)
+Setting up processing...
+Operator::CleanupMaterialStorage(): Delete epsR material data...
+Operator::CleanupMaterialStorage(): Delete mueR material data...
+Warning: Unused primitive (type: Box) detected in property: patch_copper!
+Running FDTD engine... this may take a while... grab a cup of coffee?!?
+Evaluating the end criteria every 208 timestep(s) during the first 60 s, with the progress report after that
+Multithreaded engine using 2 threads. Utilization: (77;76)
+[@        4s] Timestep:          260 || Speed:  132.1 MC/s (1.712e-02 s/TS) || Energy: ~4.93e-21 (- 0.00dB)
+[@        9s] Timestep:          572 || Speed:  152.5 MC/s (1.484e-02 s/TS) || Energy: ~1.58e-19 (- 0.00dB)
+[@       13s] Timestep:          832 || Speed:  144.9 MC/s (1.562e-02 s/TS) || Energy: ~1.97e-17 (- 0.00dB)
+[@       17s] Timestep:         1092 || Speed:  140.3 MC/s (1.613e-02 s/TS) || Energy: ~7.06e-17 (- 0.00dB)
+[@       21s] Timestep:         1352 || Speed:  145.3 MC/s (1.558e-02 s/TS) || Energy: ~6.70e-16 (- 0.00dB)
+[@       25s] Timestep:         1664 || Speed:  158.8 MC/s (1.425e-02 s/TS) || Energy: ~1.26e-14 (- 0.00dB)
+[@       30s] Timestep:         1976 || Speed:  147.2 MC/s (1.537e-02 s/TS) || Energy: ~2.34e-14 (- 0.00dB)
+[@       35s] Timestep:         2288 || Speed:  144.4 MC/s (1.567e-02 s/TS) || Energy: ~1.77e-13 (- 0.00dB)
+[@       39s] Timestep:         2548 || Speed:  133.4 MC/s (1.697e-02 s/TS) || Energy: ~2.37e-13 (- 0.00dB)
+[@       44s] Timestep:         2808 || Speed:  141.8 MC/s (1.596e-02 s/TS) || Energy: ~3.30e-13 (- 0.00dB)
+[@       48s] Timestep:         3120 || Speed:  151.1 MC/s (1.498e-02 s/TS) || Energy: ~2.14e-13 (- 2.61dB)
+[@       53s] Timestep:         3380 || Speed:  134.8 MC/s (1.678e-02 s/TS) || Energy: ~2.93e-13 (- 1.23dB)
+[@       57s] Timestep:         3640 || Speed:  132.3 MC/s (1.710e-02 s/TS) || Energy: ~5.61e-13 (- 0.00dB)
+Evaluating the end criteria with the progress report only from here on
+[@     1m02s] Timestep:         3900 || Speed:  119.7 MC/s (1.891e-02 s/TS) || Energy: ~1.61e-13 (- 5.42dB)
+[@     1m07s] Timestep:         4160 || Speed:  126.4 MC/s (1.790e-02 s/TS) || Energy: ~1.67e-13 (- 5.27dB)
+[@     1m11s] Timestep:         4368 || Speed:  117.2 MC/s (1.931e-02 s/TS) || Energy: ~2.54e-13 (- 3.44dB)
+[@     1m15s] Timestep:         4628 || Speed:  135.5 MC/s (1.671e-02 s/TS) || Energy: ~1.86e-13 (- 4.81dB)
+[@     1m19s] Timestep:         4888 || Speed:  138.3 MC/s (1.636e-02 s/TS) || Energy: ~1.28e-13 (- 6.41dB)
+[@     1m24s] Timestep:         5148 || Speed:  128.7 MC/s (1.758e-02 s/TS) || Energy: ~8.50e-14 (- 8.20dB)
+[@     1m28s] Timestep:         5408 || Speed:  138.6 MC/s (1.633e-02 s/TS) || Energy: ~5.42e-14 (-10.15dB)
+[@     1m33s] Timestep:         5668 || Speed:  124.7 MC/s (1.815e-02 s/TS) || Energy: ~3.34e-14 (-12.25dB)
+[@     1m37s] Timestep:         5928 || Speed:  136.5 MC/s (1.658e-02 s/TS) || Energy: ~2.00e-14 (-14.49dB)
+[@     1m42s] Timestep:         6188 || Speed:  132.6 MC/s (1.707e-02 s/TS) || Energy: ~1.16e-14 (-16.85dB)
+[@     1m46s] Timestep:         6448 || Speed:  135.0 MC/s (1.676e-02 s/TS) || Energy: ~6.61e-15 (-19.29dB)
+[@     1m50s] Timestep:         6708 || Speed:  140.6 MC/s (1.609e-02 s/TS) || Energy: ~3.77e-15 (-21.72dB)
+[@     1m54s] Timestep:         6968 || Speed:  144.8 MC/s (1.562e-02 s/TS) || Energy: ~2.22e-15 (-24.03dB)
+[@     1m59s] Timestep:         7228 || Speed:  125.2 MC/s (1.807e-02 s/TS) || Energy: ~1.39e-15 (-26.05dB)
+[@     2m03s] Timestep:         7488 || Speed:  139.8 MC/s (1.619e-02 s/TS) || Energy: ~9.57e-16 (-27.68dB)
+[@     2m08s] Timestep:         7748 || Speed:  131.6 MC/s (1.720e-02 s/TS) || Energy: ~7.16e-16 (-28.94dB)
+[@     2m12s] Timestep:         8008 || Speed:  127.0 MC/s (1.782e-02 s/TS) || Energy: ~5.66e-16 (-29.97dB)
+[@     2m17s] Timestep:         8268 || Speed:  121.1 MC/s (1.868e-02 s/TS) || Energy: ~4.55e-16 (-30.91dB)
+[@     2m22s] Timestep:         8528 || Speed:  118.0 MC/s (1.918e-02 s/TS) || Energy: ~3.64e-16 (-31.88dB)
+[@     2m26s] Timestep:         8788 || Speed:  133.9 MC/s (1.690e-02 s/TS) || Energy: ~2.84e-16 (-32.95dB)
+[@     2m31s] Timestep:         9048 || Speed:  129.3 MC/s (1.749e-02 s/TS) || Energy: ~2.16e-16 (-34.15dB)
+[@     2m35s] Timestep:         9308 || Speed:  131.6 MC/s (1.719e-02 s/TS) || Energy: ~1.59e-16 (-35.48dB)
+[@     2m40s] Timestep:         9568 || Speed:  126.0 MC/s (1.796e-02 s/TS) || Energy: ~1.13e-16 (-36.97dB)
+[@     2m45s] Timestep:         9828 || Speed:  126.0 MC/s (1.796e-02 s/TS) || Energy: ~7.75e-17 (-38.60dB)
+[@     2m50s] Timestep:        10088 || Speed:  121.9 MC/s (1.856e-02 s/TS) || Energy: ~5.13e-17 (-40.39dB)
+[@     2m54s] Timestep:        10348 || Speed:  138.4 MC/s (1.635e-02 s/TS) || Energy: ~3.29e-17 (-42.32dB)
+[@     2m58s] Timestep:        10608 || Speed:  140.9 MC/s (1.606e-02 s/TS) || Energy: ~2.04e-17 (-44.40dB)
+[@     3m02s] Timestep:        10868 || Speed:  136.2 MC/s (1.661e-02 s/TS) || Energy: ~1.22e-17 (-46.61dB)
+[@     3m07s] Timestep:        11128 || Speed:  132.4 MC/s (1.709e-02 s/TS) || Energy: ~7.15e-18 (-48.95dB)
+[@     3m11s] Timestep:        11388 || Speed:  144.7 MC/s (1.564e-02 s/TS) || Energy: ~4.09e-18 (-51.38dB)
+RunFDTD: end-criteria of -50.00dB reached after 11388 timesteps (-51.38dB)
+Time for 11388 iterations with 2262870.00 cells : 191.32 sec
+Speed: 134.70 MCells/s 
+Note: limiting the default thread count to 2 of 4 visible CPUs (CPU affinity and/or a cgroup CPU quota)
+{
+  "id": "P03_MS5",
+  "numeric_outputs_finite": true,
+  "port_validity": "OK",
+  "port_validity_detail": {
+    "port_validity": "OK",
+    "s11_abs_limit": 1.02,
+    "max_abs_s11_by_plane": {
+      "measurement": 0.9471039986916119,
+      "launch": 0.947103998691612
+    },
+    "min_p_acc_W": 5.0103794682051454e-29,
+    "reasons": [],
+    "rule": "PORT_INVALID if max|S11| > 1.02 on any plane or P_acc < 0 at any evaluated frequency (channel grid + wideband rows inside the valid excitation range)"
+  },
+  "samples": 1003,
+  "reference_ohm": 50.0,
+  "channel_samples": 501,
+  "channel_worst_s11_db": -6.499823163583138,
+  "channel_worst_frequency_hz": 8236800000.0,
+  "channel_best_s11_db": -10.579114870865634,
+  "channel_best_frequency_hz": 7975000000.0,
+  "channel_meets_minus6db_on_sampled_grid": true,
+  "channel_meets_minus10db_on_sampled_grid": false,
+  "wideband": {
+    "grid_hz": [
+      5460000000.0,
+      10520000000.0,
+      5000000.0
+    ],
+    "samples": 1013,
+    "valid_rule": "u_inc within 20 dB of its peak (as reanalyze_port_dft.py)",
+    "valid_range_hz": [
+      5460000000.0,
+      10480000000.0
+    ],
+    "valid_samples": 1005,
+    "re_zin_peak_ohm": 107.87325213540792,
+    "re_zin_peak_hz": 8135000000.0,
+    "im_zin_at_re_peak_ohm": -18.43165595812476,
+    "min_s11_db": -10.579114870865634,
+    "min_s11_hz": 7975000000.0,
+    "plane": "measurement plane, fixed 50 ohm"
+  },
+  "s11_metrics_plane": "measurement plane",
+  "port_postprocess": {
+    "method": "MSL edge port post-processing (em/port_postprocess.py): U = U_B, I = mean(I_A, I_B) / cos(beta D / 2); beta from cos(beta D) = (U_A + U_C) / (2 U_B) (three equispaced voltage probes, valid for any mixture of waves, no current needed; analytic Hammerstad-Jensen + Getsinger eps_eff fallback recorded per frequency); fixed 50 ohm reference (a = (U + 50 I) / 2, S11 = (U - a) / a, Zin = U / I) at the measurement plane (s11_measplane.csv, the primary S11); the launch-plane S11 (s11_complex.csv) moves U, I to y = -sy/2 over an ideal lossless 50 ohm line with that beta. Line loss is neglected and a numerical Z_line different from 50 ohm is not calibrated. The openEMS Z_line/beta extraction (MSLPort.ReadUIData + CalcPort ref_plane_shift) is available only as a flagged diagnostic.",
+    "reference_ohm_fixed": 50.0,
+    "measurement_plane_y_mm": -9.201042451839921,
+    "launch_plane_y_mm": -13.0,
+    "shift_length_mm": 3.798957548160079,
+    "probe_lines_y_mm": [
+      -9.67591214535993,
+      -9.201042451839921,
+      -8.726172758319912
+    ],
+    "probe_spacing_mm": [
+      0.4748696935200094,
+      0.4748696935200094
+    ],
+    "probe_spacing_nonuniformity": 0.0,
+    "current_average_correction_cos_beta_D_over_2": true,
+    "eeff_used_channel": {
+      "min": 4.262591386763379,
+      "median": 4.272763716658081,
+      "max": 4.323676700810678
+    },
+    "eeff_used_wideband_valid": {
+      "min": 3.5871459644044528,
+      "median": 4.252731524198342,
+      "max": 4.399282693857918
+    },
+    "eeff_analytic_hammerstad_getsinger_f0": 3.6486583990729065,
+    "beta_fallback_channel": {},
+    "beta_fallback_channel_count": 0,
+    "beta_fallback_wideband_valid_count": 269,
+    "beta_fallback_reasons": {
+      "0": "estimator",
+      "1": "abs(Re cos(beta D)) > 1",
+      "2": "abs(U_B) negligible (voltage node / no signal)",
+      "3": "eps_eff outside [1, eps_r]",
+      "4": "outlier against the running median (continuity)",
+      "5": "non-finite"
+    },
+    "imag_part_of_cos_beta_D_max": 0.001385669445030986,
+    "max_abs_s11_measplane_channel": 0.4731608919672502,
+    "max_abs_s11_launch_channel": 0.47316089196725014,
+    "files": [
+      "s11_complex.csv (launch plane)",
+      "s11_measplane.csv",
+      "s11_wideband.csv (launch plane)",
+      "s11_wideband_measplane.csv"
+    ],
+    "assumptions": [
+      "line loss between the planes neglected (|S11| identical at both planes by construction)",
+      "a numerical Z_line different from 50 ohm is not calibrated",
+      "I = mean(I_A, I_B) is at the middle probe line only through cos(beta D/2)"
+    ]
+  },
+  "wall_seconds": 208.13001790799999,
+  "cpu_seconds": 355.53144,
+  "peak_rss_kib": 449736,
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "frequency_evaluation_step_hz": 1000000.0,
+  "frequency_grid_caveat": "DTFT evaluation spacing is not physical resolution; finite-record decay/truncation governs accuracy",
+  "coverage_caveat": "sampled frequencies including exact endpoints; no mathematical guarantee between samples",
+  "native_xml_sha256": "31da4d51866dced198ed87587bfb0ef8b3ab6e1de9b40e9796849a70d919cdbf",
+  "variant_sha256": "630ee96eff8dca827751dae9109903445352a19da613f163f275840bd16f6d1b",
+  "far_field": {
+    "status": "EM_SIMULATED_FAR_FIELD",
+    "summary_file": "nf2ff_summary.json",
+    "summary": [
+      {
+        "frequency_hz": 7737600000.0,
+        "Prad_W": 2.0777646680719985e-26,
+        "P_inc_W": 3.812631857364702e-26,
+        "P_acc_W": 2.9608723598750703e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7017407086604931,
+        "total_efficiency_Prad_over_Pinc": 0.5449686058879425,
+        "s11_db_launch_plane_50ohm": -6.509078875638638,
+        "s11_db_measurement_plane_50ohm": -6.509078875638639,
+        "mismatch_loss_db": 1.0980518659368468,
+        "D_broadside_dBi": 4.1854532416428505,
+        "gain_broadside_dBi": 2.647219952688509,
+        "realized_gain_broadside_dBi": 1.5491680867516624,
+        "Dmax_sampled_dBi": 6.948313956636969,
+        "Dmax_sampled_theta_deg": 34.999996185302734,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 6.948313963508689,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 7787520000.0,
+        "Prad_W": 2.2866650564119777e-26,
+        "P_inc_W": 3.93200249138662e-26,
+        "P_acc_W": 3.2406746349486723e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7056138964867713,
+        "total_efficiency_Prad_over_Pinc": 0.5815522908291916,
+        "s11_db_launch_plane_50ohm": -7.5492972759397485,
+        "s11_db_measurement_plane_50ohm": -7.549297275939747,
+        "mismatch_loss_db": 0.8397835445853318,
+        "D_broadside_dBi": 4.327383226765987,
+        "gain_broadside_dBi": 2.8130544795809067,
+        "realized_gain_broadside_dBi": 1.973270934995576,
+        "Dmax_sampled_dBi": 6.972845255026584,
+        "Dmax_sampled_theta_deg": 30.0,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 6.972845084575195,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 7837440000.0,
+        "Prad_W": 2.474123387690835e-26,
+        "P_inc_W": 4.043468114025017e-26,
+        "P_acc_W": 3.4922026341707976e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7084707409248893,
+        "total_efficiency_Prad_over_Pinc": 0.6118815130776439,
+        "s11_db_launch_plane_50ohm": -8.653932248134273,
+        "s11_db_measurement_plane_50ohm": -8.653932248134273,
+        "mismatch_loss_db": 0.6365458710967844,
+        "D_broadside_dBi": 4.468645632697514,
+        "gain_broadside_dBi": 2.971864823313444,
+        "realized_gain_broadside_dBi": 2.335318952216659,
+        "Dmax_sampled_dBi": 7.010575216504851,
+        "Dmax_sampled_theta_deg": 30.0,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 7.010575276995046,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 7887360000.0,
+        "Prad_W": 2.628338201912729e-26,
+        "P_inc_W": 4.1421991989284135e-26,
+        "P_acc_W": 3.6966757447750446e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7110004726889219,
+        "total_efficiency_Prad_over_Pinc": 0.6345272343717028,
+        "s11_db_launch_plane_50ohm": -9.683604083512746,
+        "s11_db_measurement_plane_50ohm": -9.68360408351274,
+        "mismatch_loss_db": 0.49419622391804563,
+        "D_broadside_dBi": 4.609257852415072,
+        "gain_broadside_dBi": 3.1279567469999674,
+        "realized_gain_broadside_dBi": 2.633760523081921,
+        "Dmax_sampled_dBi": 7.045518251649893,
+        "Dmax_sampled_theta_deg": 30.0,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 7.045518162049338,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 7937280000.0,
+        "Prad_W": 2.7391441393868945e-26,
+        "P_inc_W": 4.222978232684137e-26,
+        "P_acc_W": 3.8378217320098666e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7137236512422387,
+        "total_efficiency_Prad_over_Pinc": 0.6486285243402466,
+        "s11_db_launch_plane_50ohm": -10.399816105778232,
+        "s11_db_measurement_plane_50ohm": -10.399816105778232,
+        "mismatch_loss_db": 0.41534045105585093,
+        "D_broadside_dBi": 4.7494235157183935,
+        "gain_broadside_dBi": 3.284724401373756,
+        "realized_gain_broadside_dBi": 2.869383950317906,
+        "Dmax_sampled_dBi": 7.077471688140834,
+        "Dmax_sampled_theta_deg": 30.0,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 7.077471715670084,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 7987200000.0,
+        "Prad_W": 2.7993340923479745e-26,
+        "P_inc_W": 4.280873135009162e-26,
+        "P_acc_W": 3.9045469690951684e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7169420971254666,
+        "total_efficiency_Prad_over_Pinc": 0.6539166202929262,
+        "s11_db_launch_plane_50ohm": -10.559679417607214,
+        "s11_db_measurement_plane_50ohm": -10.559679417607214,
+        "mismatch_loss_db": 0.3996170610536603,
+        "D_broadside_dBi": 4.889427034597676,
+        "gain_broadside_dBi": 3.444267853279209,
+        "realized_gain_broadside_dBi": 3.044650792225549,
+        "Dmax_sampled_dBi": 7.106213404663732,
+        "Dmax_sampled_theta_deg": 30.0,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 7.106213361226833,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 8037120000.0,
+        "Prad_W": 2.805601219141663e-26,
+        "P_inc_W": 4.3119209466548326e-26,
+        "P_acc_W": 3.8927569175246064e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7207234560450637,
+        "total_efficiency_Prad_over_Pinc": 0.6506615621787396,
+        "s11_db_launch_plane_50ohm": -10.122867837649965,
+        "s11_db_measurement_plane_50ohm": -10.122867837649967,
+        "mismatch_loss_db": 0.44413504911585805,
+        "D_broadside_dBi": 5.029525560318385,
+        "gain_broadside_dBi": 3.607212124955692,
+        "realized_gain_broadside_dBi": 3.163077075839833,
+        "Dmax_sampled_dBi": 7.131504199337737,
+        "Dmax_sampled_theta_deg": 30.0,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 7.131504102305653,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 8087040000.0,
+        "Prad_W": 2.758952958012026e-26,
+        "P_inc_W": 4.313676621872568e-26,
+        "P_acc_W": 3.805902686858688e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7249142148427363,
+        "total_efficiency_Prad_over_Pinc": 0.6395827040030563,
+        "s11_db_launch_plane_50ohm": -9.291771808011953,
+        "s11_db_measurement_plane_50ohm": -9.291771808011951,
+        "mismatch_loss_db": 0.5438990514715496,
+        "D_broadside_dBi": 5.1698937955502755,
+        "gain_broadside_dBi": 3.7727599547119373,
+        "realized_gain_broadside_dBi": 3.2288609032403883,
+        "Dmax_sampled_dBi": 7.153108894537209,
+        "Dmax_sampled_theta_deg": 30.0,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 7.15310896434233,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 8136960000.0,
+        "Prad_W": 2.664507542655518e-26,
+        "P_inc_W": 4.285512073842341e-26,
+        "P_acc_W": 3.6541445952670674e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7291740852583255,
+        "total_efficiency_Prad_over_Pinc": 0.6217477624013671,
+        "s11_db_launch_plane_50ohm": -8.317205151656585,
+        "s11_db_measurement_plane_50ohm": -8.317205151656587,
+        "mismatch_loss_db": 0.692169945251121,
+        "D_broadside_dBi": 5.310522360936765,
+        "gain_broadside_dBi": 3.938834615877222,
+        "realized_gain_broadside_dBi": 3.246664670626101,
+        "Dmax_sampled_dBi": 7.186044825329004,
+        "Dmax_sampled_theta_deg": 24.999998092651367,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 7.186044845506146,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 8186880000.0,
+        "Prad_W": 2.530709296777223e-26,
+        "P_inc_W": 4.228610876143745e-26,
+        "P_acc_W": 3.452365627094977e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.7330362916707378,
+        "total_efficiency_Prad_over_Pinc": 0.5984729668682798,
+        "s11_db_launch_plane_50ohm": -7.3619876735412735,
+        "s11_db_measurement_plane_50ohm": -7.361987673541277,
+        "mismatch_loss_db": 0.880809385012761,
+        "D_broadside_dBi": 5.45119890987436,
+        "gain_broadside_dBi": 4.102453675142038,
+        "realized_gain_broadside_dBi": 3.2216442901292757,
+        "Dmax_sampled_dBi": 7.2225440006714265,
+        "Dmax_sampled_theta_deg": 24.999998092651367,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 7.222543915003188,
+        "power_balance_flag": "ok"
+      },
+      {
+        "frequency_hz": 8236800000.0,
+        "Prad_W": 2.3681360382977973e-26,
+        "P_inc_W": 4.1456769733176716e-26,
+        "P_acc_W": 3.2175377146452204e-26,
+        "radiation_efficiency_Prad_over_Pacc": 0.736008789428881,
+        "total_efficiency_Prad_over_Pinc": 0.5712302365909235,
+        "s11_db_launch_plane_50ohm": -6.499823163583141,
+        "s11_db_measurement_plane_50ohm": -6.499823163583139,
+        "mismatch_loss_db": 1.1007181309171923,
+        "D_broadside_dBi": 5.591454179622367,
+        "gain_broadside_dBi": 4.2602841868243875,
+        "realized_gain_broadside_dBi": 3.1595660559071934,
+        "Dmax_sampled_dBi": 7.255660445849271,
+        "Dmax_sampled_theta_deg": 24.999998092651367,
+        "Dmax_sampled_phi_deg": 270.0,
+        "Dmax_openEMS_dBi": 7.255660601309834,
+        "power_balance_flag": "ok"
+      }
+    ]
+  },
+  "port_model": "msl",
+  "reference_plane_y_mm": -13.0,
+  "reference_plane": "s11_measplane.csv: measurement plane (middle voltage probe), fixed 50 ohm; s11_complex.csv: board edge y = -size_y/2, U,I moved over an ideal lossless 50 ohm line with the voltage-estimated beta"
+}
+
+real	3m28.371s
+user	5m44.414s
+sys	0m11.159s

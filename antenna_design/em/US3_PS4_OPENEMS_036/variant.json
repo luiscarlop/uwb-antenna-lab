@@ -1,0 +1,338 @@
+{
+  "id": "US3_PS4",
+  "family": "USLOT_MSL_H207_PARASITIC",
+  "base_design": "US3_PS1",
+  "evidence": "GEOMETRY_ONLY",
+  "substrate": {
+    "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ]
+  },
+  "metal": {
+    "conductivity_S_m": 58000000.0,
+    "thickness_m": 3.5e-05
+  },
+  "patch_polygon_mm": [
+    [
+      -5.710633,
+      -3.151
+    ],
+    [
+      5.710633,
+      -3.151
+    ],
+    [
+      5.710633,
+      3.151
+    ],
+    [
+      -5.710633,
+      3.151
+    ]
+  ],
+  "slots_polygon_mm": [
+    [
+      [
+        -2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        -0.7
+      ],
+      [
+        2.2,
+        1.95
+      ],
+      [
+        1.4,
+        1.95
+      ],
+      [
+        1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        0.1
+      ],
+      [
+        -1.4,
+        1.95
+      ],
+      [
+        -2.2,
+        1.95
+      ]
+    ]
+  ],
+  "feed": {
+    "type": "microstrip_edge_qw",
+    "z0_ohm": 50,
+    "line_width_mm": 3.92,
+    "line_x_mm": 0.0,
+    "line_start_y_mm": -13.0,
+    "line_end_y_mm": -9.751,
+    "connector": {
+      "type": "none",
+      "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed: 50 ohm line (w 3.92 mm, y -13 -> -9.851) + lambda/4 transformer (w 0.80 mm, l 6.60 mm) touching the radiating edge y=-3.251 (no inset, no notch)."
+    },
+    "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+    "transformer_width_mm": 0.8,
+    "transformer_length_mm": 6.6,
+    "transformer_start_y_mm": -9.751,
+    "patch_edge_y_mm": -3.151,
+    "feed_polygons_mm": [
+      [
+        [
+          -1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -13.0
+        ],
+        [
+          1.96,
+          -9.751
+        ],
+        [
+          -1.96,
+          -9.751
+        ]
+      ],
+      [
+        [
+          -0.4,
+          -9.751
+        ],
+        [
+          0.4,
+          -9.751
+        ],
+        [
+          0.4,
+          -3.151
+        ],
+        [
+          -0.4,
+          -3.151
+        ]
+      ]
+    ],
+    "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 0.80 mm -> Zt 102.5 ohm; Kirschning-Jansen eps_eff(f0) 3.197 (GUIDE_MODEL)"
+  },
+  "uslot_params": {
+    "L_mm": 6.302,
+    "W_mm": 11.421266,
+    "s_over_L": 0.34,
+    "Wu_mm": 4.4,
+    "Lu_mm": 2.65,
+    "t_mm": 0.8,
+    "y0_mm": -0.7,
+    "open_toward": "+y"
+  },
+  "parasitic_patches": [
+    {
+      "name": "par1",
+      "z_mm": 1.035,
+      "polygon_mm": [
+        [
+          -5.5,
+          -2.98
+        ],
+        [
+          5.5,
+          -2.98
+        ],
+        [
+          5.5,
+          4.48
+        ],
+        [
+          -5.5,
+          4.48
+        ]
+      ]
+    }
+  ],
+  "parasitic_params": {
+    "Wp_mm": 11.0,
+    "Lp_mm": 7.67,
+    "x_centre_mm": 0.0,
+    "y_min_mm": -3.035,
+    "y_max_mm": 4.635,
+    "y_centre_mm": 0.8,
+    "z_mm": 1.035,
+    "h1_ground_to_parasitic_mm": 1.035,
+    "h2_parasitic_to_patch_mm": 1.035,
+    "overhang_beyond_patch_plus_y_mm": 1.434,
+    "inset_from_patch_edge_minus_y_mm": 0.166,
+    "inset_from_patch_edge_x_mm": 0.211,
+    "note": "Floating sheet (no via, no probe), same metal as the patch. Lp 7.6 -> 7.67 mm about the SAME centre y = 0.80 mm as US3_PS1 (each end +0.035 mm). The polygon stays inside y >= -3.035 so it does not lie under the 0.8 mm transformer / 50 ohm line: the patch edge is now y = -3.201 (patch_L/2), the transformer ends there on z = h, and the sheet (z = 1.035) starts 0.166 mm above it in y. y_min = -3.0 (PS1 value) gave a y grading ratio 1.853 > 1.5 in prepare (patch edge -3.201 and sheet edge -3.0 only 0.2 mm apart); -3.035 and -2.95 pass, -2.975 does not.",
+    "clearance_to_transformer_mm": 0.166
+  },
+  "changed_vs_previous": {
+    "US3_PS1": {
+      "patch_L_mm": [
+        6.502,
+        6.302
+      ],
+      "parasitic_par1_Lp_mm": [
+        7.6,
+        7.46
+      ],
+      "parasitic_par1_y_mm": [
+        [
+          -3.0,
+          4.6
+        ],
+        [
+          -2.98,
+          4.48
+        ]
+      ],
+      "derived": {
+        "patch_edge_y_mm": [
+          -3.251,
+          -3.151
+        ],
+        "transformer_start_y_mm": [
+          -9.851,
+          -9.751
+        ],
+        "line_50ohm_length_mm": [
+          3.149,
+          3.249
+        ]
+      },
+      "note": "Documented two-change exception (owner decision): a common upward shift of both coupled modes. Transformer 0.80 x 6.60 mm, U-slot (absolute coordinates), z_par 1.035 mm, Wp 11.0 mm, material, board and port unchanged."
+    }
+  },
+  "rationale": "Owner request 2026-11-15 (second version): from US3_PS1 (rounds 031/032: S11 minima -31.7 dB at 7.675 GHz and -25.4 dB at 8.03 GHz, worst in channel -5.96 dB at 8.2368 GHz, eta 0.64 -> 0.225 (f0) -> 0.515) raise the main resonance a little and keep the second where it is, to bring both closer from below. MODE IDENTIFICATION (not unambiguous, see computation): two arguments on the 032 data point in opposite directions, hence the identification is NOT settled. (1) Critical-coupling argument (both S11 minima are within -25 dB of a match, i.e. the port external rate ~ the unloaded rate of each mode) with Q_u = Q_d*(1-eta) (Q_d = 1/tan_delta = 58.8, eta at the mode from the NF2FF points) gives a port-coupled (driven-patch) energy weight of ~0.67 in the lower mode (range 0.55-0.80): lower mode = excited-patch-dominated, upper mode = parasitic-dominated (weight ~0.67), antiphase 'dark' mode (radiation Q ~200 vs ~33). This also fits the PS1 guide (parasitic alone ~8.06 GHz +-4 %, here ~7.92) and the owner's original reading. (2) Frequency-sum argument (f1^2 + f2^2 conserved under symmetric coupling, driven patch alone at its US3_MS3 openEMS value 7.95-7.98 GHz) gives the opposite: lower mode parasitic-dominated (driven weight ~0.24, parasitic alone ~7.75 GHz). It only holds if the parasitic does not pull the driven patch down; (1) needs it to be pulled down by ~0.15-0.2 GHz. Working choice: (1), the better-supported one (it uses the radiation and port-coupling data, not an assumption on the unperturbed patch), with a ~60 % confidence by judgement; PS4 itself is the discriminating experiment (the signs of the f1 and f2 shifts differ between the two). CHOICE: patch_L 6.502 -> 6.402 mm (-0.10 mm, inside the owner's HFSS patch_L sweep 6.402-6.502) raises the patch frequency by ~71 MHz (7.06 MHz per 0.01 mm); Lp 7.60 -> 7.67 mm (+0.07 mm) lowers the parasitic frequency by ~68 MHz (9.7 MHz per 0.01 mm). The sum is a DETUNING REDUCTION (patch_L up/Lp down in frequency) that, for the identification (1), raises the lower mode at fixed upper mode. LIMIT (the important caveat): the two modes are already close to the coupling-limited minimum separation (2*c/(f1+f2) ~ 0.33 GHz for w = 0.67 versus 0.355 GHz now; 0.28-0.35 GHz over w 0.55-0.80). With coupling unchanged the lower mode can rise by at most ~+2 (w 0.55), +22 (w 0.67) or +72 MHz (w 0.80) with the upper mode fixed; the chosen move gives ~+12 MHz (range -5 to +32). That is of the order of the mesh uncertainty (~13 MHz, round 031). A larger rise of the main mode needs EITHER the upper mode to rise with it (shift of the whole pair, e.g. patch_L -0.10 alone: +45/+26 MHz, which moves the eta valley to ~8.06 GHz inside the channel) OR a smaller coupling k (z_par, overlap), not a size change. Not changed: z_par, Wp, U-slot, transformer, port. GEOMETRY_ONLY; no S11, gain, efficiency or bandwidth is claimed.",
+  "computation": {
+    "label": "GUIDE_MODEL (coupled-mode f^2 matrix calibrated with openEMS 032; NOT EM, no result for PS4)",
+    "method": "(a) Mode frequencies of 032 taken at the S11 minima (7.675 and 8.03 GHz; Re(Zin) peaks 7.64/8.045 give the same trace within 0.1 %). (b) 2x2 coupled-mode matrix M = [[fa^2, c],[c, fb^2]], fa = excited patch, fb = parasitic, eigenvalues f1^2, f2^2 = 7.675^2, 8.03^2. The driven-patch energy weight w of the lower mode fixes the matrix (fa^2 = w f1^2 + (1-w) f2^2, fb^2 = (1-w) f1^2 + w f2^2, c = sqrt(w(1-w)) (f2^2 - f1^2)). (c) w from the critical-coupling/eta argument: kappa_e,i = w_i kappa_e (external rate of mode i = driven-patch weight x rate of the patch), matched minima -> kappa_e,i ~ kappa_u,i = f_i/Q_u,i, Q_u,i = Q_d (1 - eta_i) with Q_d = 58.8 (tan_delta 0.017, metal loss neglected, field in air neglected) and eta_1 = 0.64 (7.7376 GHz, nearest NF2FF point to the lower mode), eta_2 = 0.225 (7.9872 GHz; 0.24 at 8.037): Q_u = 21 and 45 -> w_2/w_1 = 0.49 -> w = 0.67. The result is the weight of the excited patch in the lower mode and rests on both minima being near critical coupling (S11 -31.7/-25.4 dB), which is only approximately true because the lambda/4 transformer and the 50 ohm line sit between the port and the patch edge. (d) Shifts: d fa = +7.06 MHz per -0.01 mm of patch_L (owner HFSS sweep 7.0 MHz/0.01 mm in the HFSS frame x 1.009 openEMS frame, hfss/hfss_parametric_patch_L_2026-11-13.json); d fb = -9.7 MHz per +0.01 mm of Lp (the 9.6 MHz of the US3_PS1 guide x 1.009; the guide's own formula slope check: f/L_eff = 7.92/8.53 -> 9.3 MHz per 0.01 mm). These slopes are NOT calibrated with 031/032: those two runs have one geometry, so no slope can be derived from them; what was calibrated with 032 are the mode frequencies, the weights and the coupling c. A slope error of +-20 % moves the predicted shifts by about +-3 MHz. Circuit-fit attempt: a 2-resonator + microstrip-transformer fit of the 032 (and 023) Zin did NOT converge to a physical solution (parameters ran into the bounds; residual ~0.15 in |Gamma| even for the single-patch US3_MS3), so no fit result is used; the identification relies only on (c) and the sum rule.",
+    "inputs": {
+      "modes_032_ghz": [
+        7.675,
+        8.03
+      ],
+      "eta_032": {
+        "7.7376": 0.638,
+        "7.9872": 0.225,
+        "8.0371": 0.24,
+        "8.2368": 0.515
+      },
+      "US3_MS3_023_single_resonance_ghz": "S11 min -16.2 dB at 7.999, Re(Zin) peak 69 ohm at ~7.93-7.95 (port plane)",
+      "slope_patch_L_mhz_per_0p01mm": -7.06,
+      "slope_Lp_mhz_per_0p01mm": -9.7
+    },
+    "outputs": {
+      "identification_w_driven_in_lower_mode": {
+        "critical_coupling_eta": 0.67,
+        "range": [
+          0.55,
+          0.8
+        ],
+        "frequency_sum_rule": 0.244
+      },
+      "B_w0p67": {
+        "fa_ghz": 7.794,
+        "fb_ghz": 7.915,
+        "c_ghz2": 2.62,
+        "k_eff": 0.042,
+        "gap_now_mhz": 355,
+        "gap_floor_mhz": 334,
+        "max_f1_lift_f2_fixed_mhz": 22
+      },
+      "predicted_shift_PS4_mhz": {
+        "B_w0p55": {
+          "f1": -5,
+          "f2": 8
+        },
+        "B_w0p67": {
+          "f1": 12,
+          "f2": -9
+        },
+        "B_w0p80": {
+          "f1": 32,
+          "f2": -29
+        },
+        "A_w0p244": {
+          "f1": -42,
+          "f2": 45
+        }
+      },
+      "alternatives_mhz_f1_f2": {
+        "patch_L_-0.10_only": {
+          "B_w0p67": [
+            45,
+            26
+          ],
+          "A_w0p244": [
+            15,
+            55
+          ]
+        },
+        "patch_L_-0.10_Lp_-0.07": {
+          "all": [
+            71,
+            67
+          ]
+        }
+      },
+      "expected_effect_on_S11_channel": "NOT predicted: the model has no S11. Judgement: with the upper mode (which sets the -5.96 dB at 8.2368 GHz) almost fixed and f1 +~12 MHz, the change of the worst-in-channel value is expected to be small (<~0.5 dB); the upper-edge -6 dB is not expected to be secured by this move alone.",
+      "expected_effect_on_eta": "The ~8.0 GHz dark mode stays in the channel (valley expected 0.2-0.3 around 7.98-8.04 GHz); H2 is expected to FAIL (eta >= 0.55 at all 11 points) unless the loss mechanism is something else than the mode character.",
+      "uncertainty": "identification ~60/40 (B/A); f1, f2 shifts of the chosen move are below or of the order of the mesh uncertainty (~13 MHz) in B and clear (~40 MHz, opposite signs) in A."
+    },
+    "geometry_checks": {
+      "patch_mm": [
+        11.421266,
+        6.402
+      ],
+      "parasitic_mm": [
+        11.0,
+        7.67
+      ],
+      "parasitic_y_range_mm": [
+        -3.035,
+        4.635
+      ],
+      "par_clearance_to_transformer_plan_mm": 0.166,
+      "slot_copper_to_patch_edge_mm": {
+        "plus_y": 1.251,
+        "minus_y": 2.501
+      },
+      "overhang_plus_y_mm": 1.434,
+      "board_margin_mm": "as US3_PS1"
+    }
+  },
+  "pre_registered_hypothesis": {
+    "H0_shift": "Both S11 minima move up by 100-180 MHz (US3_PS1/032: 7.675 and 8.03 GHz) keeping a separation within 300-400 MHz.",
+    "H1": "Worst S11 in the channel <= -8 dB (preferred -10 dB); the -10 dB band of 032 (7.49-8.115 GHz) shifted would be ~7.63-8.25 GHz.",
+    "H2": "eta >= 0.55 at all 11 channel points and realized broadside gain >= 2 dBi at all 11 points. Expected to FAIL near the upper mode (the eta valley of 032 is tied to it and moves to ~8.17 GHz, inside the channel).",
+    "decision_rule": "H1 true and S11 comparable to US3_PS1 with better centring -> design-reviewer (Fable) helps with the design (owner instruction 2026-11-16). H1 true and H2 false -> report the trade-off (match by loss) and propose the tanD=0 diagnostic or a coupling change (z_par) for the last refinement. H0 false (shifts not as predicted) -> recalibrate slopes with this run before any further change."
+  },
+  "manufacturability": {
+    "layers": "3 copper layers (L1 patch + feed + U-slot at z=h, L2 floating parasitic at z=1.035 mm, L3 ground at z=0) and 2 dielectric layers of ~1.035 mm each: a standard 3-copper-layer FR4 multilayer (core + prepreg/core).",
+    "vias": "none: the parasitic is floating (no probe, no plated through hole in the antenna region); the feed is a planar microstrip.",
+    "min_feature_mm": "U-slot arms 0.8 mm and gaps as in US3_MS3 (unchanged); parasitic is a solid rectangle 11.0 x 7.6 mm, no feature < 0.8 mm.",
+    "stackup_note": "Dielectric thickness and the exact z of the buried copper depend on the fabricator's core/prepreg library; typical core thicknesses of ~1.0-1.2 mm and prepreg of 0.1-0.2 mm are only an orientation (NOT verified against a datasheet). The model assumes ONE homogeneous eps_r=4.4 over 2.07 mm, so the fabricator must give the real stackup (the prepreg/core eps_r can differ from the core and sets z_par and k).",
+    "tolerances_to_specify": "layer-to-layer registration and dielectric thickness ( +-z_par moves k and f2 ); etching of Lp (guide: ~10 MHz per 0.01 mm). Same rough FR4 + copper-roughness caveat as the rest of the campaign.",
+    "risks": "z_par and registration are not controlled by the TFG; the model is homogeneous FR4 (provisional); a floating inner sheet cannot be seen or tuned after lamination. US3_PS4: the two size changes are 0.10 mm (patch_L) and 0.07 mm (Lp), of the order of the etching tolerance (guide ~7-10 MHz per 0.01 mm): a +-0.05 mm etching error moves the modes by ~35-50 MHz, larger than the predicted effect of the change."
+  },
+  "purpose": "Test, in openEMS base mesh, whether a differential detuning (patch_L -0.10 mm, Lp +0.07 mm) raises the main resonance of US3_PS1 with the 8.03 GHz mode fixed, and whether the eta valley tied to the 8.03 GHz mode follows the S11 improvement (match by loss).",
+  "mesh_hint_lines_mm": {
+    "y": [
+      -0.215
+    ]
+  },
+  "mesh_hint_note": "Hard y line at -0.215 mm (inside the U-slot base, as US3_MS3/US3_PS1). Prepare-only trials for US3_PS4 (base mesh, round-32 command): with the PS1 sheet edge y_min = -3.0 the y grading ratio was 1.853 > 1.5 near lines -3.2843, -3.201 (patch edge), -3.0466; the fix was to move the sheet edge (y_min = -3.035, ratio 1.4) instead of adding hints: hints at -3.1/-3.12/-3.3 did not fix it or gave 1.56.",
+  "owner_decision_2026_11_16": "The rf-designer version (patch_L -0.10, Lp +0.07: raise f1 ~+12 MHz, hold f2) predicted shifts below the mesh uncertainty, because the coupling floors the separation at ~335 MHz. The owner chose instead to shift BOTH resonances up by ~140 MHz with the US3_PS1 shape. Applied by the orchestrator: patch_L 6.502 -> 6.302 mm (-0.20; ~+141 MHz at -7.06 MHz/0.01 mm) and Lp 7.60 -> 7.46 mm (-0.14; ~+136 MHz at -9.7 MHz/0.01 mm), parasitic centre y 0.80 -> 0.75 mm (y -2.98..+4.48) because centres 0.78-0.82 fail the 1.5 y grading against the new patch edge -3.151. rf-designer version kept in the report as the alternative."
+}

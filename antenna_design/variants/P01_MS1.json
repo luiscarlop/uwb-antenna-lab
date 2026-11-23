@@ -1,0 +1,140 @@
+{
+ "id": "P01_MS1",
+ "family": "P01_MSL_H207",
+ "base_design": "P01_rectangular_patch",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 2.07,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.661
+  ],
+  [
+   5.710633,
+   -3.661
+  ],
+  [
+   5.710633,
+   3.661
+  ],
+  [
+   -5.710633,
+   3.661
+  ]
+ ],
+ "slots_polygon_mm": [],
+ "feed": {
+  "type": "microstrip_edge_qw",
+  "z0_ohm": 50,
+  "line_width_mm": 3.92,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -10.261,
+  "connector": {
+   "type": "none",
+   "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed identical to US3_MS3: 50 ohm line (w 3.92 mm, y -13 -> -10.261) + lambda/4 transformer (w 0.80 mm, l 6.60 mm) touching the radiating edge y=-3.661 (no inset, no notch)."
+  },
+  "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+  "transformer_width_mm": 0.8,
+  "transformer_length_mm": 6.6,
+  "transformer_start_y_mm": -10.261,
+  "patch_edge_y_mm": -3.661,
+  "feed_polygons_mm": [
+   [
+    [
+     -1.96,
+     -13.0
+    ],
+    [
+     1.96,
+     -13.0
+    ],
+    [
+     1.96,
+     -10.261
+    ],
+    [
+     -1.96,
+     -10.261
+    ]
+   ],
+   [
+    [
+     -0.4,
+     -10.261
+    ],
+    [
+     0.4,
+     -10.261
+    ],
+    [
+     0.4,
+     -3.661
+    ],
+    [
+     -0.4,
+     -3.661
+    ]
+   ]
+  ],
+  "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 0.80 mm -> Zt 102.5 ohm; Kirschning-Jansen eps_eff(f0) 3.197 (GUIDE_MODEL)"
+ },
+ "patch_params": {
+  "L_mm": 7.322,
+  "W_mm": 11.421266
+ },
+ "changed_vs_previous": {
+  "US3_MS3": {
+   "slots_polygon_mm": [
+    "U-slot (Wu 4.4, Lu 2.65, t 0.8)",
+    "none"
+   ],
+   "L_mm": [
+    6.502,
+    7.322
+   ],
+   "note": "Comparison variable: the radiating element (U-slot -> plain rectangle) at the same target fr; L is tied to it (rescaled so the resonance stays at f0). Material, h, board, W, 50 ohm line width, transformer w/l, port type/position and mesh profile unchanged."
+  },
+  "P01_R2": {
+   "feed": [
+    "ideal probe (h 1.6 mm)",
+    "owner microstrip edge + lambda/4 (h 2.07 mm)"
+   ],
+   "note": "P01_R2 probe result is not reused as matching evidence (owner decision 2026-11-05)."
+  }
+ },
+ "rationale": "Owner decision 2026-11-05 requires redoing P01_R2 with the microstrip feed. For a clean comparison with the best owner-feed candidate (US3_MS3) the same FR4 h 2.07 mm and the same 50 ohm line + lambda/4 are kept; only the element changes. L = 7.67 mm * 7.625/7.9872 = 7.322 mm from the EM fit of US0 (plain rectangle, h 2.07, fine mesh, fr 7.625 GHz); the same L*fr scaling took US3 -> US3_MS2 to within -0.65/+0.70 % of f0 in EM. TL-model edge resistance of the plain rectangle (G1+G12) is ~300 ohm, within the EM range of the U-slot edge (243-296 ohm), so the ~102 ohm transformer is a consistent first choice. GEOMETRY_ONLY; no S11 claimed.",
+ "computation": {
+  "method": "em/circuit_fits/P01_MS1_design.py (L*fr scaling from US0 fit; Balanis TL G1/G12 edge resistance)",
+  "outputs": "em/circuit_fits/P01_MS1_design.json",
+  "evidence": "GUIDE_MODEL (not EM)"
+ },
+ "manufacturability": {
+  "min_feature_mm": 0.8,
+  "patch_to_board_edge_mm": {
+   "x": 7.289,
+   "y": 9.339
+  },
+  "note": "Transformer 0.80 mm wide, same as US3_MS3; feed continuous from board edge to patch edge; no slots."
+ },
+ "purpose": "Owner-feed P01 (rectangular patch) on the same material and feed as US3_MS3: does the U-slot buy channel coverage over a plain rectangle?",
+ "pre_registered_hypothesis": {
+  "H1": "Base mesh, 50 ohm lumped port at y=-13: the channel S11 minimum lies within 7.85-8.15 GHz (L scaling works without slot).",
+  "H2": "Worst |S11| in 7.7376-8.2368 GHz is WORSE (higher) than US3_MS3 base mesh (-8.18 dB) because the plain rectangle has narrower bandwidth (higher Q) than the U-slot.",
+  "decision_rule": "Worst <= -6 dB -> fine mesh next (two-mesh rule of claude_run_016). Worst > -6 dB with H1 true -> P01 rectangle is inferior to US3_MS3 under the owner feed; recalibrate l_t/Zt only once from this port-plane data, otherwise concentrate on US3_MS3/P03. H1 false -> rescale L from this run's resonance before any feed change."
+ },
+ "mesh_hint_lines_mm": {}
+}

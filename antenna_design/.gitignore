@@ -1,0 +1,8 @@
+outputs/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# hfss/build/ holds the AEDT creation scripts: the repo-wide "build/" rule must not ignore it
+!hfss/build/

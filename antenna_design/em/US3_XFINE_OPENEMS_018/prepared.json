@@ -1,0 +1,251 @@
+{
+  "id": "US3",
+  "base_design": "P02_u_slot_patch",
+  "status": "PREPARED_NOT_RUN",
+  "mesh_profile": "xfine",
+  "mesh_profile_rules": {
+    "SUBSTRATE_LINES": 15,
+    "METAL_EDGE_RES_MM": 0.1225,
+    "XY_MAX_STEP_MM": 0.245,
+    "Z_MAX_STEP_MM": 0.42
+  },
+  "variant_evidence_at_input": "GEOMETRY_ONLY",
+  "variant_file": "/home/user/TFG_Beamforming_FBD/antenna_design/variants/US3.json",
+  "variant_sha256": "1e39cd151dea8e1f943f7fc318cb045597a957acb364ade9e0339c64241918a6",
+  "openEMS_version": "0.37.0.post1.dev40+g5fecbb58d",
+  "CSXCAD_version": "0.7.0.post1.dev8+g626b99f2f",
+  "script_sha256": "0f8a546f3032461b9f8f81ad78ecdbef686e20f7dc26e6761348384ccdb38367",
+  "native_xml_sha256": "faa1fe15fc1351fdd8e5e84f529023a6300e50305b27551e7be2ff7e831fbc1e",
+  "options": {
+    "edge_port": null,
+    "nf2ff": false,
+    "nf2ff_points": null
+  },
+  "center_hz": 7987200000.0,
+  "channel_band_hz": [
+    7737600000,
+    8236800000
+  ],
+  "materials": {
+    "substrate": "FR4_homogeneous_PROVISIONAL_h2p07",
+    "eps_r": 4.4,
+    "tan_delta_at_f0": 0.017,
+    "h_mm": 2.07,
+    "size_mm": [
+      26.0,
+      26.0
+    ],
+    "dielectric_conductivity_S_m": 0.03323722487554589,
+    "dielectric_loss_model": "constant conductivity; tan_delta(f)=tan_delta(f0)*f0/f",
+    "metal_model": "2D finite conducting sheet",
+    "conductivity_S_m": 58000000.0,
+    "sheet_thickness_m": 3.5e-05,
+    "sheet_API_roundtrip_verified": true,
+    "roughness": "not modeled"
+  },
+  "geometry": {
+    "patch_primitive": "AddPolygon",
+    "patch_vertices": 4,
+    "slots": 1,
+    "slot_model": "slot = zero-thickness polygon (CSXCAD AddPolygon, norm_dir z, elevation h) of an air Material (eps_r 1, kappa 0) with priority 20 > conducting sheet 10. Verified by reading the installed source: ContinuousStructure::GetPropertyByCoordPriority(coord, primList) returns the first priority-sorted primitive containing the edge coordinate; Operator::CalcPEC_Range and Operator_Ext_ConductingSheet::BuildExtension only act when that winner is METAL/ConductingSheet; Operator::AverageMatCellCenter samples cell centres (never on the z=h plane; drawing tolerance 0), so the zero-thickness air polygon does not alter substrate epsilon. NOT yet exercised in a solve.",
+    "microstrip_line_box_mm": null,
+    "feed_boxes_mm": null,
+    "polygon_meshing": "round 6 rules (fixed_mesh_lines): 1/3-2/3 metal_edge_res rule on every axis-aligned metal/no-metal edge of patch, slots and line (board-edge coincident edges skipped), bounding-box extremes, plain vertex lines (dropped if < 0.1 mm from a rule/user line), merge of lines < 0.05 mm, merge of facing 'outside' lines < 0.7 * res, optional mesh_hint_lines_mm, bounded relaxation of fixed lines (<= 0.04 mm shift, target ratio 1.3 among fixed cells), then SmoothMeshLines with the ratio parameter lowered until the result is <= 1.4 (SMOOTH_RATIO_SEARCH); target 1.4, hard limit 1.5 (recorded in mesh_ratio_above_1p4_by_axis); staircase on oblique edges",
+    "polygon_mesh_report": {
+      "rule_edges": {
+        "x": 6,
+        "y": 6
+      },
+      "dropped_plain": {
+        "x": 12,
+        "y": 12
+      },
+      "merged_close": {
+        "x": 8,
+        "y": 10
+      },
+      "merged_outside_pairs": {
+        "x": 0,
+        "y": 0
+      },
+      "user_lines": {
+        "x": 1,
+        "y": 1
+      },
+      "relaxed_lines": {
+        "x": 0,
+        "y": 0
+      },
+      "max_shift_mm": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "probe_hard_lines_mm": {
+        "x": 0.0,
+        "y": -2.329
+      }
+    },
+    "slot_mesh_check": {
+      "rule": ">= 3 cells (centre inside the slot) across every chord >= 0.3 mm",
+      "slots": [
+        {
+          "slot": 0,
+          "min_cells_across": 6,
+          "narrowest_counted_chord": {
+            "cells": 6,
+            "width_mm": 0.7999999999999999,
+            "chord_along": "y",
+            "at_mm": -1.393651707317073,
+            "interval_mm": [
+              -0.7,
+              0.1
+            ]
+          },
+          "per_axis": {
+            "x": {
+              "cells": 6,
+              "width_mm": 0.8000000000000003,
+              "chord_along": "x",
+              "at_mm": 0.10881231707317074,
+              "interval_mm": [
+                -2.2,
+                -1.4
+              ]
+            },
+            "y": {
+              "cells": 6,
+              "width_mm": 0.7999999999999999,
+              "chord_along": "y",
+              "at_mm": -1.393651707317073,
+              "interval_mm": [
+                -0.7,
+                0.1
+              ]
+            }
+          },
+          "status": "OK"
+        }
+      ],
+      "status": "OK"
+    },
+    "smoothing_ratio_parameter_used": {
+      "x": 1.4,
+      "y": 1.4
+    },
+    "smoothing_infill_lines_mm": {
+      "x": [],
+      "y": []
+    }
+  },
+  "port": {
+    "reference_ohm": 50,
+    "start_mm": [
+      0.0,
+      -2.329,
+      0
+    ],
+    "stop_mm": [
+      0.0,
+      -2.329,
+      2.07
+    ],
+    "type": "ideal vertical lumped line; no pin/coax connector/aperture/deembedding",
+    "priority": 5,
+    "grid_lines_at_port": {
+      "x": {
+        "line_mm": 0.0,
+        "cell_below_mm": 0.2115875442197508,
+        "cell_above_mm": 0.2115875442197508
+      },
+      "y": {
+        "line_mm": -2.329,
+        "cell_below_mm": 0.23852791941291906,
+        "cell_above_mm": 0.2139330790792746
+      },
+      "z": {
+        "line_0_mm": 0.0,
+        "line_h_mm": 2.07,
+        "substrate_cells": 14,
+        "substrate_cell_mm": 0.14785714285714285
+      }
+    },
+    "reference_plane": "the lumped port itself (U and I integrated over z 0..h at the feed point); no plane shift, no beta, no de-embedding: the probe inductance belongs to the antenna"
+  },
+  "mesh": {
+    "x": {
+      "cells": 300,
+      "min_step_mm": 0.11053240740740744,
+      "max_step_mm": 0.2449627298539454,
+      "max_neighbor_ratio": 1.4000000000000008,
+      "pml_inner_low_mm": -33.044444444444444,
+      "pml_inner_high_mm": 33.044444444444444
+    },
+    "y": {
+      "cells": 298,
+      "min_step_mm": 0.12249999999999994,
+      "max_step_mm": 0.24444444444445423,
+      "max_neighbor_ratio": 1.4000000000000004,
+      "pml_inner_low_mm": -33.044444444444444,
+      "pml_inner_high_mm": 33.044444444444444
+    },
+    "z": {
+      "cells": 155,
+      "min_step_mm": 0.1478571428571427,
+      "max_step_mm": 0.4179159589740813,
+      "max_neighbor_ratio": 1.298230312079014,
+      "pml_inner_low_mm": -21.656672328207367,
+      "pml_inner_high_mm": 31.657728216162525
+    }
+  },
+  "mesh_ratio_above_1p4_by_axis": {},
+  "total_cells": 13857000,
+  "box_half_mm": 35.0,
+  "mesh_grading_limit_used": 1.4,
+  "budget_before_solve": {
+    "maximum_CPUs_threads": 2,
+    "nodal_cells": 14039844,
+    "estimated_RAM_bytes_measured_basis": 2251432650,
+    "estimated_RAM_bytes_measured_basis_x2_margin": 4502865301,
+    "RAM_basis": "P01_OPENEMS_002 RSS 758256 KiB / 4841937 nodal cells = 0.156602 KiB/cell, x2.0 margin",
+    "estimated_RAM_bytes_conservative_reference_only": 28753600512,
+    "conservative_basis": "2048 B/cell, unmeasured; reference only, not used in the abort rule",
+    "yee_min_cell_reference_step_s": 2.3934241811617134e-13,
+    "estimated_actual_timestep_s": 2.77870570625725e-13,
+    "estimated_timesteps": 14144,
+    "estimated_engine_seconds": 3746.784028981132,
+    "worst_case_engine_seconds_30000_steps": 7947.081509433962,
+    "time_basis": "nodal cells * steps / 53 Mcell/s (measured in P01_OPENEMS_002); steps scale with 1/timestep from P01_OPENEMS_002 (10368 steps, record 3.930e-09 s); assumes the same physical record (resonator Q may lengthen it); capped by NrTS",
+    "maximum_timesteps": 30000,
+    "external_wall_limit_required_s": 5621,
+    "abort_rule": "do not launch if RAM (measured basis x2) > 8 GiB or estimated time > 4000 s",
+    "time_limit_s": 4000.0,
+    "time_limit_basis": "owner decision 2026-11-05: up to 4000 s for convergence runs",
+    "launch_allowed_by_budget": true,
+    "abort_reasons": []
+  },
+  "boundaries": "PML_8 all six; coordinates mm",
+  "excitation": {
+    "type": "Gaussian",
+    "center_hz": 7987200000.0,
+    "corner_offset_hz": 2500000000.0,
+    "option": "--excitation-fc-hz (default 1e9 = XML of 001/004/005/006)",
+    "nominal_minus20dB_range_hz": [
+      5458154784.358089,
+      10516245215.64191
+    ],
+    "nominal_range_rule": "spectrum exp(-2.25 (f - f0)^2 / fc^2) (openEMS excitation.cpp CalcGaussianPulse/MaxFreq): -20 dB at f0 +- 1.0116 fc",
+    "wideband_grid_hz": [
+      5460000000.0,
+      10520000000.0,
+      5000000.0
+    ],
+    "pulse_length_s": 1.1459155902616464e-09,
+    "pulse_length_rule": "openEMS CalcGaussianPulsExcitation: 2 * 9 / (2 pi fc)",
+    "NrTS": 30000,
+    "EndCriteria": 1e-05,
+    "NrTS_EndCriteria_note": "pulse length scales as 1/fc (fc 1 GHz: 2.87 ns; 2.5 GHz: 1.15 ns) and is far below the 30000-step cap; the energy criterion is relative to the peak energy, so it is unchanged; the step estimate in budget_before_solve keeps the 006 record length (conservative: a shorter pulse cannot lengthen the ring-down). Higher f_max only raises the probe sampling rate. Cells: xy <= 0.5 mm (lambda_FR4/27 at 10.5 GHz), air z <= 0.8 mm (lambda0/36). PML_8 and the NF2FF box (17.5 mm) are less effective at 5.5 GHz (box 0.32 lambda): outside-band content is for the port only; NF2FF frequencies stay in the channel."
+  },
+  "energy_end_criterion": 1e-05,
+  "mesh_convergence": "NOT_ESTABLISHED: single mesh",
+  "far_field": "not recorded; gain/efficiency/radiated group delay unavailable"
+}

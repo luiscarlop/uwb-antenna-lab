@@ -1,0 +1,28 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "2400s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US1.json",
+    "--out",
+    "em/US1_FINE_OPENEMS_014",
+    "--mesh",
+    "fine",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude autonomous rounds)",
+  "started_utc": "2026-11-04T20:27:45.640543+00:00"
+}

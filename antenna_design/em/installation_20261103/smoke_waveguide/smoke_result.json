@@ -1,0 +1,19 @@
+{
+  "test": "official_Rect_Waveguide",
+  "solver_executed": true,
+  "upstream_source_sha256": "90fe797216e463b99ceac84e392840a9d607874308339b4ac4b0c93b5fcfcd39",
+  "openEMS_python_version": "0.37.0.post1.dev1+g5fecbb58d",
+  "CSXCAD_python_version": "0.7.0.post1.dev1+g626b99f2f",
+  "frequency_range_hz": [
+    20000000000.0,
+    26000000000.0
+  ],
+  "samples": 201,
+  "max_s11_abs": 0.00689357335712432,
+  "min_s21_abs": 0.9993277526180043,
+  "max_real_impedance_relative_error": 0.009712758114218933,
+  "wall_seconds": 0.6819508680000581,
+  "cpu_seconds": 2.339814,
+  "peak_rss_kib": 96576,
+  "limitations": "installation smoke test, not antenna validation; finite outputs alone do not establish numerical accuracy"
+}

@@ -1,0 +1,250 @@
+{
+  "source": "hfss/results/results_US3_MS3/S Parameter US3_MS3 parametric patch_L.csv",
+  "design": "US3_MS3",
+  "evidence": "HFSS (owner), one adaptive solve per value",
+  "rows": [
+    {
+      "patch_L_mm": 6.402,
+      "channel_worst_db": -7.59,
+      "channel_worst_ghz": 7.738,
+      "min_db": -15.68,
+      "min_ghz": 7.984,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.668,
+        "to_ghz": 8.376,
+        "width_mhz": 708.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.816,
+        "to_ghz": 8.17,
+        "width_mhz": 354.0
+      },
+      "minus10_centre_ghz": 7.993
+    },
+    {
+      "patch_L_mm": 6.412,
+      "channel_worst_db": -7.71,
+      "channel_worst_ghz": 7.738,
+      "min_db": -15.38,
+      "min_ghz": 7.98,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.663,
+        "to_ghz": 8.369,
+        "width_mhz": 706.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.813,
+        "to_ghz": 8.164,
+        "width_mhz": 351.0
+      },
+      "minus10_centre_ghz": 7.9885
+    },
+    {
+      "patch_L_mm": 6.417,
+      "channel_worst_db": -7.72,
+      "channel_worst_ghz": 7.738,
+      "min_db": -15.56,
+      "min_ghz": 7.979,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.663,
+        "to_ghz": 8.369,
+        "width_mhz": 706.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.812,
+        "to_ghz": 8.164,
+        "width_mhz": 352.0
+      },
+      "minus10_centre_ghz": 7.988
+    },
+    {
+      "patch_L_mm": 6.422,
+      "channel_worst_db": -7.66,
+      "channel_worst_ghz": 8.236,
+      "min_db": -16.14,
+      "min_ghz": 7.948,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.632,
+        "to_ghz": 8.345,
+        "width_mhz": 713.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.778,
+        "to_ghz": 8.137,
+        "width_mhz": 359.0
+      },
+      "minus10_centre_ghz": 7.9575
+    },
+    {
+      "patch_L_mm": 6.432,
+      "channel_worst_db": -7.94,
+      "channel_worst_ghz": 8.236,
+      "min_db": -15.52,
+      "min_ghz": 7.966,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.649,
+        "to_ghz": 8.358,
+        "width_mhz": 709.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.798,
+        "to_ghz": 8.151,
+        "width_mhz": 353.0
+      },
+      "minus10_centre_ghz": 7.9745
+    },
+    {
+      "patch_L_mm": 6.442,
+      "channel_worst_db": -7.55,
+      "channel_worst_ghz": 8.236,
+      "min_db": -15.57,
+      "min_ghz": 7.946,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.631,
+        "to_ghz": 8.337,
+        "width_mhz": 706.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.779,
+        "to_ghz": 8.131,
+        "width_mhz": 352.0
+      },
+      "minus10_centre_ghz": 7.955
+    },
+    {
+      "patch_L_mm": 6.452,
+      "channel_worst_db": -7.19,
+      "channel_worst_ghz": 8.236,
+      "min_db": -15.74,
+      "min_ghz": 7.927,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.613,
+        "to_ghz": 8.317,
+        "width_mhz": 704.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.76,
+        "to_ghz": 8.112,
+        "width_mhz": 352.0
+      },
+      "minus10_centre_ghz": 7.936
+    },
+    {
+      "patch_L_mm": 6.462,
+      "channel_worst_db": -7.41,
+      "channel_worst_ghz": 8.236,
+      "min_db": -15.45,
+      "min_ghz": 7.94,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.624,
+        "to_ghz": 8.329,
+        "width_mhz": 705.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.773,
+        "to_ghz": 8.123,
+        "width_mhz": 350.0
+      },
+      "minus10_centre_ghz": 7.948
+    },
+    {
+      "patch_L_mm": 6.472,
+      "channel_worst_db": -7.33,
+      "channel_worst_ghz": 8.236,
+      "min_db": -15.38,
+      "min_ghz": 7.937,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.622,
+        "to_ghz": 8.324,
+        "width_mhz": 702.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.771,
+        "to_ghz": 8.12,
+        "width_mhz": 349.0
+      },
+      "minus10_centre_ghz": 7.9455
+    },
+    {
+      "patch_L_mm": 6.482,
+      "channel_worst_db": -7.08,
+      "channel_worst_ghz": 8.236,
+      "min_db": -15.75,
+      "min_ghz": 7.922,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.608,
+        "to_ghz": 8.31,
+        "width_mhz": 702.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.756,
+        "to_ghz": 8.107,
+        "width_mhz": 351.0
+      },
+      "minus10_centre_ghz": 7.9315
+    },
+    {
+      "patch_L_mm": 6.492,
+      "channel_worst_db": -7.18,
+      "channel_worst_ghz": 8.236,
+      "min_db": -15.42,
+      "min_ghz": 7.927,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.612,
+        "to_ghz": 8.316,
+        "width_mhz": 704.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.762,
+        "to_ghz": 8.111,
+        "width_mhz": 349.0
+      },
+      "minus10_centre_ghz": 7.9365
+    },
+    {
+      "patch_L_mm": 6.502,
+      "channel_worst_db": -6.8,
+      "channel_worst_ghz": 8.236,
+      "min_db": -15.69,
+      "min_ghz": 7.906,
+      "local_minima_count": 1,
+      "band_minus6db": {
+        "from_ghz": 7.593,
+        "to_ghz": 8.292,
+        "width_mhz": 699.0
+      },
+      "band_minus10db": {
+        "from_ghz": 7.74,
+        "to_ghz": 8.09,
+        "width_mhz": 350.0
+      },
+      "minus10_centre_ghz": 7.915
+    }
+  ],
+  "minus10_centre_fit": {
+    "mhz_per_0p01mm": -7.04,
+    "rms_residual_mhz": 9.2,
+    "max_abs_residual_mhz": 17.7,
+    "note": "non-monotonic residuals of this size are attributed to per-value adaptive meshing (not verified)"
+  },
+  "minus10_width_mhz_range": [
+    349.0,
+    359.0
+  ],
+  "best_channel_worst": {
+    "patch_L_mm": 6.432,
+    "channel_worst_db": -7.94
+  },
+  "conclusion": "patch_L shifts the response without changing its width; -10 dB width ~350 MHz < 499.2 MHz channel, so no patch_L meets -10 dB over the channel."
+}

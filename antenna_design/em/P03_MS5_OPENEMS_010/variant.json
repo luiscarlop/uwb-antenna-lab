@@ -1,0 +1,152 @@
+{
+ "id": "P03_MS5",
+ "base_design": "P03_hex_slot_patch",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "generic_FR4_PROVISIONAL",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 1.6,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_center_mm": [
+  0.0,
+  3.479267
+ ],
+ "patch_polygon_mm": [
+  [
+   5.007,
+   3.479267
+  ],
+  [
+   2.5035,
+   7.815457
+  ],
+  [
+   -2.5035,
+   7.815457
+  ],
+  [
+   -5.007,
+   3.479267
+  ],
+  [
+   -2.5035,
+   -0.856922
+  ],
+  [
+   2.5035,
+   -0.856922
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    1.1,
+    3.479267
+   ],
+   [
+    0.55,
+    4.431895
+   ],
+   [
+    -0.55,
+    4.431895
+   ],
+   [
+    -1.1,
+    3.479267
+   ],
+   [
+    -0.55,
+    2.526639
+   ],
+   [
+    0.55,
+    2.526639
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "microstrip_edge_qw",
+  "z0_ohm": 50.0,
+  "line_width_mm": 3.02,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -6.076922,
+  "transformer_width_mm": 0.72,
+  "transformer_length_mm": 5.22,
+  "transformer_start_y_mm": -6.076922,
+  "patch_edge_y_mm": -0.856922,
+  "connector": {
+   "type": "SMA_edge_launch",
+   "modeled": "50 ohm port at board edge y=-13 (reference plane); connector body not modeled"
+  },
+  "feed_polygons_mm": [
+   [
+    [
+     -1.51,
+     -13.0
+    ],
+    [
+     1.51,
+     -13.0
+    ],
+    [
+     1.51,
+     -6.076922
+    ],
+    [
+     -1.51,
+     -6.076922
+    ]
+   ],
+   [
+    [
+     -0.36,
+     -6.076922
+    ],
+    [
+     0.36,
+     -6.076922
+    ],
+    [
+     0.36,
+     -0.856922
+    ],
+    [
+     -0.36,
+     -0.856922
+    ]
+   ]
+  ]
+ },
+ "changed_vs_base": {
+  "hexagon_circumradius_mm": [
+   4.8,
+   5.007
+  ]
+ },
+ "changed_vs_previous": {
+  "from": "P03_MS3 (EM_SIMULATED, run 008)",
+  "hexagon_circumradius_mm": [
+   4.907429,
+   5.007
+  ],
+  "patch_centre_y_mm": [
+   3.393036,
+   3.479267
+  ],
+  "reason": "Single-variable scaling (+1.4 %) to lower the |S11| minimum (8.035 GHz in 008) toward f0 and recover the lower channel edge (-5.48 dB at 7.7376 GHz); bottom flat side, feed, slot r, material, plate unchanged."
+ },
+ "rationale": "P03_MS5: unica variable = radio 5.007 mm (entre MS3 4.96 y MS4 5.03). Hipotesis (no resultado). GEOMETRY_ONLY hasta simular.",
+ "from": "P03_MS4 (EM_SIMULATED, run 009) and P03_MS3 (run 008)",
+ "reason": "Single-variable scaling to r=5.007 mm (interpolation of MS3/MS4 edge S11 slopes: lower and upper channel-edge worst cases equalise near r~5.007 mm, predicted ~-6.5 dB; hypothesis, not result). Geometry vertices linearly interpolated between MS3 and MS4 (exact: affine in r); feed, slot r, material, plate unchanged."
+}

@@ -1,0 +1,50 @@
+mkdir -p failed for path /home/agent/.config/matplotlib: [Errno 30] Read-only file system: '/home/agent/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-ejft6cvx because there was an issue with the default path (/home/agent/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Fontconfig error: No writable cache directories
+openEMS - force-disabling all field dumps
+openEMS - dump simulation statistics to 'openEMS_run_stats.txt' and 'openEMS_stats.txt'
+Note: limiting the default thread count to 2 of 5 visible CPUs (CPU affinity and/or a cgroup CPU quota)
+openEMS - fixed number of threads: 2
+ ---------------------------------------------------------------------- 
+ | openEMS 64bit -- version 5fecbb5
+ | (C) 2010-2026 Thorsten Liebig <thorsten.liebig@gmx.de>  GPL license
+ ---------------------------------------------------------------------- 
+	Used external libraries:
+		CSXCAD -- Version: 626b99f
+		hdf5   -- Version: 1.14.5
+		          compiled against: HDF5 library version: 1.14.5
+		tinyxml -- compiled against: 2.6.2
+		fparser
+		boost  -- compiled against: 1_83
+		zlib   -- Version: 1.3.1
+		          compiled against: 1.3.1
+
+Create FDTD operator (compressed SSE + multi-threading)
+FDTD simulation size: 27x12x124 --> 40176 FDTD cells 
+FDTD timestep is: 7.3219e-13 s; Nyquist rate: 26 timesteps @2.62647e+10 Hz
+Excitation signal length is: 1305 timesteps (9.55509e-10s)
+Max. number of timesteps: 10000 ( --> 7.66284 * Excitation signal length)
+Create FDTD engine (compressed SSE + multi-threading)
+Running FDTD engine... this may take a while... grab a cup of coffee?!?
+RunFDTD: end-criteria of -60dB reached after 1430 timesteps (-60.3882dB)
+Time for 1430 iterations with 40176 cells : 0.526771 sec
+Speed: 109.064 MCells/s 
+{
+  "test": "official_Rect_Waveguide",
+  "solver_executed": true,
+  "upstream_source_sha256": "90fe797216e463b99ceac84e392840a9d607874308339b4ac4b0c93b5fcfcd39",
+  "openEMS_python_version": "0.37.0.post1.dev1+g5fecbb58d",
+  "CSXCAD_python_version": "0.7.0.post1.dev1+g626b99f2f",
+  "frequency_range_hz": [
+    20000000000.0,
+    26000000000.0
+  ],
+  "samples": 201,
+  "max_s11_abs": 0.00689357335712432,
+  "min_s21_abs": 0.9993277526180043,
+  "max_real_impedance_relative_error": 0.009712758114218933,
+  "wall_seconds": 0.6819508680000581,
+  "cpu_seconds": 2.339814,
+  "peak_rss_kib": 96576,
+  "limitations": "installation smoke test, not antenna validation; finite outputs alone do not establish numerical accuracy"
+}

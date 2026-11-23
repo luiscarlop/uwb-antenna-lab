@@ -1,0 +1,202 @@
+{
+ "id": "US3_MS3",
+ "family": "USLOT_MSL_H207",
+ "base_design": "US3_MS2",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 2.07,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.251
+  ],
+  [
+   5.710633,
+   -3.251
+  ],
+  [
+   5.710633,
+   3.251
+  ],
+  [
+   -5.710633,
+   3.251
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    -2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    1.95
+   ],
+   [
+    1.4,
+    1.95
+   ],
+   [
+    1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    1.95
+   ],
+   [
+    -2.2,
+    1.95
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "microstrip_edge_qw",
+  "z0_ohm": 50,
+  "line_width_mm": 3.92,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -9.851,
+  "connector": {
+   "type": "none",
+   "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped). Feed: 50 ohm line (w 3.92 mm, y -13 -> -9.851) + lambda/4 transformer (w 0.80 mm, l 6.60 mm) touching the radiating edge y=-3.251 (no inset, no notch)."
+  },
+  "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)",
+  "transformer_width_mm": 0.8,
+  "transformer_length_mm": 6.6,
+  "transformer_start_y_mm": -9.851,
+  "patch_edge_y_mm": -3.251,
+  "feed_polygons_mm": [
+   [
+    [
+     -1.96,
+     -13.0
+    ],
+    [
+     1.96,
+     -13.0
+    ],
+    [
+     1.96,
+     -9.851
+    ],
+    [
+     -1.96,
+     -9.851
+    ]
+   ],
+   [
+    [
+     -0.4,
+     -9.851
+    ],
+    [
+     0.4,
+     -9.851
+    ],
+    [
+     0.4,
+     -3.251
+    ],
+    [
+     -0.4,
+     -3.251
+    ]
+   ]
+  ],
+  "transformer_width_method": "Hammerstad-Jensen static Z0 (Wheeler 35 um correction): w 0.80 mm -> Zt 102.5 ohm; Kirschning-Jansen eps_eff(f0) 3.197 (GUIDE_MODEL)"
+ },
+ "uslot_params": {
+  "L_mm": 6.502,
+  "W_mm": 11.421266,
+  "s_over_L": 0.34,
+  "Wu_mm": 4.4,
+  "Lu_mm": 2.65,
+  "t_mm": 0.8,
+  "y0_mm": -0.7,
+  "open_toward": "+y"
+ },
+ "changed_vs_previous": {
+  "US3_MS2": {
+   "feed.type": [
+    "microstrip_inset_edge",
+    "microstrip_edge_qw"
+   ],
+   "line_end_y_mm": [
+    -3.251,
+    -9.851
+   ],
+   "transformer": [
+    null,
+    "w 0.80 mm x l 6.60 mm, Zt ~102.5 ohm, y -9.851 -> -3.251"
+   ],
+   "note": "Single variable: the last 6.60 mm of the 50 ohm line become a ~102 ohm lambda/4 transformer. Patch, U-slot, material, h, board, 50 ohm line width, port position/type and mesh profile unchanged."
+  }
+ },
+ "rationale": "Round 22 (US3_MS2) measured the edge-fed U-slot: R_edge 243-296 ohm, Q 16.25 at the patch edge, S11 -2.4..-3.9 dB with a direct 50 ohm feed. A ~100 ohm quarter-wave transformer (sqrt(50*~210 ohm effective)) is the round-22 next_task. Length: the round-22 guide sweep (ideal line, static eps_eff, edge-plane data) gave ~5.5 mm; re-designed here from the PORT-plane EM data with dispersive eps_eff (Kirschning-Jansen) for both line widths, the optimum is 6.6 mm (> lambda_g/4 = 5.2 mm because the transformer also absorbs the edge series inductance ~0.78 nH). At 5.5 mm the same model predicts only -4.5 dB worst. GEOMETRY_ONLY; no S11 claimed.",
+ "computation": {
+  "method": "em/circuit_fits/US3_MS3_qw_design.py: US3_MS2 port-plane Zin (EM, round 22) de-embedded over 9.749 mm of 50 ohm line (KJ dispersive eps_eff, scale 0.95/1.00/1.05), lossless transformer (static HJ Z0, KJ eps_eff), remaining 50 ohm line. Step discontinuity, transformer radiation and coupling NOT modelled. GUIDE_MODEL.",
+  "inputs": {
+   "eps_r": 4.4,
+   "h_mm": 2.07,
+   "t_mm": 0.035,
+   "source": "em/US3_MS2_OPENEMS_022/s11_wideband.csv 7.3-8.7 GHz"
+  },
+  "outputs": {
+   "Zt_ohm": 102.5,
+   "eps_eff_t_f0": 3.197,
+   "eps_eff_50_f0": 3.64,
+   "lambda_g_t_quarter_mm_f0": 5.248,
+   "chosen_w_mm": 0.8,
+   "chosen_l_mm": 6.6,
+   "line50_remaining_mm": 3.149,
+   "guide_worst_in_band_db": {
+    "eeff_scale_0.95": -5.69,
+    "eeff_scale_1.00": -7.55,
+    "eeff_scale_1.05": -5.64
+   },
+   "guide_best_in_band_db_nominal": -12.98,
+   "guide_l_sensitivity_nominal_db": {
+    "5.5": -4.52,
+    "6.2": -6.32,
+    "6.6": -7.55,
+    "7.0": -6.43
+   },
+   "evidence": "GUIDE_MODEL (not EM)"
+  }
+ },
+ "purpose": "Match the edge-fed U-slot (US3_MS2) to the 50 ohm lumped port at the line start with a single quarter-wave transformer, owner feed rule 2026-11-05.",
+ "pre_registered_hypothesis": {
+  "H1": "Base mesh, 50 ohm lumped port at y=-13: worst |S11| in 7.7376-8.2368 GHz <= -6.5 dB (>= 0.5 dB margin over -6 dB).",
+  "H2": "Radiation efficiency > 0.70 in the channel and Dmax within 20 deg of broadside (the transformer matches the line, so line/mismatch loss of US3_MS2 should drop).",
+  "decision_rule": "H1 holds -> next round: same variant on the fine mesh (two-mesh convergence check, owner rule). Worst in (-6.5, -6] dB -> marginal, fine mesh before any length change. Worst > -6 dB -> recalibrate l_t (and Zt) from the EM port-plane response of this run (do not sweep blindly); if the EM optimum of a single lambda/4 is still > -6 dB, report and reconsider topology (double-section or inset+QW).",
+  "note": "Guide sensitivity to eps_eff (+-5 %) is large (-7.55 -> -5.6 dB): the result is a real test, not a foregone conclusion."
+ },
+ "mesh_hint_lines_mm": {
+  "y": [
+   -0.215
+  ]
+ },
+ "mesh_hint_note": "Hard y line at -0.215 mm (inside the U-slot base, metal-free): microstrip_edge_qw adds plain y lines across the slot (<= 0.3 mm), which without this hint gave a y grading ratio 1.507 > 1.5 near y -0.37..-0.07 mm. Found by prepare-only trials (round 23)."
+}

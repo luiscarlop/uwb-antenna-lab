@@ -1,0 +1,36 @@
+{
+  "pre_registered_rule": "reports/claude_run_027.md (round 28)",
+  "worst_base": -10.421114584583819,
+  "worst_fine": -10.359734364836362,
+  "worst_fine_f_ghz": 7.7376,
+  "samples_above_-10_fine": 0,
+  "best_fine": -25.136328589714378,
+  "minus10_edges_base_ghz": [
+    7.724,
+    8.306
+  ],
+  "minus10_edges_fine_ghz": [
+    7.726,
+    8.305
+  ],
+  "max_abs_dgamma_channel": 0.0291207687828753,
+  "energy_db": -50.05,
+  "port_validity": "OK",
+  "max_abs_s11_fine": 0.5309777618163778,
+  "edge_shift_mhz": [
+    2.0,
+    -1.0
+  ],
+  "checks_minus10": {
+    "worst_le_-10_both": true,
+    "dgamma_le_0.03": true,
+    "edges_le_10MHz": true,
+    "energy_port_passivity": true
+  },
+  "verdict_minus10": "BOUNDED_SENSITIVITY_PASS",
+  "checks_minus6": {
+    "worst_le_-6_both": true,
+    "change_le_0.5dB": true,
+    "dgamma_le_0.03": true
+  }
+}

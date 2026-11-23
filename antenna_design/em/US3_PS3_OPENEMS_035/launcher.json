@@ -1,0 +1,36 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "2400s",
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "em/patch_openems.py",
+    "solve",
+    "--variant",
+    "variants/US3_PS3.json",
+    "--out",
+    "em/US3_PS3_OPENEMS_035",
+    "--mesh",
+    "base",
+    "--edge-port",
+    "lumped",
+    "--nf2ff",
+    "--nf2ff-points",
+    "11",
+    "--excitation-fc-hz",
+    "2.5e9",
+    "--max-timesteps",
+    "60000"
+  ],
+  "cwd": "antenna_design",
+  "launched_by": "orchestrator (Claude round 35: US3_PS3 base mesh with the mesh hints that also pass fine; pair with round 36 fine)",
+  "started_utc": "2026-11-15T20:23:16.890093+00:00",
+  "pre_run_estimate": {
+    "basis": "034: 18810 steps in 390 s, 0.49 GB",
+    "vcpu": 2
+  }
+}

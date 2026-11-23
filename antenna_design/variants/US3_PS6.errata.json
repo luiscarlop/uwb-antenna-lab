@@ -1,0 +1,146 @@
+{
+  "id": "US3_PS6_ERRATA",
+  "fecha": "2026-11-16",
+  "evidence": "GEOMETRY_ONLY",
+  "refers_to": {
+    "file": "variants/US3_PS6.json",
+    "sha256": "65b310885e06934305ba3712007197e3260f7064cd2a6dfc618f31e43a7c0978",
+    "note": "El JSON original NO se edita: su sha256 esta registrado en las ejecuciones openEMS 038 y 039. Esta fe de erratas lo complementa; ante discrepancia, mandan los poligonos."
+  },
+  "unchanged_and_correct": {
+    "statement": "Los poligonos (patch_polygon_mm, slots_polygon_mm, feed.feed_polygons_mm, parasitic_patches[].polygon_mm), feed.*_y_mm, uslot_params y parasitic_params (Lp, Wp, centro, z) son correctos y no cambian. Lo erroneo son solo metadatos de texto y derivados heredados de US3_PS5.",
+    "values_recomputed_from_polygons": {
+      "patch_mm_x_by_y": [
+        11.421266,
+        6.29
+      ],
+      "patch_edge_y_mm": -3.145,
+      "line_50ohm_y_mm": [
+        -13.0,
+        -9.745
+      ],
+      "transformer_y_mm": [
+        -9.745,
+        -3.145
+      ],
+      "transformer_mm": [
+        0.8,
+        6.6
+      ],
+      "parasitic_y_mm": [
+        -2.91,
+        4.14
+      ],
+      "parasitic_mm": [
+        11.0,
+        7.05
+      ],
+      "parasitic_z_mm": 1.035,
+      "slot_y_mm": [
+        -0.7,
+        1.95
+      ]
+    }
+  },
+  "corrections": [
+    {
+      "campo": "feed.connector.modeled (texto)",
+      "linea_aprox": 83,
+      "valor_erroneo_heredado_de_PS5": "y -13 -> -9.69, longitud de la linea 3.31 mm; transformador y -9.69 -> -3.09; borde radiante y=-3.09",
+      "valor_correcto": "y -13 -> -9.745, longitud 3.255 mm; transformador y -9.745 -> -3.145; borde radiante y=-3.145",
+      "recalculo": "-9.745-(-13)=3.255; -3.145-(-9.745)=6.6 (el transformador 0.80 x 6.60 no cambia)"
+    },
+    {
+      "campo": "parasitic_params.inset_from_patch_edge_minus_y_mm",
+      "linea_aprox": 175,
+      "valor_erroneo_heredado_de_PS5": 0.18,
+      "valor_correcto": 0.235,
+      "recalculo": "-2.91-(-3.145)"
+    },
+    {
+      "campo": "parasitic_params.clearance_to_transformer_mm",
+      "linea_aprox": 177,
+      "valor_erroneo_heredado_de_PS5": 0.18,
+      "valor_correcto": 0.235,
+      "recalculo": "-2.91-(-3.145)"
+    },
+    {
+      "campo": "parasitic_params.note (texto)",
+      "linea_aprox": 178,
+      "valor_erroneo_heredado_de_PS5": "borde del parche y=-3.09 (patch_L/2); lamina empieza 0.18 mm por encima en y",
+      "valor_correcto": "borde del parche y=-3.145; la lamina empieza 0.235 mm por encima en y (el borde -2.91 no se mueve)",
+      "recalculo": "-2.91-(-3.145)=0.235; patch_L/2=3.145"
+    },
+    {
+      "campo": "parasitic_params.overhang_beyond_patch_plus_y_mm (hallazgo adicional)",
+      "linea_aprox": 174,
+      "valor_erroneo_heredado_de_PS5": 1.05,
+      "valor_correcto": 0.995,
+      "recalculo": "4.14-3.145. En PS5 era 4.14-3.09=1.05"
+    },
+    {
+      "campo": "geometry_checks.patch_mm",
+      "linea_aprox": 183,
+      "valor_erroneo_heredado_de_PS5": [
+        11.421266,
+        6.18
+      ],
+      "valor_correcto": [
+        11.421266,
+        6.29
+      ],
+      "recalculo": "y: 3.145-(-3.145)=6.29 (= uslot_params.L_mm)"
+    },
+    {
+      "campo": "geometry_checks.par_clearance_to_transformer_plan_mm",
+      "linea_aprox": 193,
+      "valor_erroneo_heredado_de_PS5": 0.18,
+      "valor_correcto": 0.235,
+      "recalculo": "-2.91-(-3.145)"
+    },
+    {
+      "campo": "geometry_checks.slot_copper_to_patch_edge_mm.plus_y",
+      "linea_aprox": 195,
+      "valor_erroneo_heredado_de_PS5": 1.14,
+      "valor_correcto": 1.195,
+      "recalculo": "3.145-1.95"
+    },
+    {
+      "campo": "geometry_checks.slot_copper_to_patch_edge_mm.minus_y",
+      "linea_aprox": 196,
+      "valor_erroneo_heredado_de_PS5": 2.39,
+      "valor_correcto": 2.445,
+      "recalculo": "-0.7-(-3.145)"
+    },
+    {
+      "campo": "geometry_checks.overhang_plus_y_mm (hallazgo adicional)",
+      "linea_aprox": 198,
+      "valor_erroneo_heredado_de_PS5": 1.05,
+      "valor_correcto": 0.995,
+      "recalculo": "4.14-3.145"
+    },
+    {
+      "campo": "geometry_checks.feed_mm.line_50ohm_length",
+      "linea_aprox": 200,
+      "valor_erroneo_heredado_de_PS5": 3.31,
+      "valor_correcto": 3.255,
+      "recalculo": "-9.745-(-13)"
+    },
+    {
+      "campo": "manufacturability.min_feature_mm (texto)",
+      "linea_aprox": 251,
+      "valor_erroneo_heredado_de_PS5": "holgura plana minima 0.18 mm en y entre el extremo del transformador y el borde de la lamina",
+      "valor_correcto": "0.235 mm",
+      "recalculo": "-2.91-(-3.145)"
+    },
+    {
+      "campo": "manufacturability.risks (texto)",
+      "linea_aprox": 254,
+      "valor_erroneo_heredado_de_PS5": "desplazamiento en y de 0.18 mm del borde de la lamina respecto al del parche",
+      "valor_correcto": "0.235 mm",
+      "recalculo": "-2.91-(-3.145)"
+    }
+  ],
+  "not_errata": "changed_vs_previous (lineas 217-239) ya recoge los valores correctos (patch_edge -3.09 -> -3.145, transformer_start -9.69 -> -9.745, linea 3.31 -> 3.255): los valores 6.18, -3.09, -9.69 y 3.31 en ese bloque son los de PS5, correctos como 'antes'. mesh_hint_lines_mm (y -3.06) es correcto para el borde -3.145.",
+  "consumers_note": "Los scripts HFSS (claude_pyaedt_ch9.py DESIGNS['US3_PS6']) y los resultados openEMS 038/039 usan los poligonos y los valores correctos; ninguna de las erratas los afecta."
+}

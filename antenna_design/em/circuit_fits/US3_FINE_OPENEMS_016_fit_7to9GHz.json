@@ -1,0 +1,39 @@
+{
+  "source_csv": "em/US3_FINE_OPENEMS_016/s11_wideband.csv",
+  "fit_range_hz": [
+    7000000000.0,
+    9000000000.0
+  ],
+  "samples": 399,
+  "model": "Zin = R0 + j w Ls + R/(1 + jQ(f/fr - fr/f))",
+  "fit": {
+    "fr_hz": 7581000000.0,
+    "Q": 13.75,
+    "R_ohm": 141.79389784117924,
+    "Ls_H": 1.8256685052620014e-09,
+    "R0_ohm": 10.517778007263543,
+    "rms_error_ohm": 2.8735847697021257,
+    "fitted_model_worst_in_band_s11_db": -6.244343612918319
+  },
+  "what_if_best_over_R_and_fr_same_Q": [
+    {
+      "Ls_scale": 1.0,
+      "best_worst_in_band_s11_db": -8.389033498782164,
+      "R_ohm": 200,
+      "fr_hz": 7460000000.0
+    },
+    {
+      "Ls_scale": 0.5,
+      "best_worst_in_band_s11_db": -10.554912807265712,
+      "R_ohm": 130,
+      "fr_hz": 7500000000.0
+    },
+    {
+      "Ls_scale": 0.0,
+      "best_worst_in_band_s11_db": -10.64081143255353,
+      "R_ohm": 50,
+      "fr_hz": 7980000000.0
+    }
+  ],
+  "evidence": "GUIDE_MODEL fitted to EM_SIMULATED data; what-if values are not EM results"
+}

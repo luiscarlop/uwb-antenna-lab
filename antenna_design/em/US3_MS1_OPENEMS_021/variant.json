@@ -1,0 +1,154 @@
+{
+ "id": "US3_MS1",
+ "family": "USLOT_MSL_H207",
+ "base_design": "US3",
+ "evidence": "GEOMETRY_ONLY",
+ "substrate": {
+  "name": "FR4_homogeneous_PROVISIONAL_h2p07",
+  "eps_r": 4.4,
+  "tan_delta": 0.017,
+  "h_mm": 2.07,
+  "size_mm": [
+   26.0,
+   26.0
+  ]
+ },
+ "metal": {
+  "conductivity_S_m": 58000000.0,
+  "thickness_m": 3.5e-05
+ },
+ "patch_polygon_mm": [
+  [
+   -5.710633,
+   -3.251
+  ],
+  [
+   -2.46,
+   -3.251
+  ],
+  [
+   -2.46,
+   -1.251
+  ],
+  [
+   2.46,
+   -1.251
+  ],
+  [
+   2.46,
+   -3.251
+  ],
+  [
+   5.710633,
+   -3.251
+  ],
+  [
+   5.710633,
+   3.251
+  ],
+  [
+   -5.710633,
+   3.251
+  ]
+ ],
+ "slots_polygon_mm": [
+  [
+   [
+    -2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    -0.7
+   ],
+   [
+    2.2,
+    1.95
+   ],
+   [
+    1.4,
+    1.95
+   ],
+   [
+    1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    0.1
+   ],
+   [
+    -1.4,
+    1.95
+   ],
+   [
+    -2.2,
+    1.95
+   ]
+  ]
+ ],
+ "feed": {
+  "type": "microstrip_inset_edge",
+  "z0_ohm": 50,
+  "line_width_mm": 3.92,
+  "line_x_mm": 0.0,
+  "line_start_y_mm": -13.0,
+  "line_end_y_mm": -1.251,
+  "notch_gap_mm": 0.5,
+  "inset_depth_mm": 2.0,
+  "connector": {
+   "type": "none",
+   "modeled": "Owner decision 2026-11-05: no SMA/coax; 50 ohm vertical AddLumpedPort at the line start (board edge y=-13), strip width, R=50 ohm; S11 reference plane = line start, no de-embedding (run with --edge-port lumped)"
+  },
+  "line_width_method": "Hammerstad-Jensen (with Wheeler 35 um thickness correction) on eps_r 4.4, h 2.07 mm: w = 3.919 mm -> 3.92 mm gives Z0 = 49.99 ohm, eps_eff = 3.308 (estimate, GEOMETRY_ONLY)"
+ },
+ "uslot_params": {
+  "L_mm": 6.502,
+  "W_mm": 11.421266,
+  "s_over_L": 0.34,
+  "Wu_mm": 4.4,
+  "Lu_mm": 2.65,
+  "t_mm": 0.8,
+  "y0_mm": -0.7,
+  "open_toward": "+y"
+ },
+ "changed_vs_previous": {
+  "US3": {
+   "feed": [
+    "probe_lumped_vertical (x 0, y -2.329)",
+    "microstrip_inset_edge 50 ohm, w 3.92 mm, inset 2.0 mm, notch gap 0.5 mm, lumped port at board edge"
+   ],
+   "L_mm": [
+    6.85,
+    6.502
+   ],
+   "note": "Two coupled changes forced by the owner feed decision: removing the probe removes the series inductance that matched US3 in band, so the patch resonance (fit fr 7.581 GHz, below the band) is moved to f0. Material, h, board, W and the U-slot polygon (Wu, Lu, t, y0) are unchanged."
+  }
+ },
+ "rationale": "US3_MS1: US3 re-fed per owner decision 2026-11-05 (no SMA/coax probe). Circuit fit of US3 fine/xfine (em/circuit_fits/US3_*_fit_7to9GHz.json: Zin = R0 + jwLs + R/(1+jQ(f/fr-fr/f)), fr 7.581/7.583 GHz, Q 13.75, R 142-143 ohm, Ls 1.83-1.97 nH) shows the in-band match came from the ideal-probe inductance acting on a resonance below the band. A microstrip inset feed has no such series inductance, so L is scaled by fr_fit/f0 (6.85 -> 6.501 mm) to centre the patch resonance on f0 (first-order cavity scaling, estimate). Inset depth from the cos^2 inset law anchored on the fit: R(probe at 1.096 mm from the edge) ~ 142 ohm -> R_edge ~ 142/cos^2(pi*1.096/6.85) ~ 185 ohm; R(d) = 50 ohm at d ~ 2.1 mm for L 6.5 mm; d = 2.0 mm (R est ~ 60 ohm) keeps 0.55 mm of metal between the inset tip (y -1.2505) and the U-slot base (y -0.7). Guide estimate only: notches and the U-slot perturb the cos^2 law; no S11 is claimed. With Q ~ 13.75 the guide model predicts VSWR 3 fractional bandwidth ~ 2/(Q sqrt3) ~ 8.4 % (> 6.25 % channel) only if the resonance is centred: not a result.",
+ "computation": {
+  "method": "Hammerstad-Jensen microstrip; cavity scaling of L by the EM-fitted fr; cos^2 inset law anchored on the US3 circuit fit. GEOMETRY_ONLY.",
+  "inputs": {
+   "eps_r": 4.4,
+   "h_mm": 2.07,
+   "t_mm": 0.035,
+   "fr_fit_hz_US3_fine": 7581000000.0,
+   "R_fit_ohm_US3_fine": 141.79,
+   "probe_offset_from_edge_mm": 1.096
+  },
+  "outputs": {
+   "w50_mm": 3.919,
+   "eps_eff_line": 3.308,
+   "L_mm": 6.502,
+   "R_edge_est_ohm": 185,
+   "inset_depth_for_50ohm_est_mm": 2.1,
+   "inset_depth_chosen_mm": 2.0,
+   "inset_tip_to_uslot_base_mm": 0.551,
+   "notch_half_width_mm": 2.46,
+   "uslot_base_half_width_mm": 2.2,
+   "side_metal_beside_notch_mm": 3.2506,
+   "line_length_board_edge_to_patch_edge_mm": 9.749,
+   "lambda_g_line_mm_at_f0": 20.637
+  }
+ }
+}
